@@ -1149,6 +1149,18 @@ input {
   }
 }
 
+#oil-attributes-preview {
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: tint($base-color, 64%);
+    shape-rendering: crispEdges;
+  }
+  .axis text {
+    display: none;
+  }
+}
+
 // Tooltip
 
 .tooltip {

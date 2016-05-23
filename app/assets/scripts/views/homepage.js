@@ -25,6 +25,7 @@ HomePageChart.prototype.create = function () {
   this.svg = d3.select(this.el).append('svg')
     .attr('width', this.width)
     .attr('height', this.height);
+
   this.draw();
   return this;
 };
@@ -245,6 +246,11 @@ var HomePage = BaseView.extend({
     // oil attributes
     this.charts.fakeOilAttributes = new HomePageChart();
     this.charts.fakeOilAttributes.createDataAndScales = function () {
+      // Overwrite variables to add margins
+      this.margin = {top: 0, right: 0, bottom: 20, left: 20};
+      this.width = this.width - this.margin.left - this.margin.right;
+      this.height = this.height - this.margin.top - this.margin.bottom;
+
       this.data = mockData.oilAttributes;
       // Create scale functions
       var xMax = self.addExtentBuffer(d3.max(this.data, function (d) {
@@ -268,6 +274,13 @@ var HomePage = BaseView.extend({
                     .range([4, 42]);
     };
     this.charts.fakeOilAttributes.draw = function () {
+      // Overwrite svg
+      this.svg = this.svg
+        .attr('width', this.width + this.margin.left + this.margin.right)
+        .attr('height', this.height + this.margin.top + this.margin.bottom)
+        .append('g')
+        .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
+
       var graph = this;
       // Selection
       var circles = this.svg.selectAll('circle')
@@ -281,6 +294,17 @@ var HomePage = BaseView.extend({
          .attr('cx', function (d) { return graph.x(d.x); })
          .attr('cy', function (d) { return graph.y(d.g); })
          .attr('r', function (d) { return 0; });
+
+      // add axes
+      var xAxis = d3.svg.axis()
+               .scale(this.x)
+               .orient('bottom')
+               .ticks(5);
+
+      this.svg.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0,' + (this.height + 8) + ')')
+        .call(xAxis);
 
       // X axis title
       this.xProperty = 'waterToOilRatio';
