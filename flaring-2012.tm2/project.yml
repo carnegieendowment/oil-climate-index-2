@@ -1,5 +1,5 @@
 _prefs: 
-  mapid: devseed.8abefef2
+  mapid: carnegiecomms.9c2f044c
   saveCenter: true
 _properties: {}
 attribution: ''
@@ -18,8 +18,8 @@ interactivity_layer: ''
 layers: null
 maxzoom: 8
 minzoom: 0
-name: OCI Temp 2012
-source: "mapbox:///devseed.1zz8pqyw"
+name: OCI 2012
+source: "mapbox:///carnegiecomms.7025qo1b"
 styles: 
   - style.mss
 template: ''

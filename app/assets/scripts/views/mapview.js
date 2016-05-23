@@ -61,14 +61,14 @@ var MapView = BaseView.extend({
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGV2c2VlZCIsImEiOiJnUi1mbkVvIn0.018aLhX0Mb0tdtaT2QNe2Q';
     this.flaringLayers = {
-      '2012': L.mapbox.tileLayer('devseed.8abefef2'),
-      '2013': L.mapbox.tileLayer('devseed.2f84ecb9'),
-      '2014': L.mapbox.tileLayer('devseed.ee4bebe5'),
+      '2012': L.mapbox.tileLayer('carnegiecomms.9c2f044c'),
+      '2013': L.mapbox.tileLayer('carnegiecomms.9e285c3e'),
+      '2014': L.mapbox.tileLayer('carnegiecomms.1d1c0ebe'),
       'off': null
     };
     var map = L.mapbox.map(
       'map',
-      'devseed.f5a0e5c3',
+      'carnegiecomms.34955fec',
       {
         zoomControl: false,
         scrollWheelZoom: false,
