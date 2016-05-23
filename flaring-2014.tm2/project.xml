@@ -8,8 +8,8 @@
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">8</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[OCI Temp 2014]]></Parameter>
-  <Parameter name="source"><![CDATA[mapbox:///devseed.1zz8pqyw]]></Parameter>
+  <Parameter name="name"><![CDATA[OCI 2014]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///carnegiecomms.7025qo1b]]></Parameter>
 </Parameters>
 
 
