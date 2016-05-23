@@ -1,0 +1,140 @@
+Sub SpecialProcess()
+
+  ' SpecialProcess Macro
+  ' Uses this workbook in conjunction with the OCI consolidated sheet to generate data for special cases for the OCI website
+  ' This assumes that the OCI consolidated sheet starts with the default OPGEE and PRELIM runs in place
+  ' The macro DOES NOT save this file after running (so it will stay in the original state)
+  '
+  ' Created by Development Seed
+  '
+
+  Dim OPGEE As Workbook
+  Dim OPGEEBook As Workbook
+  Dim OCICS As Workbook
+  Dim OCICSMain As Worksheet
+  Dim OPGEEOutputs As Worksheet
+  Dim OCICSPath As String
+  Dim SolarSteamArray() As String
+  Dim WaterArray() As String
+  Dim FlareArray() As String
+  Dim OPGEEResults As Integer
+  Dim StartCell As Range
+  Dim OCICSStartCell As Range
+  Dim MatchOil As String
+  Dim MatchOffset As Range
+  Dim WriteMatchOffset As Range
+  Dim OPGEEBookTop As Range
+
+  Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+
+  ' This Workbook is OPGEE
+  Set OPGEE = ThisWorkbook
+  Set OPGEEOutputs = OPGEE.Sheets("Bulk Assessment - Results")
+
+  ' Store our starting cell
+  Set StartCell = OPGEEOutputs.Range("H9")
+
+  ' Open the OCICS (consolidated sheet; let the user choose it)
+  OCICSPath = Application.GetOpenFilename(Title:="Select OCI Consolidated Sheet")
+  Set OCICS = Workbooks.Open(OCICSPath)
+  Set OCICSMain = OCICS.Sheets("OCI")
+  Set OCICSStartCell = OCICSMain.Range("I5")
+
+  ' Go grab our model parameters from Column A (Row 41, 69, 85) of OCICS
+  ' They are stored in a string array so we'll use CDbl(Array(index)) when accessing
+  SolarSteamArray() = Split(OCICSMain.Range("A41").Value, ",")
+  WaterArray() = Split(OCICSMain.Range("A69").Value, ",")
+  FlareArray() = Split(OCICSMain.Range("A85").Value, ",")
+
+  ' Loop over our OPGEE Results and match to array values
+  '' Grab first n where n matches the combinations of the above arrays
+
+  OPGEEResults = ((UBound(SolarSteamArray) + 1) * (UBound(WaterArray) + 1) * (UBound(FlareArray) + 1))
+  For i = 0 To OPGEEResults - 1
+
+    '' Assume the unique name is in D2
+    MatchOil = OPGEEOutputs.Range("D2").Value
+    Set MatchOffset = Range(OCICSStartCell.Offset(1, 0), OCICSStartCell.Offset(1, 0).End(xlToRight)).Find(What:=MatchOil, LookIn:=xlValues, LookAt:=xlPart, SearchOrder:=xlByColumns).Offset(-1, 0)
+
+    If MatchOffset Is Nothing Then
+      MsgBox "No Matching Oil Found in OCI Consolidated Sheet"
+      Exit For
+    End If
+
+    ' Copy & Paste (Outputs and Output-Inputs)
+
+    Range(StartCell.Offset(0, i), StartCell.Offset(79, i)).Copy
+    MatchOffset.Offset(257, 0).PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+        SkipBlanks:=False, Transpose:=False
+
+    Range(StartCell.Offset(94, i), StartCell.Offset(148, i)).Copy
+    MatchOffset.Offset(351, 0).PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+        SkipBlanks:=False, Transpose:=False
+
+    ' Calculate
+    For Each sh In OCICS.Worksheets
+      sh.EnableCalculation = True
+    Next
+    Application.Calculate
+
+    ' Get our run name by combining the custom slider information with the OCICS metadata
+    s = w = f = "x"
+    For j = LBound(SolarSteamArray) To UBound(SolarSteamArray)
+      If StartCell.Offset(156, i).Value = CDbl(SolarSteamArray(j)) Then
+        s = j
+        Exit For
+      End If
+    Next j
+    For j = LBound(WaterArray) To UBound(WaterArray)
+      If StartCell.Offset(154, i).Value = CDbl(WaterArray(j)) Then
+        w = j
+        Exit For
+      End If
+    Next j
+    For j = LBound(FlareArray) To UBound(FlareArray)
+      If StartCell.Offset(155, i).Value = CDbl(FlareArray(j)) Then
+        f = j
+        Exit For
+      End If
+    Next j
+
+    ' Write to matching OPGEEBook and save
+    Set OPGEEBook = Workbooks.Open(OCICS.Path & "\opgee_run" & s & w & f & ".csv")
+    Set OPGEEBookTop = OPGEEBook.Sheets("opgee_run" & w & s & f).Range("A1")
+    Set WriteMatchOffset = Range(OPGEEBookTop.Offset(0, 1), OPGEEBookTop.Offset(0, 1).End(xlDown)).Find(What:=MatchOil, SearchOrder:=xlByRows)
+
+    ' Run Name
+    WriteMatchOffset.Offset(0, -1).Value = "run" & w & s & f
+
+    ' Unique Oil Name (redundant)
+    WriteMatchOffset.Value = MatchOil
+
+    ' Values
+    Range(MatchOffset.Offset(417, 0), MatchOffset.Offset(429, 0)).Copy
+    WriteMatchOffset.Offset(0, 1).PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+      SkipBlanks:=False, Transpose:=True
+
+    ' Output-Inputs
+    ' 283 (API Gravity) 295 (GOR) 296 (WOR) 300 (SOR) 312 (FOR)
+    WriteMatchOffset.Offset(0, 14).Value = MatchOffset.Offset(278, 0).Value
+
+    Range(MatchOffset.Offset(290, 0), MatchOffset.Offset(291, 0)).Copy
+    WriteMatchOffset.Offset(0, 15).PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+      SkipBlanks:=False, Transpose:=True
+
+    WriteMatchOffset.Offset(0, 17).Value = MatchOffset.Offset(295, 0).Value
+    WriteMatchOffset.Offset(0, 18).Value = MatchOffset.Offset(307, 0).Value
+
+    ' Save and close csv
+    Application.DisplayAlerts = False
+    OPGEEBook.Save
+    OPGEEBook.Close
+    Application.DisplayAlerts = True
+
+  Next i
+
+  ' Close OCICS, force no-save
+  OCICS.Close SaveChanges:=False
+
+End Sub

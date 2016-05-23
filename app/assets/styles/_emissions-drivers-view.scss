@@ -1,0 +1,30 @@
+// EMISSIONS DRIVERS VIEW
+
+#ed-chart-cont {
+  .panel-header {
+    @extend .visually-hidden;
+  }
+}
+
+#emissions-drivers {
+  .trend {
+    stroke: $base-color;
+    stroke-width: 1;
+    stroke-dasharray: 8 4;
+  }
+  .circle-legend,
+  .circle-text {
+    @extend .hd-label;
+    font-size: 14px;
+    opacity: 0.80;
+    @include bp(tablet-long) {
+      display: none;
+    }
+  }
+}
+
+.trend {
+  stroke: #555;
+  stroke-width: 1;
+  stroke-dasharray: 10 5;
+}

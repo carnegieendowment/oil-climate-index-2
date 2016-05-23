@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "4.2"
+
+env:
+  global:
+  - DEPLOY_BRANCH=master
+  - secure: "HT2176Ka6N4JXTgKGKWS0PDJjPX3S1dEEwla40ZKZNgBHzgrNaJ3gno9G5MSQN+TE6MVbka4lpKOcY2IT3MlDyyJ3g1C2Kw6m2IGZIFoZBQeVfkCCkIjJU1MgKl3kUU9TOFST8ZpJT1aHoMlpMWWCAMye1VBSugQtDGVmR76rJytxxryf77fuMudDnbWPZxAAbe1a6mMLOcLnev9Osbj5ikglHwr6Z7soN1+D7++/akgt+23/ze5Ab7gqs45zgVy5XnGgzjw20ASX82yJ7S2fPqOVuQjI5MRDAm4PKOpXSIQfW8EQuU2Sx4WW4g0TgAJejmgg6f81BIqTUoTpNaboZ0aLvIQPW19gieUfx0SecG6zDpB3T5DutdKw+HHqYB9AYtWtmfTXQqX872YVccfba56gBxYg/UKDUHgv6FqOV5b0wwXy07AWrkHGp/K9kPWV5I49WY0YO0BCACWJpY36XAXbUxM5y0q7yrKTzDiXUf9JsbrlZm6SJvqcD33LuwWpX3JKJq1ElbpGNcBue0gLLiE36gRuizurXXxdqhIKCa/XCNGHoEIeGlYAsvbHxm1VdLqL37zEL1yI0AKvpgjNBeDpAKd5JTG3QyBwO+tyEZmSV9UfuEtzeaSXJFtaBFknl42bjSCZZQE0cudhjfBRmYAImoQmTjPYw26Xqmpjj4=" # GH_TOKEN
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+- chmod +x ./.build_scripts/deploy.sh
+
+before_script:
+- npm test
+
+script:
+- npm run build
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: .build_scripts/deploy.sh
+  on:
+    branch: ${DEPLOY_BRANCH}

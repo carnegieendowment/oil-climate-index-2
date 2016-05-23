@@ -1,0 +1,122 @@
+<div id="supply-curve-view" class="view">
+
+  <!-- intro -->
+  <section class="intro intro-production">
+    <div class="overlay-dark">
+      <div class="prose prose-centered">
+        <h1 class="prose-prime-title">Oil Production and Emissions</h1>
+        <p class="copy-feature">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque, nunc quis vulputate tempus, leo neque tristique lacus, quis aliquam mauris ante vitae tellus. Nunc et vestibulum metus, nec posuere lacus. Cras in eleifend nisl. Fusce sit amet elit tincidunt, convallis magna in, sodales felis.</p>
+      </div>
+      <div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a><a href="https://www.digitalglobe.com/" target="_blank">© DigitalGlobe</a></div>
+    </div>
+  </section>
+  <!--/ intro -->
+
+  <!-- chart-section -->
+  <section class="section-content" id="sc-chart-cont">
+    <div class="row">
+      <header class="panel-header">
+        <div class="panel-headline">
+          <h1 class="panel-title">Chart</h1>
+        </div>
+      </header>
+
+      <div class="panel-body">
+        <div id="supply-curve" class="data-charts">
+          <span class="button button-small button-filter">Filter Chart</span>
+          <div id="no-results-message">
+            <p>There are currently no oils that match your filter requirements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-hideable filter-hidden">
+        <h3 class="header-filter">Filter Oils</h3>
+
+        <div class="control-section">
+          <fieldset id="ratio-select">
+            <legend class="control-title">Select Units</legend>
+            <div class="radio">
+              <label><input type="radio" name="ratio-select" value="perBarrel" checked> GHGs/Barrel</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="ratio-select" value="perMJ"> GHGs/Megajoule Product</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="control-section">
+          <fieldset id="region-select">
+            <legend class="control-title">Filter by Region</legend>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="Asia-Pacific"> Asia-Pacific</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="Europe"> Europe</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="Eurasia"> Eurasia</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="Middle East & N. Africa"> Middle East & N. Africa</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="North America"> North America</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="S. America & Carribean"> S. America & Carribean</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="region-select" value="Sub-Saharan Africa"> Sub-Saharan Africa</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="control-section">
+          <fieldset id="oiltype-select">
+            <legend class="control-title">Filter by Oil Type</legend>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Extra-Heavy"><span class="extraheavy-color block-color"></span> Extra-Heavy</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Heavy"><span class="heavy-color block-color"></span> Heavy</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Medium"><span class="medium-color block-color"></span> Medium</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Light"><span class="light-color block-color"></span> Light</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Ultra-Light"><span class="ultra-light-color block-color"></span> Ultra-Light</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Condensate"><span class="condensate-color block-color"></span> Condensate</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Ultra-Deep"><span class="ultra-deep-color block-color"></span> Ultra-Deep</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="High-Gas"><span class="high-gas-color block-color"></span> High-Gas</label>
+            </div>
+            <div class="checkbox">
+              <span class="swatch"></span>
+              <label><input type="checkbox" name="oiltype-select" value="Depleted"><span class="depleted-color block-color"></span> Depleted</label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!--/ chart-section -->
+  <%= blueBar %>
+</div>

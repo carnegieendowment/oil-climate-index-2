@@ -1,0 +1,267 @@
+// OIL DETAILS VIEW
+
+#od-chart-cont {
+  .panel-header {
+    @extend .visually-hidden;
+  }
+
+  // Data Charts
+  .chart-item {
+    @include span(12/12);
+    margin-bottom: 1.8em;
+    h4 {
+      @extend .hd-label;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+      .raw {
+        color: #302C26;
+        opacity: 0.32;
+        font-size: 85%;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .units {
+      @extend .hd-label;
+      font-size: .9em;
+      text-transform: inherit;
+      color: tint($base-color, 56%);
+      line-height: 16px;
+      font-family: $base-font-family;
+      font-weight: $base-font-weight;
+      font-stretch: normal;
+      clear: left;
+      display: block;
+    }
+  }
+  .container-charts {
+    @include col(7/12);
+    @media screen and (max-width: 1024px) {
+      @include col(12/12);
+      padding-bottom: 2em;
+    }
+  }
+  .data-charts {
+    .value {
+      margin-bottom: 0;
+      color: $red;
+      .raw { 
+        color: darken($gray-light, 5); 
+      }
+      #diff {
+        font-size: 1.4em;
+        margin-left: .3em;
+        padding-top: .35em;
+        float: left;
+      }
+      .compare { color: $brand-color; }
+      li {
+        width: 30%;
+        float: left;
+        @extend .clearfix;
+        &:last-child {
+          border-left: 1px solid $gray-light;
+          padding-left: 8%;
+        }
+      }
+    }
+  }
+  rect {
+    &.main { fill: $red; }
+    &.default { fill: darken($gray-light, 5); }
+    &.compare { fill: $brand-color; }
+  }
+}
+
+.stats-large {
+  font-size: 3em;
+  @extend .hd-label;
+  display: block;
+  line-height: 1em;
+  float: left;
+  margin-bottom: .05em;
+}
+
+.header__with-description {
+  margin-bottom: 0px;
+}
+
+.description-header {
+  margin-bottom: 1em;
+}
+
+#key-stats-cont {
+
+  .panel-header {
+    @extend .visually-hidden;
+  }
+  .panel-body {
+    @include span(12/12);
+  }
+  @include bp(tablet-long) {
+    @include span(12/12);
+  }
+
+  .icon-information {
+    cursor: help;
+    border-radius: 20em;
+    background-color: $gray-light;
+    margin-left: 2em;
+    padding: .1em .75em;
+    font-size: .7em;
+    font-weight: bold;
+    font-family: $base-font-family;
+    display: inline-block;
+  }
+}
+
+.prose-title--details {
+  margin: 0px 0 .2em;
+  text-transform: inherit;
+  float: left;
+  margin-right: .7em;
+}
+
+.oils-details {
+  background-color: lighten($gray-background, 5);
+  padding: 2em 0 2.2em;
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+}
+
+#oil-details-description {
+  margin-bottom: 1.5em;
+  width: 70%;
+}
+
+.oil-details-description-container {
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  p {
+    width: 70%;
+    line-height: 1.7em;
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+}
+
+.card-details-drivers {
+  margin-bottom: 1em;
+}
+
+.glossary-link {
+  font-size: 0.8rem;
+}
+
+.dropdown-compare {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 1.2em;
+  border: 1px solid $gray-light;
+  border-radius: $global-radius;
+  box-shadow: 2px 2px 5px $border-shadow-rgba;
+  top: 2.5em;
+  &.open { display: block; }
+  input {
+    border: 1px solid $gray-light;
+    margin-top: 0;
+    min-width: 220px;
+  }
+  form {
+    &:after {
+      @extend .icon-search-left;
+      display: block;
+      position: absolute;
+      top: 1.6em;
+      right: 2em;
+    }
+  }
+}
+
+.container-compare {
+  position: relative;
+  width: 282px;
+  float: left;
+}
+
+.suggestions-dropdown-compare {
+  border-top: 1px solid $gray-light;
+  padding-top: 1em;
+  margin-top: 1.5em;
+}
+
+#map-locations-cont {
+  width: 100%;
+  min-height: 450px;
+  position: absolute;
+  .panel-body {
+    @include span(12/12);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include bp(tablet-long) {
+    @include span(12/12);
+  }
+}
+
+#map {
+  min-height: 450px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  cursor: default !important;
+  div {
+    cursor: default !important;
+    outline: none;
+  }
+
+  .map-oil {
+    font-size: 2.5em;
+    color: $brand-color;
+    &:before { @extend .icon-location-marker; }
+    &.map-oil-main { color: $red; }
+  }
+}
+
+#location {
+  .main-map {
+    min-height: 600px;
+  }
+}
+.container-oil-details {
+  width: 100%;
+  float: left;
+  margin-bottom: 2em;
+  &:last-child {
+    padding-left: 4%;
+    border-left: 1px solid $gray-light;
+  }
+  .oil-details_compare_description {
+    width: 35%;
+    float: left;
+  }
+  .oil-details_compare_title {
+    width: 30%;
+    clear: none;
+    float: left;
+    clear: left;
+  }
+}
+
+#ed-chart-cont {
+  @media screen and (max-width: 800px) {
+    padding: 0;
+  }
+}
+
+#od-chart-cont {
+  .panel-aside {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

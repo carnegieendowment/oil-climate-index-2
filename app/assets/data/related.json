@@ -1,0 +1,527 @@
+{
+  "Algeria Hassi R'Mel": [
+    "US Eagle Ford - Condensate",
+    "Australia Cossack",
+    "Libya Waha",
+    "US Eagle Ford - Volatile oil",
+    "Kazakhstan Tengiz"
+  ],
+  "Angola Girassol": [
+    "Angola Kuito",
+    "Angola Takula",
+    "Nigeria Bonga",
+    "Iran Marun",
+    "Saudi Arabia Zuluf"
+  ],
+  "Angola Kuito": [
+    "Angola Takula",
+    "Angola Girassol",
+    "Nigeria Bonga",
+    "Saudi Arabia Zuluf",
+    "Saudi Arab Safaniya"
+  ],
+  "Angola Takula": [
+    "Angola Kuito",
+    "Angola Girassol",
+    "Nigeria Bonga",
+    "Iran Marun",
+    "Kuwait Burgan"
+  ],
+  "Australia Cossack": [
+    "US Eagle Ford - Condensate",
+    "US Eagle Ford - Volatile oil",
+    "Kazakhstan Tengiz",
+    "UAE Murban",
+    "Nigeria Agbami"
+  ],
+  "Azerbaijan Azeri": [
+    "Kazakhstan Tengiz",
+    "China Nanhai Light",
+    "Indonesia Minas",
+    "India Bombay High",
+    "US Thunder Horse"
+  ],
+  "Brazil Frade": [
+    "Brazil Lula",
+    "China Bozhong",
+    "China QinHuangDao",
+    "Indonesia Duri",
+    "US South Belridge"
+  ],
+  "Brazil Lula": [
+    "Brazil Frade",
+    "US Mars",
+    "Russia Chayvo",
+    "Mexico Chuc",
+    "Iraq Zubair"
+  ],
+  "Canada Hibernia": [
+    "Iraq Kirkuk",
+    "Azerbaijan Azeri",
+    "US Thunder Horse",
+    "Canada Light Sweet SCO",
+    "Canada Foster Creek"
+  ],
+  "China Bozhong": [
+    "Indonesia Duri",
+    "US Midway-Sunset",
+    "Venezuela Hamaca",
+    "China Nanhai Light",
+    "China QinHuangDao"
+  ],
+  "China Nanhai Light": [
+    "Azerbaijan Azeri",
+    "China QinHuangDao",
+    "China Bozhong",
+    "Nigeria Escravos Beach",
+    "Dansk Blend"
+  ],
+  "China QinHuangDao": [
+    "China Nanhai Light",
+    "China Bozhong",
+    "Brazil Frade",
+    "Indonesia Duri",
+    "Brazil Frade"
+  ],
+  "Colombia Cano Limon": [
+    "Ecuador Sacha",
+    "Colombia Cusiana",
+    "Iran Marun",
+    "Saudi Arabia Zuluf",
+    "Ecuador Sacha"
+  ],
+  "Colombia Cusiana": [
+    "Ecuador Sacha",
+    "Colombia Cano Limon",
+    "Russia Chayvo",
+    "Mexico Chuc",
+    "Nigeria Pennington"
+  ],
+  "Ecuador Sacha": [
+    "Colombia Cusiana",
+    "Colombia Cano Limon",
+    "Kuwait Burgan",
+    "Kuwait Ratawi",
+    "Iran Marun"
+  ],
+  "India Bombay High": [
+    "Azerbaijan Azeri",
+    "US Thunder Horse",
+    "Canada Hibernia",
+    "US Alaska North Slope",
+    "US WC"
+  ],
+  "Indonesia Duri": [
+    "China Bozhong",
+    "US Midway-Sunset",
+    "China QinHuangDao",
+    "Venezuela Tia Juana",
+    "US South Belridge"
+  ],
+  "Indonesia Minas": [
+    "Indonesia Minas",
+    "Indonesia Duri",
+    "Libya Waha",
+    "US Lake Washington Field",
+    "Russia Romashkinskoye"
+  ],
+  "Iran Aboozar": [
+    "Iran Marun",
+    "Iraq Rumaila",
+    "Iran Marun",
+    "Saudi Arabia Zuluf",
+    "Ecuador Sacha"
+  ],
+  "Iran Marun": [
+    "Angola Kuito",
+    "Iran Aboozar",
+    "Kuwait Ratawi",
+    "Kuwait Burgan",
+    "Saudi Arabia Zuluf"
+  ],
+  "Iraq Rumaila": [
+    "Iraq West Qurna-2",
+    "Iraq Zubair",
+    "Iraq Kirkuk",
+    "Iran Marun",
+    "Saudi Arabia Zuluf"
+  ],
+  "Iraq West Qurna-2": [
+    "Iraq Zubair",
+    "Iraq Kirkuk",
+    "Iraq Rumaila",
+    "Iran Marun",
+    "Saudi Arabia Zuluf"
+  ],
+  "Iraq Zubair": [
+    "Iraq West Qurna-2",
+    "Iraq Kirkuk",
+    "Iraq Rumaila",
+    "Russia Chayvo",
+    "Colombia Cusiana"
+  ],
+  "Iraq Kirkuk": [
+    "Iraq West Qurna-2",
+    "Iraq Zubair",
+    "Iraq Rumaila",
+    "Canada Hibernia",
+    "UK Forties Average"
+  ],
+  "Kazakhstan Tengiz": [
+    "China Nanhai Light",
+    "Nigeria Agbami",
+    "UAE Murban",
+    "US Eagle Ford - Black oil",
+    "West Texas Intermediate"
+  ],
+  "Kuwait Burgan": [
+    "Kuwait Ratawi",
+    "Iran Marun",
+    "Ecuador Sacha",
+    "Saudi Arabia Zuluf",
+    "Saudi Arab Safaniya"
+  ],
+  "Kuwait Ratawi": [
+    "Kuwait Burgan",
+    "Iran Marun",
+    "Ecuador Sacha",
+    "Saudi Arabia Zuluf",
+    "US Alaska North Slope"
+  ],
+  "Libya Waha": [
+    "Algeria Hassi R'Mel",
+    "US Lake Washington Field",
+    "Russia Romashkinskoye",
+    "Indonesia Minas",
+    "US Salt Creek"
+  ],
+  "Mexico Chuc": [
+    "Mexico Cantarell",
+    "US Thunder Horse",
+    "US Mars",
+    "Norway North Sea Skarv",
+    "Nigeria Pennington"
+  ],
+  "Nigeria Agbami": [
+    "Australia Cossack",
+    "Algeria Hassi R'Mel",
+    "West Texas Intermediate",
+    "US Eagle Ford - Black oil",
+    "UAE Murban"
+  ],
+  "Nigeria Bonga": [
+    "Angola Kuito",
+    "Angola Takula",
+    "Brazil Lula",
+    "Saudi Arab Safaniya",
+    "Nigeria Bonny"
+  ],
+  "Nigeria Bonny": [
+    "Nigeria Obagi",
+    "Nigeria Escravos Beach",
+    "US Alaska North Slope",
+    "Nigeria Agbami",
+    "Nigeria Bonga"
+  ],
+  "Nigeria Escravos Beach": [
+    "Nigeria Obagi",
+    "Nigeria Bonny",
+    "Nigeria Pennington",
+    "Norway Ekofisk",
+    "China Nanhai Light"
+  ],
+  "Nigeria Obagi": [
+    "Nigeria Escravos Beach",
+    "Nigeria Pennington",
+    "US Alaska North Slope",
+    "Nigeria Agbami",
+    "Nigeria Bonga"
+  ],
+  "Nigeria Pennington": [
+    "Nigeria Escravos Beach",
+    "Nigeria Obagi",
+    "Russia Chayvo",
+    "Norway North Sea Skarv",
+    "Colombia Cusiana"
+  ],
+  "Norway Ekofisk": [
+    "Norway Oseberg",
+    "Norway North Sea Skarv",
+    "UK Forties Average",
+    "Dansk Blend",
+    "Nigeria Bonny"
+  ],
+  "Norway Oseberg": [
+    "Norway North Sea Skarv",
+    "Norway Ekofisk",
+    "UK Forties Average",
+    "Dansk Blend",
+    "Nigeria Bonny"
+  ],
+  "Norway North Sea Skarv": [
+    "Norway Oseberg",
+    "Norway Ekofisk",
+    "UK Forties Average",
+    "Dansk Blend",
+    "Russia Chayvo"
+  ],
+  "Qatar Dukhan": [
+    "Qatar Bul Hanine",
+    "Nigeria Agbami",
+    "Libya Waha",
+    "UAE Murban",
+    "Kazakhstan Tengiz"
+  ],
+  "Qatar Bul Hanine": [
+    "Qatar Dukhan",
+    "Mexico Chuc",
+    "US Thunder Horse",
+    "Saudi Arabia Ghawar",
+    "UK Forties Average"
+  ],
+  "Russia Romashkinskoye": [
+    "Russia Samotlor",
+    "Russia Chayvo",
+    "US Midway-Sunset",
+    "Mexico Cantarell",
+    "Kuwait Ratawi"
+  ],
+  "Russia Samotlor": [
+    "Russia Romashkinskoye",
+    "Russia Chayvo",
+    "US Bakken - Flaring",
+    "Dansk Blend",
+    "Azerbaijan Azeri"
+  ],
+  "Saudi Arabia Ghawar": [
+    "Saudi Arabia Zuluf",
+    "Saudi Arab Safaniya",
+    "Canada Hibernia",
+    "Qatar Bul Hanine",
+    "Mexico Chuc"
+  ],
+  "Saudi Arab Safaniya": [
+    "Saudi Arabia Zuluf",
+    "Saudi Arabia Ghawar",
+    "Kuwait Ratawi",
+    "Kuwait Burgan",
+    "Angola Kuito"
+  ],
+  "Saudi Arabia Zuluf": [
+    "Angola Kuito",
+    "Saudi Arab Safaniya",
+    "Saudi Arabia Ghawar",
+    "Iran Marun",
+    "Ecuador Sacha"
+  ],
+  "UAE Fateh": [
+    "UAE Murban",
+    "Kuwait Ratawi",
+    "Kuwait Burgan",
+    "Iran Marun",
+    "Ecuador Sacha"
+  ],
+  "UAE Murban": [
+    "UAE Fateh",
+    "West Texas Intermediate",
+    "US Eagle Ford - Black oil",
+    "Nigeria Agbami",
+    "Australia Cossack"
+  ],
+  "US Alaska North Slope": [
+    "Nigeria Bonny",
+    "Norway North Sea Skarv",
+    "India Bombay High",
+    "Nigeria Obagi",
+    "Kuwait Ratawi"
+  ],
+  "US Bakken - Flaring": [
+    "US Bakken - No flaring",
+    "US Eagle Ford - Black oil",
+    "US WC",
+    "Nigeria Escravos Beach",
+    "China Nanhai Light"
+  ],
+  "US Bakken - No flaring": [
+    "US Bakken - Flaring",
+    "US Eagle Ford - Black oil",
+    "US WC",
+    "Nigeria Escravos Beach",
+    "China Nanhai Light"
+  ],
+  "US Eagle Ford - Black oil": [
+    "US East Texas Field",
+    "US Eagle Ford - Volatile oil",
+    "US Eagle Ford - Condensate",
+    "West Texas Intermediate",
+    "Nigeria Agbami"
+  ],
+  "US Eagle Ford - Volatile oil": [
+    "US East Texas Field",
+    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Condensate",
+    "West Texas Intermediate",
+    "Algeria Hassi R'Mel"
+  ],
+  "US Eagle Ford - Condensate": [
+    "US East Texas Field",
+    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Volatile oil",
+    "Algeria Hassi R'Mel",
+    "West Texas Intermediate"
+  ],
+  "US East Texas Field": [
+    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Volatile oil",
+    "US Eagle Ford - Condensate",
+    "Mexico Cantarell",
+    "US Yates"
+  ],
+  "US Lake Washington Field": [
+    "US WC",
+    "US South Belridge",
+    "Russia Romashkinskoye",
+    "Libya Waha",
+    "Mexico Cantarell"
+  ],
+  "US Mars": [
+    "US Thunder Horse",
+    "Iraq Zubair",
+    "Brazil Lula",
+    "UAE Fateh",
+    "Iran Marun"
+  ],
+  "US Midway-Sunset": [
+    "Venezuela Hamaca",
+    "US Lake Washington Field",
+    "US Salt Creek",
+    "US Wilmington-Duffy",
+    "Venezuela Tia Juana"
+  ],
+  "US Salt Creek": [
+    "US WC",
+    "US East Texas Field",
+    "US Yates",
+    "Indonesia Minas",
+    "Libya Waha"
+  ],
+  "US WC": [
+    "US Salt Creek",
+    "US Yates",
+    "US Bakken - Flaring",
+    "US Bakken - No flaring",
+    "Dansk Blend"
+  ],
+  "US South Belridge": [
+    "US Salt Creek",
+    "US Lake Washington Field",
+    "US Yates",
+    "US Midway-Sunset",
+    "US Wilmington-Duffy"
+  ],
+  "US Thunder Horse": [
+    "India Bombay High",
+    "US Mars",
+    "Mexico Chuc",
+    "Qatar Bul Hanine",
+    "Saudi Arabia Ghawar"
+  ],
+  "West Texas Intermediate": [
+    "US East Texas Field",
+    "US Yates",
+    "US Eagle Ford - Black oil",
+    "UAE Murban",
+    "Nigeria Agbami"
+  ],
+  "US Yates": [
+    "US East Texas Field",
+    "West Texas Intermediate",
+    "US Eagle Ford - Black oil",
+    "US Lake Washington Field",
+    "US Salt Creek"
+  ],
+  "US Wilmington-Duffy": [
+    "US Salt Creek",
+    "US Lake Washington Field",
+    "US Yates",
+    "US Lake Washington Field",
+    "US South Belridge"
+  ],
+  "Venezuela Tia Juana": [
+    "Venezuela Hamaca",
+    "Venezuela Merey Blend",
+    "Indonesia Duri",
+    "US South Belridge",
+    "China Bozhong"
+  ],
+  "Canada Cold Lake": [
+    "Venezuela Merey Blend",
+    "Canada Foster Creek",
+    "Canada Medium Sweet SCO",
+    "Canada Light Sweet SCO",
+    "Indonesia Duri"
+  ],
+  "Canada Foster Creek": [
+    "Venezuela Merey Blend",
+    "Canada Cold Lake",
+    "Canada Medium Sweet SCO",
+    "Canada Light Sweet SCO",
+    "Indonesia Duri"
+  ],
+  "Canada Light Sweet SCO": [
+    "Venezuela Hamaca",
+    "Canada Medium Sweet SCO",
+    "Canada Cold Lake",
+    "Canada Foster Creek",
+    "Indonesia Duri"
+  ],
+  "Canada Medium Sweet SCO": [
+    "Venezuela Hamaca",
+    "Canada Light Sweet SCO",
+    "Canada Cold Lake",
+    "Canada Foster Creek",
+    "Indonesia Duri"
+  ],
+  "Dansk Blend": [
+    "UK Forties Average",
+    "Norway Ekofisk",
+    "Norway Oseberg",
+    "Norway North Sea Skarv",
+    "US WC"
+  ],
+  "Mexico Cantarell": [
+    "Mexico Chuc",
+    "US Lake Washington Field",
+    "US East Texas Field",
+    "US Yates",
+    "Libya Waha"
+  ],
+  "Russia Chayvo": [
+    "Russia Samotlor",
+    "Russia Romashkinskoye",
+    "Brazil Lula",
+    "Colombia Cusiana",
+    "Iraq Zubair"
+  ],
+  "UK Forties Average": [
+    "Dansk Blend",
+    "Norway Ekofisk",
+    "Norway Oseberg",
+    "Norway North Sea Skarv",
+    "Iraq Kirkuk"
+  ],
+  "Venezuela Merey Blend": [
+    "Canada Cold Lake",
+    "Canada Foster Creek",
+    "Venezuela Hamaca",
+    "Venezuela Tia Juana",
+    "China Bozhong"
+  ],
+  "Venezuela Hamaca": [
+    "Canada Light Sweet SCO",
+    "Canada Medium Sweet SCO",
+    "Venezuela Merey Blend",
+    "Venezuela Tia Juana",
+    "Canada Foster Creek"
+  ]
+}

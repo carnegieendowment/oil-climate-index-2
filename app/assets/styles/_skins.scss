@@ -1,0 +1,12 @@
+%base-box-skin {
+  background: #fff;
+  border-radius: $global-radius;
+  box-shadow: 0 3px 0 0 $drop-flat-shadow-rgba, 0 0 0 1px $border-shadow-rgba;
+  @extend .clearfix;
+}
+
+%base-overlay-skin {
+  background: #fff;
+  border-radius: $global-radius;
+  box-shadow: 0 0 0 1px $border-shadow-rgba, 0 2px 12px 0 $drop-spread-shadow-rgba;
+}

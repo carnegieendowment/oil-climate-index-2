@@ -1,0 +1,208 @@
+// TYPE
+
+// Headings
+
+@mixin heading($font-size) {
+  font-size: $font-size;
+  line-height: $font-size + 0.5;
+  margin: 1.75rem 0 1rem 0;
+  @media #{$medium-up} {
+    $font-size: $font-size + 0.25;
+    font-size: $font-size;
+    line-height: $font-size + 0.5;
+  }
+  @media #{$large-up} {
+    $font-size: $font-size + 0.25;
+    font-size: $font-size;
+    line-height: $font-size + 0.5;
+    margin: 2rem 0 1.25rem 0;
+  }
+}
+
+// BUTTONS
+
+// Variations
+
+@mixin bttn-variation($color) {
+  background-color: $color;
+  &:hover {
+    background-color: shade($color, 8%);
+  }
+  .open > &,
+  &.active,
+  &.active:hover,
+  &:active {
+    background-color: shade($color, 16%);
+  }
+}
+
+
+// BREAKPOINTS
+// Copy-pasted from CEIP mixins.scss
+
+// you should generally try to use this bp mixin as few times as possible
+// for example once in a style block is recommended:
+// .element {
+//   .item1 { ... }
+
+//   .item2 { ... }
+
+//   @include bp(mobile){
+//     .item1 { ... }
+//     .item2 { ... }
+//   }
+
+// }
+
+// multiple uses in a block is not recommended (the css can become very bloated if you do this through out your sass):
+// .element {
+//   .item1 {
+//     @include bp(mobile){ ... }
+//   }
+
+//   .item2 {
+//     @include bp(mobile){ ... }
+//   }
+
+// }
+
+// the benefit of this mixin is to have a convenient reference to how a component and its' children behave in different breakpoints in the same style block
+// as opposed to having multiple sass files dedicated to various responsive scenerios and jumping back and forth between those files.
+
+@mixin bp($point) {
+  @if $point == max {
+    @media (max-width: $site-max-width) { @content; }
+  }
+  @else if $point == wide {
+    @media (min-width: $bp-wide) { @content; }
+  }
+  @else if $point == wide-landscape {
+    @media (min-width: $bp-wide) and (orientation: landscape) { @content; }
+  }
+  @else if $point == full {
+    @media (min-width: $bp-full) { @content; }
+  }
+
+  //specific breakpoints for design - mostly for desktop nav items, particularly search
+  @else if $point == desktop-med {
+    @media (max-width: $bp-wide) { @content; }
+  }
+  @else if $point == tablet {
+    @media (max-width: $bp-tablet) { @content; }
+  }
+  @else if $point == tablet-landscape {
+    @media (max-width: $bp-tablet) and (orientation: landscape) { @content; }
+  }
+  @else if $point == tablet-portrait {
+    @media (max-width: $bp-tablet-long) and (orientation: portrait) { @content; }
+  }
+  @else if $point == ipad {
+    @media (max-width: $bp-ipad-port) { @content; }
+  }
+  @else if $point == ipad-landscape {
+    @media (max-width: $bp-ipad-port) and (orientation: landscape) { @content; }
+  }
+  @else if $point == ipad-portrait {
+    @media (max-width: $bp-ipad-port) and (orientation: portrait) { @content; }
+  }
+  @else if $point == tablet-full {
+    @media (max-width: $bp-tablet) { @content; }
+  }
+  @else if $point == tablet-long {
+    @media (max-width: $bp-tablet-long) { @content; }
+  }
+  @else if $point == tablet-slim {
+    @media (max-width: $bp-tablet-slim) { @content; }
+  }
+  @else if $point == tablet-slim-portrait {
+    @media (max-width: $bp-tablet-slim) and (orientation: portrait) { @content; }
+  }
+  @else if $point == tablet-slim-landscape {
+    @media (max-width: $bp-tablet-slim) and (orientation: landscape) { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: $bp-mobile) { @content; }
+  }
+  @else if $point == mobile-portrait {
+    @media (max-width: $bp-mobile) and (orientation: portrait) { @content; }
+  }
+  @else if $point == mobile-slim {
+    @media (max-width: $bp-mobile-slim) { @content; }
+  }
+  @else if $point == mobile-slim-portrait {
+    @media (max-width: $bp-mobile-slim) and (orientation: portrait) { @content; }
+  }
+  @else if $point == mobile-long {
+    @media (max-width: $bp-mobile-long) { @content; }
+  }
+  @else if $point == mobile-long-landscape {
+    @media (max-width: $bp-mobile-long) and (orientation: landscape) { @content; }
+  }
+  @else if $point == mobile-long-portrait {
+    @media (max-width: $bp-mobile-long) and (orientation: portrait) { @content; }
+  }
+  @else if $point == mobile-wide {
+    @media (max-width: $bp-mobile-wide) { @content; }
+  }
+  @else if $point == mobile-wide-landscape {
+    @media (max-width: $bp-mobile-wide) and (orientation: landscape) { @content; }
+  }
+  @else if $point == mobile-wide-portrait {
+    @media (max-width: $bp-mobile-wide) and (orientation: portrait) { @content; }
+  }
+
+  //all device breakpoints below large tablets, both orientations
+  @else if $point == mediumheader {
+    @media (max-width: $bp-tablet-slim) and (orientation: portrait) {@content; }
+    @media (max-width: $bp-tablet) and (orientation: landscape) {@content; }
+  }
+  //all device breakpoints below large mobile, both orientations
+  @else if $point == smallheader {
+    @media (max-width: $bp-mobile-wide) and (orientation: portrait) {@content; }
+    @media (max-width: $bp-ipad-port) and (orientation: landscape) {@content; }
+  }
+  //global nav breakpoint for going full width
+  @else if $point == globalnav {
+    @media (max-width: $bp-mobile-long) { @content; }
+  }
+
+  //only tablet breakpoints
+  @else if $point == tablet-only {
+    @media (min-width: ($bp-mobile + 1) ) and (max-width: $bp-tablet) { @content; }
+  }
+  //only wide-screen, long tablet portrait
+  @else if $point == tablet-portrait {
+    @media (max-width: $bp-full) and (orientation: portrait) { @content; }
+  }
+  //only ipad portrait breakpoint
+  @else if $point == ipad-portrait {
+    @media (max-width: $bp-ipad-port) and (orientation: portrait) { @content; }
+  }
+  //only ipad landscape breakpoint : 
+  @else if $point == ipad-landscape {
+    @media (max-width: $bp-tablet) and (orientation: landscape) { @content; }
+  }
+  //this applies to everything above mobile and excludes mobile
+  @else if $point == not-mobile {
+    @media (min-width: ($bp-mobile + 1) ) { @content; }
+  }
+  //
+  @else if $point == tablet-only {
+    @media (min-width: ($bp-mobile + 1) ) and (max-width: $bp-tablet) { @content; }
+  }
+}
+
+//Responsive fine tuning
+@mixin vp-min($viewport) {
+  @media screen and (min-width: $viewport) {@content;}
+}
+@mixin vp-max($viewport) {
+  @media screen and (max-width: $viewport) {@content;}
+}
+@mixin vp-min-max($v-min, $v-max) {
+  @media screen and (min-width: $v-min) and (max-width: $v-max) {@content;}
+}
+@mixin transition-property($property) {
+  @include transition(compact($property 0.2s));
+  &:hover {@include transition(compact($property 0.2s));}
+}

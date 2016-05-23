@@ -1,0 +1,34 @@
+{
+      "gasoline": {
+            "name": "Gasoline",
+            "price": 1.56
+      },
+      "jetFuel": {
+            "name": "Jet Fuel",
+            "price": 1.75
+      },
+      "diesel": {
+            "name": "Diesel",
+            "price": 1.89
+      },
+      "residualFuels": {
+            "name": "Residual Fuels",
+            "price": 1.38
+      },
+      "fuelOil": {
+            "name": "Fuel Oil",
+            "price": 1.25
+      },
+      "coke": {
+            "name": "Coke",
+            "price": 83.00
+      },
+      "lightEnds": {
+            "name": "Light Ends (RFG)",
+            "price": 0.00
+      },
+      "lpg": {
+            "name": "Liquified Petroluem Gas (LPG)",
+            "price": 0.55
+      }
+}

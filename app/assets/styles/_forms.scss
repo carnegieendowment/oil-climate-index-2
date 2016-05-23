@@ -1,0 +1,516 @@
+// GLOBAL
+
+button, input, select, textarea {
+  font: inherit;
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
+.form-horizontal {
+  @extend .clearfix;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 4px 9px;
+  font-size: 14px;
+  line-height: 22px;
+  color: $base-font-color;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid tint($base-color, 80%);
+  border-radius: $global-radius;
+  font-family: $base-font-family;
+  @include transform(translateZ(0));
+  @include transition(all 0.24s ease 0s);
+  box-shadow: inset 0 2px 0 0 rgba($base-color, 0.08);
+  &:focus {
+    outline: 0;
+    border-color: tint($base-color, 48%);
+  }
+}
+
+select.form-control {
+  box-shadow: inset 0 -2px 0 0 rgba($base-color, 0.08);
+  cursor: pointer;
+}
+
+.form-control[disabled]
+fieldset[disabled] .form-control {
+  @extend .disabled;
+}
+.form-control[readonly] {
+  cursor: text;
+  opacity: 0.48;
+}
+textarea.form-control {
+  height: auto;
+}
+input[type="search"] {
+  margin-top: .6em;
+  background-color: #fff;
+  border-radius: $global-radius;
+  color: $gray-dark;
+  padding: .5em.7em ;
+  font-size: .9em;
+  min-width: 280px;
+}
+
+.input-s {
+  height: 24px;
+  padding: 2px 7px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  @extend .clearfix;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  width: 100%;
+  > * {
+    display: table-cell;
+    vertical-align: top;
+  }
+  > *:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  > *:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  > *:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  .bttn {
+    &:first-child {
+      border-right: 0;
+    }
+    &:last-child {
+      border-left: 0;
+    }
+  }
+}
+
+#carbon-tax-field {
+  position: relative;
+  .input-group {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1em;
+    &:before {
+      content: '$';
+      position: absolute;
+      left: -1em;
+      top: 0.25em;
+    }
+  }
+  .units-description { margin-top: 0; }
+  span.button { cursor: pointer; }
+  label.switch {
+    position: absolute;
+    top: 0.25em;
+    right: 0.25em;
+  }
+}
+
+.input-group-addon {
+  border: 1px solid tint($base-color, 80%);
+  border-radius: $global-radius;
+  background: tint($base-color, 96%);
+  height: 32px;
+  min-width: 32px;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 22px;
+  white-space: nowrap;
+  text-align: center;
+  &:first-child {
+    border-right: 0;
+  }
+  &:last-child {
+    border-left: 0;
+  }
+}
+
+legend,
+label {
+  font: inherit;
+  color: inherit;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  line-height: inherit;
+  border: 0;
+}
+
+label {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0;
+  font-family: $base-font-family;
+  cursor: pointer;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+.checkbox,
+.radio {
+  position: relative;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: inherit;
+  }
+}
+
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: -20px;
+}
+
+
+// SWITCHES
+
+.switch {
+  @include transform(translate3d(0, 0, 0));
+  position: relative;
+  width: 56px;
+  height: 24px;
+  &.lpg-override { width: 64px; }
+}
+.switch input,
+.switch-text {
+  @extend .visually-hidden;
+}
+.switch-ui {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: tint($base-color, 96%);
+  border-radius: $global-radius;
+  box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+  @include transition(background-color 0.16s ease 0s);
+  &:hover {
+    &:before {
+      background: tint($base-color, 96%);
+    }
+  }
+  &:active,
+  &:active:hover {
+    &:before {
+     background: tint($base-color, 88%);
+     box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+    }
+  }
+}
+.switch-ui:before {
+  border-radius: $global-radius/2;
+  background: #fff;
+  box-shadow: inset 0 -3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  min-height: 16px;
+  min-width: 16px;
+  margin: 4px;
+  content: "";
+  @include transition(left 0.16s ease 0s);
+}
+.switch-ui:after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  content: "Off";
+  color: inherit;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 4px 0;
+  padding: 0 8px;
+  text-transform: uppercase;
+  font-weight: normal;
+  width: 100%;
+  text-align: right;
+}
+.switch.lpg-override {
+  .switch-ui:after { content: "Sell"; }
+  input:checked ~ .switch-ui:after { content: "Use"; }
+}
+.switch input:checked ~ .switch-ui {
+  background: tint($base-color, 20%);
+}
+.switch input:checked ~ .switch-ui:before {
+  left: calc(100% - 24px);
+}
+.switch input:checked ~ .switch-ui:after {
+  @extend .antialiased;
+  text-align: left;
+  color: #fff;
+  content: "On";
+}
+
+
+// SLIDERS noUiSlider.js
+
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  @include user-select(none);
+}
+.noUi-target {
+  position: relative;
+}
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+}
+.noUi-stacking .noUi-handle {
+/* This class is applied to the lower origin when
+   its values is > 50%. */
+  z-index: 10;
+}
+.noUi-stacking + .noUi-origin {
+/* Fix stacking order in IE7, which incorrectly
+   creates a new context for the origins. */
+  *z-index: -1;
+}
+.noUi-state-tap .noUi-origin {
+-webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+.noUi-base {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+/* Slider size;
+ */
+.noUi-horizontal {
+  height: 16px;
+}
+.noUi-vertical {
+  width: 16px;
+}
+
+/* Styling;
+ */
+.noUi-background {
+  background: tint($base-color, 96%);
+  box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+}
+.noUi-connect {
+  background: tint($base-color, 20%);
+  box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+}
+.noUi-origin {
+  border-radius: $global-radius;
+}
+.noUi-target {
+  border-radius: $global-radius;
+  background: tint($base-color, 20%);
+  box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+}
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+}
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+  cursor: w-resize;
+}
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+.noUi-handle {
+  border-radius: $global-radius/2;
+  background: #fff;
+  box-shadow: inset 0 -3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+  @include transition(background-color 0.16s ease 0s);
+  &:hover {
+    background: tint($base-color, 96%);
+  }
+  .noUi-horizontal & {
+    width: 16px;
+    height: 24px;
+    left: -8px;
+    top: -4px;
+    cursor: ew-resize;
+  }
+}
+.noUi-active,
+.noUi-active:hover {
+  background: tint($base-color, 88%);
+  box-shadow: inset 0 3px 0 0 rgba($base-color, 0.08), inset 0 0 0 1px rgba($base-color, 0.16);
+}
+
+/* Handle stripes;
+ */
+.noUi-handle:before,
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 12px;
+  width: 1px;
+  background: rgba($base-color, 0.12);
+  top: 50%;
+  margin-top: -6px;
+}
+.noUi-handle:before {
+  left: 6px;
+}
+.noUi-handle:after {
+  right: 6px;
+}
+
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  cursor: not-allowed;
+}
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+
+/*******************************************************/
+/*******************************************************/
+/**** noUiSlider Pips
+
+/* Base;
+ *
+ */
+
+.noUi-pips {
+  position: absolute;
+  font-size: 14px;
+}
+
+/* Values;
+ *
+ */
+.noUi-value {
+  width: 48px;
+  position: absolute;
+  text-align: center;
+  font-family: $base-font-family;
+  color: $base-font-color;
+  line-height: 16px;
+  font-size: 12px;
+}
+.noUi-value-sub {
+}
+
+/* Markings;
+ *
+ */
+.noUi-marker {
+  position: absolute;
+  background: tint($base-color, 88%);
+}
+.noUi-marker-sub {
+}
+.noUi-marker-large {
+}
+
+
+/* Horizontal layout;
+ *
+ */
+.noUi-pips-horizontal {
+  margin-top: 8px;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+.noUi-value-horizontal {
+  padding-top: 8px;
+  margin-left: -24px;
+}
+.noUi-value-horizontal.noUi-value-sub {
+  padding-top: 16px;
+}
+
+.noUi-marker-horizontal.noUi-marker {
+  width: 1px;
+  height: 4px;
+}
+.noUi-marker-horizontal.noUi-marker-sub {
+}
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 8px;
+}

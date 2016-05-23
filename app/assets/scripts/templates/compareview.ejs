@@ -1,0 +1,145 @@
+<div id="compare-view" class="view">
+  <!-- intro -->
+  <div class="intro intro-secondary">
+    <section id="map-locations-cont" class="panel-m">
+      <div class="panel-body">
+        <div id="map"></div>
+      </div>
+    </section>
+    <div class="prose-location">
+      <div class="row">
+        <p class="prose-meta">Compare Oils</p>
+        <h1 class="prose-title--details" id="oil-names"><a href="#oil/<%= utils.makeId(oil.name)%>"><%= oil.name %></a> v.
+          <% if (comparisonOil) { %>
+            <a href="#oil/<%= utils.makeId(comparisonOilName)%>"><%= comparisonOilName %></a>
+          <% } else { %>
+            <span><%= comparisonOilName %></span>
+          <% } %>
+        </h1>
+        <div class="container-compare">
+          <a class="button button-small compare compare-edit" href="#">Edit</a>
+          <div class="dropdown-compare container-triangle">
+            <form autocomplete="off" onsubmit="return false;">
+              <input type="search" placeholder="Enter oil name or type of oil" name="">
+              <div class="search-results"></div>
+            </form>
+            <div class="suggestions-dropdown-compare">
+              <h5 class="header-condensed">Suggestions</h5>
+              <ul>
+                <% suggestedOils.forEach(function (o) { %>
+                  <li class="list-element-small"><a href="#compare/<%= utils.makeId(oil.name) %>/<%= utils.makeId(o) %>"><%= o %></a></li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ intro -->
+
+  <!-- chart-section -->
+    <% if (oil && comparisonOil) { %>
+    <section class="oils-details">
+      <div class="row">
+         <!-- details -->
+         <div class="oil-details-meta">
+
+          <% if (oil.keyStats.length) { %>
+          <div id="key-stats-cont" class="panel-m clearfix">
+            <div class="container-oil-details container-oil-details-compare">
+              <div class="header-compare-container">
+                <h6 class="header-condensed-capped header-light header-compare"><%= oil.name %></h6>
+                <h6 class="header-condensed-capped header-light header-compare"><%= comparisonOil.name %></h6>
+              </div>
+              <dl class="stats-list">
+                <% _.each(oil.keyStats, function(stat, index, array) { %>
+                <dt class="oil-details_compare_title"><%= stat.key %></dt>
+                <dd class="oil-details_compare_description">
+                  <span class="stat-title" data-toggle="tooltip" title='<%= stat.title %>'><%= stat.value %></span>
+                  <% if (stat['data-title']) { %>
+                    <span data-title-after="<%= stat['data-title'] %>" class="icon-information">?</span>
+                  <% } %>
+                </dd>
+                <% var compStat = comparisonOil.keyStats[index]; %>
+                <dd class="oil-details_compare_description">
+                  <span class="stat-title" data-toggle="tooltip" title='<%= compStat.title %>'><%= compStat.value %></span>
+                  <% if (compStat['data-title']) { %>
+                    <span data-title-after="<%= compStat['data-title'] %>" class="icon-information">?</span>
+                  <% } %>
+                </dd>
+                <% }) %>
+
+              </dl>
+          </div>
+          <% } %>
+          <div class="glossary-link">
+            <p>* For more information on terminology, check out the <a href="#glossary">glossary</a>.</p>
+          </div>
+         </div>
+        </div>
+    </section>
+    <% } %>
+    <section class="panel has-aside section-content-sm" id="od-chart-cont">
+      <div class="row">
+        <h2>Emissions</h2>
+        <div class="container-charts">
+          <div class="data-charts">
+            <div class="chart-item">
+
+              <h4 class="header__with-description">Total Greenhouse Gas Emissions Per Barrel</h4>
+              <p class="units description-header"><%= totalUnits %></p>
+              <ul class="value">
+                <li>
+                  <span id="model-total" class="stats-large"></span>
+                  <sub class="raw" id="diff"></sub>
+                  <span class="units"><%= oil.name %></span>
+                </li>
+                <li>
+                  <span id="comparison-model-total" class="compare stats-large"></span>
+                  <span class="units"><%= comparisonOilName %></span>
+                </li>
+              </ul>
+            </div>
+            <div class="chart-item">
+              <h4>Upstream Emissions</h4>
+              <div class="bar" id="upstream-bar"></div>
+            </div>
+            <div class="chart-item">
+              <h4>Midstream Emissions</h4>
+              <div class="bar" id="midstream-bar"></div>
+            </div>
+            <div class="chart-item">
+              <h4>Downstream Emissions</h4>
+              <div class="bar" id="downstream-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-aside">
+          <div class="data-controls">
+
+            <!-- model-parameters -->
+            <div id="model-parameters" class="static"></div>
+            <!--/ model-parameters -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+  <!--/ chart-section -->
+  <section class="section-callout section-content related-oils">
+    <div class="row">
+      <h3 class="section-callout__header">Related Oils</h3>
+      <span class="carosel-arrow backward offset-0"></span>
+      <span class="carosel-arrow forward offset-0"></span>
+      <div class="carosel offset-0">
+        <div class="inner-carosel">
+          <% relatedOils.forEach(function (oil) { %>
+            <%= oil %>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

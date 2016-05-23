@@ -1,0 +1,48 @@
+<div id="location" class="view">
+
+  <!-- intro -->
+  <section class="intro">
+    <div class="prose prose-centered">
+      <h1>Oils by Geographic Location</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fringilla facilisis lorem a gravida. Cras tempus magna sit amet neque posuere imperdiet. Ut vel imperdiet lectus. Cras venenatis commodo eros et consectetur.</p>
+    </div>
+  </section>
+  <!--/ intro -->
+
+  <section class="map-overlay map-flaring">
+    <div id="map" class="main-map"></div>
+    <div class="world-zoom leaflet-bar"></div>
+    <div id="bubble-legend">
+    </div>
+    <div class="map-filter filter-map">
+      <div class="control-section">
+        <form>
+          <fieldset id="year-select">
+            <legend class="control-title">Select Year for Flaring Data</legend>
+            <div class="radio">
+              <label><input type="radio" name="year-select" value="2012">2012</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="year-select" value="2013">2013</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="year-select" value="2014" checked>2014</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="year-select" value="off">Off</label>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="map-filter map-instructions">
+      <div class="map-filter-container">
+        <span>?</span>
+        <div class="map-tooltip">
+          <p>To navigate the map more quickly, use your keyboard's arrow keys or hold shift and create a square on the map to zoom into that specific area.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%= blueBar %>
+</div>

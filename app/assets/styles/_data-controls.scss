@@ -1,0 +1,442 @@
+.data-controls {
+  @include bp(tablet-long) {
+    margin: 0 -16px;
+    height: auto !important;
+    width: 100% !important;
+    &.sticky {
+      position: static;
+      padding: 0;
+      margin: 0 -16px;
+      border-radius: 0;
+      height: auto;
+      overflow: visible;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.legend-name {
+  font-size: .9em;
+}
+
+.legend-units {
+  font-size: .6em;
+}
+
+.circle-text, .dot-text, .dot-label {
+  font-size: .7em;
+}
+
+.has-aside {
+  .control-section {
+    margin-bottom: 1.3em;
+  }
+}
+
+.control-section {
+  border-bottom: 1px solid tint($base-color, 92%);
+  padding-bottom: 1.3em;
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .checkbox,
+  .radio {
+    margin-bottom: 0;
+    @include col(1/2, $cycle: 2);
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      margin-top: 0;
+    }
+  }
+  .has-button {
+    @include span(2/2);
+    .bttn {
+      margin-left: 8px;
+      vertical-align: top;
+    }
+    .bttn-xs:before {
+      font-size: 10px;
+    }
+  }
+}
+.control-title {
+  @extend .hd-label;
+  font-size: .9em;
+  float: none;
+  margin: 0 0 12px 0;
+  @media screen and (max-width: 670px) {
+    margin: 0;
+  }
+}
+
+#co-chart-cont {
+  .control-section {
+    &:nth-of-type(2) {
+      border-top: 1px solid tint($base-color, 92%);
+      padding-top: 1.3em;
+    }
+  }
+}
+
+.map-flaring {
+  position: relative;
+  @media screen and (max-width: 670px) {
+    margin: 0 1em;
+  }
+}
+
+#bubble-legend {
+  position: absolute;
+  bottom: 1em;
+  z-index: 2;
+  background: rgba(0, 0, 0, .6);
+  width: 175px;
+  padding: 1em 0 .5em;
+  border-radius: 0 $global-radius $global-radius 0;
+}
+
+.map-filter {
+  background-color: rgba(255, 255, 255, .8);
+  border: 1px solid tint($base-color, 92%);
+  border-radius: $global-radius 0 0 $global-radius;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+}
+
+.filter-map {
+  top: 1.5em;
+  padding: 1.5em 1em 1.4em 1.2em;
+  max-width: 150px;
+  @media screen and (max-width: 670px) {
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: .5em .8em;
+    border-radius: 0;
+  }
+  .control-section {
+    border-bottom: 1px solid tint($base-color, 80%);
+    .radio, .radio:nth-child(2n) {
+      margin-top: 0;
+      float: none;
+      width: 100%;
+      @media screen and (max-width: 670px) {
+        width: auto;
+        display: inline-block;
+        margin-right: 2%;
+      }
+    }
+  }
+}
+
+.map-instructions {
+  top: 13.5em;
+  padding: .3em .8em;
+  &:hover {
+    .map-tooltip {
+      visibility: visible;
+    }
+  }
+  @media screen and (max-width: 670px) {
+    top: 4.5em;
+  }
+}
+
+.map-filter-container {
+  position: relative;
+}
+
+.map-tooltip {
+  border-radius: $global-radius;
+  visibility: hidden;
+  position: absolute;
+  font-size: .8em;
+  right: 2.5em;
+  background-color: rgba(255, 255, 255, .8);
+  top: -.5em;
+  transition: all 0.1s ease 0s;
+}
+
+.world-zoom {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  bottom: 6em;
+  right: 10px;
+  color: $black;
+  cursor: pointer;
+  background-color: white;
+  &:before {
+    @extend .collecticon-globe;
+    width: 8px;
+    font-size: 1em;
+    height: 10px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 670px) {
+    bottom: 7.5em;
+  }
+}
+
+.carbon-tax-field-section {
+  background-color: lighten($gray-light, 9);
+  border-radius: $global-radius;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border: 1px solid tint($base-color, 92%);
+  box-shadow: 0px 1px 1px rgba($gray-medium, 30);
+}
+
+// MOD PARAM SELECTOR
+
+#model-parameters {
+  position: relative;
+  z-index: 20;
+  font-family: $base-font-family;
+  .control-title {
+    a, a:visited {
+      color: inherit;
+      z-index: 20;
+    }
+    a:hover { opacity: 1; }
+    a:after {
+      content: "Edit";
+      font-size: inherit;
+      font-family: $base-font-family;
+      font-weight: $base-font-bold;
+      text-transform: none;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+  }
+  &.static .control-title a {
+    cursor: text;
+    &:after {
+      display: none;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .mp-list {
+    @include transform(translate3d(0, 0, 0));
+    @extend .clearfix;
+    li {
+      width: 33%;
+      float: left;
+      height: 90px;
+      margin: .5em 0;
+    }
+    .key {
+      position: relative;
+      padding-top: 2.8em;
+      text-align: center;
+      font-size: .8em;
+      line-height: 1.2em;
+      font-family: $base-font-family;
+      &.icon-flare:before { @extend .icon-element-flame; }
+      &.icon-solar-steam:before { @extend .icon-element-steam; }
+      &.icon-water:before { @extend .icon-element-drop; }
+      &.icon-refinery:before { @extend .icon-factory; }
+      &.icon-petcoke:before { @extend .icon-element-petcoke; }
+      &.icon-asphalt:before { @extend .icon-element-petcoke; }
+      &.icon-lpg:before { 
+        content: " "; 
+        background-image: url("../images/layout/icon-water.svg"); 
+        background-size: 40px 40px;
+        display: block; 
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -16px;
+        width: 32px;
+        height: 32px;
+        font-size: 2.2em;
+        line-height: 1;
+        display: block;
+      }
+    }
+    .value {
+      position: relative;
+      text-align: center;
+      span {
+        width: 100%;
+        @extend .truncated;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    .value.petcoke {
+      margin-right: 0;
+    }
+  }
+
+  .icon-flare {
+    .container-filter_title:before {
+      @extend .icon-element-flame;
+    }
+  }
+  .icon-solar-steam {
+    .container-filter_title:before {
+      @extend .icon-element-steam;
+    }
+  }
+  .icon-water {
+    .container-filter_title:before {
+      @extend .icon-element-drop;
+    }
+  }
+  .icon-refinery {
+    .container-filter_title:before {
+      @extend .icon-factory;
+    }
+  }
+  .icon-petcoke {
+    .container-filter_title:before {
+      @extend .icon-element-petcoke;
+    }
+  }
+  .icon-asphalt{ @extend .icon-element-petcoke; }
+  .icon-lpg {
+    .container-filter_title:before {
+      content: " "; 
+      background-image: url("../images/layout/icon-water.svg"); 
+      background-size: 20px 20px;
+      display: inline-block; 
+      background-repeat: no-repeat;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .icon-information {
+    cursor: help;
+    border-radius: 20em;
+    background-color: $gray-light;
+    padding: .1em .5em;
+    font-size: .7em;
+    font-weight: bold;
+    font-family: $base-font-family;
+    display: inline-block;
+  }
+
+  .mp-summary,
+  .mp-edit {
+    @include transition(max-height 0.24s ease 0s, opacity 0.32s ease 0s);
+  }
+  .mp-edit,
+  &.open > .mp-summary,
+  &.static > .mp-summary  {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+  }
+  .mp-summary,
+  &.open > .mp-edit,
+  &.static > .mp-edit {
+    max-height: 10000px;
+    opacity: 1;
+    overflow: visible;
+  }
+  &.open > .control-title a:after {
+    content: "Done";
+  }
+
+  .param-control {
+    @extend .clearfix;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .param-title {
+    @extend .hd-label;
+    position: relative;
+    display: inline-block;
+    padding-left: .1em;
+    color: tint($base-color, 56%);
+    font-size: 14px;
+    line-height: 20px;
+    &:before {
+      font-size: 16px;
+    }
+  }
+  .slider {
+    margin-bottom: 26px;
+  }
+  .switch {
+    display: block;
+  }
+  .container-filter_title {
+    margin-bottom: .8em;
+  }
+}
+
+.link-edit {
+  &:before {
+    @extend .icon-pencil;
+    padding-right: .4em;
+  }
+}
+#oil-details-view .link-edit,
+#compare-view .link-edit {
+  display: none;
+}
+
+.link {
+  font-size: .8em;
+  margin-left: .5em;
+}
+
+.block-color {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: $global-radius;
+  margin-right: .1em;
+  margin-top: .3em;
+}
+
+.extraheavy-color { background-color: $ot-extra-heavy;}
+.heavy-color { background-color: $ot-heavy;}
+.medium-color { background-color: $ot-medium;}
+.light-color { background-color: $ot-light;}
+.ultra-light-color { background-color: $ot-ultra-light;}
+.ultra-deep-color { background-color: $ot-ultra-deep;}
+.oil-sands-color { background-color: $ot-oil-sands;}
+.depleted-color { background-color: $ot-depleted;}
+.condensate-color { background-color: $ot-condensate;}
+.high-gas-color { background-color: $ot-high-gas;}
+
+
+.toggle, .toggle:visited {
+  margin-bottom: 1em;
+  clear: both;
+  h3 {
+    float: left;
+    color: #595651;
+    margin-right: .5em;
+  }
+  .link-close {
+    display: none;
+   }
+}
+
+.open {
+  .toggle {
+    .link-close {
+      display: inherit;
+    }
+    .link-edit {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.carosel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  padding: 0.25rem;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: all 0.2s ease 0s;
+  &:hover {
+    color: rgba(white, .8);
+  }
+  &.backward {
+    left: 3%;
+    &:after {
+      @extend .icon-s-arr-left;
+    }
+    @media screen and (max-width: 445px){
+      left: 0;
+    }
+    &.offset-0 { display: none; }
+   }
+  &.forward {
+    right: 3%;
+    &:after {
+      @extend .icon-s-arr-right;
+    }
+    @media screen and (max-width: 445px){
+      right: .0%;
+    }
+    &.offset-2 {
+      @media screen and (min-width: 1235px) {
+        display: none;
+      }
+    }
+    &.offset-3 {
+      @media screen and (min-width: 719px) {
+        display: none;
+      }
+    }
+    &.offset-4 {
+      display: none;
+    }
+  }
+}
+
+section.related-oils {
+  position: relative;
+  .carosel {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    // steps
+    &.offset-1 {
+      .inner-carosel {
+        transform: translateX(-33%);
+        @media screen and (max-width: 1234px) {
+          transform: translateX(-61%);
+        }
+        @media screen and (max-width: 936px){
+          transform: translateX(-50%);
+        }
+        @media screen and (max-width: 719px){
+          transform: translateX(-120%);
+        }
+      }
+    }
+    &.offset-2 {
+      .inner-carosel {
+        transform: translateX(-67%);
+        @media screen and (max-width: 1234px) {
+          transform: translateX(-122%);
+          .forward { display: none; }
+        }
+        @media screen and (max-width: 936px){
+          transform: translateX(-102%);
+
+        }
+        @media screen and (max-width: 719px){
+          transform: translateX(-242%);
+        }
+      }
+    }
+    &.offset-3 {
+      .inner-carosel {
+        transform: translateX(-100%);
+        @media screen and (max-width: 1234px) {
+          transform: translateX(-183%);
+          .forward { display: none; }
+        }
+        @media screen and (max-width: 936px){
+          transform: translateX(-155%);
+
+        }
+        @media screen and (max-width: 719px){
+          transform: translateX(-363%);
+        }
+      }
+    }
+    &.offset-4 {
+      .inner-carosel {
+        transform: translateX(-133%);
+        @media screen and (max-width: 1234px) {
+          transform: translateX(-244%);
+          .forward { display: none; }
+        }
+        @media screen and (max-width: 936px){
+          transform: translateX(-200%);
+
+        }
+        @media screen and (max-width: 719px){
+          transform: translateX(-485%);
+        }
+      }
+    }
+  }
+  .inner-carosel {
+    transition: transform .36s;
+  }
+  .popover {
+    vertical-align: top;
+    display: inline-block;
+    white-space: normal;
+    margin: 0 1.8%;
+    width: 30%;
+    box-shadow: inset 0 -1px 0 0 $border-shadow-rgba;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &:first-of-type {
+      margin-left: 0;
+    }
+    @media screen and (max-width: 1234px){
+      margin: 0 15.5%;
+    }
+    @media screen and (max-width: 936px){
+      margin: 0 11.5%;
+    }
+    @media screen and (max-width: 789px){
+      margin: 0 10.5%;
+    }
+    @media screen and (max-width: 719px){
+      margin: 0 45%;
+    }
+  }
+}

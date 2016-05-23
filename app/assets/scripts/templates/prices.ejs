@@ -1,0 +1,75 @@
+<div class="modal-inner">
+  <header class="modal-header">
+    <h1 class="modal-title">Adjust values</h1>
+    <a href="#" title="Close" class="modal-close" data-modal-dismiss><span>Close</span></a>
+    <p>Estimate the impact of market price fluctuations on an oil’s emissions per dollar of petroleum product. Enter values for petroleum product prices below and click Apply to change. Click Reset for default values.</p>
+  </header>
+  <div class="modal-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="gasoline">Gasoline</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="gasoline" id="gasoline" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="diesel">Diesel</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="diesel" id="diesel" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="jetFuel">Jet Fuel</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="jetFuel" id="jetFuel" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="residualFuels">Residual Fuels</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="residualFuels" id="residualFuels" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fuelOil">Fuel Oil</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="fuelOil" id="fuelOil" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="coke">Coke</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/ton</div>
+          <input class="form-control price-input" type="text" name="coke" id="coke" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lightEnds">Light Ends (RFG)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="lightEnds" id="lightEnds" placeholder="Price" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lpg">Liquified Petroluem Gas (LPG)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$/gallon</div>
+          <input class="form-control price-input" type="text" name="lpg" id="lpg" placeholder="Price" />
+        </div>
+      </div>
+    </form>
+    <div class="footnote">
+      <p>All prices are based on 2015 values except for coke, which is based on 2014 values.</p>
+    </div>
+  </div>
+  <footer class="modal-footer">
+    <button type="button" title="Cancel" class="bttn bttn-m bttn-base-light cancel" data-modal-dismiss>Cancel</button>
+    <button type="button" title="Reset" class="bttn bttn-m bttn-base-light reset">Reset</button>
+    <button type="button" title="Apply" class="bttn bttn-m bttn-base apply" id="apply-prices">Apply</button>
+  </footer>
+</div>

@@ -1,0 +1,159 @@
+//Carnegie original colors
+$blue-light: #3d71b7;
+$blue-main: #092e55;
+$blue-dark: #062544;
+$gray-background: #EEEEED;
+$gray-light: #e4e3dd;
+$gray-medium: #ccc7c2;
+$gray-dark: #635a4f;
+$gray-silver: #b0bac8;
+$orange: #d68019;
+$black: #000;
+$white: #fff;
+$red: #DD4500;
+$red-dark: #C13E02;
+
+// We use these as default colors throughout
+$base-color: #302C26;    				// Rangitoto (Dark brown)
+$primary-color: #3d71b7;            	// San Marino (same as CEIP $blue-light)
+$secondary-color: #635a4f;          	// Wenge (same as CEIP $gray-dark)
+$brand-color: $blue-main;
+$text-base: #595651;
+
+$alert-color: #c0392b;                  // Pomegranate (red)
+$success-color: #1abc9c;                // Turquoise
+$warning-color: #f39c12;                // Orange
+$info-color: #2980b9;                   // Belize hole (blue)
+
+// Chart colors
+$oil-comp-bar: $primary-color;
+$extraction-color: $oil-comp-bar;
+$refining-color: tint($oil-comp-bar, 25%);
+$transport-color: tint($oil-comp-bar, 50%);
+$combustion-color: tint($oil-comp-bar, 75%);
+$step-color: black;
+$upstream-opacity: 1.0;
+$midstream-opacity: 0.6;
+$downstream-opacity: 0.4;
+
+// Oil type colors
+$ot-extra-heavy: #231F20;
+$ot-heavy: #645A4F;
+$ot-medium: #006838;
+$ot-light: #009444;
+$ot-ultra-light: #8DC63F;
+$ot-ultra-deep: #003A63;
+$ot-oil-sands: #EDCF0E;
+$ot-depleted: #006AA7;
+$ot-condensate: #CCC7C2;
+$ot-high-gas: #0095DA;
+
+// We use these to control various font styles
+// $base-* refers to the base styles when there's nothing else to override them.
+$base-font-color: tint($base-color, 20%);
+$base-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica Neue LT W01_55 Roman", "Segoe UI", "Lucida Grande", Arial, sans-serif;
+$base-font-weight: 300;
+$base-font-style: normal;
+$base-font-bold: 700;
+
+// $primary-*, $secondary-* and so on refer to aditional settings that may be used in the project
+// $primary-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+// $primary-font-weight: normal;
+// $primary-font-style: normal;
+// $primary-font-bold: 700;
+
+// $secondary-*, $secondary-* and so on refer to aditional settings that may be used in the project
+$secondary-font-family: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue LT W01_77 Bd Cn", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Tahoma Bold", "Geneva", "Segoe UI", "Arial Narrow", "Arial", sans-serif;
+$secondary-font-weight: 600;
+$secondary-font-stretch: condensed;
+
+$secondary-font-family-light: "HelveticaNeue-CondensedLight", "HelveticaNeueLightCondensed", "HelveticaNeue-Light-Condensed", "Helvetica Neue Light Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnLight', "Tahoma", "Geneva", "Segoe UI Light", "Arial Narrow", "Arial", sans-serif;
+
+
+// We use these to make sure border radius matches unless we want it different.
+$global-radius: 4px;
+$global-rounded: 960px;
+
+// We use this rgba for shadowing
+$border-shadow-rgba: rgba($base-color, 0.08); // border-like shadow
+$drop-flat-shadow-rgba: rgba($base-color, 0.08); // flat drop shadow
+$drop-spread-shadow-rgba: rgba($base-color, 0.16); // spread drop shadow
+
+// Width and paddings
+$site-min-width: 320px;
+$site-max-width: 1280px;
+$jeet-max-width: $site-max-width; // Reset Jeet.gs max-width
+
+// CEIP font vars
+// these should use a sematic name pairing like the colors above
+// example
+// $font-heading1: $FrutigerNeueLTW02-CnBoo-775064;
+// $font-heading2: $FrutigerNeueLTW02-CnMd;
+$FrutigerNeueLTW02-CnBoo-775064: "FrutigerNeueLTW02-CnBoo 775064", "Arial Narrow", Arial, sans-serif;
+$FrutigerNeueLTW02-CnMd: "FrutigerNeueLTW02-CnMd", Arial, sans-serif;
+$FrutigerNeueLTW02-CnBlk-775104: "FrutigerNeueLTW02-CnBlk 775104", "Arial Black", Gadget, sans-serif;
+$Frutiger-LT-W20-57-Cn: "Frutiger LT W20 57 Cn", "Arial Narrow", Arial, sans-serif;
+$MHei-PRC-Medium: "MHei PRC Medium", Arial, sans-serif;
+$NeueFrutigerW10-CdBook: "NeueFrutigerW10-CdBook", "Arial Narrow", Arial, sans-serif;
+$NeueFrutigerW10-CdMediu-892794: "NeueFrutigerW10-CdMediu 892794", Arial, sans-serif;
+$NeueFrutigerW10-CdBlack-892812: "NeueFrutigerW10-CdBlack 892812", "Arial Black", Gadget, sans-serif;
+$FrutigerNeue1450W01-Boo1196290: "FrutigerNeue1450W01-Boo1196290", Arial, sans-serif;
+
+$font-base: Georgia, "Times New Roman", Times, serif;
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-size: 16px;
+$font-line-height: 1.4;
+
+
+// CEIP breakpoints vars
+
+//layout
+$site-max-width: 1600px;
+
+//Breakpoints
+$bp-wide: 1280px;
+$bp-full: 1025px;
+$bp-tablet: 1024px;
+$bp-tablet-long: 800px;
+$bp-ipad-port: 768px;
+$bp-tablet-slim: 640px;
+$bp-mobile-long: 568px;
+$bp-mobile-wide: 480px;
+$bp-mobile: 360px;
+$bp-mobile-slim: 320px;
+
+//Foldpoints - subtract 45px for header; mid5 and below subtract 30px
+//10.27.14 tm: depricated for use with global nav for jquery solution
+$fp-max: 1080px;
+$fp-mid7: 1024px;
+$fp-mid6: 900px;
+$fp-mid5: 800px;
+$fp-mid4: 768px;
+$fp-mid3: 640px;
+$fp-mid2: 568px;
+$fp-mid1: 533px;
+$fp-min: 480px;
+
+
+// Bootstrap tooltip dependancy vars
+
+$zindex-tooltip: 9999;
+
+//** Tooltip max width
+$tooltip-max-width: 200px !default;
+//** Tooltip text color
+$tooltip-color: #fff !default;
+//** Tooltip background color
+$tooltip-bg: $base-color !default;
+$tooltip-opacity: .9 !default;
+
+//** Tooltip arrow width
+$tooltip-arrow-width: 4px !default;
+//** Tooltip arrow color
+$tooltip-arrow-color: $tooltip-bg !default;
+
+$font-size-small: 12px;
+$font-family-base: $base-font-family;
+$border-radius-base: $global-radius;

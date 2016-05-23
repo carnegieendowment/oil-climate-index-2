@@ -1,0 +1,163 @@
+<div id="oil-details-view" class="view">
+
+  <!-- intro -->
+  <div class="intro intro-secondary">
+    <section id="map-locations-cont" class="panel-m">
+      <div class="panel-body">
+        <div id="map"></div>
+      </div>
+    </section>
+    <div class="prose-location">
+      <div class="row">
+        <p class="prose-meta">Oil details</p>
+        <h1 class="prose-title--details"><%= oil.name %></h1>
+        <div class="container-compare">
+          <a class="button button-small compare" href="#">Compare</a>
+          <div class="dropdown-compare container-triangle">
+            <form autocomplete="off" onsubmit="return false;">
+              <input type="search" placeholder="Enter oil name or type of oil" name="">
+              <div class="search-results"></div>
+            </form>
+            <div class="suggestions-dropdown-compare">
+              <h5 class="header-condensed">Suggestions</h5>
+              <ul>
+                <% suggestedOils.forEach(function (o) { %>
+                  <li class="list-element-small"><a href="#compare/<%= utils.makeId(oil.name) %>/<%= utils.makeId(o) %>"><%= o %></a></li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ intro -->
+
+  <!-- chart-section -->
+    <section class="oils-details">
+      <div class="row">
+        <% if (description) { %>
+        <div class="oil-details-description-container">
+          <p><%= description %></p>
+        </div>
+        <% } %>
+         <!-- details -->
+         <div class="oil-details-meta">
+
+          <% if (oil.keyStats.length) { %>
+          <div id="key-stats-cont" class="panel panel-m clearfix container-oil-details-meta">
+            <header class="panel-header">
+              <div class="panel-headline">
+                <h1 class="panel-title">Key Stats</h1>
+              </div>
+            </header>
+            <dl class="stats-list">
+              <% _.each(oil.keyStats, function(stat, index, array) { %>
+              <% if (index < array.length / 2) { %>
+              <dt><%= stat.key %></dt>
+              <dd>
+                <span class="stat-title"><%= stat.value %></span>
+                <% if (stat['data-title']) { %>
+                  <span data-title-after="<%= stat['data-title'] %>" class="icon-information">?</span>
+                <% } %>
+              </dd>
+              <% } %>
+              <% }) %>
+            </dl>
+            <dl class='stats-list'>
+            <% _.each(oil.keyStats, function(stat, index, array) { %>
+              <% if (index > array.length / 2) { %>
+              <dt><%= stat.key %></dt>
+              <dd>
+                <span class="stat-title"><%= stat.value %></span>
+                <% if (stat['data-title']) { %>
+                  <span data-title-after="<%= stat['data-title'] %>" class="icon-information">?</span>
+                <% } %>
+              </dd>
+              <% } %>
+              <% }) %>
+            </dl>
+          </div>
+          <% } %>
+          <% if (icons) { %>
+          <div class="card-details-drivers">
+            <h6>Emissions Drivers:</h6>
+            <ul>
+              <%= icons.split(',').filter(function (f) {
+                return f.trim();
+              }).map(function (m, i, arr) {
+                return '<li>' + m;
+              }).join(',</li>') + '</li>' %>
+            </ul>
+          </div>
+          <% } %>
+          <div class="glossary-link">
+            <p>* For more information on terminology, check out the <a href="#glossary">glossary</a>.</p>
+          </div>
+       </div>
+      </div>
+      <!--/ details -->
+    </section>
+    <section class="panel has-aside section-content-sm" id="od-chart-cont">
+      <div class="row">
+        <h2>Emissions</h2>
+        <div class="container-charts">
+          <div class="data-charts">
+            <div class="chart-item">
+
+              <h4 class="header__with-description">Total Greenhouse Gas Emissions Per Barrel</h4>
+              <p class="units description-header"><%= totalUnits %></p>
+              <ul class="value">
+                <li>
+                  <span id="model-total" class="stats-large"></span>
+                  <sub class="raw" id="diff"></sub>
+                  <span class="units"><%= oil.name %></span>
+                </li>
+                <li>
+                  <span class="raw stats-large" id="default-total"></span>
+                  <span class="units">Default</span>
+                </li>
+              </ul>
+            </div>
+            <div class="chart-item">
+              <h4>Upstream Emissions</h4>
+              <div class="bar" id="upstream-bar"></div>
+            </div>
+            <div class="chart-item">
+              <h4>Midstream Emissions</h4>
+              <div class="bar" id="midstream-bar"></div>
+            </div>
+            <div class="chart-item">
+              <h4>Downstream Emissions</h4>
+              <div class="bar" id="downstream-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-aside">
+          <div class="data-controls">
+
+            <!-- model-parameters -->
+            <div id="model-parameters" class="static"></div>
+            <!--/ model-parameters -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+  <!--/ chart-section -->
+  <section class="section-callout section-content related-oils">
+    <div class="row">
+      <h3 class="section-callout__header">Related Oils</h3>
+      <span class="carosel-arrow backward offset-0"></span>
+      <span class="carosel-arrow forward offset-0"></span>
+      <div class="carosel offset-0">
+        <div class="inner-carosel">
+          <% relatedOils.forEach(function (oil) { %>
+            <%= oil %>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,25 @@
+_prefs: 
+  mapid: devseed.2f84ecb9
+  saveCenter: true
+_properties: {}
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -45.7031
+  - 43.5804
+  - 2
+description: ''
+format: "png8:m=h"
+interactivity_layer: ''
+layers: null
+maxzoom: 8
+minzoom: 0
+name: OCI Temp 2013
+source: "mapbox:///devseed.1zz8pqyw"
+styles: 
+  - style.mss
+template: ''

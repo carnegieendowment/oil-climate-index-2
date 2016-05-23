@@ -1,0 +1,194 @@
+// GLOSSARY
+
+.glossary-def {
+  padding: 24px 0 0 0;
+  margin-top: 24px;
+  border-top: 1px solid rgba($base-color, 0.08);
+  > *:last-child {
+    margin-bottom: 0;
+  }
+  &:first-child {
+  	border-top: none;
+  	margin-top: 0;
+  }
+  .glossary-term {
+    @extend .hd-label;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+// METHODOLOGY
+
+ul.oiltype-legend {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+  li {
+    position: relative;
+    padding: 0 0 0 24px;
+  }
+}
+
+[class^='ot-'] {
+  position: absolute;
+  border-radius: $global-radius/2;
+  content: "";
+  height: 14px;
+  width: 14px;
+  top: 50%;
+  left: 0;
+  margin-top: -7px;
+}
+
+.ot-ultra-deep { background-color: $ot-ultra-deep; }
+.ot-extra-heavy { background-color: $ot-extra-heavy; }
+.ot-heavy { background-color: $ot-heavy; }
+.ot-high-gas { background-color: $ot-high-gas; }
+.ot-light { background-color: $ot-light; }
+.ot-depleted-oil { background-color: $ot-depleted; }
+
+/* temporary css for static pages */
+
+#methodology-view { position: relative; }
+.doc-nav, .doc-nav li { list-style:none;}
+
+.doc-nav {
+  position: absolute;
+  width: 18%;
+  &.sticky {
+    position: fixed;
+    top: 140px;
+    @media screen and (max-width: 480px) {
+    	position: inherit;
+    }
+  }
+  &.bottom {
+    position: absolute;
+    bottom: 70px;
+  }
+  @media screen and (max-width: 480px) {
+    position: inherit;
+    width: 100%;
+    clear: right;
+    margin-bottom: 2em;
+  }
+}
+
+.prose ul.doc-nav {margin-left:0;}
+
+.doc-nav li {
+  font-size:.8em;
+  font-weight:bold;
+  line-height:normal;
+  margin-bottom: .9em;
+  @media screen and (max-width: 480px) {
+    display: inline-block;
+    margin-right: .5em;
+    margin-bottom: .5em;
+  }
+}
+
+.doc-nav li a {
+  color:#3d71b7;
+  text-decoration: underline;
+  line-height:normal;
+}
+
+#methodology-view, .view-team {
+  .prose-content {
+    width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	float: none;
+}
+  .container-content {
+	width: 95%;
+	padding-left: 20%;
+	@media screen and (max-width: 480px) {
+      width: 100%;
+      padding-left: 0;
+	}
+  }
+}
+
+.prose.prose-content .contentImg.headshot {
+	width:126px;
+	height:162px;
+	float: left;
+	border: 2px solid $gray-light;
+}
+
+.container-bio {
+	margin-bottom: 2em;
+}
+
+.bio {
+	float: left;
+	width: 80%;
+}
+
+.prose.prose-content .contentImg {
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:top center;
+	display:block;
+}
+
+.prose.prose-content .contentImg.float-left {
+	float:left;
+	margin: 0.3em 3% 0.5em 0;
+}
+
+.prose-content h3 { margin-bottom: 1.5em; }
+
+.prose.prose-content .contentImg.full-width {
+	float:none;
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:2em;
+	width:100%;
+}
+
+#gordon { background-image: url(../images/content/gordon.jpg); }
+#bergerson { background-image: url(../images/content/bergerson.jpg); }
+#brandt { background-image: url(../images/content/brandt.jpg); }
+#koomey { background-image: url(../images/content/koomey.jpg); }
+#livingston { background-image: url(../images/content/livingston.jpg); }
+#tan { background-image: url(../images/content/tan.jpg); }
+
+#opgee-model-schematic {
+  background-image: url(../images/content/OPGEE-schematic.png);
+  padding-top:70%;
+}
+#prelim-model-schematic {
+  background-image: url(../images/content/PRELIM-schematic.png);
+  padding-top:132%;
+}
+#opem-model-schematic {
+  background-image: url(../images/content/OPEM-Schematic-updated.png);
+  padding-top:66%;}
+
+.data-table {
+	margin-bottom:1em;
+}
+
+.data-table.float-right {
+	float:right;
+	margin-left:2em;
+	margin-right:0;
+	margin-top:.5em;
+	width:50%;
+}
+
+.data-table td {
+	background-color:white;
+	padding:.5em 1em;
+	text-align:left;
+}
+
+.data-table thead td {
+	font-weight: bold;
+	font-size:.9em;
+	text-transform: uppercase;
+}

@@ -1,0 +1,41 @@
+// SUPPLY CURVE VIEW
+
+#sc-chart-cont {
+  .panel-header {
+    @extend .visually-hidden;
+  }
+  .panel-body {
+    @include col(12/12);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+#supply-curve, #production-graph-preview {
+  rect {
+    stroke: #fff;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+    @media screen and (max-width: 650px) {
+      stroke-width: 0;
+    }
+  }
+}
+
+.main-title {
+  @include bp(ipad) {
+    display: none;
+  }
+}
+
+.y.axis.title, .x.axis.title {
+  @include bp(tablet-slim) {
+    font-size: 10px;
+  }
+}
+
+.y.axis.subtitle, .x.axis.subtitle {
+  @include bp(tablet-slim) {
+    font-size: 8px;
+  }
+}

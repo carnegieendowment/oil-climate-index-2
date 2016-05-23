@@ -1,0 +1,197 @@
+<div id="compare-oils-view" class="view">
+
+  <!-- intro -->
+  <section class="intro intro-supply">
+    <div class="overlay-dark">
+      <div class="prose prose-centered">
+        <h1 class="prose-prime-title">Emissions Through the Supply Chain</h1>
+        <p class="copy-feature">The global oil market is made up of complex resources, thousands of extraction sites, evolving production methods, different refinery configurations, vast distribution and logistics networks, and varying end uses of the numerous petroleum products. All of these factors contribute to an oil’s climate impact.</p>
+      </div>
+      <div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a><a href="https://www.digitalglobe.com/" target="_blank">© DigitalGlobe</a></div>
+    </div>
+  </section>
+  <!--/ intro -->
+
+  <!-- chart-section -->
+  <section class="panel has-aside section-content" id="co-chart-cont">
+    <div class="row">
+      <div class="panel-body">
+        <div class="chart-legend">
+          <dl class="key">
+            <dt class="key-title">Key</dt>
+            <dd class="key-item upstream">Upstream</dd>
+            <dd class="key-item midstream">Midstream</dd>
+            <dd class="key-item downstream">Downstream</dd>
+          </dl>
+        </div>
+
+        <div id="compare-oils" class="data-charts">
+        <div id="no-results-message">
+          <p>There are currently no oils that match your filter requirements.</p>
+        </div>
+        </div>
+
+      </div>
+      <div class="panel-aside">
+        <div>
+
+          <!-- model-parameters -->
+          <div id="model-parameters" class="control-section"></div>
+          <!--/ model-parameters -->
+
+          <form>
+            <div class="control-section carbon-tax-field-section">
+              <fieldset id="carbon-tax-field">
+                <legend class="control-title">Carbon Tax <span class="units-description">(per metric ton CO&#x2082)</span></legend>
+                <label class="switch" for="toggle-carbon">
+                  <input id="toggle-carbon" name="toggle-carbon" type="checkbox" />
+                  <span class="switch-text">Toggle Carbon</span>
+                  <span class="switch-ui"></span>
+                </label>
+                <div class="input-group disabled">
+                  <input class="form-control carbon-tax-input" type="text" name="carbon-tax" id="carbon-tax" value=<%= Oci.carbonTax %> />
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="ratio-select">
+                <legend class="control-title">Sort by Emissions Units</legend>
+                <div class="radio">
+                  <label><input type="radio" name="ratio-select" value="perBarrel" checked> GHGs/Barrel</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="ratio-select" value="perMJ"> GHGs/Megajoule Product</label>
+                </div>
+                <div class="radio has-button">
+                  <label><input type="radio" name="ratio-select" value="perDollar"> GHGs/$ Product</label>
+                  <a href="#" id="price-button" title="Adjust values" class="link-edit link">Edit Values</a>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="step-select">
+                <legend class="control-title">Sort by Emissions Components</legend>
+                <div class="radio">
+                  <label><input type="radio" name="step-select" value="ghgTotal" checked> Total GHGs</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="step-select" value="upstream"> Upstream</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="step-select" value="midstream"> Midstream</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="step-select" value="downstream"> Downstream</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="step-select" value="indirect"> Upstream + Midstream (Indirect)</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="step-select" value="type"> Oil Type</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="sort-select">
+                <legend class="control-title">Sort by Emissions Order</legend>
+                <div class="radio">
+                  <label><input type="radio" name="sort-select" value="true" checked> High-to-Low</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="sort-select" value="false"> Low-to-High</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="region-select">
+                <legend class="control-title">Filter by Region</legend>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="Asia-Pacific"> Asia-Pacific</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="Europe"> Europe</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="Eurasia"> Eurasia</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="Middle East & N. Africa"> Middle East & N. Africa</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="North America"> North America</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="S. America & Carribean"> S. America & Carribean</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="region-select" value="Sub-Saharan Africa"> Sub-Saharan Africa</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="oiltype-select">
+                <legend class="control-title">Filter by Oil Type</legend>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Extra-Heavy"><span class="extraheavy-color block-color"></span> Extra-Heavy</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Heavy"><span class="heavy-color block-color"></span> Heavy</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Medium"><span class="medium-color block-color"></span> Medium</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Light"><span class="light-color block-color"></span> Light</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Ultra-Light"><span class="ultra-light-color block-color"></span> Ultra-Light</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Condensate"><span class="condensate-color block-color"></span> Condensate</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Ultra-Deep"><span class="ultra-deep-color block-color"></span> Ultra-Deep</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="High-Gas"><span class="high-gas-color block-color"></span> High-Gas</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Depleted"><span class="depleted-color block-color"></span> Depleted</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="opec-select">
+                <legend class="control-title">Filter by OPEC Membership</legend>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="opec-select" value="Yes"> Member</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="opec-select" value="No"> Non-member</label>
+                </div>
+              </fieldset>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ chart-section -->
+  <%= blueBar %>
+</div>

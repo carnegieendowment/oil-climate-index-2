@@ -1,0 +1,192 @@
+// GLOBAL
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  @include transform(translateZ(0));
+}
+
+.bttn {
+  display: inline-block;
+  font-family: $base-font-family;
+  text-transform: none;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: $global-radius;
+  border: 1px solid rgba($base-color, 0.16);
+  background-image: none;
+  @include user-select(none);
+  line-height: 24px;
+  font-size: 16px;
+  padding: 3px 10px;
+  min-height: 32px;
+  min-width: 32px;
+  box-shadow: inset 0 -2px 0 0 rgba($base-color, 0.08);
+  text-shadow: none;
+  opacity: 1;
+  @include transition(background-color 0.16s ease 0s);
+
+  .open > &,
+  &:active,
+  &.active {
+    box-shadow: inset 0 2px 0 0 rgba($base-color, 0.16);
+    outline: 0;
+    @include transform(translate(0));
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &.disabled, &[disabled] {
+    @extend .disabled;
+  }
+  &.hide-txt {
+    &:before {
+      margin-right: 0;
+    }
+    &:after {
+      margin-left: 0;
+    }
+    > * {
+      @extend .visually-hidden;
+    }
+  }
+}
+
+
+// COLOR VARIATIONS
+
+// Base
+.bttn-base,
+.bttn-base:hover,
+.bttn-base:visited {
+  @include bttn-variation(tint($base-color, 20%));
+  color: #fff;
+  @extend .antialiased;
+}
+
+// Base light
+.bttn-base-light,
+.bttn-base-light:hover,
+.bttn-base-light:visited {
+  @include bttn-variation(tint($base-color, 96%));
+  color: $base-font-color;
+  @extend .antialiased;
+}
+
+// Primary
+.bttn-primary,
+.bttn-primary:hover,
+.bttn-primary:visited {
+  @include bttn-variation($primary-color);
+  color: #fff;
+  @extend .antialiased;
+}
+
+// SIZES
+
+
+// XSmall (24px)
+.bttn-xs,
+.bttn-group-xs .bttn {
+  line-height: 16px;
+  font-size: 12px;
+  padding: 1px 6px;
+  min-height: 20px;
+}
+
+// Small (24px)
+.bttn-s,
+.bttn-group-s .bttn {
+  line-height: 20px;
+  font-size: 14px;
+  padding: 1px 6px;
+  min-height: 24px;
+}
+
+// Medium (32px)
+// Default
+.bttn-m,
+.bttn-group-m .bttn {
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 3px 10px;
+  min-height: 32px;
+}
+
+// ICONS
+
+.bttn {
+  &:after {
+    margin-left: 4px;
+    opacity: 0.48;
+    font-size: 16px;
+  }
+  &:before {
+    margin-right: 6px;
+    font-size: 16px;
+  }
+  &.download:before { @extend .icon-download; }
+  &.share:before { @extend .icon-share; }
+  &.prev:before { @extend .icon-arr-left; }
+  &.next:before { @extend .icon-arr-right; }
+  &.compare:after { @extend .icon-s-arr-right; }
+  &.edit:before { @extend .icon-pencil; }
+  &.copy:before { @extend .icon-clipboard; }
+}
+
+
+// GROUP
+
+.bttn-group,
+.bttn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  &.bttn-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    > li .bttn {
+      display: block;
+    }
+  }
+  > *,
+  > .bttn {
+    position: relative;
+    margin: 0;
+  }
+}
+
+.bttn-group {
+  > *,
+  > .bttn {
+    float: left;
+  }
+  > *:first-child:not(:last-child) .bttn,
+  > .bttn:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  > *:last-child:not(:first-child) .bttn,
+  > .bttn:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  > *:not(:first-child):not(:last-child) .bttn,
+  > .bttn:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  > .bttn + .bttn,
+  &.bttn-list > li + li {
+    margin-left: -1px;
+  }
+}

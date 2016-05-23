@@ -1,0 +1,426 @@
+' Module level variables (for scoping purposes)
+Private Oils As Integer
+Private NonSpecialOils As Integer
+Private OCICS As Workbook
+Private OCICSMain As Worksheet
+Private StartCell As Range
+Private OilNames As Range
+
+Sub Data_Processing()
+'
+' Data_Processing Macro
+' Uses this workbook in conjunction with the OPGEE and PRELIM models to generate data for the OCI website
+' This assumes that the workbook starts with the default OPGEE and PRELIM runs in place
+' The macro DOES NOT save this file after running (so it will stay in the original state)
+'
+' Created by Development Seed
+'
+
+  Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+
+  ' This Workbook is the OCICS
+  Set OCICS = ThisWorkbook
+  Set OCICSMain = OCICS.Sheets("OCI")
+
+  ' Store our starting cell
+  Set StartCell = OCICSMain.Range("I5")
+
+  ' Return the number of columns until our first empty cell, going right
+  Oils = Range(StartCell, StartCell.End(xlToRight)).Columns.Count
+
+  ' Unique Oil Names to be used throughout
+  Set OilNames = Range(StartCell.Offset(1, 0), StartCell.Offset(1, Oils - 1))
+
+  ''' INFO
+  Call Info
+
+  ''' OPGEE
+  Call OPGEE
+
+  ''' PRELIM
+  Call PRELIM
+
+  Application.ScreenUpdating = True
+
+'
+End Sub
+
+Sub Info()
+
+  ''' OIL INFO
+  Dim InfoBook As Workbook
+
+  ' Create a new workbook (to be titled info.csv)
+  Set InfoBook = Workbooks.Add
+
+  ' Copy rows 5-27 for all oils, paste transposed into info.csv
+  Range(StartCell, StartCell.Offset(22, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("A2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+
+  ' Grab the variable names from column F
+  Range(StartCell.Offset(0, -3), StartCell.Offset(22, -3)).Copy
+  InfoBook.Sheets("Sheet1").Range("A1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+
+  ' Copy row 273-275 (Field Age, Field Depth, Oil Production Volume) for all oils, paste transposed into info.csv
+  Range(StartCell.Offset(268, 0), StartCell.Offset(270, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("X2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+
+  InfoBook.Sheets("Sheet1").Range("X1").Value = "Field Age"
+  InfoBook.Sheets("Sheet1").Range("Y1").Value = "Field Depth"
+  InfoBook.Sheets("Sheet1").Range("Z1").Value = "Oil Production Volume"
+
+  ' Portion Net Upstream Petcoke, row 444
+  Range(StartCell.Offset(439, 0), StartCell.Offset(439, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AA2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AA1").Value = "Portion Net Upstream Petcoke"
+
+  ' Copy row 453 (default refinery) for all oils, paste transposed into info.csv
+  Range(StartCell.Offset(448, 0), StartCell.Offset(448, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AB2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AB1").Value = "Default Refinery"
+
+  ' Copy row 1777 (transport emissions) for all oils, paste transposed into info.csv
+  Range(StartCell.Offset(1772, 0), StartCell.Offset(1772, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AC2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AC1").Value = "Transport Emissions"
+
+  ' Copy row 1805 (total emissions) for all oils, paste transposed into info.csv
+  Range(StartCell.Offset(1800, 0), StartCell.Offset(1800, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AD2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AD1").Value = "Total Emissions"
+
+  ' Copy row 1928/1934 (oil prices)
+  Range(StartCell.Offset(1923, 0), StartCell.Offset(1923, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AE2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AE1").Value = "Per $ Crude Oil - Current"
+
+  Range(StartCell.Offset(1929, 0), StartCell.Offset(1929, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AF2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AF1").Value = "Per $ Crude Oil - Historic"
+
+  ' Copy row 1948-50 (data quality)
+  Range(StartCell.Offset(1943, 0), StartCell.Offset(1945, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AG2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AG1").Value = "OPGEE Data Quality"
+  InfoBook.Sheets("Sheet1").Range("AH1").Value = "PRELIM Data Quality"
+  InfoBook.Sheets("Sheet1").Range("AI1").Value = "OPEM Data Quality"
+
+  ' Save and close info.csv
+  Application.DisplayAlerts = False
+  InfoBook.SaveAs Filename:=OCICS.Path & "\info.csv", FileFormat:=xlCSV
+  InfoBook.Close
+  Application.DisplayAlerts = True
+
+End Sub
+Sub OPGEE()
+
+  Dim OPGEE As Workbook
+  Dim OPGEEBook As Workbook
+  Dim OPGEEModel As Workbook
+  Dim OPGEEInputs As Worksheet
+  Dim OPGEEOutputs As Worksheet
+  Dim OPGEEEnergy As Worksheet
+  Dim MetadataBook As Workbook
+  Dim MetadataSheet As Worksheet
+  Dim OPGEEModelPath As String
+  Dim WaterArray() As String
+  Dim SolarSteamArray() As String
+  Dim FlareArray() As String
+
+  ' Open the OPGEE Model (let the user choose it)
+  OPGEEModelPath = Application.GetOpenFilename(Title:="Select OPGEE Model")
+  Set OPGEEModel = Workbooks.Open(OPGEEModelPath)
+  Set OPGEEInputs = OPGEEModel.Sheets("Bulk Assessment - Inputs")
+  Set OPGEEOutputs = OPGEEModel.Sheets("Bulk Assessment - Results")
+  Set OPGEEEmissions = OPGEEModel.Sheets("GHG Emissions")
+
+  ' Overwrite one formula in the OPGEE Model (for solar steam)
+  OPGEEEmissions.Range("H22").Formula = "=('Energy Consumption'!H31*IF('Energy Consumption'!K31=" & Chr(34) & "4" & Chr(34) & ",'Emissions Factors'!M17,'Emissions Factors'!C17)+'Energy Consumption'!H32*'Emissions Factors'!F17) * A22"
+
+  ' Go grab our model parameters from Column A (Row 41, 69, 85) of OCICS
+  ' They are stored in a string array so we'll use CDbl(Array(index)) when accessing
+  SolarSteamArray() = Split(OCICSMain.Range("A41").Value, ",")
+  WaterArray() = Split(OCICSMain.Range("A69").Value, ",")
+  FlareArray() = Split(OCICSMain.Range("A85").Value, ",")
+
+  ' Loop over our OPGEE Parameters
+
+  ' For OPGEE we wont run the Special Oils so leave them out (requires a _tag” in row 4))
+
+  NonSpecialOils = Range(StartCell.Offset(-1, 0), StartCell.Offset(-1, 0).End(xlToRight)).Columns.Count - 1
+
+  For s = LBound(SolarSteamArray) To UBound(SolarSteamArray)
+      For w = LBound(WaterArray) To UBound(WaterArray)
+          For f = LBound(FlareArray) To UBound(FlareArray)
+              ' Create a new workbook (to be titled opgee_run[xxx].csv)
+              Set OPGEEBook = Workbooks.Add
+
+              ' Copy inputs from OCICS to OPGEE (Rows 35 through 112)
+              Range(StartCell.Offset(30, 0), StartCell.Offset(107, NonSpecialOils - 1)).Copy
+              OPGEEInputs.Range("H9").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=False
+
+              ''' Run Model Once to get Imputed Values
+              ' It needs automatic calculations on
+              ' It requires that book to be activated or it's macro references fail
+              ' We need to specify how many oils we are running it on
+              ' We need to disable calculation on OCICS or the calculations will lock up the system
+
+              Application.Calculation = xlCalculationAutomatic
+              For Each sh In OCICS.Worksheets
+                sh.EnableCalculation = False
+              Next
+              OPGEEInputs.Range("C2").Value = Oils
+              OPGEEModel.Activate
+              Application.Run ("" & OPGEEModel.Name & "!UltraBulk_assessment")
+
+              ' Copy imputed water and flaring values on to Inputs tab
+              Range(OPGEEOutputs.Range("H43"), OPGEEOutputs.Range("H44").Offset(0, NonSpecialOils - 1)).Copy
+              OPGEEInputs.Range("H43").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                 SkipBlanks:=False, Transpose:=False
+
+              Range(OPGEEOutputs.Range("H59"), OPGEEOutputs.Range("H59").Offset(0, NonSpecialOils - 1)).Copy
+              OPGEEInputs.Range("H59").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                 SkipBlanks:=False, Transpose:=False
+
+              ' Scale water and flaring according to our run
+              For i = 0 To (NonSpecialOils - 1)
+                  OPGEEInputs.Range("H43").Offset(0, i).Value = OPGEEInputs.Range("H43").Offset(0, i).Value * CDbl(WaterArray(w))
+                  OPGEEInputs.Range("H44").Offset(0, i).Value = OPGEEInputs.Range("H44").Offset(0, i).Value * CDbl(WaterArray(w))
+                  OPGEEInputs.Range("H59").Offset(0, i).Value = OPGEEInputs.Range("H59").Offset(0, i).Value * CDbl(FlareArray(f))
+              Next
+
+              ' Change the Solar Steam Multiplier according to our run
+              OPGEEEmissions.Range("A22").Value = (1 - CDbl(SolarSteamArray(s)))
+
+              ' Run Again
+              Application.Run ("" & OPGEEModel.Name & "!UltraBulk_assessment")
+              Application.Calculation = xlCalculationManual
+              Application.ScreenUpdating = False
+
+              ' (4) Copy & Paste (Outputs and Output-Inputs)
+
+              Range(OPGEEModel.Sheets("Bulk Assessment - Results").Range("H9"), OPGEEModel.Sheets("Bulk Assessment - Results").Range("H88").Offset(0, NonSpecialOils - 1)).Copy
+              StartCell.Offset(257, 0).PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=False
+
+              Range(OPGEEModel.Sheets("Bulk Assessment - Results").Range("H103"), OPGEEModel.Sheets("Bulk Assessment - Results").Range("H157").Offset(0, NonSpecialOils - 1)).Copy
+              StartCell.Offset(351, 0).PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=False
+
+              ' Calculate
+              For Each sh In OCICS.Worksheets
+                  sh.EnableCalculation = True
+              Next
+              Application.Calculate
+
+              ' (5) Write to OPGEEBook and save
+
+              ' Run Name
+              OPGEEBook.Sheets("Sheet1").Range("A1").Value = "Run"
+              For i = 0 To (Oils - 1)
+                  OPGEEBook.Sheets("Sheet1").Range("A2").Offset(i, 0).Value = "run" & s & w & f
+              Next i
+
+              ' Unique Oil Names
+              OilNames.Copy
+              OPGEEBook.Sheets("Sheet1").Range("B1").Value = "Unique"
+              OPGEEBook.Sheets("Sheet1").Range("B2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+              ' Values
+              Range(StartCell.Offset(417, 0), StartCell.Offset(429, Oils - 1)).Copy
+              OPGEEBook.Sheets("Sheet1").Range("C2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+              ' Variable Names (column F)
+              Range(StartCell.Offset(417, -3), StartCell.Offset(429, -3)).Copy
+              OPGEEBook.Sheets("Sheet1").Range("C1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+              ' Output-Inputs
+              ' 283 (API Gravity) 295 (GOR) 296 (WOR) 300 (SOR) 312 (FOR)
+              OPGEEBook.Sheets("Sheet1").Range("P1").Value = "API Gravity"
+              Range(StartCell.Offset(278, 0), StartCell.Offset(278, Oils - 1)).Copy
+              OPGEEBook.Sheets("Sheet1").Range("P2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+              OPGEEBook.Sheets("Sheet1").Range("Q1").Value = "Gas-to-Oil-Ratio"
+              OPGEEBook.Sheets("Sheet1").Range("R1").Value = "Water-to-Oil-Ratio"
+              Range(StartCell.Offset(290, 0), StartCell.Offset(291, Oils - 1)).Copy
+              OPGEEBook.Sheets("Sheet1").Range("Q2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+              OPGEEBook.Sheets("Sheet1").Range("S1").Value = "Steam-to-Oil-Ratio"
+              Range(StartCell.Offset(295, 0), StartCell.Offset(295, Oils - 1)).Copy
+              OPGEEBook.Sheets("Sheet1").Range("S2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+              OPGEEBook.Sheets("Sheet1").Range("T1").Value = "Flaring-to-Oil-Ratio"
+              Range(StartCell.Offset(307, 0), StartCell.Offset(307, Oils - 1)).Copy
+              OPGEEBook.Sheets("Sheet1").Range("T2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+              ' Save and close .csv
+              Application.DisplayAlerts = False
+              OPGEEBook.SaveAs Filename:=OCICS.Path & "\opgee_run" & s & w & f & ".csv", FileFormat:=xlCSV
+              OPGEEBook.Close
+              Application.DisplayAlerts = True
+          Next f
+      Next w
+  Next s
+
+  ' Close model, force no-save
+  OPGEEModel.Close SaveChanges:=False
+
+  ' Write out metadata
+  Set MetadataBook = Workbooks.Add
+  Set MetadataSheet = MetadataBook.Sheets("Sheet1")
+  MetadataSheet.Range("A1").Value = "solarSteam"
+  MetadataSheet.Range("A2").Value = OCICSMain.Range("A41").Value
+  MetadataSheet.Range("B1").Value = "water"
+  MetadataSheet.Range("B2").Value = OCICSMain.Range("A69").Value
+  MetadataSheet.Range("C1").Value = "flare"
+  MetadataSheet.Range("C2").Value = OCICSMain.Range("A85").Value
+  MetadataSheet.Range("D1").Value = "refinery"
+  MetadataSheet.Range("D2").Value = StartCell.Offset(1025, -2).Value
+
+  Application.DisplayAlerts = False
+  MetadataBook.SaveAs Filename:="metadata.csv", FileFormat:=xlCSV
+  MetadataBook.Close
+  Application.DisplayAlerts = True
+
+End Sub
+
+
+Sub PRELIM()
+
+  Dim PRELIM As Workbook
+  Dim PRELIMSheet As Worksheet
+  Dim RefineryRange As Range
+  Dim LPGOffset As Integer
+  Dim LPGSecondaryOffset As Integer
+  Dim LHVBook As Workbook
+  Dim LHVSheet As Worksheet
+
+  Set RefineryRange = Range(StartCell.Offset(1025, 0), StartCell.Offset(1025, Oils - 1))
+  ' Rows Between two LPG cases
+  LPGOffset = 655
+  LPGSecondaryOffset = 51
+
+  ' Combustion Variables - Format
+  For j = 0 To 9
+    StartCell.Offset(1030 + j, -3).Value = "Portion " + StartCell.Offset(1030 + j, -3).Value
+    StartCell.Offset(1030 + LPGOffset + j, -3).Value = "Portion " + StartCell.Offset(1030 + LPGOffset + j, -3).Value
+  Next j
+
+
+  ' 5 loops (refinery types)
+  ' 2 interior loops (lpg on/off)
+  For i = 0 To 4
+      For j = 0 To 1
+          ' New PRELIM Output Sheet
+          Set PRELIM = Workbooks.Add
+          Set PRELIMSheet = PRELIM.Sheets("Sheet1")
+
+          ' Set Refinery
+          For Each cell In RefineryRange.Offset(LPGOffset * j, 0).Cells
+              cell.Value = i
+          Next
+
+          ' Calculate
+          Application.Calculate
+
+          ' Copy and Paste
+
+          ' Run Name
+          PRELIMSheet.Range("A1").Value = "Run"
+          For k = 0 To (Oils - 1)
+            PRELIMSheet.Range("A2").Offset(k, 0).Value = "run" & i & j
+          Next k
+
+          ' Unique Oil Names
+          OilNames.Copy
+          PRELIMSheet.Range("B1").Value = "Unique"
+          PRELIMSheet.Range("B2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+                  SkipBlanks:=False, Transpose:=True
+
+          ' PRELIM Values
+          Range(StartCell.Offset(1076 + LPGOffset * j, 0), StartCell.Offset(1097 + LPGOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("C2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' PRELIM Variable Names (column F)
+          Range(StartCell.Offset(1076 + LPGOffset * j, -3), StartCell.Offset(1097 + LPGOffset * j, -3)).Copy
+          PRELIMSheet.Range("C1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Combustion Values
+          Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, 0), StartCell.Offset(1787 + LPGSecondaryOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("Y2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Combustion Variables
+          Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, -3), StartCell.Offset(1787 + LPGSecondaryOffset * j, -3)).Copy
+          PRELIMSheet.Range("Y1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Combustion Values - Pricing
+          Range(StartCell.Offset(1030 + LPGOffset * j, 0), StartCell.Offset(1039 + LPGOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("AI2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Combustion Variables - Pricing
+          Range(StartCell.Offset(1030 + LPGOffset * j, -3), StartCell.Offset(1039 + LPGOffset * j, -3)).Copy
+          PRELIMSheet.Range("AI1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Clean Sheet
+          PRELIMSheet.Columns(13).EntireColumn.Delete
+          PRELIMSheet.Columns(9).EntireColumn.Delete
+          PRELIMSheet.Columns(6).EntireColumn.Delete
+          PRELIMSheet.Columns(4).EntireColumn.Delete
+
+          ' Eliminate any oils which shouldn't have this refinery configuration
+          For k = (Oils - 1) To 0 Step -1
+              If CDbl(StartCell.Offset(18, k).Value) = i And Not i = 0 Then
+                  PRELIMSheet.Rows(k + 2).EntireRow.Delete
+              End If
+          Next k
+
+          ' Save Sheet
+          Application.DisplayAlerts = False
+          PRELIM.SaveAs Filename:=OCICS.Path & "\prelim_run" & i & (1 - j) & ".csv", FileFormat:=xlCSV
+          PRELIM.Close
+          Application.DisplayAlerts = True
+      Next j
+  Next i
+
+  ' Write out LHV (lower heating values)
+  Set LHVBook = Workbooks.Add
+  Set LHVSheet = LHVBook.Sheets("Sheet1")
+  ' Grab the variable names from column F
+  Range(StartCell.Offset(1861, -3), StartCell.Offset(1869, -3)).Copy
+  LHVSheet.Range("A1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  ' Get values from column D'
+  Range(StartCell.Offset(1861, -5), StartCell.Offset(1869, -5)).Copy
+  LHVSheet.Range("A2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+
+  Application.DisplayAlerts = False
+  LHVBook.SaveAs Filename:="lhv.csv", FileFormat:=xlCSV
+  LHVBook.Close
+  Application.DisplayAlerts = True
+
+End Sub

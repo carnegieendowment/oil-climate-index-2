@@ -1,0 +1,108 @@
+// This parent can be any width and height
+// http://css-tricks.com/centering-in-the-unknown/
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  overflow-y: auto;
+  background: rgba($base-color, 0.92);
+  padding: 16px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  @include transform(translate3d(0, 0, 0));
+  @include transition(opacity 0.32s ease 0s, visibility 0.32s linear 0s);
+  // The ghost, nudged to maintain perfect centering
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 1px;
+    margin-right: -1px; // Adjusts for spacing
+  }
+  &.revealed {
+    opacity: 1;
+    visibility: visible;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// The element to be centered, can also be of any width and height
+.modal-inner {
+  position: relative;
+  @extend %base-overlay-skin;
+  width: 100%;
+  max-width: 576px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  opacity: 0;
+  margin: -128px 0 0 0;
+  visibility: hidden;
+  @include transition(opacity 0.24s ease 0s, margin 0.24s ease 0s, visibility 0.24s linear 0s);
+}
+
+.modal.revealed .modal-inner {
+  opacity: 1;
+  margin-top: 0;
+  visibility: visible;
+}
+
+.modal-s .modal-inner {
+  max-width: 384px;
+}
+
+// Content styles
+.modal {
+
+  .modal-close,
+  .modal:visited {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    display: block;
+    font-size: 16px;
+    line-height: 1;
+    color: tint($base-color, 64%);
+    span {
+      @extend .visually-hidden;
+    }
+    &:before {
+      @extend .icon-s-cancel;
+    }
+  }
+  .modal-footer,
+  .modal-header,
+  .modal-body {
+    padding: 16px 32px;
+    @extend .clearfix;
+    @include bp(tablet-long) {
+      padding: 16px;
+    }
+  }
+  .modal-header {
+    background: tint($base-color, 96%);
+    border-radius: $global-radius $global-radius 0 0;
+    box-shadow: inset 0 -1px 0 0 $border-shadow-rgba;
+    p { font-size: 14px; }
+  }
+  .modal-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 !important;
+  }
+  .modal-footer {
+    background: tint($base-color, 96%);
+    border-radius: 0 0 $global-radius $global-radius;
+    box-shadow: inset 0 1px 0 0 $border-shadow-rgba;
+    text-align: center;
+  }
+
+}

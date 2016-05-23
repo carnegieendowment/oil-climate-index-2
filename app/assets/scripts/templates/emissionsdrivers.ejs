@@ -1,0 +1,141 @@
+<div id="emissions-drivers-view" class="view">
+
+  <!-- intro -->
+  <section class="intro intro-drivers">
+    <div class="overlay-dark">
+      <div class="prose prose-centered">
+        <h1 class="prose-prime-title">Oil's Physical Properties & the Climate</h1>
+        <p class="copy-feature">An oil’s characteristics have different effects on its GHG emissions. Some factors, like an oil’s sulfur content, appear to have little impact on its midstream refining emissions. Meanwhile other factors, like an oil’s API gravity (or weight), appear to correlate with downstream end-use emissions.</p>
+      </div>
+      <div class="attribution"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a><a href="https://www.digitalglobe.com/" target="_blank">© DigitalGlobe</a></div>
+    </div>
+  </section>
+  <!--/ intro -->
+
+  <!-- chart-section -->
+  <section class="panel has-aside section-content" id="ed-chart-cont">
+    <div class="row">
+      <header class="panel-header">
+        <div class="panel-headline">
+          <h1 class="panel-title">Chart</h1>
+        </div>
+      </header>
+      <div class="panel-body">
+        <div id="emissions-drivers" class="data-charts"></div>
+      </div>
+      <div class="panel-aside">
+        <div>
+
+          <!-- model-parameters -->
+          <div id="model-parameters" class="control-section"></div>
+          <!--/ model-parameters -->
+
+          <form>
+            <div class="control-section">
+              <fieldset id="ratio-select">
+                <legend class="control-title">Sort by Emissions Units</legend>
+                <div class="radio">
+                  <label><input type="radio" name="ratio-select" value="perBarrel" checked> GHGs/Barrel</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="ratio-select" value="perMJ"> GHGs/Megajoule Product</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="ratio-select" value="perCurrent"> GHGs/$ Crude, Current Value</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="ratio-select" value="perHistoric"> GHGs/$ Crude, Historic Value</label>
+                </div>
+                <div class="radio has-button">
+                  <label><input type="radio" name="ratio-select" value="perDollar"> GHGs/$ Product</label>
+                  <a href="#" id="price-button" title="Adjust values" class="link-edit link">Edit Values</a>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="control-section">
+              <legend class="control-title">Select Oil Characteristic (X axis)</legend>
+              <select class="config-dropdown form-control" name="x-select" id="x-select">
+                <option value="ghgTotal"> Total Emissions</option>
+                <option value="upstream"> Upstream Emissions</option>
+                <option value="midstream"> Midstream Emissions</option>
+                <option value="downstream"> Downstream Emissions</option>
+                <option value="apiGravity" selected> API Gravity</option>
+                <option value="sulfurContent"> Sulfur Content</option>
+                <option value="waterToOilRatio"> Water-to-Oil Ratio</option>
+                <option value="gasToOilRatio"> Gas-to-Oil Ratio</option>
+                <option value="steamToOilRatio"> Steam-to-Oil Ratio</option>
+                <option value="flaringToOilRatio"> Flaring-to-Oil Ratio</option>
+                <option value="prodGasoline"> Gasoline</option>
+                <option value="prodDiesel"> Diesel</option>
+                <option value="prodResidual"> Residual Fuels</option>
+                <option value="prodJet"> Jet Fuel</option>
+                <option value="prodPetcoke"> Petcoke</option>
+                <option value="prodLPG"> Liquified Petroluem Gas (LPG)</option>
+                <option value="yearsProduction"> Years in Production</option>
+                <option value="currentMarketValue"> Current Market Value Products (2016)</option>
+                <option value="historicMarketValue"> Historic Market Value Products (2015)</option>
+              </select>
+            </div>
+
+            <div class="control-section">
+              <legend class="control-title">Select Emissions Component (Y axis)</legend>
+              <select class="config-dropdown form-control" name="y-select" id="y-select">
+                <option value="ghgTotal" selected> Total</option>
+                <option value="upstream"> Upstream</option>
+                <option value="midstream"> Midstream</option>
+                <option value="downstream"> Downstream</option>
+              </select>
+            </div>
+
+            <div class="control-section">
+              <fieldset id="oiltype-select">
+                <legend class="control-title">Filter by Oil Type</legend>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Extra-Heavy"><span class="extraheavy-color block-color"></span> Extra-Heavy</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Heavy"><span class="heavy-color block-color"></span> Heavy</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Medium"><span class="medium-color block-color"></span> Medium</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Light"><span class="light-color block-color"></span> Light</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Ultra-Light"><span class="ultra-light-color block-color"></span> Ultra-Light</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Condensate"><span class="condensate-color block-color"></span> Condensate</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Ultra-Deep"><span class="ultra-deep-color block-color"></span> Ultra-Deep</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="High-Gas"><span class="high-gas-color block-color"></span> High-Gas</label>
+                </div>
+                <div class="checkbox">
+                  <span class="swatch"></span>
+                  <label><input type="checkbox" name="oiltype-select" value="Depleted"><span class="depleted-color block-color"></span> Depleted</label>
+                </div>
+              </fieldset>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ chart-section -->
+  <%= blueBar %>
+</div>

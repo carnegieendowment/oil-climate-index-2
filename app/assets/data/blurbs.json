@@ -1,0 +1,95 @@
+{
+  "Nigeria Agbami": {
+    "description": "A light, sweet, deepwater oil produced off the coast of West Africa. Agbami’s GHG emissions are low compared to other oils in the index because its moderate levels of gas are not highly flared like Nigeria Obagi or Bonny. OCI assay source: Chevron"
+  },
+  "U.S. Alaska North Slope": {
+    "description": "A medium, sweet oil produced from numerous fields along the coastline of the Arctic Ocean, the largest of which is Prudhoe Bay. Alaska North Slope’s GHG emissions are in the midrange because this gassy oil does not have a high flare rate. However, additional modeling is required to determine if drilling in the Arctic tundra has climate impacts that are not currently accounted for. OCI assay source: ExxonMobil"
+  },
+  "Azerbaijan Azeri Light": {
+    "description": "A light, sweet oil located offshore in the South Caspian basin that is used as a regional benchmark crude and accounts for the majority of Azerbaijan’s total current oil output. Azeri Light has one of the lowest estimated GHG emissions yet the highest current production rates of the 30 OCI test oils. OCI assay source: Chevron"
+  },
+  "Nigeria Bonny": {
+    "description": "An ultra-deep, light, sweet oil located in the Niger Delta basin. Bonny’s GHG emissions are currently high due to its flare rate. Reducing this oil’s flare-to-oil ratio by 90 percent of current levels through new gas handling infrastructure and improved operations could significantly reduce Bonny’s total GHG emissions. OCI assay source: Chevron"
+  },
+  "China Bozhong": {
+    "description": "A deep, heavy, sweet, gassy oil located offshore Beijing in the Bohai Bay that is currently operated by the China National Offshore Oil Corporation. Bozhong’s depth and its heavy makeup, in conjunction with its high gas content and high flare rate, means that this complex oil’s GHG emissions total is estimated to be one of the highest of the OCI test oils. OCI assay source: Chevron"
+  },
+  "UK Brent": {
+    "description": "A light, gassy, depleted oil in the North Sea’s UK sector that, despite its small current production volume, serves as a benchmark for international crude pricing. Brent’s GHG emissions rank high compared to other oils in the index—except for Nigeria Obagi and Bonny (which flare excessively) and Russia Chayvo (which is extremely deep)—due to its large surface-processing requirements to remove excess water and gas. OCI assay source: Chevron"
+  },
+  "Indonesia Duri": {
+    "description": "A heavy, thick, waxy oil located onshore in central Sumatra that contains very little associated gas. But large energy inputs are needed to produce steam and inject it into this shallow field to make this oil flow. Large total upstream emissions, together with the significant volume of hydrogen needed to refine this heavy oil into petroleum products, make Duri a high-GHG oil compared to others in the index. OCI assay source: Chevron"
+  },
+  "Norway Ekofisk": {
+    "description": "A deep, light, sweet oil located offshore in the North Sea that, like UK Brent and Forties, is one of the major crudes in the Brent benchmark blend. Due to an effective ban on flaring in Norway since the 1970s, Ekofisk has lower estimated GHGs than similar crudes, and it has the lowest emissions of all 30 OCI test oils. The majority of Ekofisk’s emissions (over 90 percent) occur downstream during the combustion of petroleum products. OCI assay source: BP"
+  },
+  "Brazil Frade": {
+    "description": "A shallow, heavy, sour oil located offshore in the Campos basin, northeast of Rio de Janeiro. Frade’s low gas-to-oil ratio translates into low upstream GHG extraction emissions compared to other heavy oils. Like other heavy crudes, refinery GHG emissions are significant because of the hydrogen needed to transform the crude into lighter products. OCI assay source: Chevron"
+  },
+  "Angola Girassol": {
+    "description": "A shallow, medium, sweet oil located northwest of Luanda, in the vicinity of several other oil fields. Girassol’s GHG emissions are lower than the average of the OCI test oils because of its low water and gas content. But GHG emissions could be reduced further if less gas is flared. OCI assay source: ExxonMobil "
+  },
+  "Venezuela Hamaca": {
+    "description": "An extra-heavy oil produced in the Orinoco heavy-oil belt in central Venezuela. Hamaca’s upstream GHG emissions are high because it needs to be upgraded into a synthetic crude oil (SCO) before it is refined. OCI assay source: Knovel"
+  },
+  "Canada Hibernia": {
+    "description": "A light, sweet oil that is located offshore Newfoundland. Hibernia’s GHG emissions are lower than the average and are relatively comparable to the other conventional OCI test oils. OCI assay source: Chevron"
+  },
+  "Angola Kuito": {
+    "description": "A heavy, sweet oil that is produced west of Cabinda in North Angola. Kuito’s GHG emissions are closer to those of conventional test oils than extra-heavy test oils. OCI assay source: Chevron"
+  },
+  "Brazil Lula": {
+    "description": "A medium, sweet, ultra-deep oil in the Santos basin offshore Rio de Janeiro. This Brazilian supergiant pre-salt oil has near-average emissions compared to the other OCI test oils, but GHG emissions could increase as drilling depths increase. OCI assay source: BG Group"
+  },
+  "U.S. Gulf Mars": {
+    "description": "A medium, sour oil produced in ultra-deep waters in the U.S. Gulf of Mexico that has seen increased investments in recent years to extend the field’s life. Mars’s GHG emissions are low compared to other test oils. OCI assay source: BP"
+  },
+  "Canada Midale": {
+    "description": "A medium, sour oil produced in southern Saskatchewan, along the northern margin of the Williston basin (famous for the Bakken shale play). Midale’s GHG emissions are low for a depleting field. OCI assay source: Crude Monitor"
+  },
+  "California Midway Sunset": {
+    "description": "A medium-to-heavy, sour, watery oil from one of the oldest and largest fields in California’s San Joaquin Valley. Midway Sunset’s GHG emissions are very high because a large volume of steam must be injected into the reservoir to loosen and allow it to flow and because its high water content means that extra energy is required to pump it out of the ground. OCI assay source: Knovel"
+  },
+  "Nigeria Obagi": {
+    "description": "A light, sweet oil that is produced northwest of Port Harcourt in the Niger Delta. Obagi’s GHG emissions are high due to its high flare rate and because it is depleting. OCI assay source: Chevron"
+  },
+  "Kuwait Ratawi": {
+    "description": "A medium, sour oil produced from the partitioned neutral zone between Kuwait and Saudi Arabia. Ratawi’s GHG emissions are low relative to other medium-high gravity oils. OCI assay source: Chevron"
+  },
+  "California South Belridge": {
+    "description": "A heavy, sweet oil from the San Joaquin Valley that, like Midway Sunset, makes use of steam-flooding techniques to enhance oil recovery. South Belridge has relatively high GHG emissions compared to the other OCI test oils. OCI assay source: Knovel"
+  },
+  "Kazakhstan Tengiz": {
+    "description": "A light, sweet oil located in the low-lying wetlands along the northeast shores of the Caspian Sea. This deep, supergiant oil field has lower GHG emissions than the other OCI test oils. OCI assay source: Chevron"
+  },
+  "U.S. Gulf Thunder Horse": {
+    "description": "A light, sweet oil located offshore in the U.S. Gulf of Mexico. Thunder Horse’s GHG emissions are relatively low compared to other ultra-deep oils in part because it is not particularly gassy. OCI assay source: ExxonMobil"
+  },
+  "California Wilmington": {
+    "description": "A heavy, sweet oil located south of Los Angeles. Wilmington’s GHG emissions are relatively high due to its water content, which is the highest of the 30 OCI test oils. OCI assay source: Knovel"
+  },
+  "Iraq Zubair": {
+    "description": "A medium, sour oil from a large, deep field located west of Basra (the oil is also sometimes called Basra). Zubair has average GHG emissions compared to the other OCI test oils, but flaring of the oil needs to be limited in order to maintain this emission profile. OCI assay source: BP"
+  },
+  "UK Forties": {
+    "description": "A light, sweet oil from the UK’s largest offshore field in the North Sea. Like Ekofisk and Brent, Forties is a Brent benchmark crude; however, its GHG emissions are lower because it is not as depleted as other OCI test oils in the same category. OCI assay source: BP"
+  },
+  "Russia Chayvo": {
+    "description": "A light, sweet oil located off Sakhalin Island in eastern Russia (also named Sokol). Chayvo’s GHG emissions are currently estimated to be average, compared to the other OCI test oils. Further research is needed, however, to fully assess the effects of the record-setting depth of Chayvo’s directionally drilled wells. OCI assay source: ExxonMobil"
+  },
+  "Canada Cold Lake Diluted Bitumen (Dilbit)": {
+    "description": "An extra-heavy, high-sulfur bitumen produced from Alberta’s Cold Lake region that is not upgraded before transport to the refinery and is modeled as dilbit (75 percent bitumen and 25 percent diluent). That means Cold Lake’s GHG emissions are not based on an equivalent barrel of oil. If this dilbit’s emissions were calculated per equivalent barrel of oil (considering bitumen only), Cold Lake’s GHG emissions would be far greater than what is reported in the OCI. OCI assay source: Crude Monitor"
+  },
+  "Canada Suncor Synthetic H (SCO)": {
+    "description": "An extra-heavy, high-sulfur bitumen mined from Alberta’s Athabasca oil sands and upgraded into a medium, sour synthetic crude oil (SCO) before transport to the refinery. Suncor Synthetic H SCO’s API gravity of 19.5 results in higher total GHG emissions than Synthetic A SCO. OCI assay source: Crude Monitor"
+  },
+  "Canada Suncor Synthetic A (SCO)": {
+    "description": "An extra-heavy, high-sulfur bitumen mined from Alberta’s Athabasca oil sands and upgraded into a light, sweet synthetic crude oil (SCO) before transport to the refinery. Suncor Synthetic A SCO is upgraded to 32.8 API, compared to 19.5 for Synthetic H SCO. As such, Synthetic A SCO emits more GHG emissions in upgrading, but fewer emissions in refining and end use compared to Synthetic H SCO. OCI assay source: Crude Monitor"
+  },
+  "Canada Syncrude Synthetic (SCO)": {
+    "description": "An extra-heavy, high-sulfur bitumen mined from Alberta’s Athabasca oil sands and upgraded into a light, sweet synthetic crude oil (SCO) before transport to the refinery. Syncrude Synthetic SCO yields less petcoke with lower downstream emissions than both Suncor Synthetic A SCO and Suncor Synthetic H SCO. OCI assay source: Crude Monitor"
+  },
+  "Light": {
+    "description": "Light Oil"
+  }
+}
