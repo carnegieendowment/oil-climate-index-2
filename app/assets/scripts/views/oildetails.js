@@ -102,8 +102,8 @@ var OilDetails = BaseView.extend({
       totalUnits: utils.getUnits('ghgTotal', 'perBarrel'),
       description: (Oci.blurbs[this.oilKey] || {}).description,
       icons: Oci.data.info[this.oilKey]['Absolute Emissions Icons'],
-      suggestedOils: Oci.relatedOils[this.oilKey],
-      relatedOils: Oci.relatedOils[this.oilKey].map(function (oil) {
+      suggestedOils: (Oci.relatedOils[this.oilKey] || []),
+      relatedOils: (Oci.relatedOils[this.oilKey] && Oci.relatedOils[this.oilKey].map(function (oil) {
         var d = Oci.data.info[oil];
         if (d) {
           return utils.createTooltipHtml(
@@ -133,7 +133,7 @@ var OilDetails = BaseView.extend({
         } else {
           return '';
         }
-      })
+      }) || [])
     }));
 
     this.modelParametersView = new ModelParameters();

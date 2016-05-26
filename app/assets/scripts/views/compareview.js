@@ -109,8 +109,8 @@ var CompareView = BaseView.extend({
       // separate key so we can leave the above one blank for groups
       comparisonOilName: comparisonOilName,
       totalUnits: utils.getUnits('ghgTotal', 'perBarrel'),
-      suggestedOils: Oci.relatedOils[this.oilKey],
-      relatedOils: Oci.relatedOils[this.oilKey].map(function (oil) {
+      suggestedOils: (Oci.relatedOils[this.oilKey] || []),
+      relatedOils: (Oci.relatedOils[this.oilKey] && Oci.relatedOils[this.oilKey].map(function (oil) {
         var d = Oci.data.info[oil];
         if (d) {
           return utils.createTooltipHtml(
@@ -140,7 +140,7 @@ var CompareView = BaseView.extend({
         } else {
           return '';
         }
-      })
+      }) || [])
     }));
 
     this.modelParametersView = new ModelParameters();
