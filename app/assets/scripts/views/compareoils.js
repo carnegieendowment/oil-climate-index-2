@@ -149,7 +149,7 @@ var CompareOils = BaseView.extend({
       var prelim = modelData.prelim[oils[i]];
       // we might not have a prelim run for this oil (certain oils don't
       // run through some refineries)
-      if (!prelim) break;
+      if (!prelim) continue;
       var upstream = +opgee['Net lifecycle emissions'];
       var midstream = utils.getRefiningTotal(prelim);
       var transport = +info[utils.getDatasetKey('transport')];
