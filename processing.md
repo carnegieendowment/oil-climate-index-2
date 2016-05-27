@@ -32,7 +32,7 @@ Perform these steps on the OCI Consolidated Sheet to prepare it for data updatin
 - Add the unique oil name into cell D2 (used for matching with the rest of the data)
 - Copy in special processing macro (`special_macro.txt')
 - Run macro for each special oil
-  - Select OCI Consolidated Sheet when prompted
-  - Slider values should be column H, rows 163-5
+  - Select (prepped) OCI Consolidated Sheet when prompted
+  - Slider values should be column H, rows 163-5 (in order: Solar Steam, Water, Flaring)
   - Macro will only grab the first `n` columns start at column H where `n` is equal to `solar_steam_options * water_options * flaring_options` (currently 80)
 - Close without saving

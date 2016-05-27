@@ -81,19 +81,19 @@ Sub SpecialProcess()
     ' Get our run name by combining the custom slider information with the OCICS metadata
     s = w = f = "x"
     For j = LBound(SolarSteamArray) To UBound(SolarSteamArray)
-      If StartCell.Offset(156, i).Value = CDbl(SolarSteamArray(j)) Then
+      If StartCell.Offset(154, i).Value = CDbl(SolarSteamArray(j)) Then
         s = j
         Exit For
       End If
     Next j
     For j = LBound(WaterArray) To UBound(WaterArray)
-      If StartCell.Offset(154, i).Value = CDbl(WaterArray(j)) Then
+      If StartCell.Offset(155, i).Value = CDbl(WaterArray(j)) Then
         w = j
         Exit For
       End If
     Next j
     For j = LBound(FlareArray) To UBound(FlareArray)
-      If StartCell.Offset(155, i).Value = CDbl(FlareArray(j)) Then
+      If StartCell.Offset(156, i).Value = CDbl(FlareArray(j)) Then
         f = j
         Exit For
       End If
@@ -101,11 +101,11 @@ Sub SpecialProcess()
 
     ' Write to matching OPGEEBook and save
     Set OPGEEBook = Workbooks.Open(OCICS.Path & "\opgee_run" & s & w & f & ".csv")
-    Set OPGEEBookTop = OPGEEBook.Sheets("opgee_run" & w & s & f).Range("A1")
+    Set OPGEEBookTop = OPGEEBook.Sheets("opgee_run" & s & w & f).Range("A1")
     Set WriteMatchOffset = Range(OPGEEBookTop.Offset(0, 1), OPGEEBookTop.Offset(0, 1).End(xlDown)).Find(What:=MatchOil, SearchOrder:=xlByRows)
 
     ' Run Name
-    WriteMatchOffset.Offset(0, -1).Value = "run" & w & s & f
+    WriteMatchOffset.Offset(0, -1).Value = "run" & s & w & f
 
     ' Unique Oil Name (redundant)
     WriteMatchOffset.Value = MatchOil
