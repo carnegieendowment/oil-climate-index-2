@@ -157,16 +157,16 @@ var utils = {
   },
 
   // Convert the original value to a new value based on desired ratio type
-  getValueForRatio: function (originalValue, ratio, prelim, showCoke, info, showLPG) {
+  getValueForRatio: function (originalValue, ratio, prelim, showCoke, info) {
     switch (ratio) {
       case 'perBarrel':
         return originalValue;
       case 'perMJ':
         // GHG/barrel * barrel/MJ * g/kg
-        return originalValue * (1.0 / utils.getMJPerBarrel(prelim, showCoke, info, showLPG)) * 1000;
+        return originalValue * (1.0 / utils.getMJPerBarrel(prelim, showCoke, info)) * 1000;
       case 'perDollar':
         // GHG/barrel * barrel/$ * g/kg
-        return originalValue * (1.0 / this.getPricePerBarrel(prelim, showCoke, info, showLPG)) * 1000;
+        return originalValue * (1.0 / this.getPricePerBarrel(prelim, showCoke, info)) * 1000;
       case 'perCurrent':
         // GHG/barrel * barrel/currentPrice * g/kg
         return originalValue * (1.0 / info['Per $ Crude Oil - Current']) * 1000;
@@ -179,7 +179,7 @@ var utils = {
   },
 
   // Use prelim data and pricing info to determing blended price per barrel
-  getPricePerBarrel: function (prelim, showCoke, info, showLPG) {
+  getPricePerBarrel: function (prelim, showCoke, info) {
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
@@ -189,7 +189,8 @@ var utils = {
       prelim['Portion Diesel'] * Oci.prices.diesel.price +
       prelim['Portion Fuel Oil'] * Oci.prices.fuelOil.price +
       prelim['Portion Residual Fuels'] * Oci.prices.residualFuels.price +
-      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Oci.prices.lightEnds.price;
+      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Oci.prices.lightEnds.price +
+      prelim['Portion Liquefied Petroleum Gases (LPG)'] * Oci.prices.lpg.price;
 
     // Special conversion to get to per barrel
     // divide by PRELIM barrels per day but use 100k as fallback
@@ -198,14 +199,12 @@ var utils = {
     // Add extra if we're including petcoke, formulas are provided by Carnegie
     sum += (showCoke * (((prelim['Portion Petroleum Coke'] / 5) * Oci.prices.coke.price) / barrelsPerDay));
     sum += (showCoke * info['Portion Net Upstream Petcoke'] * Oci.prices.coke.price);
-    // Same as above for LPG
-    sum += (showLPG * ((prelim['Portion Liquefied Petroleum Gases (LPG)'] * Oci.prices.lpg.price) / barrelsPerDay));
 
     return sum;
   },
 
   // Use prelim data and pricing info to determing blended MJ per barrel
-  getMJPerBarrel: function (prelim, showCoke, info, showLPG) {
+  getMJPerBarrel: function (prelim, showCoke, info) {
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
@@ -215,7 +214,8 @@ var utils = {
       prelim['Portion Diesel'] * Number(Oci.data.lhv['Diesel']) +
       prelim['Portion Fuel Oil'] * Number(Oci.data.lhv['Fuel Oil']) +
       prelim['Portion Residual Fuels'] * Number(Oci.data.lhv['Residual Fuels']) +
-      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Number(Oci.data.lhv['Light Ends (RFG)']);
+      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Number(Oci.data.lhv['Light Ends (RFG)']) +
+      prelim['Portion Liquefied Petroleum Gases (LPG)'] * Number(Oci.data.lhv['Liquified Petroluem Gas (LPG)']);
 
     // divide by PRELIM barrels per day but use 100k as fallback
     sum = sum / barrelsPerDay;
@@ -223,8 +223,6 @@ var utils = {
     // Add extra if we're including petcoke, formulas are provided by Carnegie
     sum += (showCoke * ((prelim['Portion Petroleum Coke'] * Number(Oci.data.lhv['Petcoke Produced'])) / barrelsPerDay));
     sum += (showCoke * info['Portion Net Upstream Petcoke'] * Number(Oci.data.lhv['Net Upstream Petcoke Used']));
-    // Same as above for LPG
-    sum += (showLPG * ((prelim['Portion Liquefied Petroleum Gases (LPG)'] * Number(Oci.data.lhv['Liquified Petroluem Gas (LPG)'])) / barrelsPerDay));
 
     return sum;
   },
@@ -411,7 +409,7 @@ var utils = {
       case 'flaringToOilRatio':
         return 'Flaring-to-Oil-Ratio';
       case 'prodLPG':
-        return 'Portion Liquified Petroluem Gas (LPG)';
+        return 'Portion Liquefied Petroleum Gases (LPG)';
       case 'prodJet':
         return 'Portion Jet Fuel';
       case 'prodPetcoke':
@@ -559,7 +557,7 @@ var utils = {
       case 'flaringToOilRatio':
         return 'Flaring-to-Oil Ratio';
       case 'prodLPG':
-        return 'Liquified Petroluem Gas (LPG) Production';
+        return 'Liquefied Petroluem Gas (LPG) Production';
       case 'prodJet':
         return 'Jet Fuel Production';
       case 'prodPetcoke':
@@ -611,7 +609,7 @@ var utils = {
   getPRELIMModel: function (refinery, lpg) {
     var metadata = Oci.data.metadata;
     var ri = this.trimMetadataArray(metadata.refinery.split(',')).indexOf(refinery);
-    var li = Number(lpg);
+    var li = 1 - Number(lpg);
     // Generate model string
     var model = 'run';
     // If we don't have a match, return default
@@ -624,28 +622,27 @@ var utils = {
   },
 
   // Sum up combustion fields
-  getCombustionTotal: function (prelim, showCoke, showLPG) {
+  getCombustionTotal: function (prelim, showCoke) {
     var combustionArray = [prelim['Gasoline'], prelim['Jet Fuel'],
-      prelim['Diesel'], prelim['Fuel Oil'], prelim['Residual Fuels']];
+      prelim['Diesel'], prelim['Fuel Oil'], prelim['Residual Fuels'],
+      prelim['Liquefied Petroleum Gas (LPG)']];
 
     if (showCoke) {
       combustionArray.push(prelim['Petroleum Coke'] * showCoke);
       combustionArray.push(prelim['Net Upstream Petcoke'] * showCoke);
     }
-    if (showLPG) {
-      combustionArray.push(prelim['Liquefied Petroleum Gas (LPG)']);
-    }
+
     return d3.sum(combustionArray);
   },
 
   // Return combustion components
-  getDownstreamComponents: function (prelim, showCoke, showLPG, transport) {
+  getDownstreamComponents: function (prelim, showCoke, transport) {
     var outList = ['Heat', 'Steam', 'Electricity', 'Hydrogen', 'Fluid', 'Excess', 'Portion', 'Total', 'Unique', 'MJperbbl'];
 
     var objArray = _.filter(_.map(prelim, function (el, key) {
       return { name: key, value: el };
     }), function (el) {
-      return ['Petroleum Coke', 'Net Upstream Petcoke', 'Liquefied Petroleum Gas (LPG)'].indexOf(el.name) === -1;
+      return ['Petroleum Coke', 'Net Upstream Petcoke'].indexOf(el.name) === -1;
     });
 
     // add a combined petcoke object
@@ -653,12 +650,6 @@ var utils = {
       objArray.push({
         name: 'Petroleum Coke',
         value: (Number(prelim['Petroleum Coke']) * showCoke || 0) + (Number(prelim['Net Upstream Petcoke']) * showCoke || 0)
-      });
-    }
-    if (showLPG) {
-      objArray.push({
-        name: 'Liquefied Petroleum Gas (LPG)',
-        value: Number(prelim['Liquefied Petroleum Gas (LPG)'])
       });
     }
 
@@ -922,7 +913,7 @@ var utils = {
   },
 
   // Generates an oil object for plotting, potentially using default values
-  generateOilObject: function (oilKey, modelData, showCoke, showLPG, isComparison) {
+  generateOilObject: function (oilKey, modelData, showCoke, isComparison) {
     // if the oil key is a group instead of an oil...
     if (Object.keys(Oci.data.info).indexOf(oilKey) === -1) {
       // gather all matching oils
@@ -983,7 +974,7 @@ var utils = {
       var upstream = +opgee['Net lifecycle emissions'];
       var midstream = +utils.getRefiningTotal(prelim);
       var transport = +info[utils.getDatasetKey('transport')];
-      var combustion = +utils.getCombustionTotal(prelim, showCoke, showLPG);
+      var combustion = +utils.getCombustionTotal(prelim, showCoke);
 
       // Sum up for total
       var ghgTotal = d3.sum([upstream, midstream, transport, combustion]);
@@ -1003,7 +994,7 @@ var utils = {
         'gasToOilRatio': +opgee[utils.getDatasetKey('gasToOilRatio')],
         'type': info['Overall Crude Category'].trim(),
         'components': {
-          'downstream': utils.getDownstreamComponents(prelim, showCoke, showLPG, transport),
+          'downstream': utils.getDownstreamComponents(prelim, showCoke, transport),
           'midstream': utils.getRefiningComponents(prelim),
           'upstream': utils.getExtractionComponents(opgee)
         }

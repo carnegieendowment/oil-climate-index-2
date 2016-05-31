@@ -253,7 +253,7 @@ var OilDetails = BaseView.extend({
     var defaultModelData = {
       info: Oci.data.info,
       opgee: Oci.data.opgee[utils.getOPGEEModel('0', '0', '0')],
-      prelim: Oci.data.prelim[utils.getPRELIMModel('0 = Default', 0)]
+      prelim: Oci.data.prelim[utils.getPRELIMModel('0 = Default', 1)]
     };
 
     // Grab things based on the model we're using
@@ -265,8 +265,8 @@ var OilDetails = BaseView.extend({
     };
 
     this.chartData = [
-      utils.generateOilObject(this.oilKey, defaultModelData, true, params.lpg, true),
-      utils.generateOilObject(this.oilKey, modelData, params.showCoke, params.lpg, false)
+      utils.generateOilObject(this.oilKey, defaultModelData, true, true),
+      utils.generateOilObject(this.oilKey, modelData, params.showCoke, false)
     ];
   },
 
