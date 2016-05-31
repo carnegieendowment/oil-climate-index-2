@@ -29,6 +29,8 @@ Perform these steps on the OCI Consolidated Workbook (Sheet: OCI) to prepare it 
   c. Make sure these are the same values used in the special cases sheets (order doesn't matter though, it matches dynamically)
 4. Add a "tag" indicating the start of the special oils in row D; any text will work
 
+Note: to skip a certain refinery run for a specific oil, add the corresponding refinery number (1-4, from row 1030) to row 23 in the oil's column.
+
 ## Special processing
 
 1. Start with an prepared OPGEE model output workbook with results that correspond to the slider selections in the prepared file above. So for each permutation possible from the above step 3b, we should have one run (Solar Steam 15%, Water 75%, Flaring 50%, see more below in step 4)
