@@ -156,10 +156,10 @@ var CompareOils = BaseView.extend({
       var combustion = utils.getCombustionTotal(prelim, params.showCoke);
 
       // Adjust for any ratio
-      upstream = +utils.getValueForRatio(upstream, this.sortRatio, prelim, params.showCoke, info, params.lpg);
-      midstream = +utils.getValueForRatio(midstream, this.sortRatio, prelim, params.showCoke, info, params.lpg);
-      transport = +utils.getValueForRatio(transport, this.sortRatio, prelim, params.showCoke, info, params.lpg);
-      combustion = +utils.getValueForRatio(combustion, this.sortRatio, prelim, params.showCoke, info, params.lpg);
+      upstream = +utils.getValueForRatio(upstream, this.sortRatio, prelim, params.showCoke, info);
+      midstream = +utils.getValueForRatio(midstream, this.sortRatio, prelim, params.showCoke, info);
+      transport = +utils.getValueForRatio(transport, this.sortRatio, prelim, params.showCoke, info);
+      combustion = +utils.getValueForRatio(combustion, this.sortRatio, prelim, params.showCoke, info);
 
       // Sum up for total
       var ghgTotal = d3.sum([upstream, midstream, transport, combustion]);

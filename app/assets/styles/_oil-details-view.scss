@@ -47,8 +47,8 @@
     .value {
       margin-bottom: 0;
       color: $red;
-      .raw { 
-        color: darken($gray-light, 5); 
+      .raw {
+        color: darken($gray-light, 5);
       }
       #diff {
         font-size: 1.4em;
@@ -261,7 +261,7 @@
 
 #od-chart-cont {
   .panel-aside {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 }

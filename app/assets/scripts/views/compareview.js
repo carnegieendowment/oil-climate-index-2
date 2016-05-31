@@ -298,8 +298,8 @@ var CompareView = BaseView.extend({
     };
 
     this.chartData = [
-      utils.generateOilObject(this.comparisonOilKey, modelData, params.showCoke, params.lpg, true),
-      utils.generateOilObject(this.oilKey, modelData, params.showCoke, params.lpg, false)
+      utils.generateOilObject(this.comparisonOilKey, modelData, params.showCoke, true),
+      utils.generateOilObject(this.oilKey, modelData, params.showCoke, false)
     ];
     $('#model-total').html(this.chartData[1].ghgTotal.toFixed(0));
     $('#comparison-model-total').html(this.chartData[0].ghgTotal.toFixed(0));

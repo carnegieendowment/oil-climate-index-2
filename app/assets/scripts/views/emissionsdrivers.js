@@ -425,10 +425,10 @@ var EmissionsDrivers = BaseView.extend({
       var combustion = utils.getCombustionTotal(prelim, params.showCoke);
 
       // Adjust for any ratio
-      upstream = +utils.getValueForRatio(upstream, this.sortRatio, prelim, params.showCoke, info, params.lpg);
-      midstream = +utils.getValueForRatio(midstream, this.sortRatio, prelim, params.showCoke, info, params.lpg);
-      transport = +utils.getValueForRatio(transport, this.sortRatio, prelim, params.showCoke, info, params.lpg);
-      combustion = +utils.getValueForRatio(combustion, this.sortRatio, prelim, params.showCoke, info, params.lpg);
+      upstream = +utils.getValueForRatio(upstream, this.sortRatio, prelim, params.showCoke, info);
+      midstream = +utils.getValueForRatio(midstream, this.sortRatio, prelim, params.showCoke, info);
+      transport = +utils.getValueForRatio(transport, this.sortRatio, prelim, params.showCoke, info);
+      combustion = +utils.getValueForRatio(combustion, this.sortRatio, prelim, params.showCoke, info);
 
       // Sum up for total
       var ghgTotal = d3.sum([upstream, midstream, transport, combustion]);
@@ -457,7 +457,7 @@ var EmissionsDrivers = BaseView.extend({
         prodGasoline: +prelim[utils.getDatasetKey('prodGasoline')],
         prodDiesel: +prelim[utils.getDatasetKey('prodDiesel')],
         prodResidual: +prelim[utils.getDatasetKey('prodResidual')],
-        prodLPG: +prelim[utils.getDatasetKey('prodLPG')] * params.lpg,
+        prodLPG: +prelim[utils.getDatasetKey('prodLPG')],
         prodJet: +prelim[utils.getDatasetKey('prodJet')],
         prodPetcoke: (+prelim[utils.getDatasetKey('prodPetcoke')] + Number(info[utils.getDatasetKey('prodUpstreamPetcoke')])) * params.showCoke,
         currentMarketValue: +info['Per $ Crude Oil - Current'],
