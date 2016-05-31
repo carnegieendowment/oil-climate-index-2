@@ -1,5 +1,12 @@
 # Oil Climate Index
 
+## Site Updates
+
+See the following documents for more information:
+- [Data Processing](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/PROCESSING.md)
+- [Copy Edits](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/COPY.md)
+- [Geospatial Data](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/GEO.md)
+
 ## Development environment
 To set up the development environment for this website, you'll need to install the following on your system:
 
