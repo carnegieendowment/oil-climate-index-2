@@ -1,9 +1,9 @@
 {
   "Algeria Hassi R'Mel": [
-    "US Eagle Ford - Condensate",
+    "US Eagle Ford - Condensate Zone",
     "Australia Cossack",
     "Libya Waha",
-    "US Eagle Ford - Volatile oil",
+    "US Eagle Ford - Volatile Oil Zone",
     "Kazakhstan Tengiz"
   ],
   "Angola Girassol": [
@@ -28,8 +28,8 @@
     "Kuwait Burgan"
   ],
   "Australia Cossack": [
-    "US Eagle Ford - Condensate",
-    "US Eagle Ford - Volatile oil",
+    "US Eagle Ford - Condensate Zone",
+    "US Eagle Ford - Volatile Oil Zone",
     "Kazakhstan Tengiz",
     "UAE Murban",
     "Nigeria Agbami"
@@ -59,13 +59,13 @@
     "Iraq Kirkuk",
     "Azerbaijan Azeri",
     "US Thunder Horse",
-    "Canada Light Sweet SCO",
-    "Canada Foster Creek"
+    "Canada Athabasca DC SCO",
+    "Canada Cold Lake SAGD Dilbit"
   ],
   "China Bozhong": [
     "Indonesia Duri",
     "US Midway-Sunset",
-    "Venezuela Hamaca",
+    "Venezuela Hamaca SCO",
     "China Nanhai Light",
     "China QinHuangDao"
   ],
@@ -165,13 +165,13 @@
     "Iraq Zubair",
     "Iraq Rumaila",
     "Canada Hibernia",
-    "UK Forties Average"
+    "UK Forties Blend"
   ],
   "Kazakhstan Tengiz": [
     "China Nanhai Light",
     "Nigeria Agbami",
     "UAE Murban",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "West Texas Intermediate"
   ],
   "Kuwait Burgan": [
@@ -206,7 +206,7 @@
     "Australia Cossack",
     "Algeria Hassi R'Mel",
     "West Texas Intermediate",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "UAE Murban"
   ],
   "Nigeria Bonga": [
@@ -247,21 +247,21 @@
   "Norway Ekofisk": [
     "Norway Oseberg",
     "Norway North Sea Skarv",
-    "UK Forties Average",
+    "UK Forties Blend",
     "Dansk Blend",
     "Nigeria Bonny"
   ],
   "Norway Oseberg": [
     "Norway North Sea Skarv",
     "Norway Ekofisk",
-    "UK Forties Average",
+    "UK Forties Blend",
     "Dansk Blend",
     "Nigeria Bonny"
   ],
   "Norway North Sea Skarv": [
     "Norway Oseberg",
     "Norway Ekofisk",
-    "UK Forties Average",
+    "UK Forties Blend",
     "Dansk Blend",
     "Russia Chayvo"
   ],
@@ -277,7 +277,7 @@
     "Mexico Chuc",
     "US Thunder Horse",
     "Saudi Arabia Ghawar",
-    "UK Forties Average"
+    "UK Forties Blend"
   ],
   "Russia Romashkinskoye": [
     "Russia Samotlor",
@@ -324,7 +324,7 @@
   "UAE Murban": [
     "UAE Fateh",
     "West Texas Intermediate",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "Nigeria Agbami",
     "Australia Cossack"
   ],
@@ -337,43 +337,43 @@
   ],
   "US Bakken - Flaring": [
     "US Bakken - No flaring",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "US WC",
     "Nigeria Escravos Beach",
     "China Nanhai Light"
   ],
   "US Bakken - No flaring": [
     "US Bakken - Flaring",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "US WC",
     "Nigeria Escravos Beach",
     "China Nanhai Light"
   ],
-  "US Eagle Ford - Black oil": [
+  "US Eagle Ford - Black Oil Zone": [
     "US East Texas Field",
-    "US Eagle Ford - Volatile oil",
-    "US Eagle Ford - Condensate",
+    "US Eagle Ford - Volatile Oil Zone",
+    "US Eagle Ford - Condensate Zone",
     "West Texas Intermediate",
     "Nigeria Agbami"
   ],
-  "US Eagle Ford - Volatile oil": [
+  "US Eagle Ford - Volatile Oil Zone": [
     "US East Texas Field",
-    "US Eagle Ford - Black oil",
-    "US Eagle Ford - Condensate",
+    "US Eagle Ford - Black Oil Zone",
+    "US Eagle Ford - Condensate Zone",
     "West Texas Intermediate",
     "Algeria Hassi R'Mel"
   ],
-  "US Eagle Ford - Condensate": [
+  "US Eagle Ford - Condensate Zone": [
     "US East Texas Field",
-    "US Eagle Ford - Black oil",
-    "US Eagle Ford - Volatile oil",
+    "US Eagle Ford - Black Oil Zone",
+    "US Eagle Ford - Volatile Oil Zone",
     "Algeria Hassi R'Mel",
     "West Texas Intermediate"
   ],
   "US East Texas Field": [
-    "US Eagle Ford - Black oil",
-    "US Eagle Ford - Volatile oil",
-    "US Eagle Ford - Condensate",
+    "US Eagle Ford - Black Oil Zone",
+    "US Eagle Ford - Volatile Oil Zone",
+    "US Eagle Ford - Condensate Zone",
     "Mexico Cantarell",
     "US Yates"
   ],
@@ -392,7 +392,7 @@
     "Iran Marun"
   ],
   "US Midway-Sunset": [
-    "Venezuela Hamaca",
+    "Venezuela Hamaca SCO",
     "US Lake Washington Field",
     "US Salt Creek",
     "US Wilmington-Duffy",
@@ -429,14 +429,14 @@
   "West Texas Intermediate": [
     "US East Texas Field",
     "US Yates",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "UAE Murban",
     "Nigeria Agbami"
   ],
   "US Yates": [
     "US East Texas Field",
     "West Texas Intermediate",
-    "US Eagle Ford - Black oil",
+    "US Eagle Ford - Black Oil Zone",
     "US Lake Washington Field",
     "US Salt Creek"
   ],
@@ -448,42 +448,42 @@
     "US South Belridge"
   ],
   "Venezuela Tia Juana": [
-    "Venezuela Hamaca",
+    "Venezuela Hamaca SCO",
     "Venezuela Merey Blend",
     "Indonesia Duri",
     "US South Belridge",
     "China Bozhong"
   ],
-  "Canada Cold Lake": [
+  "Canada Cold Lake CSS Dilbit": [
     "Venezuela Merey Blend",
-    "Canada Foster Creek",
-    "Canada Medium Sweet SCO",
-    "Canada Light Sweet SCO",
+    "Canada Cold Lake SAGD Dilbit",
+    "Canada Athabasca FC-HC SCO",
+    "Canada Athabasca DC SCO",
     "Indonesia Duri"
   ],
-  "Canada Foster Creek": [
+  "Canada Cold Lake SAGD Dilbit": [
     "Venezuela Merey Blend",
-    "Canada Cold Lake",
-    "Canada Medium Sweet SCO",
-    "Canada Light Sweet SCO",
+    "Canada Cold Lake CSS Dilbit",
+    "Canada Athabasca FC-HC SCO",
+    "Canada Athabasca DC SCO",
     "Indonesia Duri"
   ],
-  "Canada Light Sweet SCO": [
-    "Venezuela Hamaca",
-    "Canada Medium Sweet SCO",
-    "Canada Cold Lake",
-    "Canada Foster Creek",
+  "Canada Athabasca DC SCO": [
+    "Venezuela Hamaca SCO",
+    "Canada Athabasca FC-HC SCO",
+    "Canada Cold Lake CSS Dilbit",
+    "Canada Cold Lake SAGD Dilbit",
     "Indonesia Duri"
   ],
-  "Canada Medium Sweet SCO": [
-    "Venezuela Hamaca",
-    "Canada Light Sweet SCO",
-    "Canada Cold Lake",
-    "Canada Foster Creek",
+  "Canada Athabasca FC-HC SCO": [
+    "Venezuela Hamaca SCO",
+    "Canada Athabasca DC SCO",
+    "Canada Cold Lake CSS Dilbit",
+    "Canada Cold Lake SAGD Dilbit",
     "Indonesia Duri"
   ],
   "Dansk Blend": [
-    "UK Forties Average",
+    "UK Forties Blend",
     "Norway Ekofisk",
     "Norway Oseberg",
     "Norway North Sea Skarv",
@@ -503,7 +503,7 @@
     "Colombia Cusiana",
     "Iraq Zubair"
   ],
-  "UK Forties Average": [
+  "UK Forties Blend": [
     "Dansk Blend",
     "Norway Ekofisk",
     "Norway Oseberg",
@@ -511,17 +511,17 @@
     "Iraq Kirkuk"
   ],
   "Venezuela Merey Blend": [
-    "Canada Cold Lake",
-    "Canada Foster Creek",
-    "Venezuela Hamaca",
+    "Canada Cold Lake CSS Dilbit",
+    "Canada Cold Lake SAGD Dilbit",
+    "Venezuela Hamaca SCO",
     "Venezuela Tia Juana",
     "China Bozhong"
   ],
-  "Venezuela Hamaca": [
-    "Canada Light Sweet SCO",
-    "Canada Medium Sweet SCO",
+  "Venezuela Hamaca SCO": [
+    "Canada Athabasca DC SCO",
+    "Canada Athabasca FC-HC SCO",
     "Venezuela Merey Blend",
     "Venezuela Tia Juana",
-    "Canada Foster Creek"
+    "Canada Cold Lake SAGD Dilbit"
   ]
 }
