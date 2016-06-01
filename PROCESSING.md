@@ -5,7 +5,7 @@ Below are instructions for using the OCI Consolidated Workbook plus an OPGEE mod
 1. Install [python](https://www.python.org/downloads/), [csvkit](http://csvkit.readthedocs.org/en/0.9.1/install.html#users), and [jq](http://stedolan.github.io/jq/download/); add each to the [path/environment variables](http://www.computerhope.com/issues/ch000549.htm) as you go.
 2. Open the prepared file, a slightly modified version of the OCI Consolidated workbook (see below)
 3. Run the macro
-  a. Select OPGEE model when prompted
+  1. Select OPGEE model when prompted
 4. **Close without saving**
 5. Perform any special processing (see below)
 6. Run the processing script: `process.bat`
