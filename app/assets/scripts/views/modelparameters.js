@@ -102,7 +102,7 @@ var ModelParameters = Backbone.View.extend({
     $('.value.water span').html(water + '%');
     var petcoke = parseInt(this.cokeSlider.get());
     $('.value.petcoke span').html(petcoke + '%');
-    var lpg = $('#toggle-lpg').is(':checked') ? 'Use' : 'Sell';
+    var lpg = $('#toggle-lpg').is(':checked') ? 'Sell' : 'Use';
     $('.value.lpg span').html(lpg);
     var refinery = $('#dropdown-refinery').val();
     switch (refinery) {

@@ -280,8 +280,11 @@ input[type=radio] {
   text-align: right;
 }
 .switch.lpg-override {
-  .switch-ui:after { content: "Sell"; }
-  input:checked ~ .switch-ui:after { content: "Use"; }
+  .switch-ui:after {
+    content: "Use";
+    padding-right: 10px;
+  }
+  input:checked ~ .switch-ui:after { content: "Sell"; }
 }
 .switch input:checked ~ .switch-ui {
   background: tint($base-color, 20%);
