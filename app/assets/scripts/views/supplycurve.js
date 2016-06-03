@@ -52,7 +52,7 @@ var SupplyCurve = BaseView.extend({
         var ghgTotal = utils.numberWithCommas(d.ghgTotal);
         var ghgPerMJ = utils.numberWithCommas(d.ghgPerMJ);
         var productionVolume = utils.numberWithCommas(d.productionVolume);
-        var total = utils.numberWithCommas(d.ghgTotal * d.productionVolume);
+        var total = utils.numberWithCommas(d.ghgTotal * d.productionVolume * 365 / (1000 * 1000000));
 
         var yValue;
         if (self.yProperty === 'perBarrel') {

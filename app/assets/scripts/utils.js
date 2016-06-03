@@ -461,7 +461,7 @@ var utils = {
       case 'productionVolume':
         return 'barrels per day';
       case 'emissionRate':
-        return 'kg CO<sub>2</sub> eq./day';
+        return 'million metric tons CO<sub>2</sub> eq./year';
       case 'yearsProduction':
         return 'Years';
       case 'sulfurContent':
