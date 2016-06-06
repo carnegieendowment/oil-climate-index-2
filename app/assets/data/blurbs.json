@@ -2,7 +2,6 @@
   "Algeria Hassi R’Mel": {
     "description": "An ultra-light, sweet, high-gas condensate produced south of Algiers, Algeria. Hassi R’Mel’s gas-to-oil ratio is among the highest in OCI Phase 2, and its venting, flaring, and fugitive methane emissions, as well as its emissions from gas processing, are accordingly high. However, as a net source of energy exports in the form of natural gas and natural gas liquids, Hassi R’Mel generates significant off-site emission credits, which moderate its overall upstream GHG emissions. OCI assay source: Algerian Condensate, BP"
   },
-
   "Angola Girassol": {
     "description": "A medium, sweet oil produced northwest of Luanda, in the vicinity of several other oil fields off the Angolan coast. Girassol’s upstream GHG emissions are moderate, in part due to its low water and gas content, minimizing the amount of energy used to extract the oil and its flaring, venting, and fugitive methane emissions. Producing and combusting the heavier products that result from refining this oil, however, contributes to its downstream emissions. Girassol is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Girassol, ExxonMobil "
   },
@@ -151,9 +150,9 @@
     "description": "A light, sour oil produced in the Eastern Province of Saudi Arabia. Ghawar, the oil field with the highest production volume in OCI Phase 2, has relatively low GHG emissions compared to other OCI Phase 2 sample oils due to its combination of low upstream extraction emissions, low energy intensity during refining, and low end-product combustion emissions. Ghawar is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Arab Light, Statiev"
   },
   "Saudi Arabia Safaniya": {
-    "description": "A medium, sour oil (also known as Arab Heavy) produced offshore Saudi Arabia in the Persian Gulf. Safaniya has a relatively low gas-to-oil ratio among the Saudi crudes in OCI Phase 2. Its refined product slate also includes a large share of emission-intensive residual fuels compared to other OCI Phase 2 oils. OCI assay source: Arab Heavy, Statiev": {
-    "description": " ": {
-    "description": "Saudi Arabia Zuluf": {
+    "description": "A medium, sour oil (also known as Arab Heavy) produced offshore Saudi Arabia in the Persian Gulf. Safaniya has a relatively low gas-to-oil ratio among the Saudi crudes in OCI Phase 2. Its refined product slate also includes a large share of emission-intensive residual fuels compared to other OCI Phase 2 oils. OCI assay source: Arab Heavy, Statiev"
+  },
+  "Saudi Arabia Zuluf": {
     "description": "A medium, sour oil with a relatively high gas content compared to other OCI Phase 2 Saudi oils that is produced offshore Saudi Arabia in the Persian Gulf. Zuluf’s upstream GHG emissions make up a large portion of its total emission profile, and they are driven by the venting and processing of associated gas. OCI assay source: Arab Medium, Statiev"
   },
   "United Arab Emirates Fateh": {
