@@ -1,95 +1,227 @@
 {
-  "Nigeria Agbami": {
-    "description": "A light, sweet, deepwater oil produced off the coast of West Africa. Agbami’s GHG emissions are low compared to other oils in the index because its moderate levels of gas are not highly flared like Nigeria Obagi or Bonny. OCI assay source: Chevron"
-  },
-  "U.S. Alaska North Slope": {
-    "description": "A medium, sweet oil produced from numerous fields along the coastline of the Arctic Ocean, the largest of which is Prudhoe Bay. Alaska North Slope’s GHG emissions are in the midrange because this gassy oil does not have a high flare rate. However, additional modeling is required to determine if drilling in the Arctic tundra has climate impacts that are not currently accounted for. OCI assay source: ExxonMobil"
-  },
-  "Azerbaijan Azeri Light": {
-    "description": "A light, sweet oil located offshore in the South Caspian basin that is used as a regional benchmark crude and accounts for the majority of Azerbaijan’s total current oil output. Azeri Light has one of the lowest estimated GHG emissions yet the highest current production rates of the 30 OCI test oils. OCI assay source: Chevron"
-  },
-  "Nigeria Bonny": {
-    "description": "An ultra-deep, light, sweet oil located in the Niger Delta basin. Bonny’s GHG emissions are currently high due to its flare rate. Reducing this oil’s flare-to-oil ratio by 90 percent of current levels through new gas handling infrastructure and improved operations could significantly reduce Bonny’s total GHG emissions. OCI assay source: Chevron"
-  },
-  "China Bozhong": {
-    "description": "A deep, heavy, sweet, gassy oil located offshore Beijing in the Bohai Bay that is currently operated by the China National Offshore Oil Corporation. Bozhong’s depth and its heavy makeup, in conjunction with its high gas content and high flare rate, means that this complex oil’s GHG emissions total is estimated to be one of the highest of the OCI test oils. OCI assay source: Chevron"
-  },
-  "UK Brent": {
-    "description": "A light, gassy, depleted oil in the North Sea’s UK sector that, despite its small current production volume, serves as a benchmark for international crude pricing. Brent’s GHG emissions rank high compared to other oils in the index—except for Nigeria Obagi and Bonny (which flare excessively) and Russia Chayvo (which is extremely deep)—due to its large surface-processing requirements to remove excess water and gas. OCI assay source: Chevron"
-  },
-  "Indonesia Duri": {
-    "description": "A heavy, thick, waxy oil located onshore in central Sumatra that contains very little associated gas. But large energy inputs are needed to produce steam and inject it into this shallow field to make this oil flow. Large total upstream emissions, together with the significant volume of hydrogen needed to refine this heavy oil into petroleum products, make Duri a high-GHG oil compared to others in the index. OCI assay source: Chevron"
-  },
-  "Norway Ekofisk": {
-    "description": "A deep, light, sweet oil located offshore in the North Sea that, like UK Brent and Forties, is one of the major crudes in the Brent benchmark blend. Due to an effective ban on flaring in Norway since the 1970s, Ekofisk has lower estimated GHGs than similar crudes, and it has the lowest emissions of all 30 OCI test oils. The majority of Ekofisk’s emissions (over 90 percent) occur downstream during the combustion of petroleum products. OCI assay source: BP"
-  },
-  "Brazil Frade": {
-    "description": "A shallow, heavy, sour oil located offshore in the Campos basin, northeast of Rio de Janeiro. Frade’s low gas-to-oil ratio translates into low upstream GHG extraction emissions compared to other heavy oils. Like other heavy crudes, refinery GHG emissions are significant because of the hydrogen needed to transform the crude into lighter products. OCI assay source: Chevron"
+  "Algeria Hassi R’Mel": {
+    "description": "An ultra-light, sweet, high-gas condensate produced south of Algiers, Algeria. Hassi R’Mel’s gas-to-oil ratio is among the highest in OCI Phase 2, and its venting, flaring, and fugitive methane emissions, as well as its emissions from gas processing, are accordingly high. However, as a net source of energy exports in the form of natural gas and natural gas liquids, Hassi R’Mel generates significant off-site emission credits, which moderate its overall upstream GHG emissions. OCI assay source: Algerian Condensate, BP"
   },
   "Angola Girassol": {
-    "description": "A shallow, medium, sweet oil located northwest of Luanda, in the vicinity of several other oil fields. Girassol’s GHG emissions are lower than the average of the OCI test oils because of its low water and gas content. But GHG emissions could be reduced further if less gas is flared. OCI assay source: ExxonMobil "
-  },
-  "Venezuela Hamaca": {
-    "description": "An extra-heavy oil produced in the Orinoco heavy-oil belt in central Venezuela. Hamaca’s upstream GHG emissions are high because it needs to be upgraded into a synthetic crude oil (SCO) before it is refined. OCI assay source: Knovel"
-  },
-  "Canada Hibernia": {
-    "description": "A light, sweet oil that is located offshore Newfoundland. Hibernia’s GHG emissions are lower than the average and are relatively comparable to the other conventional OCI test oils. OCI assay source: Chevron"
+    "description": "A medium, sweet oil produced northwest of Luanda, in the vicinity of several other oil fields off the Angolan coast. Girassol’s upstream GHG emissions are moderate, in part due to its low water and gas content, minimizing the amount of energy used to extract the oil and its flaring, venting, and fugitive methane emissions. Producing and combusting the heavier products that result from refining this oil, however, contributes to its downstream emissions. Girassol is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Girassol, ExxonMobil"
   },
   "Angola Kuito": {
-    "description": "A heavy, sweet oil that is produced west of Cabinda in North Angola. Kuito’s GHG emissions are closer to those of conventional test oils than extra-heavy test oils. OCI assay source: Chevron"
+    "description": "A sour oil that has an API gravity at the boundary between medium and heavy oils. Kuito is produced west of Cabinda in north Angola. As an exception to the general OCI rule, Kuito’s default refinery configuration is deep conversion, rather than medium conversion, due to its heavier gravity. As such, Kuito’s midstream GHG emissions are relatively high compared to other OCI Phase 2 oils. OCI assay source: Kuito, Chevron"
+  },
+  "Angola Takula": {
+    "description": "A medium, sweet, watery oil produced by several small platforms off the west coast of Cabinda Province in north Angola. Takula has the highest gas content of the OCI Phase 2 Angolan crudes and, as such, has the highest GHG emissions from venting, flaring, and fugitive methane emissions among these crudes. OCI assay source: Cabinda, Statiev"
+  },
+  "Australia Cossack": {
+    "description": "An ultra-light, sweet oil produced by the North West Shelf Project, offshore near the state of Western Australia. This project is a joint venture of many different companies, including Chevron whose assay has been used in OCI Phase 2. Cossack’s associated gas is largely not flared, although venting during gas processing contributes to its upstream GHG emissions. OCI assay source: Cossack, Chevron"
+  },
+  "Azerbaijan Azeri Light": {
+    "description": "A light, sweet oil located offshore in the South Caspian basin that is used as a regional benchmark crude and accounts for the majority of Azerbaijan’s total oil output as of early 2016. Water reinjection is used for secondary recovery of Azeri Light, though this process contributes only slightly to the oil’s upstream GHG emissions. OCI assay source: Azeri, Statoil"
+  },
+  "Brazil Frade": {
+    "description": "A heavy, sour oil located offshore in the Campos basin, northeast of Rio de Janeiro in Brazil. Frade’s low gas-to-oil ratio translates into low upstream GHG extraction emissions compared to other heavy oils. Like other heavy crudes, Frade’s refining GHG emissions are significant due to the large hydrogen requirements for processing the oil into lighter products. OCI assay source: Frade, Chevron"
   },
   "Brazil Lula": {
-    "description": "A medium, sweet, ultra-deep oil in the Santos basin offshore Rio de Janeiro. This Brazilian supergiant pre-salt oil has near-average emissions compared to the other OCI test oils, but GHG emissions could increase as drilling depths increase. OCI assay source: BG Group"
+    "description": "A medium, sweet, ultra-deep oil in the Santos basin offshore Rio de Janeiro in Brazil. This supergiant pre-salt oil field has a moderate gas content; processing this gas and concomitant venting lead to significant GHG emissions. Lula’s moderate carbon content leads to relatively high midstream refining emissions compared to other OCI Phase 2 oils. OCI assay source: Lula, BG Group"
   },
-  "U.S. Gulf Mars": {
-    "description": "A medium, sour oil produced in ultra-deep waters in the U.S. Gulf of Mexico that has seen increased investments in recent years to extend the field’s life. Mars’s GHG emissions are low compared to other test oils. OCI assay source: BP"
+  "Canada Hibernia": {
+    "description": "A light, sour oil that is located offshore Newfoundland, Canada. Hibernia’s GHG emissions are lower than the OCI Phase 2 average due to its low gas-to-oil ratio and low carbon content. OCI assay source: Hibernia, Exxon"
   },
-  "Canada Midale": {
-    "description": "A medium, sour oil produced in southern Saskatchewan, along the northern margin of the Williston basin (famous for the Bakken shale play). Midale’s GHG emissions are low for a depleting field. OCI assay source: Crude Monitor"
+  "Canada Cold Lake CSS Dilbit": {
+    "description": "An extra-heavy, high-sulfur bitumen from the Cold Lake region in Canada’s Alberta Province that is blended with approximately 25 percent condensate diluent, allowing it to flow through pipelines to refineries. This bitumen is extracted using cyclic steam stimulation (CSS) to loosen deeply buried bitumen in place. The bitumen’s high energy inputs, its large land-use footprint, and the petcoke generated from refining it contribute significantly to its GHG emissions. Dilbit is not equivalent on a per-barrel basis to conventional and synthetic oils in OCI Phase 2. OCI assay source: Cold Lake, Crude Monitor"
   },
-  "California Midway Sunset": {
-    "description": "A medium-to-heavy, sour, watery oil from one of the oldest and largest fields in California’s San Joaquin Valley. Midway Sunset’s GHG emissions are very high because a large volume of steam must be injected into the reservoir to loosen and allow it to flow and because its high water content means that extra energy is required to pump it out of the ground. OCI assay source: Knovel"
+  "Canada Cold Lake SAGD Dilbit": {
+    "description": "An extra-heavy, high-sulfur bitumen from the Cold Lake region in Canada’s Alberta Province that is blended with approximately 25 percent condensate diluent, allowing it to flow through pipelines to refineries. This bitumen is extracted using steam-assisted gravity drainage (SAGD) to loosen deep-underground bitumen in place. The bitumen’s high energy inputs, its large land-use footprint, and the petcoke generated from refining it contribute significantly to its GHG emissions. Dilbit is not equivalent on a per-barrel basis to conventional and synthetic oils in OCI Phase 2. OCI assay source: Christina Lake, Crude Monitor"
   },
-  "Nigeria Obagi": {
-    "description": "A light, sweet oil that is produced northwest of Port Harcourt in the Niger Delta. Obagi’s GHG emissions are high due to its high flare rate and because it is depleting. OCI assay source: Chevron"
+  "Canada Athabasca FC-HC SCO": {
+    "description": "An extra-heavy, high-sulfur bitumen mined from the Athabasca oil sands in Canada’s Alberta Province that is upgraded into a light, sweet synthetic crude oil (SCO) before transport to the refinery. Upgrading this oil requires a fluid coker (FC) unit and a hydroconversion (HC) system. Athabasca FC-HC SCO generates more GHG emissions in the upgrading process but fewer emissions in refining and end use compared to other SCOs in OCI Phase 2, owing to its lighter, upgraded gravity. OCI assay source: Suncor Synthetic A, Crude Monitor"
   },
-  "Kuwait Ratawi": {
-    "description": "A medium, sour oil produced from the partitioned neutral zone between Kuwait and Saudi Arabia. Ratawi’s GHG emissions are low relative to other medium-high gravity oils. OCI assay source: Chevron"
+  "Canada Athabasca DC SCO": {
+    "description": "An extra-heavy, high-sulfur bitumen mined from the Athabasca oil sands in Canada’s Alberta Province that is upgraded into a medium, sweet synthetic crude oil (SCO) before transport to the refinery. A delayed coker (DC) unit, which produces petcoke, is used to upgrade this oil, and high heat and hydrogen are associated with its refining. These processes make Athabasca DC SCO one of the most emission intensive of all current sample oils in OCI Phase 2. OCI assay source: Syncrude, Crude Monitor"
   },
-  "California South Belridge": {
-    "description": "A heavy, sweet oil from the San Joaquin Valley that, like Midway Sunset, makes use of steam-flooding techniques to enhance oil recovery. South Belridge has relatively high GHG emissions compared to the other OCI test oils. OCI assay source: Knovel"
+  "China Bozhong": {
+    "description": "A heavy, sweet, gassy oil located offshore China in Bohai Bay that is currently operated by the China National Offshore Oil Corporation. Bozhong’s GHG emissions are impacted by its high gas content, due to the venting and fugitive methane emissions that occur when processing its associated gas. Along with the petcoke produced from refining this heavy crude, these factors together lead to relatively high total emissions compared to other OCI Phase 2 oils. OCI assay source: Bozhong, Chevron"
   },
-  "Kazakhstan Tengiz": {
-    "description": "A light, sweet oil located in the low-lying wetlands along the northeast shores of the Caspian Sea. This deep, supergiant oil field has lower GHG emissions than the other OCI test oils. OCI assay source: Chevron"
+  "China Nanhai Light": {
+    "description": "A light, sweet, deepwater oil from the Huizhou field produced offshore in the South China Sea, near the coast of Guangdong Province. Nanhai Light’s associated gas is moderately flared, despite its significant gas content, which contributes substantially to its upstream GHG emissions. OCI assay source: Nanhai Light, Chevron"
   },
-  "U.S. Gulf Thunder Horse": {
-    "description": "A light, sweet oil located offshore in the U.S. Gulf of Mexico. Thunder Horse’s GHG emissions are relatively low compared to other ultra-deep oils in part because it is not particularly gassy. OCI assay source: ExxonMobil"
+  "China Qinhuangdao": {
+    "description": "A heavy, sweet oil produced southeast of Beijing in China’s Bohai Bay. Qinhuangdao’s GHG emissions stem from the significant amounts of heat and hydrogen required to refine the heavy oil into petroleum products. The petroleum products produced when Qinhuangdao is refined, particularly petcoke, are emission intensive and contribute considerably to its total emissions when combusted. OCI assay source: Qinhuangdao, Chevron"
   },
-  "California Wilmington": {
-    "description": "A heavy, sweet oil located south of Los Angeles. Wilmington’s GHG emissions are relatively high due to its water content, which is the highest of the 30 OCI test oils. OCI assay source: Knovel"
+  "Colombia Caño Limón": {
+    "description": "A medium, sour oil produced in Colombia’s eastern Andes region. Caño Limón’s GHG emission drivers are land-use disruption upstream when developing drilling sites and a slate of heavier products produced when the oil is refined. OCI assay source: Caño Limón, Statiev"
+  },
+  "Colombia Cusiana": {
+    "description": "A light, sour, ultra-deep oil produced in the Llanos Foothills in Colombia’s eastern Andes region. The high heat and hydrogen required to process Cusiana at the refinery leads to high midstream GHG emissions. OCI assay source: Cusiana, Crude Oil Analysis Database"
+  },
+  "Denmark Dansk Blend": {
+    "description": "A blend of sweet, light, crude oils that are from several fields off Denmark’s coast in the North Sea, including the Dan, Gorm, and Tyra fields. The Dansk Blend’s relatively high GHG emissions during production compared to other OCI Phase 2 oils result from flaring its associated gas. OCI assay source: Dansk Blend, Statiev"
+  },
+  "Ecuador Sacha": {
+    "description": "A medium, sour oil that is produced in the Oriente basin located under the Amazon River in Ecuador. Oriente’s flaring rate is relatively high compared to other OCI Phase 2 oils given its high gas-to-oil ratio, which, along with land-use disruption when developing sites for drilling, drives the oil’s upstream GHG emissions. Sacha is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Oriente, Statiev"
+  },
+  "India Bombay High": {
+    "description": "A light, sweet oil produced off the coast of Mumbai, India. Bombay High’s gas content leads to high upstream GHG emissions from venting, flaring, and fugitive methane emissions. Energy-intensive enhanced oil recovery practices also impact the oil’s upstream GHG emissions. OCI assay source: Bombay High, Crude Oil Analysis Database"
+  },
+  "Indonesia Duri": {
+    "description": "A heavy, sweet oil that is unusually waxy and located onshore in the central Sumatran basin in Indonesia’s Riau Province. Duri requires large energy inputs to produce steam and inject it into this shallow field to make the oil flow. A significant volume of hydrogen is also required to refine this heavy oil into petroleum products. Duri is located in a carbon-rich forested ecosystem, and elevated GHG emissions are released from the soil and surrounding biomass when sites are developed for drilling. OCI assay source: Duri, Chevron"
+  },
+  "Indonesia Minas": {
+    "description": "A light, sweet oil produced onshore in the central Sumatran basin in Indonesia’s Riau Province. Minas is extracted from a depleted field, and the energy-intensive methods used to recover the oil, including pumping and water reinjection, lead to high upstream GHG emissions. Minas is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Sumatran Light, Chevron"
+  },
+  "Iran Aboozar": {
+    "description": "A medium, sour oil that is produced offshore in the Persian Gulf, west of Kharg Island and the Iranian coast. Aboozar’s upstream GHG emissions result from flaring its associated gas. OCI assay source: Ardeshir, Crude Oil Analysis Database"
+  },
+  "Iran Marun": {
+    "description": "A sour, depleted oil with a gravity on the boundary between light and medium that is produced northeast of Omidiyeh City in western Iran. Extracting Marun requires energy-intensive pumping methods due to its high water content, a process that contributes to its upstream GHG emissions. Land-use disruption when developing drilling sites and moderately flaring and venting the oil’s associated gas also generate upstream emissions. Marun is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Iranian Heavy, Crude Oil Analysis Database"
+  },
+  "Iraq Kirkuk": {
+    "description": "A light, sour oil produced in northern Iraq, close to the city of Kirkuk. The oil’s moderate gas content leads to flaring and venting, which contribute to its high upstream GHG emissions. OCI assay source: Kirkuk, Oil & Gas Journal"
+  },
+  "Iraq Rumaila": {
+    "description": "A medium, sour oil produced in southern Iraq, near the Kuwaiti border. Flaring of the gas associated with producing Rumaila oil contributes significantly to its upstream GHG emissions. OCI assay source: Basrah Medium, Crude Oil Analysis Database"
+  },
+  "Iraq West Qurna": {
+    "description": "A medium, extremely sour oil produced in southern Iraq, north of the city of Basra. West Qurna’s upstream GHG emissions result from flaring the associated gas and land-use disruption when developing sites for drilling. OCI assay source: Basra Heavy, Oil & Gas Journal"
   },
   "Iraq Zubair": {
-    "description": "A medium, sour oil from a large, deep field located west of Basra (the oil is also sometimes called Basra). Zubair has average GHG emissions compared to the other OCI test oils, but flaring of the oil needs to be limited in order to maintain this emission profile. OCI assay source: BP"
+    "description": "A medium, sour, ultra-deep oil produced in southern Iraq, west of the city of Basra. Flaring drives Zubair’s GHG emissions, and the oil’s flare rates are among the highest of all the OCI Phase 2 oils. Zubair (also known as Basra Light) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Basra Light, BP"
   },
-  "UK Forties": {
-    "description": "A light, sweet oil from the UK’s largest offshore field in the North Sea. Like Ekofisk and Brent, Forties is a Brent benchmark crude; however, its GHG emissions are lower because it is not as depleted as other OCI test oils in the same category. OCI assay source: BP"
+  "Kazakhstan Tengiz": {
+    "description": "An ultra-light, sour, ultra-deep oil located in the low-lying wetlands of western Kazakhstan along the northeast shores of the Caspian Sea. The high heat required to process Tengiz at the refinery drives its GHG emissions. OCI assay source: Tengiz, Chevron"
+  },
+  "Kuwait Burgan": {
+    "description": "A medium, sour oil produced southeast of Kuwait City in the center of the country. Hydrogen is required to refine this medium oil because of its high carbon content. The process of producing that hydrogen is energy-intensive and drives Burgan’s GHG emissions. OCI assay source: Wafra, Oil & Gas Journal"
+  },
+  "Kuwait Ratawi": {
+    "description": "A medium, extremely sour oil produced from the partitioned neutral zone between Kuwait and Saudi Arabia. Ratawi’s upstream GHG emissions from flaring its associated gas are high though its gas-to-oil ratio is relatively low compared to other OCI Phase 2 oils. OCI assay source: Ratawi, Chevron"
+  },
+  "Libya Waha": {
+    "description": "A depleted, light, sour, watery oil produced in the north-central region of Libya’s Sirte basin. Energy-intensive pumping techniques are required to extract the oil because of its high water content, and Waha’s associated gas is vented. Both processes contribute to its upstream GHG emissions. Waha (also identified as Es Sider) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Es Sider, Total"
+  },
+  "Mexico Cantarell": {
+    "description": "A depleted, medium, sour oil produced offshore in Mexico’s Bay of Campeche. Cantarell’s upstream GHG emissions result from the energy-intensive processes used to improve oil recovery, which include injecting nitrogen gas into the reservoir to boost the field’s production rates. OCI assay source: Maya, Statiev"
+  },
+  "Mexico Chuc": {
+    "description": "A light, sour, ultra-deep oil produced offshore in Mexico’s Bay of Campeche. Energy-intensive pumping methods are required to extract Chuc due to its relatively high water content, driving the oil’s upstream GHG emissions compared to other OCI Phase 2 oils. Chuc (also identified as Isthmus) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Isthmus, Statiev"
+  },
+  "Nigeria Agbami": {
+    "description": "An ultra-light, sweet, ultra-deep oil produced off Nigeria’s coast. Agbami’s GHG emissions are low compared to other modeled Nigerian crudes because its moderate level of gas is flared less than that of the other Nigerian oils in OCI Phase 2. OCI assay source: Agbami, Chevron"
+  },
+  "Nigeria Bonga": {
+    "description": "A medium, sweet oil produced off the coast of the Niger delta in southern Nigeria. Combustion of Bonga’s end-use products drives the oil’s downstream GHG emissions. The Bonga field is currently slated for abandonment in 2019 due to its low production volume. OCI assay source: Bonga, Exxon"
+  },
+  "Nigeria Bonny": {
+    "description": "A light, sweet, ultra-deep oil located in the Niger delta basin in southern Nigeria. Bonny has the highest gas-to-oil ratio of any OCI Phase 2 oil, and its gas is not well managed, leading to high GHG emission levels from flaring and venting. Bonny is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Bonny Light, Chevron"
+  },
+  "Nigeria Escravos Beach": {
+    "description": "A light, sweet oil produced off the coast of the Niger delta in southern Nigeria. Escravos Beach has the highest flaring emissions of any OCI Phase 2 oil, according to government-reported data. However, satellite data place Escravos Beach’s flaring volume at even higher levels than what is officially reported. OCI assay source: Escravos Beach, Chevron"
+  },
+  "Nigeria Obagi": {
+    "description": "A light, sweet oil that is produced northwest of Port Harcourt in the Niger delta in southern Nigeria. Obagi has high levels of associated gas, which is poorly managed. As a result, the oil has high flaring and venting rates that lead to high upstream GHG emissions. Combustion of Obagi’s end-use products contributes to relatively high downstream emissions compared to other light, sweet OCI Phase 2 oils. OCI assay source: Bonny Light, Chevron"
+  },
+  "Nigeria Pennington": {
+    "description": "A light, sweet oil produced from an ultra-deep well in shallow water off the coast of Nigeria. Pennington’s upstream GHG emissions are relatively high due to the flaring of its associated gas, though its gas-to-oil ratio is moderate compared to other Nigerian crudes included in OCI Phase 2. OCI assay source: Pennington, Chevron"
+  },
+  "Norway Ekofisk": {
+    "description": "A light, sweet oil produced in the North Sea off Norway’s coast, which, like UK Forties and Norway Oseberg, is one of the crudes that make up the widely cited Brent benchmark crude basket. Ekofisk’s upstream GHG emissions are moderate in spite of its relatively high gas-to-oil ratio compared to other OCI Phase 2 oils due to the responsible management of its associated gas. OCI assay source: Ekofisk, Statoil"
+  },
+  "Norway Skarv": {
+    "description": "A light, sweet, ultra-deep oil produced offshore Norway in the Norwegian Sea. Skarv’s gas-to-oil ratio is among the highest in the sample of OCI Phase 2 oils. The emissions associated with processing and venting the gas are accordingly high, though Skarv’s associated gas is relatively well managed compared to other OCI Phase 2 oils. OCI assay source: Skarv, BP"
+  },
+  "Norway Oseberg": {
+    "description": "A light, sweet oil produced offshore Norway in the North Sea that, like UK Forties and Norway Ekofisk, is one of the major crudes in the Brent benchmark crude basket. Oseberg’s upstream GHG emissions are relatively high compared to other OCI Phase 2 oils. It has a high gas-to-oil ratio, and gas is vented during processing though Oseberg’s flaring rate is low for an OCI Phase 2 oil. OCI assay source: Oseberg, Statoil"
+  },
+  "Qatar Bul Hanine": {
+    "description": "A light, sour oil located off Qatar’s east coast. Bul Hanine’s emissions are moderate all around. Its upstream GHG emissions mostly arise from the venting and flaring of its associated gas. Bul Hanine is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Marine Qatar, Oil & Gas Journal"
+  },
+  "Qatar Dukhan": {
+    "description": "A light, sour oil from a field on Qatar’s west coast that has been in production for over seventy-five years and is depleted. Dukhan’s high level of associated gas is difficult to manage, leading to moderate upstream GHG emissions from processing, venting, flaring, and fugitive methane emissions. Further, extracting Dukhan requires enhanced oil recovery techniques that also result in GHG emissions, including water and gas reinjection to compensate for the reservoir’s low pressure. OCI assay source: Dukhan, Crude Oil Analysis Database"
   },
   "Russia Chayvo": {
-    "description": "A light, sweet oil located off Sakhalin Island in eastern Russia (also named Sokol). Chayvo’s GHG emissions are currently estimated to be average, compared to the other OCI test oils. Further research is needed, however, to fully assess the effects of the record-setting depth of Chayvo’s directionally drilled wells. OCI assay source: ExxonMobil"
+    "description": "A light, sweet, ultra-deep oil (also known as Sokol) produced offshore Sakhalin Island in eastern Russia. While Chayvo’s GHG emissions are estimated to be average compared to the other OCI Phase 2 oils, further research is needed to assess the effects of the record-setting depth of Chayvo’s directionally drilled wells. These wells are not drilled vertically, as is conventional, but instead resemble steps, going down in segments to their final depths. OCI assay source: Sokol, ExxonMobil"
   },
-  "Canada Cold Lake Diluted Bitumen (Dilbit)": {
-    "description": "An extra-heavy, high-sulfur bitumen produced from Alberta’s Cold Lake region that is not upgraded before transport to the refinery and is modeled as dilbit (75 percent bitumen and 25 percent diluent). That means Cold Lake’s GHG emissions are not based on an equivalent barrel of oil. If this dilbit’s emissions were calculated per equivalent barrel of oil (considering bitumen only), Cold Lake’s GHG emissions would be far greater than what is reported in the OCI. OCI assay source: Crude Monitor"
+  "Russia Romashkinskoye": {
+    "description": "A medium, sour oil from a large and depleted oil field in the Tatarstan Republic of Russia, east of Moscow. Romashkinskoye’s upstream land-use emissions are above the median for OCI Phase 2 sample oils. This crude is heavier than the other Russian oils modeled and has higher emissions because refining it requires the production of hydrogen. OCI assay source: Russian Export Blend, Statiev"
   },
-  "Canada Suncor Synthetic H (SCO)": {
-    "description": "An extra-heavy, high-sulfur bitumen mined from Alberta’s Athabasca oil sands and upgraded into a medium, sour synthetic crude oil (SCO) before transport to the refinery. Suncor Synthetic H SCO’s API gravity of 19.5 results in higher total GHG emissions than Synthetic A SCO. OCI assay source: Crude Monitor"
+  "Russia Samotlor": {
+    "description": "A light, sweet, watery oil produced at Lake Samotlor in central Russia. Samotlor’s upstream GHG emissions are impacted by its high water-to-oil ratio; extracting the oil requires energy-intensive pumping and heavy lifting operations. OCI assay source: Siberian Light, Crude Oil Analysis Database"
   },
-  "Canada Suncor Synthetic A (SCO)": {
-    "description": "An extra-heavy, high-sulfur bitumen mined from Alberta’s Athabasca oil sands and upgraded into a light, sweet synthetic crude oil (SCO) before transport to the refinery. Suncor Synthetic A SCO is upgraded to 32.8 API, compared to 19.5 for Synthetic H SCO. As such, Synthetic A SCO emits more GHG emissions in upgrading, but fewer emissions in refining and end use compared to Synthetic H SCO. OCI assay source: Crude Monitor"
+  "Saudi Arabia Ghawar": {
+    "description": "A light, sour oil produced in the Eastern Province of Saudi Arabia. Ghawar, the oil field with the highest production volume in OCI Phase 2, has relatively low GHG emissions compared to other OCI Phase 2 sample oils due to its combination of low upstream extraction emissions, low energy intensity during refining, and low end-product combustion emissions. Ghawar is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Arab Light, Statiev"
   },
-  "Canada Syncrude Synthetic (SCO)": {
-    "description": "An extra-heavy, high-sulfur bitumen mined from Alberta’s Athabasca oil sands and upgraded into a light, sweet synthetic crude oil (SCO) before transport to the refinery. Syncrude Synthetic SCO yields less petcoke with lower downstream emissions than both Suncor Synthetic A SCO and Suncor Synthetic H SCO. OCI assay source: Crude Monitor"
+  "Saudi Arabia Safaniya": {
+    "description": "A medium, sour oil (also known as Arab Heavy) produced offshore Saudi Arabia in the Persian Gulf. Safaniya has a relatively low gas-to-oil ratio among the Saudi crudes in OCI Phase 2. Its refined product slate also includes a large share of emission-intensive residual fuels compared to other OCI Phase 2 oils. OCI assay source: Arab Heavy, Statiev"
   },
-  "Light": {
-    "description": "Light Oil"
+  "Saudi Arabia Zuluf": {
+    "description": "A medium, sour oil with a relatively high gas content compared to other OCI Phase 2 Saudi oils that is produced offshore Saudi Arabia in the Persian Gulf. Zuluf’s upstream GHG emissions make up a large portion of its total emission profile, and they are driven by the venting and processing of associated gas. OCI assay source: Arab Medium, Statiev"
+  },
+  "United Arab Emirates Fateh": {
+    "description": "A medium, sour, slightly gassy oil produced offshore Dubai, a UAE emirate, in the Persian Gulf. The high heat and hydrogen required to process Fateh at the refinery leads to high midstream GHG emissions. Fateh is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Fateh, Crude Oil Analysis Database"
+  },
+  "United Arab Emirates Murban": {
+    "description": "A light, sour oil produced offshore Abu Dhabi, a UAE emirate, in the Persian Gulf. Murban’s emissions are some of the lowest among the OCI Phase 2 sample oils because its production and refining emissions are moderate and its refined product slate includes some of the lowest-emitting combustible products. Murban is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Murban, BP"
+  },
+  "UK Forties Blend": {
+    "description": "A light, sour oil from the UK’s largest offshore field in the North Sea. Like Norway Ekofisk and Oseberg, the Forties Blend is a Brent benchmark crude. Its GHG emissions are lower than other OCI Phase 2 sample oils in the Brent basket because it is not as depleted. Two different techniques are used to recover the oil and contribute to these emissions—downhole pumping to lift this oil along with its associated gas. OCI assay source: Forties Blend, BP"
+  },
+  "U.S. Alaska North Slope": {
+    "description": "A medium, sour, high-gas oil produced from numerous U.S. fields along the coast of the Arctic Ocean, the largest of which is Prudhoe Bay. Alaska North Slope (also known as ANS) does not have a high flare rate, but its GHG emissions from venting methane are relatively high; the gas reinjection technique used to improve oil recovery leads to emissions that are among the highest in OCI Phase 2. Additional modeling is required to determine if drilling, production, and crude transport in this carbon-rich Arctic ecosystem have climate impacts that are not accurately accounted for in OCI Phase 2. Alaska North Slope is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Alaska North Slope, ExxonMobil"
+  },
+  "U.S. Bakken Flare": {
+    "description": "A light, sweet oil from the multijurisdictional Williston basin that spans the U.S. states of Montana, North Dakota, and South Dakota and into Saskatchewan, Canada. Bakken’s moderate gas content, when flared, results in high upstream GHG emissions. Producing oil from a significant share of current Bakken wells involves operations that flare a significant portion of associated gas. OCI assay source: Bakken, multiple sources including the MHA Nation, North Dakota Association of Rural Electric Cooperatives, and K. J. Bryden "
+  },
+  "U.S. Bakken No Flare": {
+    "description": "A light, sweet oil from the multijurisdictional Williston basin that spans the U.S. states of Montana, North Dakota, and South Dakota and into Saskatchewan, Canada. Bakken’s upstream GHG emissions are low when its associated gas is well managed and not flared or otherwise released. Because Bakken’s ratio of carbon to hydrogen is relatively low compared to other OCI Phase 2 oils, its refining and combustion emissions are likewise relatively low. OCI assay source: Bakken, multiple sources including MHA Nation, North Dakota Association of Rural Electric Cooperatives, and K. J. Bryden"
+  },
+  "U.S. Texas Eagle Ford Black Oil Zone": {
+    "description": "A light, sweet oil from the complex Eagle Ford play in the U.S. state of Texas with production zones ranging from oil to gas. In the Black Oil production zone, Eagle Ford’s moderate gas-to-oil ratio leads to moderate levels of GHG emissions from venting and flaring the associated gas during processing. OCI assay source: Proxy assay—West Texas Intermediate, Statiev"
+  },
+  "U.S. Texas Eagle Ford Volatile Oil Zone": {
+    "description": "An ultra-light, sweet oil from the complex Eagle Ford play in the U.S. state of Texas with production zones ranging from oil to gas. This Eagle Ford oil zone exists in a gaseous phase while under pressure in the reservoir. The Eagle Ford Volatile Oil has a higher gas-to-oil ratio than other resources from this play, but the natural gas produced alongside the oil can be exported, which generates an off-site emission credit. OCI assay source: Proxy assay—Aasgard Blend, Statoil"
+  },
+  "U.S. Texas Eagle Ford Condensate Zone": {
+    "description": "A sweet oil from the complex Eagle Ford play in the U.S. state of Texas with production zones ranging from oil to gas. Eagle Ford Condensate has almost ten times as much associated gas as light Eagle Ford Black Oil. For this reason, collecting and processing this oil’s gas produces emissions—venting, flaring, and fugitive methane emissions—that are among the highest of the OCI Phase 2 sample oils. However, the sale of natural gas and natural gas liquids generates off-site emission credits that moderate the oil’s upstream GHG emissions. OCI assay source: Proxy assay—Snohvit Condensate, Statoil"
+  },
+  "U.S. East Texas": {
+    "description": "A light, sweet oil that has been in production for nearly a century from a large oil field covering east Texas and bounded by Louisiana, two U.S. states. Extracting oil from this depleted field requires water-reinjection-based enhanced oil recovery as well as energy-intensive pumping, the latter of which contributes significantly to its upstream GHG emissions. East Texas (also known as East Texas Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: East Texas Sweet, Crude Oil Analysis Database"
+  },
+  "U.S. Louisiana Lake Washington": {
+    "description": "A light, sweet, depleted oil from the coast of the U.S. state of Louisiana. Some of the most emission-intensive production practices among the OCI Phase 2 oils are used to extract Lake Washington. This oil’s GHG emission driver is the combustion associated with energy-intensive pumping operations. Lake Washington (also identified as Louisiana Light Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Louisiana Light Sweet, Statiev"
+  },
+  "U.S. Gulf Mars": {
+    "description": "A medium, sour, ultra-deep oil in the U.S. Gulf of Mexico, southeast of New Orleans. Mars has a relatively high gas-to-oil ratio compared to other OCI Phase 2 oils, and venting this gas contributes significantly to the oil’s upstream GHG emissions. OCI assay source: Mars, BP"
+  },
+  "U.S. California Midway Sunset": {
+    "description": "A sour, watery oil from the U.S. state of California whose gravities range from medium to extra-heavy. Complex and depleted, Midway Sunset is one of the oldest and largest fields in the San Joaquin Valley and has been in production for one hundred twenty years. Its GHG emissions are very high due to the large volume of steam injected into the reservoir to loosen and allow oil to flow, and its high water content means that extra energy is required to pump it out of the ground. Midway Sunset’s heavy oil, which borders on being extra-heavy oil at 13 API gravity, is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Midway Sunset, Knovel"
+  },
+  "U.S. Wyoming Salt Creek": {
+    "description": "A light, sweet, depleted oil from central Wyoming, a U.S. state, that has been in production for over one hundred twenty years. The energy required to pump the oil adds to Salt Creek’s moderately high upstream GHG emissions, as does the significant development of land for drilling in a somewhat carbon-rich ecosystem. Salt Creek (also identified as Wyoming Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Wyoming Sweet, Crude Oil Analysis Database"
+  },
+  "U.S. California South Belridge": {
+    "description": "A heavy to extra-heavy, sweet, depleted oil from the San Joaquin Valley that has been in production for over a century in the U.S. state of California. South Belridge requires steam-flooding techniques to loosen the oil and improve oil recovery, contributing to upstreamGHG emissions. The production of hydrogen to refine this heavier oil into petroleum products generates midstream emissions. These processes lead to the oil’s high total GHG emissions. OCI assay source: Belridge, Knovel"
+  },
+  "U.S. Texas Spraberry": {
+    "description": "A light, sweet oil from the Permian basin in west Texas, a U.S. state, that has been in production for nearly seventy years. Extracting Spraberry requires energy-intensive pumping techniques because the field is depleted, and this process contributes to the oil’s upstream GHG emissions. Given the oil’s high gas-to-oil ratio, combustion and venting of the gas generate upstream GHG emissions. Spraberry (also identified as West Texas Intermediate or WTI) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: West Texas Intermediate, Statiev"
+  },
+  "U.S. Gulf Thunder Horse": {
+    "description": "A light, sour oil located offshore in the U.S. Gulf of Mexico, southeast of New Orleans. Thunder Horse’s GHG emissions are relatively low compared to other ultra-deep oils in part because it is not particularly gassy. OCI assay source: Thunder Horse, BP "
+  },
+  "U.S. Wyoming WC": {
+    "description": "A light, sweet oil from the Niobrara play in central Wyoming, a U.S. state. WC’s gas-to-oil ratio is among the highest of the OCI Phase 2 sample oils, and its gas is composed of heavier hydrocarbons like ethane and butane, requiring processing that both is energy intensive and entails occasional venting. WC’s venting and flaring emissions are thus among the highest of U.S. oils in the sample, though they are offset in part by natural gas that is captured upstream and exported. WC (also identified as Wyoming Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Wyoming Sweet, Crude Oil Analysis Database"
+  },
+  "U.S. Texas Yates": {
+    "description": "A light, sour, depleted crude from the Permian basin in west Texas, a U.S. state, that has been in production for over ninety years. Though enhanced oil recovery techniques are used to extract Yates, these do not greatly contribute to its emissions intensity. Yates (also identified as West Texas Sour) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: West Texas Sour, Statiev"
+  },
+  "U.S. California Wilmington": {
+    "description": "A heavy, sour oil located in southern Los Angeles County. Running pumps to extract this watery, depleted crude from the reservoir generates Wilmington’s upstream GHG emissions. Petcoke is produced when this heavy oil is refined. When exported and combusted, the petcoke contributes significantly to Wilmington’s downstream GHG emissions. OCI assay source: Wilmington, Knovel"
+  },
+  "Venezuela Hamaca SCO": {
+    "description": "An extra-heavy, sour oil produced in the Orinoco heavy-oil belt in central Venezuela. Hamaca’s upstream GHG emissions are high because it is upgraded into a synthetic crude oil (SCO) before it is refined. Hamaca is also produced in a highly developed, carbon-rich (forested) ecosystem, and elevated GHG emissions are released from the soil and from biomass when sites are developed for drilling. OCI assay source: Hamaca, Knovel"
+  },
+  "Venezuela Merey Blend": {
+    "description": "A 60/40 blend of extra-heavy, sour oil from the Orinoco heavy-oil belt and light Santa Barbara oil. The Merey Blend’s upstream GHG emissions are high due to the steam used to extract the viscous oil and the land-use disruption to the surrounding carbon-rich soil and biomass when drilling sites are developed. Heat and hydrogen are required to refine the oil, and petcoke is produced in the process; both of these factors contribute to Merey’s high emissions. The Merey Blend is one of the OCI Phase 2 oils whose price is tracked and reported monthly. This oil is blended to facilitate transport and is not equivalent on a per-barrel basis to conventional and synthetic oils in the OCI. OCI assay source: Merey, Oil & Gas Journal"
+  },
+  "Venezuela Tia Juana": {
+    "description": "An extra-heavy, sour oil from the vicinity of Lake Maracaibo. Tia Juana’s upstream GHG emissions result from land-use disruption and steam-based enhanced oil recovery techniques during its extraction. Refining emissions are high due to the hydrogen production this extra-heavy oil requires and the combustion of petcoke that process generates. OCI assay source: Tia Juana, Statiev"
   }
 }
