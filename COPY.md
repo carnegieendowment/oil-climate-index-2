@@ -44,6 +44,10 @@ These are editable from [blurbs.json](https://github.com/carnegieendowment/oil-c
 
 Each oil details view and compare view will show up 5 related oils at the bottom of the page and as suggestions in the "compare" button. These are editable from [related.json](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/app/assets/data/related.json) in a similar way to the blurbs: each JSON key is the Unique Oil Name and the values are arrays of 5 other Unique Oil Names.
 
+This same file will also accept keys which match the Oil Type Names and the `description` will appear on hover as shown:
+
+![oil types](doc-images/oil-types.png)
+
 #### Prices
 
 The default prices and display names for the products on the Price Modal can be edited from [prices.json](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/app/assets/data/prices.json). Each JSON key is an internal variable (shouldn't be changed) with two properties:
