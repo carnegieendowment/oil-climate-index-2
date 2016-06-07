@@ -31,5 +31,15 @@ Compile the sass files and javascript.
 $ npm run build
 ```
 
+Lint the javascript files
+```
+npm run lint
+```
+
+Run all tests (and run the lint command above)
+```
+npm test
+```
+
 ### Deployment
-Running `npm run build` will build the site and put all the assets into a `dist` directory. That directory can be served statically from any server. 
+Running `npm run build` will build the site and put all the assets into a `dist` directory. That directory can be served statically from any server. The site is currently set-up to automatically deploy via [Travis](https://travis-ci.org/) and runs all tests before pushing a new version of the site live.
