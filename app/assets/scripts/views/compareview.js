@@ -129,7 +129,7 @@ var CompareView = BaseView.extend({
               },
               {
                 name: 'Estimated GHG Emission Rate',
-                value: utils.numberWithCommas(Number(d['Total Emissions']) * Number(d['Oil Production Volume'])),
+                value: utils.numberWithCommas(Number(d['Total Emissions']) * Number(d['Oil Production Volume']) * 365 / (1000 * 1000000)),
                 units: utils.getUnits('emissionRate')
               }
             ],
