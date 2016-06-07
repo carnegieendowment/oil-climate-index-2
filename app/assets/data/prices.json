@@ -1,34 +1,42 @@
 {
       "gasoline": {
             "name": "Gasoline",
-            "price": 1.56
+            "historicPrice": 1.56,
+            "currentPrice": 1.36
       },
       "jetFuel": {
             "name": "Jet Fuel",
-            "price": 1.75
+            "historicPrice": 1.75,
+            "currentPrice": 1.02
       },
       "diesel": {
             "name": "Diesel",
-            "price": 1.89
+            "historicPrice": 1.89,
+            "currentPrice": 1.11
       },
       "residualFuels": {
             "name": "Residual Fuels",
-            "price": 1.38
+            "historicPrice": 1.38,
+            "currentPrice": 0.92
       },
       "fuelOil": {
             "name": "Fuel Oil",
-            "price": 1.25
+            "historicPrice": 1.25,
+            "currentPrice": 1.20
       },
       "coke": {
             "name": "Coke",
-            "price": 83.00
+            "historicPrice": 83.00,
+            "currentPrice": 74.43
       },
       "lightEnds": {
             "name": "Light Ends (RFG)",
-            "price": 0.00
+            "historicPrice": 0.00,
+            "currentPrice": 0.00
       },
       "lpg": {
             "name": "Liquified Petroluem Gas (LPG)",
-            "price": 0.55
+            "historicPrice": 0.55,
+            "currentPrice": 0.36
       }
 }

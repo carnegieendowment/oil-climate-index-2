@@ -179,26 +179,27 @@ var utils = {
   },
 
   // Use prelim data and pricing info to determing blended price per barrel
-  getPricePerBarrel: function (prelim, showCoke, info) {
+  getPricePerBarrel: function (prelim, showCoke, info, historicSwitch) {
+    var priceKey = historicSwitch ? 'historicPrice' : 'currentPrice';
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
     // Sum up price * portion in barrel
-    var sum = prelim['Portion Gasoline'] * Oci.prices.gasoline.price +
-      prelim['Portion Jet Fuel'] * Oci.prices.jetFuel.price +
-      prelim['Portion Diesel'] * Oci.prices.diesel.price +
-      prelim['Portion Fuel Oil'] * Oci.prices.fuelOil.price +
-      prelim['Portion Residual Fuels'] * Oci.prices.residualFuels.price +
-      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Oci.prices.lightEnds.price +
-      prelim['Portion Liquefied Petroleum Gases (LPG)'] * Oci.prices.lpg.price;
+    var sum = prelim['Portion Gasoline'] * Oci.prices.gasoline[priceKey] +
+      prelim['Portion Jet Fuel'] * Oci.prices.jetFuel[priceKey] +
+      prelim['Portion Diesel'] * Oci.prices.diesel[priceKey] +
+      prelim['Portion Fuel Oil'] * Oci.prices.fuelOil[priceKey] +
+      prelim['Portion Residual Fuels'] * Oci.prices.residualFuels[priceKey] +
+      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Oci.prices.lightEnds[priceKey] +
+      prelim['Portion Liquefied Petroleum Gases (LPG)'] * Oci.prices.lpg[priceKey];
 
     // Special conversion to get to per barrel
     // divide by PRELIM barrels per day but use 100k as fallback
     sum = sum * 42 / barrelsPerDay;
 
     // Add extra if we're including petcoke, formulas are provided by Carnegie
-    sum += (showCoke * (((prelim['Portion Petroleum Coke'] / 5) * Oci.prices.coke.price) / barrelsPerDay));
-    sum += (showCoke * info['Portion Net Upstream Petcoke'] * Oci.prices.coke.price);
+    sum += (showCoke * (((prelim['Portion Petroleum Coke'] / 5) * Oci.prices.coke[priceKey]) / barrelsPerDay));
+    sum += (showCoke * info['Portion Net Upstream Petcoke'] * Oci.prices.coke[priceKey]);
 
     return sum;
   },
@@ -208,7 +209,7 @@ var utils = {
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
-    // Sum up price * portion in barrel
+    // Sum up lhv * portion in barrel
     var sum = prelim['Portion Gasoline'] * Number(Oci.data.lhv['Gasoline']) +
       prelim['Portion Jet Fuel'] * Number(Oci.data.lhv['Jet Fuel']) +
       prelim['Portion Diesel'] * Number(Oci.data.lhv['Diesel']) +
