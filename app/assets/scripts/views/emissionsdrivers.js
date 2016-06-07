@@ -460,8 +460,8 @@ var EmissionsDrivers = BaseView.extend({
         prodLPG: +prelim[utils.getDatasetKey('prodLPG')],
         prodJet: +prelim[utils.getDatasetKey('prodJet')],
         prodPetcoke: (+prelim[utils.getDatasetKey('prodPetcoke')] + Number(info[utils.getDatasetKey('prodUpstreamPetcoke')])) * params.showCoke,
-        currentMarketValue: +info['Per $ Crude Oil - Current'],
-        historicMarketValue: +info['Per $ Crude Oil - Historic']
+        currentMarketValue: utils.getPricePerBarrel(prelim, params.showCoke, info),
+        historicMarketValue: utils.getPricePerBarrel(prelim, params.showCoke, info, true)
       };
 
       this.chartData.push(obj);

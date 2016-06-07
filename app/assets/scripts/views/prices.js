@@ -36,7 +36,7 @@ var prices = Backbone.View.extend({
   loadPrices: function () {
     for (var key in Oci.prices) {
       var s = 'input[name="' + key + '"]';
-      $(s).val(parseFloat(Oci.prices[key].price).toFixed(2));
+      $(s).val(parseFloat(Oci.prices[key].currentPrice).toFixed(2));
     }
   },
 
@@ -58,7 +58,7 @@ var prices = Backbone.View.extend({
       var field = $(s);
       var val = parseFloat(field.val()).toFixed(2);
       field.val(val);
-      Oci.prices[key].price = val;
+      Oci.prices[key].currentPrice = val;
     }
 
     // Tell the current view to update its prices
