@@ -737,7 +737,7 @@ var utils = {
       var v = values[i];
       valuesString += '<dt>' + v.name + '<small class="units">' + v.units + '</small></dt>';
       if (showCarbon) {
-        valuesString += '<dd class="value-oil-detail">$' + this.numberWithCommas(v.value / 1000 * Oci.carbonTax) + '</dd>';
+        valuesString += '<dd class="value-oil-detail">$' + (Math.round(v.value / 1000 * Oci.carbonTax * 20) / 20).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</dd>';
       } else {
         valuesString += '<dd class="value-oil-detail">' + this.numberWithCommas(v.value) + '</dd>';
       }
