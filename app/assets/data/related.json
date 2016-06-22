@@ -1,9 +1,9 @@
 {
   "Algeria Hassi R`Mel": [
-    "U.S. Texas Eagle Ford - Condensate Zone",
+    "U.S. Texas Eagle Ford Condensate Zone",
     "Australia Cossack",
     "Libya Waha",
-    "U.S. Texas Eagle Ford - Volatile Oil Zone",
+    "U.S. Texas Eagle Ford Volatile Oil Zone",
     "Kazakhstan Tengiz"
   ],
   "Angola Girassol": [
@@ -28,8 +28,8 @@
     "Kuwait Burgan"
   ],
   "Australia Cossack": [
-    "U.S. Texas Eagle Ford - Condensate Zone",
-    "U.S. Texas Eagle Ford - Volatile Oil Zone",
+    "U.S. Texas Eagle Ford Condensate Zone",
+    "U.S. Texas Eagle Ford Volatile Oil Zone",
     "Kazakhstan Tengiz",
     "United Arab Emirates Murban",
     "Nigeria Agbami"
@@ -171,7 +171,7 @@
     "China Nanhai Light",
     "Nigeria Agbami",
     "United Arab Emirates Murban",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Texas Spraberry"
   ],
   "Kuwait Burgan": [
@@ -206,7 +206,7 @@
     "Australia Cossack",
     "Algeria Hassi R'Mel",
     "U.S. Texas Spraberry",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "United Arab Emirates Murban"
   ],
   "Nigeria Bonga": [
@@ -289,7 +289,7 @@
   "Russia Samotlor": [
     "Russia Romashkinskoye",
     "Russia Chayvo",
-    "U.S. North Dakota Bakken - Flaring",
+    "U.S. Bakken Flare",
     "Denmark Dansk Blend",
     "Azerbaijan Azeri"
   ],
@@ -324,7 +324,7 @@
   "United Arab Emirates Murban": [
     "United Arab Emirates Fateh",
     "U.S. Texas Spraberry",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "Nigeria Agbami",
     "Australia Cossack"
   ],
@@ -335,45 +335,45 @@
     "Nigeria Obagi",
     "Kuwait Ratawi"
   ],
-  "U.S. North Dakota Bakken - Flaring": [
-    "U.S. North Dakota Bakken - No flaring",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+  "U.S. Bakken Flare": [
+    "U.S. Bakken No Flare",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Wyoming WC",
     "Nigeria Escravos Beach",
     "China Nanhai Light"
   ],
-  "U.S. North Dakota Bakken - No flaring": [
-    "U.S. North Dakota Bakken - Flaring",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+  "U.S. Bakken No Flare": [
+    "U.S. Bakken Flare",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Wyoming WC",
     "Nigeria Escravos Beach",
     "China Nanhai Light"
   ],
-  "U.S. Texas Eagle Ford - Black Oil Zone": [
+  "U.S. Texas Eagle Ford Black Oil Zone": [
     "U.S.East Texas Field",
-    "U.S. Texas Eagle Ford - Volatile Oil Zone",
-    "U.S. Texas Eagle Ford - Condensate Zone",
+    "U.S. Texas Eagle Ford Volatile Oil Zone",
+    "U.S. Texas Eagle Ford Condensate Zone",
     "U.S. Texas Spraberry",
     "Nigeria Agbami"
   ],
-  "U.S. Texas Eagle Ford - Volatile Oil Zone": [
+  "U.S. Texas Eagle Ford Volatile Oil Zone": [
     "U.S.East Texas Field",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
-    "U.S. Texas Eagle Ford - Condensate Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
+    "U.S. Texas Eagle Ford Condensate Zone",
     "U.S. Texas Spraberry",
     "Algeria Hassi R'Mel"
   ],
-  "U.S. Texas Eagle Ford - Condensate Zone": [
+  "U.S. Texas Eagle Ford Condensate Zone": [
     "U.S.East Texas Field",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
-    "U.S. Texas Eagle Ford - Volatile Oil Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
+    "U.S. Texas Eagle Ford Volatile Oil Zone",
     "Algeria Hassi R'Mel",
     "U.S. Texas Spraberry"
   ],
   "U.S.East Texas Field": [
-    "U.S. Texas Eagle Ford - Black Oil Zone",
-    "U.S. Texas Eagle Ford - Volatile Oil Zone",
-    "U.S. Texas Eagle Ford - Condensate Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
+    "U.S. Texas Eagle Ford Volatile Oil Zone",
+    "U.S. Texas Eagle Ford Condensate Zone",
     "Mexico Cantarell",
     "U.S. Texas Yates"
   ],
@@ -408,8 +408,8 @@
   "U.S. Wyoming WC": [
     "U.S.Salt Creek",
     "U.S. Texas Yates",
-    "U.S. North Dakota Bakken - Flaring",
-    "U.S. North Dakota Bakken - No flaring",
+    "U.S. Bakken Flare",
+    "U.S. Bakken No Flare",
     "Denmark Dansk Blend"
   ],
   "U.S. California South Belridge": [
@@ -429,14 +429,14 @@
   "U.S. Texas Spraberry": [
     "U.S.East Texas Field",
     "U.S. Texas Yates",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "United Arab Emirates Murban",
     "Nigeria Agbami"
   ],
   "U.S. Texas Yates": [
     "U.S.East Texas Field",
     "U.S. Texas Spraberry",
-    "U.S. Texas Eagle Ford - Black Oil Zone",
+    "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Louisiana Lake Washington Field",
     "U.S.Salt Creek"
   ],
