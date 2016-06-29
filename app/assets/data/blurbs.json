@@ -150,9 +150,9 @@
     "description": "A light, sour oil produced in the Eastern Province of Saudi Arabia. Ghawar, the oil field with the highest production volume in OCI Phase 2, has relatively low GHG emissions compared to other OCI Phase 2 sample oils due to its combination of low upstream extraction emissions, low energy intensity during refining, and low end-product combustion emissions. Ghawar is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Arab Light, Stratiev"
   },
   "Saudi Arabia Safaniya": {
-    "description": "A medium, sour oil (also known as Arab Heavy) produced offshore Saudi Arabia in the Persian Gulf. Safaniya has a relatively low gas-to-oil ratio among the Saudi crudes in OCI Phase 2. Its refined product slate also includes a large share of emission-intensive residual fuels compared to other OCI Phase 2 oils. OCI assay source: Arab Heavy, Stratiev": {
-    "description": " ": {
-    "description": "Saudi Arabia Zuluf": {
+    "description": "A medium, sour oil (also known as Arab Heavy) produced offshore Saudi Arabia in the Persian Gulf. Safaniya has a relatively low gas-to-oil ratio among the Saudi crudes in OCI Phase 2. Its refined product slate also includes a large share of emission-intensive residual fuels compared to other OCI Phase 2 oils. OCI assay source: Arab Heavy, Stratiev"
+  },
+  "Saudi Arabia Zuluf": {
     "description": "A medium, sour oil with a relatively high gas content compared to other OCI Phase 2 Saudi oils that is produced off the coast of Saudi Arabia in the Persian Gulf. Zuluf’s upstream GHG emissions make up a large portion of its total emissions profile, and they are driven by the venting and processing of associated gas. OCI assay source: Arab Medium, Stratiev"
   },
   "United Arab Emirates Fateh": {
