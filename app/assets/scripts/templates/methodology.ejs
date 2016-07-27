@@ -8,182 +8,439 @@
 </section>
 <article id="methodology-view" class="view">
   <div class="row">
-      <ul class="doc-nav">
-        <li>Jump to</li>
-        <li><a href="#methodology/modeling-methods" class="same-page-nav">Modeling Methods</a></li>
-        <li><a href="#methodology/special-cases" class="same-page-nav">Special Cases</a></li>
-        <li><a href="#methodology/converting-outputs" class="same-page-nav">Converting Outputs</a></li>
-        <li><a href="#methodology/oil-types" class="same-page-nav">Oil Types</a></li>
-        <li><a href="#methodology/change-log" class="same-page-nav">Change Log</a></li>
-      </ul>
-      <div class="prose prose-content container-content">
-        <h2>OCI Input Data</h2>
-        <p>The models that underpin the Oil-Climate Index (OCI) require consistent, comparable, and verifiable open-source data on crude oils. This includes oil assays (analyses of predetermined data measuring a crude oil’s chemical and physical characteristics) that are reported out in a specified format, upstream field-level operating specifications, midstream refining process input requirements, and downstream transport and end-use data.</p>
-        <p>The creators of the Oil-Climate Index went through an intensive process to obtain data on the 30 Phase 1 test oils. Hundreds of academic sources, technical documents, and reports from industry news were used to identify data. Oils were selected based on data availability, and the number of oils chosen for Phase 1 was limited by lack of data transparency.</p>
-        <p>Although OPGEE (the Oil Production Greenhouse Gas Emissions Estimator) technically requires up to 50 data inputs, the use of smart defaults allows the model to assign reasonable estimates based on just a few key characteristics. For upstream data inputs for the OCI’s 30 test oils, including references and sources, see the <a href="/data/OPGEE_OCI_30_fields.xlsx" target="_blank">OPGEE operating data</a> workbook.</p>
-        <p>PRELIM (the Petroleum Refinery Life-Cycle Inventory Model) requires crude oil assays that use a specified number of temperature cuts. Assays provided in a different format (for example, too few temperature cuts or different temperature bands) must be adjusted, and that process of adjustment can introduce errors into PRELIM. In the web tool, the assay sources for the 30 test oils are specified in the “oil details” fields. The assay data used in OCI calculations are available in the PRELIM model workbook on the <a href="http://www.ucalgary.ca/lcaost/prelim" target="_blank">Assay Inventory worksheet</a>.</p>
-        <p>OPEM (the Oil Products Emissions Module) data inputs require a detailed product slate (in barrels or kilograms of product per barrel of oil, which are reported by PRELIM) to calculate both the greenhouse gas (GHG) emissions associated with transporting petroleum products from the refinery outlet to the end-use destination and the GHG emissions associated with petroleum product combustion. Additional data needed for the module include the distances petroleum products travel to market, the mode of transport and transport fuel used, and the vehicle and fuel emission factors from the Argonne National Laboratory’s GREET (Greenhouse Gases, Regulated Emissions, and Energy Use in Transportation) model. End-use emissions from the combustion of petroleum products are calculated using U.S. Environmental Protection Agency emission factors. Current petroleum product prices are also required. </p>
-        <p>Given the limitations posed by the reporting of global petroleum product transport data, in Phase 1, the OCI assumes that all petroleum products were transported via pipeline from Houston to New York (2,414 kilometers, or 1,500 miles) and then by heavy-duty tanker truck to either the Washington, DC, or Boston metropolitan areas (380 kilometers, about 236 miles).</p>
-        <p>Spot prices for gasoline, diesel, and jet fuel are obtained from the U.S. Energy Information Administration. Current price data are not consistently available in an open-source format for the other refined petroleum products, including bunker C, fuel oil, and petroleum coke (petcoke). Assumptions and sources for these product prices used in OCI Phase 1 are cited in OPEM.</p>
-        <p>Details on the data necessary to run OPGEE, PRELIM, and OPEM in order to estimate total GHG emissions for OCI oils are provided below. As the OCI models are expanded, additional data requirements will be identified.</p>
-
-        <h3>Detailed Data Requirements</h3>
-        <strong>OPGEE</strong>
-        <em>Upstream Production Data</em>
-        <ol>
-          <li>Extraction method specifications (primary, secondary, enhanced oil recovery, or other)</li>
-          <li>Level of activity per unit production
-            <ul>
-              <li>Water-to-oil ratio <em>(for primary and secondary production)</em></li>
-              <li>Steam-to-oil ratio <em>(for tertiary production)</em></li>
-            </ul>
-          <li>Location <em>(onshore or offshore, with GIS coordinates)</em></li>
-          <li>Flaring rate</li>
-          <li>Venting rate <em>(level of fugitive emissions)</em></li>
-        </ol>
-
-        <strong>PRELIM</strong>
-        <em>Midstream Refining Data</em>
-        <ol>
-          <li>Reporting on updated refinery process energy requirement data</li>
-          <li>Refinery changes that affect petroleum product specifications and quality <em>(especially for bottom- and top-of-the-barrel products that are not regulated for use in vehicle engines)</em></li>
-          <li>Oil assay parameters reported consistently for each global oil</li>
-        </ol>
-        <p>Each parameter (except micro-carbon residue/Conradson carbon residue) must be specified at each cut temperature, and cut temperature ranges must be standardized as specified below or in another consistent format.</p>
-        <p>Assays currently report cut temperatures in a variety of inconsistent formats:</p>
+    <ul class="doc-nav">
+      <li>Jump to</li>
+      <li><a href="#methodology/list-of-acronyms" class="same-page-nav">List of Acronyms</a></li>
+      <li><a href="#methodology/oci-input-data" class="same-page-nav">OCI Input Data</a></li>
+      <li><a href="#methodology/detailed-data-requirements" class="same-page-nav">Detailed Data Requirements</a></li>
+      <li><a href="#methodology/oci-modeling-methods" class="same-page-nav">OCI Modeling Methods</a></li>
+      <li><a href="#methodology/oci-web-tool-functionality" class="same-page-nav">OCI Web Tool Functionality</a></li>
+      <li><a href="#methodology/special-cases" class="same-page-nav">Special Cases</a></li>
+      <li><a href="#methodology/change-log" class="same-page-nav">Change Log</a></li>
+      <li><a href="#methodology/oci-phase-3-in-planning" class="same-page-nav">OCI Phase 3—In Planning</a></li>
+    </ul>
+    <div class="prose prose-content container-content">
+      <h2 id="list-of-acronyms">List of Acronyms</h2>
+      <dl>
+        <dt>$</dt><dd>U.S. dollars</dd>
+        <dt>AGO</dt><dd>Atmospheric gas oil</dd>
+        <dt>API</dt><dd>American Petroleum Institute</dd>
+        <dt>AR</dt><dd>Atmospheric residue</dd>
+        <dt>AR5</dt><dd>Fifth assessment report of the Intergovernmental Panel on Climate Change</dd>
+        <dt>bbl</dt><dd>Barrel</dd>
+        <dt>CCR</dt><dd>Conradson carbon residue</dd>
+        <dt>CH4</dt><dd>Methane</dd>
+        <dt>CO2</dt><dd>Carbon dioxide</dd>
+        <dt>CSS</dt><dd>Cyclic steam stimulation</dd>
+        <dt>cST</dt><dd>Centistokes</dd>
+        <dt>DC</dt><dd>Delayed coking unit</dd>
+        <dt>EPA</dt><dd>U.S. Environmental Protection Agency</dd>
+        <dt>FCC</dt><dd>Fluid catalytic cracking unit</dd>
+        <dt>ft</dt><dd>Feet</dd>
+        <dt>GHG</dt><dd>Greenhouse gas</dd>
+        <dt>GIS</dt><dd>Geographic information system</dd>
+        <dt>GWP</dt><dd>Global warming potential</dd>
+        <dt>HC</dt><dd>Hydrocracking</dd>
+        <dt>HVGO</dt><dd>Heavy vacuum gas oil</dd>
+        <dt>IPCC</dt><dd>Intergovernmental Panel on Climate Change</dd>
+        <dt>LPG</dt><dd>Liquefied petroleum gas</dd>
+        <dt>LVGO</dt><dd>Light vacuum gas oil</dd>
+        <dt>MCR</dt><dd>Micro-carbon residue</dd>
+        <dt>MJ</dt><dd>Megajoule</dd>
+        <dt>N2O</dt><dd>Nitrous oxide</dd>
+        <dt>NOAA</dt><dd>National Oceanic and Atmospheric Administration</dd>
+        <dt>NASA</dt><dd>National Aeronautics and Space Administration</dd>
+        <dt>oC</dt><dd>Degrees Celsius</dd>
+        <dt>OCI</dt><dd>Oil-Climate Index</dd>
+        <dt>OPEM</dt><dd>Oil Products Emissions Module</dd>
+        <dt>OPGEE</dt><dd>Oil Production Greenhouse Gas Emissions Estimator</dd>
+        <dt>PRELIM</dt><dd>Petroleum Refinery Life-Cycle Inventory Model</dd>
+        <dt>SAGD</dt><dd>Steam-assisted gravity drainage</dd>
+        <dt>SCF</dt><dd>Standard cubic feet</dd>
+        <dt>SCO</dt><dd>Synthetic crude oil</dd>
+        <dt>VIIRS</dt><dd>Visible Infrared Imaging Radiometer Suite</dd>
+        <dt>VR</dt><dd>Vacuum residue</dd>
+        <dt>w%</dt><dd>Weight percent</dt>
+      </dl>
+      <h2 id="oci-input-data">OCI Input Data</h2>
+      <p>The models that underpin the Oil-Climate Index (OCI) require consistent, comparable, and verifiable open-source data on crude oils. This includes oil assays (analyses of predetermined data measuring a crude oil's chemical and physical characteristics) that are reported out in a specified format, upstream field-level operating specifications, midstream refining process input requirements, and downstream transport and end-use data.</p>
+      <p>In creating the Oil-Climate Index, we went through an intensive process to obtain data on the 75 Phase 2 sample oils. We used hundreds of academic sources, technical documents, and reports from industry news to identify data. Oils were selected based on their geographic, geologic, chemical, and physical diversity. But the final arbiter of the 75 global oils selected was data availability. There were oils that we would have selected for Phase 2 but for the lack of transparent data.</p>
+      <p><strong>OPGEE</strong> (the Oil Production Greenhouse Gas Emissions Estimator) technically requires up to 50 data inputs, but the use of smart defaults allows the model to assign reasonable estimates based on just a few key characteristics. For upstream data inputs for the OCI's 75 sample oils, including references and sources, see the <a href="http://oci.carnegieendowment.org/data/OPGEE_OCI_30_fields.xlsx" target="_blank">OPGEE operating data</a> workbook.</p>
+      <p><strong>PRELIM</strong> (the Petroleum Refinery Life-Cycle Inventory Model) requires crude oil assays that use a specified number of temperature cuts. Assays provided in a different format (for example, too few temperature cuts or different temperature bands) must be adjusted—a process that can introduce errors into PRELIM. In the web tool, the assay sources for the 75 sample oils are specified in the "oil details" fields. The assay data used in OCI calculations are available in the PRELIM model workbook on the <a href="http://www.ucalgary.ca/lcaost/prelim" target="_blank">"Assay Inventory" worksheet</a>.</p>
+      <p><strong>OPEM</strong> (the Oil Products Emissions Module) data inputs require a detailed product slate (in barrels or kilograms of product per barrel of oil, which are reported by PRELIM) to calculate both the greenhouse gas (GHG) emissions associated with transporting petroleum products from the refinery outlet to the end-use destination and the GHG emissions associated with petroleum product combustion. Additional data needed for the module include the distances petroleum products travel to market, the mode of transport and transport fuel used, and the vehicle and fuel emissions factors from the Argonne National Laboratory's GREET (Greenhouse Gases, Regulated Emissions, and Energy Use in Transportation) Model. End-use emissions from the combustion of petroleum products are calculated using U.S. Environmental Protection Agency (EPA) emissions factors. Current petroleum product prices are also required.</p>
+      <ol>
+        <li><em>Distance:</em> Given current limitations posed by the reporting of global petroleum product transport data, in Phase 2, the OCI still assumes that all petroleum products were transported via pipeline from Houston to New York (2,414 kilometers, or 1,500 miles) and then by heavy-duty tanker truck to either the Washington, DC, or Boston metropolitan areas (380 kilometers, about 236 miles). The plan is to allow user inputs to test default distances, modes, and other variables in Phase 3.</li>
+        <li><em>Price:</em> Routinely updated spot prices for gasoline, diesel, liquefied petroleum gas products (LPG, propane and other lighter hydrocarbon co-products), and jet fuel are obtained from the U.S. Energy Information Administration. Prices used are net of taxes. Spot price data, however, are not consistently available in an open-source format for many of the other refined petroleum products, including residual fuels, fuel oil, petrochemical feedstock, asphalt, and petroleum coke (petcoke). Assumptions and sources for these product prices used in OCI Phase 2 are cited in the authors' calculations spreadsheet.</li>
+      </ol>
+      <h2 id="detailed-data-requirements">Detailed Data Requirements</h2>
+      <h3>OPGEE: Upstream Production Data</h3>
+      <ul>
+        <li>Extraction method specifications (primary, secondary, enhanced oil recovery, or other)</li>
+        <li>Level of activity per unit of production</li>
         <ul>
-          <li>API gravity</li>
-          <li>Density</li>
-          <li>Sulfur content (percent by weight)</li>
-          <li>Nitrogen content (mass ppm)</li>
-          <li>Hydrogen content</li>
-          <li>Volume/mass flow (% recovery)</li>
-          <li>Micro-carbon residue (MCR) or Conradson carbon residue (CCR)</li>
-          <li>Viscosity (cST at 100 °C) for vacuum residuum</li>
+          <li>Water-to-oil ratio (for primary and secondary production)</li>
+          <li>Steam-to-oil ratio (for tertiary production)</li>
+          <li>Flaring rate</li>
+          <li>Venting rate (level of fugitive emissions)</li>
         </ul>
-        <p>The cut temperatures and products currently used in the PRELIM refining model are:</p>
-        <table id="cut-temps-prelim" class="data-table float-right">
+        <li>Location (onshore or offshore, with GIS coordinates)</li>
+      </ul>
+      <h3>PRELIM: Midstream Refining Data</h3>
+      <ul>
+        <li>Reporting on updated refinery process energy requirement data</li>
+        <li>Refinery changes that affect petroleum product specifications and quality (especially for bottom- and top-of-the-barrel products that are not regulated for use in vehicle engines)</li>
+        <li>Oil assay parameters reported consistently for each global oil</li>
+      </ul>
+      <p>Each parameter (except micro-carbon residue/Conradson carbon residue) must be specified at each temperature cut, and temperature cut ranges must be standardized as specified below or in another consistent format.<p>
+      <p>Assays currently report temperature cuts in a variety of inconsistent formats:</p>
+      <ul>
+        <li>API gravity</li>
+        <li>Density</li>
+        <li>Sulfur content (percent by weight)</li>
+        <li>Nitrogen content (mass ppm)</li>
+        <li>Hydrogen content</li>
+        <li>Volume/mass flow (% recovery)</li>
+        <li>Micro-carbon residue (MCR) or Conradson carbon residue (CCR)</li>
+        <li>Viscosity (cST at 100 °C) for vacuum residuum</li>
+      </ul>
+      <p>The temperature cuts and products currently used in the PRELIM refining model are:</p>
+      <table id="temperature-cuts" class="data-table full-width">
+        <thead>
+          <tr>
+            <td>TEMP</td>
+            <td>PRODUCT CUT NAME</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>80 °C</td>
+            <td>Light straight run</td>
+          </tr>
+          <tr>
+            <td>180 °C</td>
+            <td>Naphtha</td>
+          </tr>
+          <tr>
+            <td>290 °C</td>
+            <td>Kerosene</td>
+          </tr>
+          <tr>
+            <td>343 °C</td>
+            <td>Diesel</td>
+          </tr>
+          <tr>
+            <td>399 °C</td>
+            <td>Atmospheric gas oil (AGO)</td>
+          </tr>
+          <tr>
+            <td>454 °C</td>
+            <td>Light vacuum gas oil (LVGO)</td>
+          </tr>
+          <tr>
+            <td>525 °C</td>
+            <td>Heavy vacuum gas oil (HVGO)</td>
+          </tr>
+          <tr>
+            <td>525+ °C</td>
+            <td>Vacuum residue (VR)</td>
+          </tr>
+          <tr>
+            <td>399+ °C</td>
+            <td>Atmospheric residue (AR)</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>OPEM: Downstream Transport and Combustion Data</h3>
+      <ul>
+        <li>Origin and destination data of crude oil and individual petroleum products, including international and domestic trade statistics (routinely updated by crude and product volumes; transport modes and fuels; and routing and distances from field locations and storage facilities to refinery gate and refinery outlet to shipping hub to end-use markets)</li>
+        <li>Market prices for all oil products and co-products (including petrochemical feedstocks, petcoke, residual fuels, fuel oil #4, and asphalt)</li>
+      </ul>
+      <h3>Global Warming Potentials</h3>
+      <p>Download the United Nations Intergovernmental Panel on Climate Change (IPCC) 2013 global warming potentials here (page 714, Table 8.7).</p>
+      <p>OCI GHG emissions estimates are based on equivalent GHG emissions for carbon dioxide, methane, and nitrous oxide, combining these into one result using different global warming potentials (GWPs) that compare the other GHGs to carbon dioxide. For Phase 2, we used data reported by the IPCC. The IPCC's 2013 assessment report (AR5) states that the one-hundred-year GWP including climate feedback loops for carbon dioxide (CO2) is referenced at 1. The GWP for methane (CH4) is 34 times greater than CO2, and for nitrous oxide (N2O), it is 298 times greater than CO2. To ensure that OPGEE and PRELIM are using these GWPs, check table 2.1 on the "Input Data" sheet and the table headed 2013 IPCC AR5 on the "Emission Factors," respectively.</p>
+      <h3>Data Quality and Transparency</h3>
+      <p>The degree of uncertainty in the GHG emissions estimates modeled through the OCI depends on the quality of the data. We considered data quality within two kinds of parameters: crude assay and field-characterization methods on the one hand, and characterization of real-world operations on the other. Natural and technical variability, especially as these relate to changing operations over time, affect the quality of these OCI input data. In order to characterize the quality of data along these parameters, we gave each oil a data score depending on certain criteria for each stage of production, as described in <a href="https://www.dropbox.com/s/wpo6g2vatpoqglc/Draft OCI Data Quality Assessment V6.xlsx?dl=0" target="_blank">this Excel workbook</a>. Within three data quality elements—reliability and reproducibility, consistency and completeness, accuracy—inputs for each model were scored using the criteria summarized below. We anticipate expanding and updating the analysis of data quality in OCI Phase 3.</p>
+      <p>OPGEE:</p>
+      <ul>
+        <li>Reliability and reproducibility</li>
+        <ul>
+          <li>Representativeness: From how many samples are field data selected?</li>
+          <li>Vintage: How recent are field data?</li>
+          <li>Transparency: From what sources do field data come?</li>
+        </ul>
+        <li>Consistency and completeness</li>
+        <ul>
+          <li>OPGEE primary parameters (steam-to-oil ratio, API gravity, water-to-oil ratio): How many primary parameters are included in inputs?</li>
+          <li>OPGEE secondary parameters (field depth, productivity index, number of wells, production rate): How many secondary parameters are included in inputs?</li>
+          <li>Availability of flaring data: Are data available from satellite imagery and reporting?</li>
+        </ul>
+        <p>PRELIM:</p>
+        <ul>
+          <li>Reliability and reproducibility</li>
+          <ul>
+            <li>Representativeness: From how many samples is the assay selected?</li>
+            <li>Vintage: How recent is the assay?</li>
+            <li>Transparency: From what sources does the assay come?</li>
+          </ul>
+          <li>Consistency and completeness</li>
+          <ul>
+            <li>PRELIM alignment: How do crude properties align with OPGEE inputs?</li>
+            <li>PRELIM minimum assay data transformations: How complete are the assay data as required by PRELIM?</li>
+          </ul>
+          <li>Accuracy</li>
+          <ul>
+            <li>Certainty in applicable refinery configuration: How accurately can PRELIM model the default refinery configuration?</li>
+            <li>PRELIM hydrogen modeling approach impact: How does the way in which PRELIM models hydrogen production affect GHG emissions estimates?</li>
+          </ul>
+        </ul>
+        <p>OPEM:</p>
+        <ul>
+          <li>Reliability and reproducibility</li>
+          <ul>
+            <li>Representativeness: Are emissions factors for each product representative of the range of real-world product emissions factors?</li>
+            <li>Transparency: Are oil and product volumes, modes of transport, fuels utilized in transport, commodity routing, and market prices available from reliable sources?</li>
+          </ul>
+          <li>Consistency and completeness</li>
+          <ul>
+            <li>Alignment with PRELIM and OPGEE: Are products and emissions factors consistent with the outputs of PRELIM and the crudes described in OPGEE?</li>
+          </ul>
+          <li>Accuracy</li>
+          <ul>
+            <li>Product transport modeling approach: How accurately does OPEM model transport of products?</li>
+          </ul>
+        </ul>
+        <p>We established three data quality levels to assess the variability in information used in OCI Phase 2:</p>
+        <ul>
+          <li>Below minimum quality: Data provide enough information to use standardized methods of analysis to make a basic representation of a crude's performance. Because not all data requirements are met, the impact of the data on results for crude differentiation is low.</li>
+          <li>Meets minimum requirements: Data are relevant for the purposes of the analysis and comply with most modeling needs. Some standardized methods are applied. The data can be considered to have a medium impact on crude differentiation.</li>
+          <li>Exceeds minimum requirements: Data provide additional information for modeling that improve reliability and/or allow for further evaluation of a crude. The data can provide enough information to have a high impact on crude differentiation.</li>
+        </ul>
+      <h2 id="oci-modeling-methods">OCI Modeling Methods</h2>
+      <p>OPGEE and PRELIM are distinct models that are run separately. The outputs from PRELIM are inputs into OPEM. The outputs of the three models are then summed to calculate total GHG emissions. All outputs are converted into the same functional units before they are summed, and the default is GHG emissions per barrel of input crude. End product and co-product combustion is generally reported out in OPEM, regardless of where in the oil supply chain it is generated (for example, net upstream petcoke from upgrading and midstream petcoke from deep conversion refining). However, if data exist, use of co-products in upstream processes is also taken into account; this is evident in the use of upstream petcoke in extra-heavy oil upgrading.</p>
+      <p>Discrepancies and inconsistencies in OCI model inputs can occur because of different public data sources and lack of coordinated data collection. For example, there are discrepancies in API gravity inputs into OPGEE and PRELIM. However, a sensitivity analysis in this particular case dealing with API gravity data differences results in GHG emissions outputs that are within the OCI's margin of error of 5 kilograms CO2 equivalent per barrel. The API gravity presented in the web tool is derived from the oil assays used in PRELIM, because this model's emissions estimates are more sensitive to API gravity than OPGEE's.</p>
+      <p>When there is no directly corresponding assay for an OPGEE oil field, a proxy assay is selected that closely fits the sample oil's characteristics. As actual assays are collected, proxy assays will be replaced.</p>
+      <p>Data discrepancies may also arise when one set of model inputs does not accurately represent the practices in place at large oil fields with varying conditions at different wells. See the "Special Cases" section for more information.</p>
+      <h3>OPGEE Version 1.1 Draft E</h3>
+      <p>Link to the model workbook hosted by Stanford University: <a href="pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator" target="_blank">pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator</a>.</p>
+      <p>The oil field and oil data specified are used to generate OPGEE's bulk assessment tool for each oil. The bulk assessment tool is then used to calculate base-run GHG emissions outputs for each oil.</p>
+      <p>OPGEE also considers the transport of oil to the refinery inlet. In Phase 2, the OCI continues to assume that all oil is transported from its country of origin to Houston via the mode that is nearest to the oil field.</p>
+      <p>In the case of petcoke produced upstream during oil-sand and extra-heavy-oil upgrading, an offline calculation estimates the net petcoke produced. This considers the OPGEE-derived portion of petcoke used as an upstream energy source and subtracts that from the total petcoke production reported by the <a href="https://www.aer.ca/documents/sts/ST39.pdf" target="_blank">Alberta Energy Regulator</a>. Lacking detailed reporting in Venezuela, OPGEE uses the average relative amounts of petcoke production reported for Canadian oil sands for Venezuelan extra-heavy-oil upgrading.</p>
+      <p>The OCI web tool has several upstream oil field operating parameters that users can modify. These adjustments change OPGEE inputs on a percentage basis, where 100 percent is the default. Reductions and increases are calculated off this base for the flaring-to-oil ratio, water-to-oil and water-injection ratios, and the emissions intensity of steam (simulating solar-powered steam generation). Users can adjust these operating assumptions on the Supply Chain and Analysis web tool pages.</p>
+      <p>Under California regulations, OPGEE reports GHG-emissions outputs in units of kilogram CO2 equivalent per megajoule of petroleum products generated. These outputs are converted into emissions per barrel by multiplying them by the lower heating value of each oil (in megajoule per barrel).</p>
+      <h4>OPGEE Flaring Emissions Estimation and Mapping Boundaries in the OCI Web Tool</h4>
+      <p>Flaring emissions were estimated by aligning satellite measurements of flares with outlines of the oil fields. The flares and volumes were identified with data from the Visible Infrared Imaging Radiometer Suite (VIIRS) sensor, which, when combined with the Nightfire Algorithm, can detect and provide estimates to quantify flare location and volume.  The Nightfire Algorithm, developed by the National Oceanic and Atmospheric Administration (NOAA), develops annual estimates for flaring volumes and aggregates the data into a spatial database that designates the type of flare as production, refining, or processing. The flaring rates are computed as the average of 2010–2014 flaring volumes located in the fields within this analysis. A rare exception is made when government-reported flaring data or gas-to-oil ratios are lower than VIIRS-assessed flaring data; in this case, OCI Phase 2 uses the lower government data rather than VIIRS. (Nigeria Escravos Beach is the only case for which we have substituted government-reported data.)</p>
+      <p>In order to determine which flares should be included, the geographic extent of each field was determined. The location and areal extent for each field was collected from publicly available data where available. Location data were also aggregated from the Petroleum Economist's World Energy Atlas.  The atlas provides maps of oil fields across the world, as well as a number of oil-associated infrastructure projects (for example, pipelines and loading terminals). Each available image (regardless of source) was overlaid with satellite imagery from Google Earth before oil field boundaries were generated. These boundaries were drawn liberally to ensure that all visible surface infrastructure is included within the flaring estimation boundary. In many cases, the final boundary including surface infrastructure is larger than the field boundaries reported in public maps or the World Energy Atlas. For offshore fields, boundaries are placed to focus on production and processing platforms, where visible from Google Earth imagery.</p>
+      <p>Within each field boundary, yearly average flared volumes for each flare are summed to determine total flaring emissions from the field. When the flaring estimate from satellite data does not align with gas volumes reported by government agencies, satellite estimates were replaced with government-reported figures. Because the satellite estimates may not identify all instances of flaring, a lower bound of 10 standard cubic feet per barrel (scf/bbl) for oils' flare rates was instituted, based on the flare rates of the best-managed upstream operations. (Fields whose flare rates were increased to the lower bound: Australia Cossack, Canada Hibernia, Azerbaijan Azeri Light, Brazil Frade, Colombia Cusiana, Mexico Chuc, Nigeria Bonga, Russia Romashkinskoye, Saudi Arabia Safaniya, U.S. Bakken No Flare, U.S. East Texas, U.S. Louisiana Lake Washington, U.S. Gulf Mars, U.S. California Midway Sunset, U.S. Wyoming Salt Creek, U.S. Wyoming WC, U.S. California South Belridge, U.S. Texas Yates, U.S. California Wilmington, Venezuela Hamaca SCO, Venezuela Merey Blend, Venezuela Tia Juana.)</p>
+      <h3>PRELIM Version 1.1</h3>
+      <p>Link to the model workbook hosted by the University of Calgary: <a href="http://www.ucalgary.ca/lcaost/PRELIM" target="_blank">ucalgary.ca/lcaost/PRELIM</a>.</p>
+      <p>PRELIM version 1.1 contains 103 oil assays in its inventory. These assays are run through the "Results All Assays" macro three times (see the workbook for this macro). Each PRELIM run corresponds to a different refinery configuration—hydroskimming, medium conversion, and deep conversion (the last two with fluid catalytic cracking and gas-oil hydrocracking units).</p>
+      <p>The default refinery is chosen by PRELIM using an API gravity and sulfur-content categorization scheme, as summarized below. Users can run oils through different refinery configurations in the OCI web tool to estimate how GHG emissions change.</p>
+      <ul>
+        <li>Deep conversion refinery—heavy crude (15 to 22 API) with any sulfur level</li>
+        <li>Medium conversion refinery—medium sweet crude (22 to 32 API, with less than 0.5 percent sulfur content by weight); medium sour crude (22 to 32 API, with more than 0.5 percent sulfur content by weight); and light sour crude (over 32 API, with more than 0.5 percent sulfur content by weight)</li>
+        <li>Hydroskimming refinery—light sweet crude (over 32 API, with less than 0.5 percent sulfur content by weight)</li>
+      </ul>
+      <p><em>The exceptions among our sample oils are discussed in the "Special Cases" section below.</em></p>
+      <p>PRELIM version 1.1 by default uses a float case, allowing product volumes to be determined by the optimal use of refinery process units for processing individual, unblended oils. This version of PRELIM also allows users to specify output ratios for products like gas, diesel, and jet fuel, among others, in the "Expert Input" sheet. In order to use this tool, the following add-ins must be selected for use: Analysis ToolPak, Analysis ToolPak - VBA, and Solver Add-In.</p>
+      <p>Co-products, including petrochemical feedstock, asphalt, and petcoke, can be turned on and off by users. A crude blending tool was added in PRELIM version 1.1 and may be expanded in Phase 3. Additionally, a hydrogen surplus that results from lighter oils is noted but not credited for these oils or debited to heavier oils in PRELIM version 1.1; this will be considered in OCI Phase 3 as it is of consequence for GHG emissions from the lightest condensates to the heaviest oil sands.</p>
+      <p>Other model assumptions are provided in the <a href="http://ucalgary.ca/lcaost/files/lcaost/prelim-v1-0-documentation.pdf" target="_blank">PRELIM User Guide and Technical Documentation</a> (PDF).</p>
+      <h3>OPEM Version 1.1</h3>
+      <p>Link to the OPEM model workbook: <a href="http://oci.carnegieendowment.org/assets/OPEM1.0.xlsx" target="_blank">oci.carnegieendowment.org/assets/OPEM1.0.xlsx</a>.</p>
+      <p>An overriding goal of OPEM is to include in the default GHG emissions calculation—and thereby avoid carbon leakage from—all petroleum products and co-products. Historically, petroleum end use has centered on transport fuels, including gasoline and diesel, and has ignored or incompletely and inconsistently reported GHG emissions from petroleum co-products like petcoke, fuel oil, residual fuels, asphalt, and petrochemical feedstocks. OPEM version 1.1 includes these co-products; those that are not yet displayed in the OCI Phase 2 web tool will be added to a revised OPEM version 2.0 in Phase 3.</p>
+      <p>The default product slate output from PRELIM can be found in the worksheet "PRELIM Product Slates" in the OPEM workbook. Alternative product slates can be generated by running the model.</p>
+      <p>Petcoke production (both upstream in OPGEE and midstream in PRELIM) defaults to 100 percent combustion and can be adjusted down to 50 percent and zero in the OCI web tool. Asphalt and petrochemical feedstock defaults to "off" and can be turned "on" in the OCI web tool.</p>
+      <p>OPEM uses emissions factors reported by the U.S. Environmental Protection Agency for GHG inventories, updated in November 2015. These emissions factors are documented <a href="https://www.epa.gov/sites/production/files/2015-12/documents/emission-factors_nov_2015.pdf" target="_blank">here</a>. Note that the EPA assumes near-complete fuel combustion in the calculation of published emissions factors. Depending on the quality of the engine in which a fuel is burned, EPA emissions factors may result in a best-case (lowest emissions) estimate. This will be investigated in Phase 3.</p>
+      <h3>OCI Input Data Workbook</h3>
+      <p>Link to the OCI web tool workbook for Phase 2 base data: <a href="http://oci.carnegieendowment.org/data/oci-webtool-base-run.xlsx" target="_blank">oci.carnegieendowment.org/data/oci-webtool-base-run.xlsx</a>. The data to create sliders for users to adjust emissions variables are discussed below and are not included in the web tool workbook. This is because many of these calculations are included in macros that are coded into the OCI web tool itself.</p>
+      <h2 id="oci-web-tool-functionality">OCI Web Tool Functionality</h2>
+      <h3>Converting Emissions Outputs to Other Metrics</h3>
+      <p>The default functional unit or metric in the OCI web tool is GHG emissions per barrel of oil input. The OCI web tool also converts emissions to other metrics, including emissions per megajoule of petroleum products and emissions per U.S. dollar of petroleum products or barrel of crude oil (where available for priced and tracked global oils). These conversions are calculated by multiplying default results by reported lower heating values (in megajoule per barrel) and product or oil prices (in dollars per barrel, excluding all taxes), respectively.</p>
+      <p>Prices default to April 2016 data, and historic February 2015 prices are also presented for comparisons. The OCI web tool permits users to adjust petroleum product prices for both updating and forecasting purposes. These results will be displayed when the user selects GHG emissions results in units of emissions per dollar of petroleum products or barrel of crude oil.</p>
+      <h3>Sorting Oils</h3>
+      <p>The classification bounds used to sort oils in OCI Phase 2 are detailed in the table below. Crude oil types and identified GHG emissions drivers incorporated into the web tool are as follows:</p>
+      <table id="types-drivers" class="data-table full-width">
+        <thead>
+          <tr>
+            <td>Crude oil types</td>
+            <td>Emissions drivers</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Condensate, Ultra-light, Light, Medium, Heavy, Extra-heavy, Ultra-deep, Depleted, High gas</td>
+            <td>Petcoke combustion, Flaring, Land use, Steam, Venting &amp; fugitive emissions, Pumping, Refinery hydrogen, Refinery heat, Upgrading</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Classification Bounds:</strong></p>
+      <table id="classifications-bounds" class="data-table full-width">
           <thead>
             <tr>
-              <td>Temp</td>
-              <td>Product Cut Name</td>
+              <td>Lower Bound</td>
+              <td>Classification</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>80 °C</td>
-              <td>Light Straight Run</td>
+              <td colspan="2">API Crude Category (API)</td>
             </tr>
             <tr>
-              <td>180 °C</td>
-              <td>Naphtha</td>
+              <td>0</td>
+              <td>Extra-Heavy</td>
             </tr>
             <tr>
-              <td>290 °C</td>
-              <td>Kerosene</td>
+              <td>14.99</td>
+              <td>Heavy</td>
             </tr>
             <tr>
-              <td>343 °C</td>
-              <td>Diesel</td>
+              <td>21.99</td>
+              <td>Medium</td>
             </tr>
             <tr>
-              <td>399 °C</td>
-              <td>Atmospheric Gas Oil (AGO)</td>
+              <td>31.99</td>
+              <td>Light</td>
             </tr>
             <tr>
-              <td>454 °C</td>
-              <td>Light Vacuum Gas Oil (LVGO)</td>
+              <td>41.99</td>
+              <td>Ultra-Light</td>
             </tr>
             <tr>
-              <td>525 °C</td>
-              <td>Heavy Vacuum Gas Oil (HVGO)</td>
+              <td>50.99</td>
+              <td>Condensate</td>
             </tr>
             <tr>
-              <td>525+ °C</td>
-              <td>Vacuum Residue (VR)</td>
+              <td colspan="2">Sulfur (S w%)</td>
             </tr>
             <tr>
-              <td>399+ °C</td>
-              <td>Atmospheric Residue (AR)</td>
+              <td>-100.00</td>
+              <td>Sweet</td>
+            </tr>
+            <tr>
+              <td>0.50</td>
+              <td>Sour</td>
+            </tr>
+            <tr>
+              <td colspan="2">Production Volume</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>Very Low</td>
+            </tr>
+            <tr>
+              <td>2,500</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>25,000</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>250,000</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>2,500,000</td>
+              <td>Very High</td>
+            </tr>
+            <tr>
+              <td colspan="2">Depth (ft.)</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>Shallow</td>
+            </tr>
+            <tr>
+              <td>7,000</td>
+              <td>Deep</td>
+            </tr>
+            <tr>
+              <td>11,000</td>
+              <td>Ultra-Deep</td>
+            </tr>
+            <tr>
+              <td colspan="2">Flaring-to-Oil Ratio (scf/bbl oil)</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>Minimal Flare</td>
+            </tr>
+            <tr>
+              <td>50</td>
+              <td>Low Flare</td>
+            </tr>
+            <tr>
+              <td>500</td>
+              <td>High Flare</td>
+            </tr>
+            <tr>
+              <td>1,000</td>
+              <td>Ultra-High Flare</td>
+            </tr>
+            <tr>
+              <td colspan="2">Watery Oil: Water-to-Oil Ratio (bbl water/bbl oil)</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>Low Water</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Watery Oil</td>
+            </tr>
+            <tr>
+              <td colspan="2">Gassy Oil : Gas-to-Oil Ratio (scf/bbl oil)</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>Very Low Gas</td>
+            </tr>
+            <tr>
+              <td>100</td>
+              <td>Low Gas</td>
+            </tr>
+            <tr>
+              <td>1,000</td>
+              <td>Medium Gas</td>
+            </tr>
+            <tr>
+              <td>10,000</td>
+              <td>High Gas</td>
             </tr>
           </tbody>
-        </table>
-
-        <strong>OPEM</strong>
-        <em>Downstream Transport and Combustion Data</em>
-        <ol>
-          <li>Global oil trade statistics <em>(by crude, product, mode, and region)</em></li>
-          <li>Annual mapping of changing trade patterns and trends <em>(disaggregated by the full spectrum of petroleum products)</em></li>
-          <li>Domestic (in-country) oil and petroleum product transfers <em>(GIS coordinates from refinery gate or shipping hub to end use)</em></li>
-          <li>Origin data (crudes) and destination data (individual petroleum products), by refinery</li>
-          <li>Market prices for all oil products <em>(including petrochemical feedstocks, condensates, petroleum coke, bunker fuel, fuel oil #4, and asphalt)</em></li>
-        </ol>
-
-        <h2 id="modeling-methods">OCI Modeling Methods</h2>
-        <p>Each model&mdash;OPGEE, PRELIM, and OPEM&mdash;is run separately, and the outputs of each model are converted into the same functional units (that is, per barrel of crude produced, per megajoule of petroleum products, and per dollar value of petroleum products). The results are then summed to estimate the total GHG emissions associated with each individual oil’s supply chain. Exceptions are made when emissions take place across multiple parts of the supply chain (for example, upstream and downstream transport and petroleum coke production).</p>
-        <p><a href="/data/oci-webtool-base-run.xlsx" target="_blank">Download webtool base data here</a>. Note that this workbook does not include data used to make upstream sliders.  See below methodology for how to generate slider data using OPGEE and notes regarding special cases below.</p>
-
-        <h3>OPGEE Version 1.1 Draft E</h3>
-        <p>Link to model workbook: <a href="https://pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator" target="_blank">pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator</a></p>
-        <p>The oil field and oil data specified are used to generate OPGEE’s bulk assessment tool for each oil. The bulk assessment tool is then used to calculate base-run GHG emission outputs for each oil.</p>
-        <p>OPGEE also considers the transport of oil to the refinery inlet. In Phase 1, the OCI assumes that all oil is transported from its country of origin to Houston via the mode that is nearest to the oil field.</p>
-        <p>In the case of petcoke produced upstream during oil-sand and extra-heavy-oil upgrading, an offline calculation is done to estimate the net petcoke produced. This considers the OPGEE-derived portion of petcoke used as an upstream energy source and subtracts that from the total petcoke production reported by the <a href="https://www.aer.ca/documents/sts/ST39.pdf" target="_blank">Alberta Energy Regulator</a>. Lacking detailed reporting in Venezuela, OPGEE uses the average relative amounts of petcoke production reported for Canadian oil sands for Venezuelan extra-heavy-oil upgrading.</p>
-        <p>The OCI web tool has several upstream oil field operating parameters that users can modify. These adjustments change OPGEE inputs on a percentage basis, where 100 percent is the default. Reductions and increases are calculated off this base for the flaring-to-oil ratio, water-to-oil and water-injection ratios, and the steam-to-oil ratio. Users can adjust these operating assumptions in the “Compare” and “Drivers” web tool pages.</p>
-        <p>Under California regulations, OPGEE reports GHG emission outputs in units of kilogram CO2 equivalent per megajoule crude oil. These outputs are converted into emissions per barrel by multiplying them by the lower heating value of each oil (in megajoue per barrel).</p>
-
-        <h3>PRELIM Version 1.0</h3>
-        <p>Link to model workbook: <a href="http://www.ucalgary.ca/lcaost/PRELIM" target="_blank">ucalgary.ca/lcaost/PRELIM</a></p>
-        <p>In PRELIM version 1.0, oil assays are run through the “Results All Assays” macro three times (see workbook for macro). Each PRELIM run corresponds to a different refinery configuration&mdash;hydroskimming, medium conversion, and deep conversion (the last two with fluid catalytic cracking and gas-oil hydrocracking units).</p>
-        <p>The default refinery is chosen by PRELIM using an API gravity and sulfur-content categorization scheme. Users can run oils through different refinery configurations in the OCI web tool to estimate how GHG emissions change.</p>
-        <ul>
-          <li>Deep conversion refinery&mdash;heavy crude with any sulfur level</li>
-          <li>Medium conversion refinery&mdash;medium sweet crude (22 to 32 API, with less than 0.5 percent sulfur content by weight); medium sour crude (22 to 32 API, with more than 0.5 percent sulfur content by weight); and light sour crude (over 32 API, with more than 0.5 percent sulfur content by weight)</li>
-          <li>Hydroskimming refinery&mdash;light sweet crude (over 32 API, with less than 0.5 percent sulfur content by weight)</li>
-        </ul>
-        <p>The exceptions to this among the 30 Phase 1 OCI test oils are California Midway Sunset and the Canadian oil sands, which are discussed in the next section on special cases.</p>
-        <p>PRELIM version 1.0 assumes a float case to optimize the use of refinery process units and does not blend oils. As such, all refinery gases produced are used as input fuel and no petrochemical feedstock is produced in OCI Phase 1. This will be modified in Phase 2, using revised PRELIM fixed-case runs. A crude blending tool will also be added. Additionally, a hydrogen surplus that results from lighter oils is noted but not credited for these oils or debited to heavier oils in PRELIM version 1.0.</p>
-        <p>Other model assumptions are provided in the <a href="http://ucalgary.ca/lcaost/files/lcaost/prelim-v1-0-documentation.pdf" target="_blank">PRELIM User Guide and Technical Documentation</a> (PDF).</p>
-
-        <h3>OPEM Version 1.0</h3>
-        <p>Download an <a href="/assets/OPEM1.0.xlsx" target="_blank">OPEM model workbook</a> (.xlsx).</p>
-        <p>An overriding goal of OPEM is to include—and thereby avoid carbon leakage from—all petroleum co-products. Historically, petroleum end use has centered on transport fuels, including gasoline and diesel, as well as largely ignored co-products like petcoke, fuel oil, and petrochemical feedstocks. Petrochemical feedstocks and asphalt production and end use are not included in the first versions of PRELIM and OPEM. These will be included in a future phase of the OCI web tool.</p>
-        <p>The default product slate output from PRELIM can be found on the worksheet “PRELIM Product Slates” in the OPEM workbook. Alternative product slates can be generated by running the model.</p>
-        <p>Petcoke production (both upstream in OPGEE and midstream in PRELIM) is included in total petroleum product emissions. It defaults to “on” and can be turned “off” in the OCI web tool.</p>
-
-        <h2 id="special-cases">OCI Phase 1 Special Cases</h2>
-        <p><strong><a href="#oil/us-midway-sunset">California Midway Sunset</a></strong> is modeled using a different PRELIM configuration than the model’s categorization scheme calls for. The Midway Sunset oil field contains very complex oil. The API gravity is highly variable, ranging from the teens to the low twenties. The oil assay obtained for OCI Phase 1 indicates a gravity of 22.6, which suggests that the oil, according the PRELIM rules, should be run through a medium conversion refinery. But because Midway Sunset’s oil tends to be below 22 API, the oil is instead run through a deep conversion refinery in the default run. This default operating assumption can be changed in the web tool.</p>
-        <p>The default OPGEE model tends to overestimate emissions for <strong><a href="#oil/russia-chayvo">Russia Chayvo</a></strong> because highly deviated (diagonal) wells are needed to access oil in this field. Drilling energy increases with well depth for three reasons: to overcome increased friction confronted by mud and cuttings in a longer drill stem and annulus return; to circulate more mud and remove more cuttings due to the increased friction; and to lift rock chips to the surface in the opposite direction of high, in situ well pressure. Each of these factors scales differently with true vertical depth and driller’s total distance. The high-end assumption (the OPGEE default) indicates that a deviated well (36,000 feet long, 10,000 feet deep) requires the same energy as a well that is vertical but 36,000 feet deep. The low-end assumption is that a deviated well requires as much energy per unit length as a well that is 10,000 feet deep. Given that a deviated well is in fact a mix of these two cases, in reality the energy involved to lift Chayvo oil is somewhere in between.  We have used the low-end conservative estimate. <a href="/data/OPGEE_v1.1_draft_d_Chayvo_OCISensitivityRun_macro.xlsm" target="_blank">Download the OCI Phase 1 Chayvo-specific model here</a>.</p>
-        <p>A weighted average of OPGEE outputs is used to determine OPGEE emissions for <strong><a href="#oil/uk-forties-average">UK Forties</a></strong> oil. That is because upstream extraction techniques used for <strong>UK Forties</strong> vary (for example, gas lifting and utilizing a downhole pump), and there is not a dominant extraction technique. These two techniques cannot be run simultaneously in OPGEE, so their results have to be manually combined in a 60% downhole pump to 40% gas lifting.  For more details, view the UK Forties sheet within the <a href="/data/OPGEE_OCI_30_fields.xlsx" target="_blank">OPGEE Operating data</a> workbook. </p>
-        <p><strong><a href="#oil/canada-cold-lake">Canada Cold Lake Dilbit</a>, <a href="#oil/canada-light-sweet-sco">Light Sweet SCO</a> and Heavy Sour SCO, and <a href="#oil/canada-medium-sweet-sco">Medium Sweet SCO</a></strong> are unconventional oil sands resources whose extraction processes differ from those used for conventional oils. Canada Cold Lake is too deep to mine and is extracted using an in situ, steam-based technique that heats and drains oil sands, whereas the bitumen upgraded to Synthetic Crude Oils are removed using mining techniques that involve digging oil sands out of open pits. A different portion of the OPGEE model is used to quantify upstream emissions for extra-heavy oils like these because they are not extracted in the same way as conventional liquid crude using drilling and pumping; for more information, see the “Bitumen Extraction and Upgrading” worksheet in the OPGEE workbook. (An infographic describing these techniques can be found <a href="http://www.npr.org/2012/08/16/158907708/infographic-how-tar-sands-oil-is-produced" target="_blank">here</a>. Refer to pages 88–92 of the OPGEE <a href="https://pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator" target="_blank">User Guide and Technical Documentation</a> for an explanation of how these are modeled in OPGEE.)</p>
-        <p><strong><a href="#oil/venezuela-hamaca">Venezuela Hamaca</a>, Light Sweet SCO and Heavy Sour SCO, and Medium Sweet SCO</strong> are all upgraded into synthetic crude oil (SCO) before being sent to a refinery. As such, petroleum coke is produced upstream and added to total estimated combustion emissions in the OCI, in addition to any petroleum coke from the refining of the synthetic crude oil.</p>
-        <p>A barrel of oil produced from <strong>Canada Cold Lake diluted bitumen</strong> is estimated to be 75 percent bitumen blended with 25 percent diluent, which neither separately nor when blended constitute a barrel of oil that can be directly compared to the others modeled. Therefore, OCI Phase 1 emissions for Cold Lake are reported per barrel of diluted bitumen, not per barrel of oil. The emissions associated with producing the diluent (natural gas liquids or condensates) are calculated in OPGEE.</p>
-        <p>When extra-heavy oils are upgraded, their synthetic crude oil API gravity is used to determine the correct refining configuration employed in PRELIM. If the bitumen was simply diluted and sent to a refinery without being upgraded, the API gravity of the oil sand is used to determine the refinery through which to run these oils.</p>
-        <p>OCI GHG emission estimates are based on equivalent greenhouse gas emissions for carbon dioxide, methane, and nitrous oxide, combining these into one result using different global warming potentials (GWP) that compare the other greenhouse gases to carbon dioxide. OPGEE and PRELIM use the Intergovernmental Panel on Climate Change’s report <em>Climate Change 2007</em> for hundred-year GWPs. According to the report, the reference gas, carbon dioxide, is assigned a GWP of 1, methane’s GWP is 25 times greater than carbon dioxide, and nitrous oxide is 298 times greater. OPEM, as the newest OCI model, has been updated with the hundred-year global warming potentials from the <em>Climate Change 2013</em> report, whereby methane’s GWP is now assumed to be 34 times greater than carbon dioxide and nitrous oxide remains unchanged.</p>
-        <p>The use of different methane GWPs in the index introduces a small underestimation of total GHG emissions. This will be corrected by using the same GWPs in OPGEE, PRELIM, and OPEM in Phase 2 of the OCI.</p>
-
-        <h2 id="converting-outputs">Converting Emission Outputs to Other Metrics</h2>
-        <p>The default functional unit or metric in the OCI web tool is GHG emissions per barrel of oil input. The OCI web tool also converts emissions to other metrics, including emissions per megajoule (MJ) of petroleum products and emissions per U.S. dollar of petroleum products. These conversions are calculated by multiplying default results by reported lower heating values (in megajoule per barrel) and product sales prices (in dollars per barrel, excluding all taxes).</p>
-        <p>The OCI web tool permits users to adjust petroleum product prices for both updating and forecasting purposes. These results will show when the user selects GHG emission results based on the metric of emissions per dollar of petroleum products.</p>
-        <hr>
-
-        <h2 id="oil-types">Oil types</h2>
-        <a id="oiltype-legend"></a>
-        <ul class="oiltype-legend">
-          <li><span class="ot-ultra-deep"></span> Ultra-Deep</li>
-          <li><span class="ot-conventional"></span> Conventional</li>
-          <li><span class="ot-extra-heavy"></span> Extra-Heavy</li>
-          <li><span class="ot-heavy"></span> Heavy</li>
-          <li><span class="ot-high-flare"></span> High Flare</li>
-          <li><span class="ot-high-steam"></span> High Steam</li>
-          <li><span class="ot-high-gas"></span> High Gas</li>
-          <li><span class="ot-light"></span> Light</li>
-          <li><span class="ot-depleted-oil"></span> Depleted Oil</li>
-        </ul>
-        <hr>
-
-        <h2 id="change-log">Change Log</h2>
-        <p>As we find new data and as our models improve, we can find increasingly better estimates for the life-cycle emissions of an oil. This log details those changes.</p>
-        <table id="change-log" class="data-table full-width">
+      </table>
+      <h3>User-Defined Sliders</h3>
+      <p>Emissions drivers are derived from operating decisions that can affect an oil's GHG emissions. The web tool allows users to alter model parameters for steam production, water intensity, flaring intensity, and refinery configurations using sliders on the Supply Chain, Analysis, View Details, and Compare Oils pages. Steam, water, and flaring sliders alter relevant OPGEE inputs, while refinery configurations and the LPG slider alter PRELIM inputs. Petcoke and LPG sliders also alter OPEM outputs.</p>
+      <h3>Analysis Regression Lines</h3>
+      <p>Regression lines presented on the Analysis page are calculated using the simple ordinary least squares (OLS) regression method.</p>
+      <h2 id="special-cases">Special Cases</h2>
+      <h3>OPGEE Special Cases</h3>
+      <p><storng>Mexico Cantarell</strong> is extracted using gas injection of air-separated nitrogen (N2). This option had to be modified in the back end of the OPGEE model. Download the Cantarell-specific OPGEE model workbook here.</p>
+      <p>The default <strong>Russia Chayvo</strong> OPGEE model tends to overestimate emissions because highly deviated (diagonal) wells are needed to access oil in this extremely ultra-deep field. Drilling energy increases with well depth for three reasons: to overcome the increased friction when confronted by mud and cuttings in a longer drill stem and annulus return; to circulate more mud and remove more cuttings due to the increased friction; and to lift rock chips to the surface in the opposite direction of high, in situ well pressure. Each of these factors scales differently with true vertical depth and the driller's total distance. The high-end assumption (the OPGEE default) indicates that a deviated well (36,000 feet long, 10,000 feet deep) requires the same energy as a well that is vertical but 36,000 feet deep. The low-end assumption is that a deviated well requires as much energy per unit length as a well that is 10,000 feet deep. Given that a deviated well is in fact a mix of these two cases, in reality the energy involved to lift Chayvo oil is somewhere in between. We have used the low-end conservative estimate. <a href="http://oci.carnegieendowment.org/data/OPGEE_v1.1_draft_d_Chayvo_OCISensitivityRun_macro.xlsm" target="_blank">Download the Chayvo-specific OPGEE model workbook here</a>.</p>
+      <p>A weighted average of OPGEE outputs is used to determine OPGEE emissions for <strong>UK Forties Blend</strong>. Because upstream extraction techniques used for UK Forties Blend vary (gas lifting and utilizing a downhole pump), there is not a dominant extraction technique. These two techniques cannot be run simultaneously in OPGEE, so their results have to be manually combined as 60 percent downhole pumping to 40 percent gas lifting. For more details, <a href="http://oci.carnegieendowment.org/data/OPGEE_OCI_30_fields.xlsx" target="_blank">download the Forties-specific OPGEE model workbook here</a>.</p>
+      <p><strong>U.S. Texas Eagle Ford</strong> is modeled as several different fields in OPGEE to account for the fact that Eagle Ford's different production zones require different production practices to extract different oil types (black, volatile, and condensate). These processes impact upstream emissions differently. The locations of each zone affect the calculation of flaring associated with each, since flaring values are calculated spatially in conjunction with NASA's VIIRS satellite instrument whose data is then analyzed by NOAA.</p>
+      <p><strong>U.S. Bakken</strong> is a very large oil field in the Williston basin, spanning the U.S. states of Montana, North Dakota, and South Dakota and into Saskatchewan, Canada. Bakken is modeled as if it was two distinct oil fields: flared and non-flared, which in OPGEE results in two different GHG-emissions estimates. While close to 40 percent of Bakken's sites flare minimally, the majority of current Bakken production sites require flaring the associated gas. Accordingly, the decision to model Bakken using two different production pathways indicates what is currently occurring in this single oil field.</p>
+      <p><strong>Denmark Dansk Blend</strong> was modeled by averaging OPGEE results for three separate Danish OPGEE fields: Denmark Dan, Denmark Gorm, and Denmark Tyra. For more details, download the Dansk Blend-–specific OPGEE model workbook, which details inputs and results for the three fields, as well as the resulting averages.</p>
+      <p><strong>Nigeria Escravos Beach</strong> has a data discrepancy: government-reported data on the field's gas-to-oil ratio did not align with flaring data from the VIIRS satellite. OCI Phase 2 uses VIIRS data unless a government-reported flaring number is lower. This is the only oil in Phase 2 where this exception applies.</p>
+      <h3>Canada and Venezuela—Oil Sands and Extra-Heavy Oil Special Cases</h3>
+      <p><strong>Canada Cold Lake CSS Dilbit</strong>, <strong>Canada Cold Lake SAGD Dilbit</strong>, <strong>Canada Athabasca DC SCO</strong>, and <strong>Canada Athabasca FC-HC SCO</strong> are unconventional oil sands resources whose extraction processes differ from those used for conventional oils. Moreover, these oil sands' extraction pathways also differ from one another and therefore have different GHG emissions impacts. Cold Lake resources are too deep to mine and are extracted using in situ, steam-based techniques that heat and drain oil sands (respectively, cyclic steam stimulation, or CSS, and steam-assisted gravity drainage, or SAGD). The bitumen upgraded to synthetic crude oil is removed using mining techniques that involve digging oil sands out of open pits. A different portion of the OPGEE model is used to quantify upstream emissions for extra-heavy oils like these because they are not extracted in the same way as a conventional liquid crude that requires drilling and pumping; for more information, see the FBitumen Extraction and Upgrading" worksheet in the OPGEE workbook. (An infographic describing these techniques can be found <a href="http://www.npr.org/2012/08/16/158907708/infographic-how-tar-sands-oil-is-produced" target="_blank">here</a>. Refer to pages 88–92 of the <a href="https://pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator" target="_blank">OPGEE User Guide and Technical Documentation</a> for an explanation of how these are modeled in OPGEE.)</p>
+      <h4>Upgraded Synthetic Crude Oils</h4>
+      <p><strong>Venezuela Hamaca SCO</strong>, <strong>Canada Athabasca DC SCO</strong>, and <strong>Canada Athabasca FC-HC SCO</strong> are all upgraded into synthetic crude oil (SCO) before being sent to a refinery. As such, petcoke is produced upstream and added to the total estimated combustion emissions in the OCI, in addition to any petcoke from the refining of the synthetic crude oil.</p>
+      <p><strong>Canada Athabasca DC SCO</strong>'s and <strong>Canada Athabasca FC-HC SCO</strong>'s upstream petcoke production is estimated using the annual average of tons of petcoke produced per barrel of SCO as reported by the Alberta Energy Regulator in <a href="https://www.aer.ca/documents/sts/ST39-2014.xls" target="_blank">statistical report 39 (from December 2014)</a>. Athabasca DC SCO's averages derive from the figures reported by operator Suncor Energy (ABOS0077189); Athabasca FC-HC SCO's averages derive from the figures reported by operator Syncrude Canada (ABOS0077533).</p>
+      <p><strong>Venezuela Hamaca SCO</strong>'s upstream petcoke production is approximated using the petcoke production data obtained from Syncrude Canada's upgrading <a href="http://www.aer.ca/data-and-publications/statistical-reports/st39" target="_blank">processes provided by the Alberta Energy Regulator</a>, as both upgrading processes produce medium crudes. It is not only difficult to obtain information about the volume of petcoke produced from upgrading in Venezuela but also uncertain whether outdated and at-capacity refineries will continue to upgrade Venezuelan extra-heavy crudes.  For more information on the treatment of upstream petroleum coke produced from upgrading synthetic crude oils, please see the "Petcoke Details" worksheet in the OCI workbook.</p>
+      <h4>Diluted Bitumen</h4>
+      <p>A barrel of oil produced from <strong>Canada Cold Lake CSS Dilbit</strong> and from <strong>Canada Cold Lake SAGD Dilbit</strong> is estimated to be 75 percent bitumen blended with 25 percent diluent, which neither separately nor when blended constitute a barrel of oil that can be directly compared to the others modeled. Therefore, OCI Phase 2 emissions for Cold Lake resources are reported per barrel of diluted bitumen, not per barrel of oil produced. The emissions associated with producing the diluent (natural gas liquids or condensates) are calculated in OPGEE.</p>
+      <p>A weighted average of OPGEE outputs is used to determine OPGEE emissions for <strong>Venezuela Merey Blend</strong>. This dilbit contains a blend from two separate fields, the extra-heavy field of Orinoco and the light crude field of Santa Barbara. For more details, download the Merey Blend–specific OPGEE model workbook, which details inputs and results for both fields, as well as the resulting averages.</p>
+      <p>When extra-heavy oils are upgraded, their synthetic crude oil API gravity is used to determine the correct refining configuration employed in PRELIM. If the bitumen was simply diluted and sent to a refinery without being upgraded, the API gravity of the oil sand is used to determine the refinery through which to run these oils.</p>
+      <h3>PRELIM Special Cases</h3>
+      <p><strong>Angola Kuito</strong> is modeled using a different PRELIM configuration than the model's categorization scheme calls for. Kuito's API gravity is 22, which is at the cutoff for classification as a heavy oil. Its low API gravity, in conjunction with its high sulfur content, means that Kuito should be run in a deep conversion refinery in the default run. This default operating assumption can be changed in the web tool.</p>
+      <p><strong>Canada Cold Lake SAGD Dilbit</strong> is modeled using a different PRELIM configuration than the model's protocol calls for. Its assay is Christina Lake dilbit with an API gravity of just over 22, which is at the cutoff for classification as an extra-heavy oil. Its low API, in conjunction with its high sulfur content, results in a deep conversion refinery as the default run. This default operating assumption can be changed in the web tool.</p>
+      <p><strong>Nigeria Obagi</strong> is modeled using Chevron's Bonny Light assay in Nigeria as a proxy. Obagi is a play within the large Bonny oil field. The crudes ultimately extracted are similar, though the two fields vary widely in their production processes.</p>
+      <p><strong>U.S. California Midway Sunset</strong> is modeled using a different PRELIM configuration than the model's categorization scheme calls for. The Midway Sunset oil field contains very complex oil. The API gravity is highly variable, ranging from the teens to the low twenties. The oil assay obtained for OCI Phase 1 indicates a gravity of 22.6, which suggests that the oil, according to PRELIM rules, should be run through a medium conversion refinery. Because the Midway Sunset crude oil field is highly complex and known to be heavier than the 22.6 API assay obtained, this oil is instead run through a deep conversion refinery in the default run. This default operating assumption can be changed in the web tool. Note that Midway Sunset crude is priced and tracked monthly as a 13 API gravity crude.</p>
+      <p><strong>U.S. Bakken</strong> oil assay is not publicly available. A proxy assay was generated using a composite of documentation submitted to the <a href="http://yosemite.epa.gov/oa/eab_web_docket.nsf/Filings By Appeal Number/C288B68AA94008B48525796B004CC9CC/$File/Response to Petitions for Review Exhibit 7 ...19.07.pdf" target="_blank">EPA</a>, the <a href="http://www.netl.doe.gov/File Library/Research/Oil-Gas/FE0000516_FinalReport.pdf" target="_blank">Department of Energy</a>, and other research <a href="http://www.hydrocarbonprocessing.com/Article/3250397/Processing-shale-oils-in-FCC-Challenges-and-opportunities.html" target="_blank">publications</a>.</p>
+      <p><strong>U.S. Texas Eagle Ford</strong> oil fields are modeled separately due to the wide range of oil characteristics (for example, API gravity), as well as production and refining practices, particular to each zone of oil production in the Eagle Ford play. Further, in the absence of oil assays from certain Eagle Ford fields, the <strong>U.S. Eagle Ford Condensate</strong> PRELIM case was run using Statoil's <strong>Norway Snohvit Condensate</strong> assay as a proxy, and the <strong>U.S. Eagle Ford Volatile Oil</strong> PRELIM case was run using a Margham Light assay analyzed by <a href="http://www.eceric.com/crudeoil.html" target="_blank">Emir Ceri&#263; as a proxy</a>. The <strong>U.S. Eagle Ford Black Oil</strong> PRELIM case was run using Platts's Eagle Ford Ultralight assay.</p>
+      <h2 id="change-log">Change Log</h2>
+      <p>As new, open-source data is provided by others or uncovered through research, we update the OCI models and revise the estimates for life-cycle GHG emissions. This date-stamped log details changes since the OCI was released in March 2015.</p>
+      <table id="change-log" class="data-table full-width">
           <thead>
             <tr>
               <td>Date</td>
@@ -192,31 +449,83 @@
           </thead>
           <tbody>
             <tr>
+              <td>07/01/16</td>
+              <td>
+                <p>Summary of changes since OCI Phase 1 made prior to release of OCI Phase 2</p>
+                <p>Increased from 30 test oils to 75 sample oils, representing approximately 25 percent of current global production.</p>
+                <p>Petcoke reference update: In order to improve outputs for petcoke emissions calculations, production tables for the Alberta Energy Regulator and Syncrude Canada were updated from 2013 to 2014 values provided by the Alberta Energy Regulator. For Suncor Energy (see table 1.1) and Syncrude Canada (see table 1.2) production numbers in the "Petcoke Details" tab integrated in the OCI workbook were updated from 2013 figures provided by the Alberta Energy Regulator to 2014–2015 figures.</p>
+                <p>All OPGEE cases were rerun during Phase 2 with the updated OPGEE model version 1.1 draft E, which can be accessed <a href="https://pangea.stanford.edu/researchgroups/eao/research/opgee-oil-production-greenhouse-gas-emissions-estimator" target="_blank">here</a>.</p>
+                <p>Norway Ekofisk PRELIM assay was changed from a BP-provided crude assay to a Statoil-provided crude assay. This change better reflects the production by <a href="http://www.conocophillips.no/EN/our-norway-operations/greater-ekofisk-area/Pages/default.aspx" target="_blank">the current plurality producer within this field</a>.</p>
+                <p>Canada Midale field was removed from Phase 2. This change reflects the fact that the Midale field's spatial boundaries, needed to calculate average flare rates, were penetrated by production associated with other oil formations.</p>
+                <p>UK Brent field was removed from Phase 2. This change reflects the fact that the Brent field is now primarily a gas field, and its oil-production values are so low they distort OPGEE results, particularly for the flaring-to-oil ratio.</p>
+                <p>All Phase 2 model inputs (OPGEE, PRELIM, and OPEM) were run with new global warming potentials reflecting one-hundred-year cycles that include climate-feedback loops. This data was obtained from the Intergovernmental Panel on Climate Change's 2013 assessment report. Figures are located in Chapter 8, table 8.7, page 417, or <a href="https://www.ipcc.ch/pdf/assessment-report/ar5/wg1/WG1AR5_Chapter08_FINAL.pdf" target="_blank">here</a>. During Phase 1, OPGEE and PRELIM used the IPCC's 2007 assessment report. According to the 2007 report, the reference gas, carbon dioxide, is assigned a GWP of 1, methane's GWP is 25 times greater than carbon dioxide, and nitrous oxide is 298 times greater. The 2013 report updates methane's GWP to 34 times that of carbon dioxide.</p>
+                <p>New products were added to PRELIM and OPEM: liquefied petroleum gas (LPG), asphalt, and petrochemical feedstocks. Only LPG is transported and combusted in OPEM, and like all other products, its emissions factor is taken from the <a href="https://www.epa.gov/sites/production/files/2015-12/documents/emission-factors_nov_2015.pdf" target="_blank">EPA</a>. PRELIM's functionality allows for a number of custom settings with respect to producing products. For example, users can specify the intensity of asphalt, gasoline, and diesel production—though the data reported in the OCI Phase 2 web tool illustrate only two cases: the default, where LPG is produced and sold by the refinery, and the secondary case, where LPG is burned as refinery fuel gas. Additionally, some products have changed names and <a href="https://www.epa.gov/sites/production/files/2015-12/documents/emission-factors_nov_2015.pdf" target="_blank">emissions factors</a>. Bunker C is now referred to as Residual Fuels in order to more accurately reflect the wide range of bottom-of-the-barrel residual co-products that are not necessarily all classified as bunker C. In Phase 2, in order to reflect product outputs as modeled in PRELIM, residual fuels' emissions factor is an average of Residual Fuel Oils No. 5 and No. 6. "Ultra-Low Sulfur Diesel" has been renamed "Diesel."</p>
+                <p>Changed names of oil sands:</p>
+                <ul>
+                  <li>Canada Light Sweet SCO to Canada Athabasca DC SCO</li>
+                  <li>Canada Medium Sweet SCO to Canada Athabasca FC-HC SCO</li>
+                  <li>Canada Cold Lake Dilbit to Canada Cold Lake CSS Dilbit</li>
+                </ul>
+                <p>These changes reflect more accurately the pathways used to extract and upgrade dilbit and synthetic crude oil, respectively.</p>
+                <p>Venezuelan extra-heavy oils were classified similarly to Canadian oil sands, by pathway.</p>
+                <p>Lower heating values (LHV) for petroleum products are sourced from GREET 1 2015 rather than extrapolating from EPA-reported higher heating values (as they had been in Phase 1) in order to remain consistent with the use of LHVs throughout the OCI.</p>
+                <p>Sulfur is reported using PRELIM data rather than OPGEE data, as sulfur has a greater impact on emissions for PRELIM than OPGEE.</p>
+                <p>Updated the emissions conversion section "Per $ Product Value" of the calculator to denote both the "Per $ Product Value (Historic)" for February 2015 prices as well as "Per $ Product Value (Current)" for April 2016 prices for those products that are priced monthly (see "OCI Input Data" above).</p>
+                <p>Created data-quality measures (see "Data Quality and Transparency" above).</p>
+                <p>Created a "Per $ Crude Oil" pricing calculator for globally priced crude oils, as well as domestic U.S.-priced crude oils, as sourced from the Oil and Gas Journal, which is published monthly. In Phase 2, we additionally chose to model the CO2 emissions per U.S. dollar value of a crude oil for those crudes whose prices are routinely tracked. Eighteen Phase 2 oils are currently priced and tracked. Two of our Phase 2 oils, UK Forties Blend and Norway Ekofisk, are priced according to the globally priced UK Brent basket of crudes because this basket is a blend of oils coming mostly from the Forties and Ekofisk fields. The "Per $ Crude Oil" pricing calculator will include prices from April 2016 as well as the historic prices from OCI Phase 1, February 2015.</p>
+                <p>Created the new section "Carbon Tax: $ per Metric Ton CO2," which can calculate the tax per barrel of oil for each of the OCI sample fields and break down the cost of a carbon tax for each stage of an oil's life cycle.</p>
+                <p>Removed sliders for production of petrochemical feedstock and asphalt that were originally intended to be included in OCI Phase 2. They were slowing the speed of the web tool. These results from PRELIM version 1.1 can be found in the model itself, and we plan to include these additional co-products in Phase 3.</p>
+              </td>
+            </tr>
+            <tr>
               <td>05/26/15</td>
-              <td>Changed names of oil sands:
-              	<ul>
-              		<li>Canada Cold Lake Diluted Bitumen (Dilbit) to Canada Cold Lake Dilbit</li>
-              		<li>Canada Suncor Synthetic H to Canada Heavy Sour SCO</li>
-              		<li>Canada Suncor Synthetic A to Canada Light Sweet SCO</li>
-              		<li>Canada Syncrude Synthetic to Canada Medium Sweet SCO</li>
-              	</ul>
-              	Canada Cold Lake Diluted Bitumen (Dilbit) was changed to shorten the length of the unique name in order to provide a better viewing experience for mobile devices.  The other oils were changed to avoid using company names, which might imply that we are modelling their current specific pathway.  While we have some company specific data, such as assays, the pathways represented by the tool do not exactly represent company specific operations and pathways.  For example, upstream data is tied to the field (in this case Athabasca) not the company, and transport distance is not tied to exact flows of crudes.
-            	</td>
+              <td>
+                <p>Changed names of oil sands to represent their particular pathways rather than company operators:</p>
+                <ul>
+                  <li>Canada Cold Lake Diluted Bitumen (Dilbit) to Canada Cold Lake CSS Dilbit</li>
+                  <li>Canada Suncor Synthetic H to Canada Heavy Sour SCO (removed from OCI Phase 2 since this blend is an unusual oil sand pathway with a very small production volume)</li>
+                  <li>Canada Suncor Synthetic A to Canada Light Sweet SCO</li>
+                  <li>Canada Syncrude Synthetic to Canada Medium Sweet SCO</li>
+                  <li>Canada Cold Lake Diluted Bitumen (Dilbit) was changed to shorten the length of the unique name in order to provide a better viewing experience for mobile devices. The other oils were changed to avoid using company names, which might imply that we are modelling their current specific pathway. While we have some company-specific data, such as assays, the pathways represented by the tool do not exactly represent company-specific operations and pathways. For example, upstream data is tied to the field (in this case, Athabasca) not the company, and transport distance is not tied to exact flows of crudes.</li>
+                </ul>
+              </td>
             </tr>
             <tr>
               <td>05/04/15</td>
-              <td>Updated to better take into account upstream petcoke in /MJ and /$ calculations.  Prior to this we had not included the energy content/dollar value of upstream petcoke in our conversions from a per-barrel basis to a per-MegaJoule and per-dollar basis.  This resulted in an overestimation of emissions /MJ and /$.</td>
+              <td>Updated to better take into account upstream petcoke in /MJ and /$ calculations. Prior to this, we had not included the energy content/dollar value of upstream petcoke in our conversions from a per-barrel basis to a per-megajoule and per-dollar basis. This resulted in an overestimation of emissions /MJ and /$.</td>
             </tr>
             <tr>
               <td>03/01/15</td>
-              <td>Bozhong had a data inconsistency where the API gravity used in OPGEE did not match with API gravity used in PRELIM. Upstream extraction literature checked and the API gravity corrected. New data for Alaskan North Slope field properties and production practices (OPGEE Inputs) from the Alaska Oil and Gas Conservation Commission. Know Your Oil report updated to take into account these changes.</td>
+              <td>China Bozhong had a data inconsistency where the API gravity used in OPGEE did not match with API gravity used in PRELIM. Upstream extraction literature was checked and the API gravity corrected. New data for U.S. Alaska North Slope field properties and production practices (OPGEE Inputs) from the Alaska Oil and Gas Conservation Commission. The Know Your Oil report updated to take into account these changes.</td>
             </tr>
             <tr>
               <td>02/15/15</td>
-              <td>Web-tool beta release, all numbers match up with Know Your Oil report.</td>
+              <td>Web tool beta release; all numbers match up with the Know Your Oil report.</td>
             </tr>
           </tbody>
         </table>
+        <h2 id="oci-phase-3-in-planning">OCI Phase 3—In Planning</h2>
+        <ul>
+          <li>OPGEE: Reconfigure model for GHG estimates with co-generation</li>
+          <li>OPGEE: Calculate GHG emissions impacts of CO2 injection and storage as an enhanced recovery alternative</li>
+          <li>PRELIM: Reconfigure model to balance hydrogen running individual crudes to assign credits and debits for oils that produce and use hydrogen and, if possible, include renewable hydrogen calculations in the OCI</li>
+          <li>PRELIM: Build model's float case capacity to maximize production of gasoline and diesel fuel into the OCI web tool</li>
+          <li>PRELIM: Advance the collection of standardized, open-source assays, especially for unconventional oils, including condensates and extra-heavy oils</li>
+          <li>PRELIM: Obtain new assays for complex and depleted fields, such as U.S. California Midway Sunset</li>
+          <li>OPEM: Update user inputs for transportation end products</li>
+          <li>OPEM: Revise to reflect user-based options for crude and product transport and product combustion; test scenarios to determine GHG emissions sensitivities in downstream end use</li>
+          <li>Collect and report out GHG emissions embodied in oil reservoirs using oil reserve data, as available</li>
+          <li>Investigate additional oil sands and extra-heavy oil pathways, including numerous novel options under consideration</li>
+          <li>Incorporate petrochemical feedstock and asphalt production sliders (on/off) into web tool</li>
+          <li>Increase the number of oils modeled in the OCI, including a wide range of types and geographies</li>
+          <li>Update oil data, where new information is available</li>
+          <li>Expand data quality and uncertainty analysis</li>
+          <li>Add air quality modeling estimates to the OCI to evaluate oils on two dimensions—climate change and air pollution</li>
+          <li>Consider adding further non-CO2 and short-lived climate forcers to the OCI, including VOC, CO, NOX, SOX, black carbon, and tropospheric ozone</li>
+          <li>Consider user suggestions to improve estimates made using the OCI</li>
+          <li>Update land-use inputs in OPGEE model to reflect up-to-date knowledge, especially for oils in climate-sensitive ecosystems such as the Arctic and forests</li>
+          <li>Build functionality for comparisons among more than two oils</li>
+        </ul>
       </div>
     </div>
   </div>
