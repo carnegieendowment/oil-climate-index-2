@@ -26,16 +26,16 @@
   "Canada Hibernia": {
     "description": "A light, sour oil that is located offshore Newfoundland, Canada. Hibernia’s GHG emissions are lower than the OCI Phase 2 average due to its low gas-to-oil ratio and low carbon content. OCI assay source: Hibernia, Exxon"
   },
-  "Canada Cold Lake CSS Dilbit ": {
+  "Canada Cold Lake CSS Dilbit": {
     "description": "An extra-heavy, high-sulfur bitumen from the Cold Lake region in Canada’s Alberta Province that is blended with approximately 25 percent condensate diluent, allowing it to flow through pipelines to refineries. This bitumen is extracted using cyclic steam stimulation (CSS) to loosen deeply buried bitumen in place. The bitumen’s high energy inputs, its large land-use footprint, and the petcoke generated from refining it contribute significantly to its GHG emissions. Dilbit is not equivalent on a per-barrel basis to conventional and synthetic oils in OCI Phase 2. OCI assay source: Cold Lake, Crude Monitor"
   },
   "Canada Athabasca SAGD Dilbit": {
     "description": "An extra-heavy, high-sulfur bitumen from the Athabasca region in Canada’s Alberta Province that is blended with approximately 25 percent condensate diluent, allowing it to flow through pipelines to refineries. This bitumen is extracted using steam-assisted gravity drainage (SAGD) to loosen deep-underground bitumen in place. The bitumen’s high energy inputs, its large land-use footprint, and the petcoke generated from refining it contribute significantly to its GHG emissions. Dilbit is not equivalent on a per-barrel basis to conventional and synthetic oils in OCI Phase 2. OCI assay source: Christina Lake, Crude Monitor"
   },
-  "Canada Athabasca FC-HC SCO ": {
+  "Canada Athabasca FC-HC SCO": {
     "description": "An extra-heavy, high-sulfur bitumen mined from the Athabasca oil sands in Canada’s Alberta Province that is upgraded into a light, sweet synthetic crude oil (SCO) before transport to the refinery. Upgrading this oil requires a fluid coker (FC) unit and a hydroconversion (HC) system. Athabasca FC-HC SCO generates more GHG emissions in the upgrading process but fewer emissions in refining and end use compared to other SCOs in OCI Phase 2, owing to its lighter, upgraded gravity. OCI assay source: Suncor Synthetic A, Crude Monitor"
   },
-  "Canada Athabasca DC SCO ": {
+  "Canada Athabasca DC SCO": {
     "description": "An extra-heavy, high-sulfur bitumen mined from the Athabasca oil sands in Canada’s Alberta Province that is upgraded into a medium, sweet synthetic crude oil (SCO) before transport to the refinery. A delayed coker (DC) unit, which produces petcoke, is used to upgrade this oil, and high heat and hydrogen are associated with its refining. These processes make Athabasca DC SCO one of the most emissions intensive of all current sample oils in OCI Phase 2. OCI assay source: Syncrude, Crude Monitor"
   },
   "China Bozhong": {
