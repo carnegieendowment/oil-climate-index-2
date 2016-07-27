@@ -98,17 +98,18 @@ ul.oiltype-legend {
 #methodology-view, .view-team {
   .prose-content {
     width: 80%;
-	margin-right: auto;
-	margin-left: auto;
-	float: none;
-}
+  	margin-right: auto;
+  	margin-left: auto;
+  	float: none;
+  }
   .container-content {
-	width: 95%;
-	padding-left: 20%;
-	@media screen and (max-width: 480px) {
-      width: 100%;
-      padding-left: 0;
-	}
+  	width: 95%;
+  	padding-left: 20%;
+
+  	@media screen and (max-width: 480px) {
+        width: 100%;
+        padding-left: 0;
+  	}
   }
 }
 
@@ -191,4 +192,17 @@ ul.oiltype-legend {
 	font-weight: bold;
 	font-size:.9em;
 	text-transform: uppercase;
+}
+
+.acronyms-list {
+  display:block;
+
+  dt {
+    display:inline-block;
+    float:left;
+    font-weight:bold;
+    width:10%;
+  }
+
+  dd {margin-left:2em;}
 }
