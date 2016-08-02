@@ -1048,17 +1048,23 @@ var utils = {
 
   getDataQuality: function (key) {
     function numberToQuality (num) {
-      return (num)
-      ? ['Low', 'Medium', 'High'][Math.min(Math.floor(num), 2)]
-      : 'N/A';
+      if (num > 2.5) {
+        return 'High';
+      } else if (num > 1.85) {
+        return 'Medium';
+      } else if (num > 0) {
+        return 'Low';
+      } else {
+        return 'N/A';
+      }
     }
     var oil = Oci.data.info[key];
-    var upstreamQuality = oil['OPGEE Data Quality'];
-    var midstreamQuality = oil['PRELIM Data Quality'];
-    var downstreamQuality = oil['OPEM Data Quality'];
+    var upstreamQuality = +oil['OPGEE Data Quality'];
+    var midstreamQuality = +oil['PRELIM Data Quality'];
+    var downstreamQuality = +oil['OPEM Data Quality'];
     return {
       total: numberToQuality(((upstreamQuality || 0) + (midstreamQuality || 0) + (downstreamQuality || 0)) /
-      (upstreamQuality ? 1 : 0) + (midstreamQuality ? 1 : 0) + (downstreamQuality ? 1 : 0)),
+      ((upstreamQuality ? 1 : 0) + (midstreamQuality ? 1 : 0) + (downstreamQuality ? 1 : 0))),
       upstream: numberToQuality(upstreamQuality),
       midstream: numberToQuality(midstreamQuality),
       downstream: numberToQuality(downstreamQuality)
