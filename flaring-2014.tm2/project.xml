@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map[]>
-<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" buffer-size="10">
 
 <Parameters>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
   <Parameter name="center">-45.7031,43.5804,2</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
-  <Parameter name="maxzoom">8</Parameter>
+  <Parameter name="maxzoom">18</Parameter>
   <Parameter name="minzoom">0</Parameter>
   <Parameter name="name"><![CDATA[OCI 2014]]></Parameter>
   <Parameter name="source"><![CDATA[mapbox:///carnegiecomms.7025qo1b]]></Parameter>
@@ -15,7 +15,55 @@
 
 <Style name="flaregeojson" filter-mode="first" direct-image-filters="agg-stack-blur(2,2)">
   <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="512" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="256" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="128" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="64" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="32" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="16" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="8" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.004)</Filter>
+    <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="6" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
     <Filter>([BCM 2014] &gt; 0.004)</Filter>
     <MarkersSymbolizer fill="#f03b20" opacity="0.6" width="5" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
   </Rule>
@@ -43,7 +91,55 @@
     <MarkersSymbolizer fill="#f03b20" allow-overlap="true" ignore-placement="true" stroke-opacity="0" width="3" opacity="0.25" />
   </Rule>
   <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="512" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="256" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="128" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="64" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="32" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="16" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="8" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.003)</Filter>
+    <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="6" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
     <Filter>([BCM 2014] &gt; 0.003)</Filter>
     <MarkersSymbolizer fill="#fd8d3c" opacity="0.6" width="5" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
   </Rule>
@@ -71,7 +167,55 @@
     <MarkersSymbolizer fill="#fd8d3c" allow-overlap="true" ignore-placement="true" stroke-opacity="0" width="3" opacity="0.25" />
   </Rule>
   <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="512" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="256" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="128" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="64" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="32" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="16" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="8" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.002)</Filter>
+    <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="6" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
     <Filter>([BCM 2014] &gt; 0.002)</Filter>
     <MarkersSymbolizer fill="#feb24c" opacity="0.6" width="5" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
   </Rule>
@@ -99,7 +243,55 @@
     <MarkersSymbolizer fill="#feb24c" allow-overlap="true" ignore-placement="true" stroke-opacity="0" width="3" opacity="0.25" />
   </Rule>
   <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="512" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="256" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="128" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="64" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="32" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="16" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="8" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0.001)</Filter>
+    <MarkersSymbolizer fill="#fed976" opacity="0.6" width="6" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
+  </Rule>
+  <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
     <Filter>([BCM 2014] &gt; 0.001)</Filter>
     <MarkersSymbolizer fill="#fed976" opacity="0.6" width="5" allow-overlap="true" ignore-placement="true" stroke-opacity="0" />
   </Rule>
@@ -127,7 +319,55 @@
     <MarkersSymbolizer fill="#fed976" allow-overlap="true" ignore-placement="true" stroke-opacity="0" width="3" opacity="0.25" />
   </Rule>
   <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="512" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="256" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="128" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="64" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="32" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>50000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="16" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="8" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([BCM 2014] &gt; 0)</Filter>
+    <MarkersSymbolizer opacity="0.6" width="6" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
+  </Rule>
+  <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
     <Filter>([BCM 2014] &gt; 0)</Filter>
     <MarkersSymbolizer opacity="0.6" width="5" allow-overlap="true" ignore-placement="true" stroke-opacity="0" fill="#ffffb2" />
   </Rule>

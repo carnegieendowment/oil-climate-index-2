@@ -1,3 +1,7 @@
+Map {
+  buffer-size: 10;  
+}
+
 #flaregeojson["BCM 2013" > 0] {
   marker-allow-overlap: true;
   marker-ignore-placement: true;
@@ -7,6 +11,14 @@
   direct-image-filters: agg-stack-blur(2,2);
   [zoom>=5] { marker-width: 4; }
   [zoom>=7] { marker-width: 5; }
+  [zoom>=9] { marker-width: 6; }
+  [zoom>=10] { marker-width: 8; }
+  [zoom>=12] { marker-width: 16; }
+  [zoom>=14] { marker-width: 32; }
+  [zoom>=15] { marker-width: 64; }
+  [zoom>=16] { marker-width: 128; }
+  [zoom>=17] { marker-width: 256; }
+  [zoom>=18] { marker-width: 512; }
 
   [zoom>=4] { marker-opacity: .4; }
   [zoom>=6] { marker-opacity: .6; }
