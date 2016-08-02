@@ -329,9 +329,9 @@ var CompareOils = BaseView.extend({
       .attr('width', function (d) { return self.xScale(d.x); })
       .attr('fill', function (d) { return utils.categoryColorForType(d.type); })
       .attr('opacity', 0)
-      .attr('class', function (d) { return d.y.replace(/ /g, '-').replace('\'', ''); })
+      .attr('class', function (d) { return d.y.replace(/ /g, '-').replace(/['\.]/g, ''); })
       .on('mouseover', function (d) {
-        var className = d.y.replace(/ /g, '-').replace('\'', '');
+        var className = d.y.replace(/ /g, '-').replace(/['\.]/g, '');
         var selectorString = '.' + self.lastStep + ' rect.' + className;
         var lastNode = d3.select(selectorString).node();
         self.tip.show(d, lastNode);
