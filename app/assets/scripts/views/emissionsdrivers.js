@@ -432,7 +432,9 @@ var EmissionsDrivers = BaseView.extend({
 
       // Sum up for total
       var ghgTotal = d3.sum([upstream, midstream, transport, combustion]);
-
+      if (isNaN(midstream)) {
+        ghgTotal = NaN;
+      }
       // Create oil object
       var obj = {
         id: utils.makeId(info.Unique),
