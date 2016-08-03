@@ -18,6 +18,7 @@ var Methodology = require('../views/methodology');
 var Team = require('../views/team');
 var Models = require('../views/models');
 var TermsOfUse = require('../views/termsofuse');
+var DemoVideos = require('../views/demovideos');
 
 var demoViewDuration = 5000;
 
@@ -42,6 +43,7 @@ var router = Backbone.Router.extend({
     'team': 'team',
     'models': 'models',
     'termsofuse': 'termsofuse',
+    'demovideos': 'demovideos',
     'demo': 'playDemo'
   },
 
@@ -149,6 +151,11 @@ var router = Backbone.Router.extend({
   termsofuse: function () {
     Oci.view = new TermsOfUse();
     $('#menu-termsofuse').addClass('active');
+  },
+
+  demovideos: function () {
+    Oci.view = new DemoVideos();
+    $('#menu-demovideos').addClass('active');
   },
 
   allRoutes: function () {
