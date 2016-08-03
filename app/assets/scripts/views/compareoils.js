@@ -86,7 +86,7 @@ var CompareOils = BaseView.extend({
           value: d.ghgTotal,
           units: self.getXAxisSubtitle()
         });
-        return utils.createTooltipHtml(d.y, d.type, values, utils.makeId(d.y), '', Oci.data.info[d.y]['Absolute Emissions Icons'], self.showCarbon, false, utils.getDataQuality(d.y).total, self.sortRatio !== 'perBarrel');
+        return utils.createTooltipHtml(d.y, d.type, values, utils.makeId(d.y), '', Oci.data.info[d.y]['Absolute Emissions Icons'], self.showCarbon, false, utils.getDataQuality(d.y).total, self.sortRatio === 'perDollar');
       })
       .offset([0, 20])
       .direction('e');
@@ -488,7 +488,7 @@ var CompareOils = BaseView.extend({
     var self = this;
 
     // extraThousander handles conversion of grams to kgs for certain ratios
-    var extraThousander = this.sortRatio !== 'perBarrel';
+    var extraThousander = this.sortRatio === 'perDollar';
     var xMax = utils.getGlobalExtent(this.sortRatio, 'max');
     var axisScale = (this.showCarbon)
     ? d3.scale.linear().domain([0, xMax / (1000 * (extraThousander ? 1000 : 1)) * Oci.carbonTax]).range([0, this.width]).nice()
@@ -537,7 +537,7 @@ var CompareOils = BaseView.extend({
   getXAxisSubtitle: function () {
     if (this.showCarbon) {
       return utils.getUnits('ghgTotal', this.sortRatio)
-        .replace(/.*\//, '$ tax/');
+        .replace(/.*\//, '$ tax/').replace('MJ', '1000 MJ');
     } else {
       return utils.getUnits('ghgTotal', this.sortRatio);
     }
