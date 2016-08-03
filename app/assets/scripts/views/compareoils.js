@@ -86,7 +86,7 @@ var CompareOils = BaseView.extend({
           value: d.ghgTotal,
           units: self.getXAxisSubtitle()
         });
-        return utils.createTooltipHtml(d.y, d.type, values, utils.makeId(d.y), '', Oci.data.info[d.y]['Absolute Emissions Icons'], self.showCarbon, false, utils.getDataQuality(d.y).total);
+        return utils.createTooltipHtml(d.y, d.type, values, utils.makeId(d.y), '', Oci.data.info[d.y]['Absolute Emissions Icons'], self.showCarbon, false, utils.getDataQuality(d.y).total, self.sortRatio === 'perDollar');
       })
       .offset([0, 20])
       .direction('e');
@@ -329,9 +329,9 @@ var CompareOils = BaseView.extend({
       .attr('width', function (d) { return self.xScale(d.x); })
       .attr('fill', function (d) { return utils.categoryColorForType(d.type); })
       .attr('opacity', 0)
-      .attr('class', function (d) { return d.y.replace(/ /g, '-').replace('\'', ''); })
+      .attr('class', function (d) { return d.y.replace(/ /g, '-').replace(/['\.]/g, ''); })
       .on('mouseover', function (d) {
-        var className = d.y.replace(/ /g, '-').replace('\'', '');
+        var className = d.y.replace(/ /g, '-').replace(/['\.]/g, '');
         var selectorString = '.' + self.lastStep + ' rect.' + className;
         var lastNode = d3.select(selectorString).node();
         self.tip.show(d, lastNode);
@@ -487,9 +487,11 @@ var CompareOils = BaseView.extend({
   updateAxes: function (animate) {
     var self = this;
 
+    // extraThousander handles conversion of grams to kgs for certain ratios
+    var extraThousander = this.sortRatio === 'perDollar';
     var xMax = utils.getGlobalExtent(this.sortRatio, 'max');
     var axisScale = (this.showCarbon)
-    ? d3.scale.linear().domain([0, xMax / 1000 * Oci.carbonTax]).range([0, this.width]).nice()
+    ? d3.scale.linear().domain([0, xMax / (1000 * (extraThousander ? 1000 : 1)) * Oci.carbonTax]).range([0, this.width]).nice()
     : this.xScale;
 
     this.xAxis = d3.svg.axis().scale(axisScale).orient('top');
@@ -535,7 +537,7 @@ var CompareOils = BaseView.extend({
   getXAxisSubtitle: function () {
     if (this.showCarbon) {
       return utils.getUnits('ghgTotal', this.sortRatio)
-        .replace(/.*\//, '$ tax/');
+        .replace(/.*\//, '$ tax/').replace('MJ', '1000 MJ');
     } else {
       return utils.getUnits('ghgTotal', this.sortRatio);
     }

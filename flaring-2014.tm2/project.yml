@@ -16,7 +16,7 @@ description: ''
 format: "png8:m=h"
 interactivity_layer: ''
 layers: null
-maxzoom: 8
+maxzoom: 18
 minzoom: 0
 name: OCI 2014
 source: "mapbox:///carnegiecomms.7025qo1b"

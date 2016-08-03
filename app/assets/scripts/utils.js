@@ -731,13 +731,16 @@ var utils = {
   // Create the tooltip html given a title, a type, an array
   // of values like [{name: foo, value: 12, units: bbl}, {name: bar, value: 123, units: bbl}],
   // an oil name, and a link
-  createTooltipHtml: function (title, type, values, link, text, icons, showCarbon, zoom, dataQuality) {
+  createTooltipHtml: function (title, type, values, link, text, icons, showCarbon, zoom, dataQuality, extraThousander) {
     var valuesString = '';
     for (var i = 0; i < values.length; i++) {
       var v = values[i];
       valuesString += '<dt>' + v.name + '<small class="units">' + v.units + '</small></dt>';
       if (showCarbon) {
-        valuesString += '<dd class="value-oil-detail">$' + (Math.round(v.value / 1000 * Oci.carbonTax * 20) / 20).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</dd>';
+        // extraThousander handles conversion of grams to kgs for certain ratios
+        valuesString += '<dd class="value-oil-detail">$' +
+          (Math.round(v.value / (1000 * (extraThousander ? 1000 : 1)) * Oci.carbonTax * 20) / 20)
+          .toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</dd>';
       } else {
         valuesString += '<dd class="value-oil-detail">' + this.numberWithCommas(v.value) + '</dd>';
       }
@@ -1048,17 +1051,23 @@ var utils = {
 
   getDataQuality: function (key) {
     function numberToQuality (num) {
-      return (num)
-      ? ['Low', 'Medium', 'High'][Math.min(Math.floor(num), 2)]
-      : 'N/A';
+      if (num > 2.5) {
+        return 'High';
+      } else if (num > 1.85) {
+        return 'Medium';
+      } else if (num > 0) {
+        return 'Low';
+      } else {
+        return 'N/A';
+      }
     }
     var oil = Oci.data.info[key];
-    var upstreamQuality = oil['OPGEE Data Quality'];
-    var midstreamQuality = oil['PRELIM Data Quality'];
-    var downstreamQuality = oil['OPEM Data Quality'];
+    var upstreamQuality = +oil['OPGEE Data Quality'];
+    var midstreamQuality = +oil['PRELIM Data Quality'];
+    var downstreamQuality = +oil['OPEM Data Quality'];
     return {
       total: numberToQuality(((upstreamQuality || 0) + (midstreamQuality || 0) + (downstreamQuality || 0)) /
-      (upstreamQuality ? 1 : 0) + (midstreamQuality ? 1 : 0) + (downstreamQuality ? 1 : 0)),
+      ((upstreamQuality ? 1 : 0) + (midstreamQuality ? 1 : 0) + (downstreamQuality ? 1 : 0))),
       upstream: numberToQuality(upstreamQuality),
       midstream: numberToQuality(midstreamQuality),
       downstream: numberToQuality(downstreamQuality)
