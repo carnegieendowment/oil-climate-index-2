@@ -731,13 +731,16 @@ var utils = {
   // Create the tooltip html given a title, a type, an array
   // of values like [{name: foo, value: 12, units: bbl}, {name: bar, value: 123, units: bbl}],
   // an oil name, and a link
-  createTooltipHtml: function (title, type, values, link, text, icons, showCarbon, zoom, dataQuality) {
+  createTooltipHtml: function (title, type, values, link, text, icons, showCarbon, zoom, dataQuality, extraThousander) {
     var valuesString = '';
     for (var i = 0; i < values.length; i++) {
       var v = values[i];
       valuesString += '<dt>' + v.name + '<small class="units">' + v.units + '</small></dt>';
       if (showCarbon) {
-        valuesString += '<dd class="value-oil-detail">$' + (Math.round(v.value / 1000 * Oci.carbonTax * 20) / 20).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</dd>';
+        // extraThousander handles conversion of grams to kgs for certain ratios
+        valuesString += '<dd class="value-oil-detail">$' +
+          (Math.round(v.value / (1000 * (extraThousander ? 1000 : 1)) * Oci.carbonTax * 20) / 20)
+          .toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</dd>';
       } else {
         valuesString += '<dd class="value-oil-detail">' + this.numberWithCommas(v.value) + '</dd>';
       }

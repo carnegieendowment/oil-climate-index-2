@@ -86,7 +86,7 @@ var CompareOils = BaseView.extend({
           value: d.ghgTotal,
           units: self.getXAxisSubtitle()
         });
-        return utils.createTooltipHtml(d.y, d.type, values, utils.makeId(d.y), '', Oci.data.info[d.y]['Absolute Emissions Icons'], self.showCarbon, false, utils.getDataQuality(d.y).total);
+        return utils.createTooltipHtml(d.y, d.type, values, utils.makeId(d.y), '', Oci.data.info[d.y]['Absolute Emissions Icons'], self.showCarbon, false, utils.getDataQuality(d.y).total, self.sortRatio !== 'perBarrel');
       })
       .offset([0, 20])
       .direction('e');
@@ -487,9 +487,11 @@ var CompareOils = BaseView.extend({
   updateAxes: function (animate) {
     var self = this;
 
+    // extraThousander handles conversion of grams to kgs for certain ratios
+    var extraThousander = this.sortRatio !== 'perBarrel';
     var xMax = utils.getGlobalExtent(this.sortRatio, 'max');
     var axisScale = (this.showCarbon)
-    ? d3.scale.linear().domain([0, xMax / 1000 * Oci.carbonTax]).range([0, this.width]).nice()
+    ? d3.scale.linear().domain([0, xMax / (1000 * (extraThousander ? 1000 : 1)) * Oci.carbonTax]).range([0, this.width]).nice()
     : this.xScale;
 
     this.xAxis = d3.svg.axis().scale(axisScale).orient('top');
