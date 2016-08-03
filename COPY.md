@@ -53,4 +53,4 @@ This same file will also accept keys which match the Oil Type Names and the `des
 The default prices and display names for the products on the Price Modal can be edited from [prices.json](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/app/assets/data/prices.json). Each JSON key is an internal variable (shouldn't be changed) with three properties:
 - `name`: the display name of that product
 - `currentPrice`: the current and default price of that product
-  `historicPrice`: the historic price of that product
+- `historicPrice`: the historic price of that product
