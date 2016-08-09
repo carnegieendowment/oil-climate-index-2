@@ -1,6 +1,8 @@
 // SUPPLY CURVE VIEW
 
 #sc-chart-cont {
+  overflow: hidden;
+  
   .panel-header {
     @extend .visually-hidden;
   }
