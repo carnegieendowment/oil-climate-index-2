@@ -141,21 +141,25 @@ var router = Backbone.Router.extend({
   team: function () {
     Oci.view = new Team();
     $('#menu-about').addClass('active');
+    $(window).scrollTop(0);
   },
 
   models: function () {
     Oci.view = new Models();
     $('#menu-about').addClass('active');
+    $(window).scrollTop(0);
   },
 
   termsofuse: function () {
     Oci.view = new TermsOfUse();
     $('#menu-termsofuse').addClass('active');
+    $(window).scrollTop(0);
   },
 
   demovideos: function () {
     Oci.view = new DemoVideos();
     $('#menu-demovideos').addClass('active');
+    $(window).scrollTop(0);
   },
 
   allRoutes: function () {
