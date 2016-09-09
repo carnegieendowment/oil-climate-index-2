@@ -193,7 +193,7 @@
     "U.S. Louisiana Lake Washington Field",
     "Russia Romashkinskoye",
     "Indonesia Minas",
-    "U.S.Salt Creek"
+    "U.S. Wyoming Salt Creek"
   ],
   "Mexico Chuc": [
     "Mexico Cantarell",
@@ -394,11 +394,11 @@
   "U.S. California Midway Sunset": [
     "Venezuela Hamaca SCO",
     "U.S. Louisiana Lake Washington Field",
-    "U.S. Salt Creek",
+    "U.S. Wyoming Salt Creek",
     "U.S. California Wilmington",
     "Venezuela Tia Juana"
   ],
-  "U.S. Salt Creek": [
+  "U.S. Wyoming Salt Creek": [
     "U.S. Wyoming WC",
     "U.S. East Texas Field",
     "U.S. Texas Yates",
@@ -406,14 +406,14 @@
     "Libya Waha"
   ],
   "U.S. Wyoming WC": [
-    "U.S. Salt Creek",
+    "U.S. Wyoming Salt Creek",
     "U.S. Texas Yates",
     "U.S. Bakken Flare",
     "U.S. Bakken No Flare",
     "Denmark Dansk Blend"
   ],
   "U.S. California South Belridge": [
-    "U.S. Salt Creek",
+    "U.S. Wyoming Salt Creek",
     "U.S. Louisiana Lake Washington Field",
     "U.S. Texas Yates",
     "U.S. California Gulf Mars",
@@ -438,10 +438,10 @@
     "U.S. Texas Spraberry",
     "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Louisiana Lake Washington Field",
-    "U.S.Salt Creek"
+    "U.S. Wyoming Salt Creek"
   ],
   "U.S. California Wilmington": [
-    "U.S. Salt Creek",
+    "U.S. Wyoming Salt Creek",
     "U.S. Louisiana Lake Washington Field",
     "U.S. Texas Yates",
     "U.S. Louisiana Lake Washington Field",
