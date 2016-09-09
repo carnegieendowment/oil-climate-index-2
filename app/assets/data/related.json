@@ -328,7 +328,7 @@
     "Nigeria Agbami",
     "Australia Cossack"
   ],
-  "U.S.Alaska North Slope": [
+  "U.S. Alaska North Slope": [
     "Nigeria Bonny",
     "Norway Skarv",
     "India Bombay High",
@@ -350,27 +350,27 @@
     "China Nanhai Light"
   ],
   "U.S. Texas Eagle Ford Black Oil Zone": [
-    "U.S.East Texas Field",
+    "U.S. East Texas Field",
     "U.S. Texas Eagle Ford Volatile Oil Zone",
     "U.S. Texas Eagle Ford Condensate Zone",
     "U.S. Texas Spraberry",
     "Nigeria Agbami"
   ],
   "U.S. Texas Eagle Ford Volatile Oil Zone": [
-    "U.S.East Texas Field",
+    "U.S. East Texas Field",
     "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Texas Eagle Ford Condensate Zone",
     "U.S. Texas Spraberry",
     "Algeria Hassi R’Mel"
   ],
   "U.S. Texas Eagle Ford Condensate Zone": [
-    "U.S.East Texas Field",
+    "U.S. East Texas Field",
     "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Texas Eagle Ford Volatile Oil Zone",
     "Algeria Hassi R’Mel",
     "U.S. Texas Spraberry"
   ],
-  "U.S.East Texas Field": [
+  "U.S. East Texas Field": [
     "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Texas Eagle Ford Volatile Oil Zone",
     "U.S. Texas Eagle Ford Condensate Zone",
@@ -406,14 +406,14 @@
     "Libya Waha"
   ],
   "U.S. Wyoming WC": [
-    "U.S.Salt Creek",
+    "U.S. Salt Creek",
     "U.S. Texas Yates",
     "U.S. Bakken Flare",
     "U.S. Bakken No Flare",
     "Denmark Dansk Blend"
   ],
   "U.S. California South Belridge": [
-    "U.S.Salt Creek",
+    "U.S. Salt Creek",
     "U.S. Louisiana Lake Washington Field",
     "U.S. Texas Yates",
     "U.S. California Gulf Mars",
@@ -427,21 +427,21 @@
     "Saudi Arabia Ghawar"
   ],
   "U.S. Texas Spraberry": [
-    "U.S.East Texas Field",
+    "U.S. East Texas Field",
     "U.S. Texas Yates",
     "U.S. Texas Eagle Ford Black Oil Zone",
     "United Arab Emirates Murban",
     "Nigeria Agbami"
   ],
   "U.S. Texas Yates": [
-    "U.S.East Texas Field",
+    "U.S. East Texas Field",
     "U.S. Texas Spraberry",
     "U.S. Texas Eagle Ford Black Oil Zone",
     "U.S. Louisiana Lake Washington Field",
     "U.S.Salt Creek"
   ],
   "U.S. California Wilmington": [
-    "U.S.Salt Creek",
+    "U.S. Salt Creek",
     "U.S. Louisiana Lake Washington Field",
     "U.S. Texas Yates",
     "U.S. Louisiana Lake Washington Field",
@@ -492,7 +492,7 @@
   "Mexico Cantarell": [
     "Mexico Chuc",
     "U.S. Louisiana Lake Washington Field",
-    "U.S.East Texas Field",
+    "U.S. East Texas Field",
     "U.S. Texas Yates",
     "Libya Waha"
   ],
