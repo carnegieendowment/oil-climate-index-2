@@ -19,6 +19,7 @@ Perform these steps on the OCI Consolidated Workbook (Sheet: OCI) to prepare it 
     1. Open the VBA editor (Alt+F11 or click VBA editor on the Developers Tab)
     2. Right click the project --> Insert --> Module
     3. Copy macro text [`macro.txt`](https://github.com/carnegieendowment/oil-climate-index-2/blob/master/macro.txt)
+    4. Note that sometimes an edit to the macro is necessary. If the macro will not run try editing the lines: "Application.Run ("" & OPGEEModel.Name & "!UltraBulk_assessment")" In "Sub OPGEE" to read "Application.Run ("'" & OPGEEModel.Name & "'!UltraBulk_assessment")"
 2. Add two columns to the beginning of the sheet (A, B)
 3. Set slider values in column A
   1. Macro will only look in A41, A69, A85 (Solar Steam, Water, Flaring)
