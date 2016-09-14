@@ -83,7 +83,7 @@
     "Indonesia Duri",
     "Brazil Frade"
   ],
-  "Colombia Caño Limón: [
+  "Colombia Caño Limón": [
     "Ecuador Sacha",
     "Colombia Cusiana",
     "Iran Marun",
@@ -92,14 +92,14 @@
   ],
   "Colombia Cusiana": [
     "Ecuador Sacha",
-    "Colombia Caño Limón,
+    "Colombia Caño Limón",
     "Russia Chayvo",
     "Mexico Chuc",
     "Nigeria Pennington"
   ],
   "Ecuador Sacha": [
     "Colombia Cusiana",
-    "Colombia Caño Limón,
+    "Colombia Caño Limón",
     "Kuwait Burgan",
     "Kuwait Ratawi",
     "Iran Marun"
