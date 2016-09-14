@@ -258,6 +258,10 @@ $popover-arr-size: 16px;
   font-style: italic;
   font-stretch: normal;
   margin: .5em 0 .7em;
+
+  &.data-quality {
+    color: $white;
+  }
 }
 
 
