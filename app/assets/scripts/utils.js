@@ -391,7 +391,7 @@ var utils = {
       case 'sulfurContent':
         return 'Sulfur %wt (PRELIM)';
       case 'prodResidual':
-        return 'Residual Fuels';
+        return 'Portion Residual Fuels';
       case 'prodGasoline':
         return 'Portion Gasoline';
       case 'prodDiesel':
