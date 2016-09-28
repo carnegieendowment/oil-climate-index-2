@@ -475,7 +475,7 @@ var utils = {
       case 'prodLPG':
       case 'prodJet':
       case 'prodPetcoke':
-        return 'bbl product/day';
+        return 'bbl product/100,000 bbl crude';
       case 'type':
       case 'ghgTotal':
       case 'upstream':
