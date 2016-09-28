@@ -8,8 +8,9 @@ Below are instructions for using the OCI Consolidated Workbook plus an OPGEE mod
   1. Select OPGEE model when prompted
 4. **Close without saving**
 5. Perform any special processing (see below)
-6. Run the processing script: `process.bat`
-7. The final data will be named `oils.json`; replace the old file with this name on the website ([on the master branch in `app/assets/data` folder](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data)
+6. Edit the oils.json file so that the names of oils Alegeria Hassi R'Mel read "Algeria Hassi R’Mel" and Colombia Cano Limon reads "Colombia Caño Limón" using the find and replace function in Notepad++ Save the resulting file as oils.json
+7. Run the processing script: `process.bat`
+8. The final data will be named `oils.json`; replace the old file with this name on the website ([on the master branch in `app/assets/data` folder](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data)
 
 ## OCI Consolidated Workbook File Modifications
 
