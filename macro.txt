@@ -365,13 +365,13 @@ Sub PRELIM()
           PRELIMSheet.Range("C1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Values
-          Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, 0), StartCell.Offset(1787 + LPGSecondaryOffset * j, Oils - 1)).Copy
+          ' Combustion Values (MJ/d)
+          Range(StartCell.Offset(1042 + LPGOffset * j, 0), StartCell.Offset(1051 + LPGOffset * j, Oils - 1)).Copy
           PRELIMSheet.Range("Y2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Variables
-          Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, -3), StartCell.Offset(1787 + LPGSecondaryOffset * j, -3)).Copy
+          ' Combustion Variables (MJ/d)
+          Range(StartCell.Offset(1042 + LPGOffset * j, -3), StartCell.Offset(1051 + LPGOffset * j, -3)).Copy
           PRELIMSheet.Range("Y1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
@@ -405,22 +405,4 @@ Sub PRELIM()
           Application.DisplayAlerts = True
       Next j
   Next i
-
-  ' Write out LHV (lower heating values)
-  Set LHVBook = Workbooks.Add
-  Set LHVSheet = LHVBook.Sheets("Sheet1")
-  ' Grab the variable names from column F
-  Range(StartCell.Offset(1861, -3), StartCell.Offset(1869, -3)).Copy
-  LHVSheet.Range("A1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-     SkipBlanks:=False, Transpose:=True
-  ' Get values from column D'
-  Range(StartCell.Offset(1861, -5), StartCell.Offset(1869, -5)).Copy
-  LHVSheet.Range("A2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-     SkipBlanks:=False, Transpose:=True
-
-  Application.DisplayAlerts = False
-  LHVBook.SaveAs Filename:="lhv.csv", FileFormat:=xlCSV
-  LHVBook.Close
-  Application.DisplayAlerts = True
-
 End Sub
