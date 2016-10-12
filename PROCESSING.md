@@ -2,15 +2,14 @@ Below are instructions for using the OCI Consolidated Workbook plus an OPGEE mod
 
 ## Data Processing (creating new data for the site)
 
-1. Install [python](https://www.python.org/downloads/), [csvkit](http://csvkit.readthedocs.org/en/0.9.1/install.html#users), and [jq](http://stedolan.github.io/jq/download/); add each to the [path/environment variables](http://www.computerhope.com/issues/ch000549.htm) as you go.
+1. Install [python](https://www.python.org/downloads/), [csvkit](http://csvkit.readthedocs.org/en/0.9.1/install.html#users), [jq](http://stedolan.github.io/jq/download/), and [libiconv](http://gnuwin32.sourceforge.net/packages/libiconv.htm) (only needed for Windows; use "Setup Program" download link); add each to the [path/environment variables](http://www.computerhope.com/issues/ch000549.htm) as you go.
 2. Open the prepared file, a slightly modified version of the OCI Consolidated workbook (see below)
 3. Run the macro
   1. Select OPGEE model when prompted
 4. **Close without saving**
 5. Perform any special processing (see below)
-6. Edit the oils.json file so that the names of oils Alegeria Hassi R'Mel read "Algeria Hassi R’Mel" and Colombia Cano Limon reads "Colombia Caño Limón" using the find and replace function in Notepad++ Save the resulting file as oils.json
-7. Run the processing script: `process.bat`
-8. The final data will be named `oils.json`; replace the old file with this name on the website ([on the master branch in `app/assets/data` folder](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data)
+6. Run the processing script: `process.bat`
+7. The final data will be named `oils.json`; replace the old file with this name on the website ([on the master branch in `app/assets/data` folder](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data)
 
 ## OCI Consolidated Workbook File Modifications
 
