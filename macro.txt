@@ -322,6 +322,8 @@ Sub PRELIM()
   For j = 0 To 9
     StartCell.Offset(1030 + j, -3).Value = "Portion " + StartCell.Offset(1030 + j, -3).Value
     StartCell.Offset(1030 + LPGOffset + j, -3).Value = "Portion " + StartCell.Offset(1030 + LPGOffset + j, -3).Value
+    StartCell.Offset(1042 + j, -3).Value = "MJD " + StartCell.Offset(1042 + j, -3).Value
+    StartCell.Offset(1042 + LPGOffset + j, -3).Value = "MJD " + StartCell.Offset(1042 + LPGOffset + j, -3).Value
   Next j
 
 
@@ -355,41 +357,51 @@ Sub PRELIM()
           PRELIMSheet.Range("B2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
                   SkipBlanks:=False, Transpose:=True
 
-          ' PRELIM Values
-          Range(StartCell.Offset(1076 + LPGOffset * j, 0), StartCell.Offset(1097 + LPGOffset * j, Oils - 1)).Copy
+          ' Product - Pricing
+          Range(StartCell.Offset(1030 + LPGOffset * j, 0), StartCell.Offset(1039 + LPGOffset * j, Oils - 1)).Copy
           PRELIMSheet.Range("C2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' PRELIM Variable Names (column F)
-          Range(StartCell.Offset(1076 + LPGOffset * j, -3), StartCell.Offset(1097 + LPGOffset * j, -3)).Copy
+          ' Product Variables - Pricing
+          Range(StartCell.Offset(1030 + LPGOffset * j, -3), StartCell.Offset(1039 + LPGOffset * j, -3)).Copy
           PRELIMSheet.Range("C1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Values (MJ/d)
+          ' Product (MJ/d)
           Range(StartCell.Offset(1042 + LPGOffset * j, 0), StartCell.Offset(1051 + LPGOffset * j, Oils - 1)).Copy
-          PRELIMSheet.Range("Y2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+          PRELIMSheet.Range("M2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Variables (MJ/d)
+          ' Product Variables (MJ/d)
           Range(StartCell.Offset(1042 + LPGOffset * j, -3), StartCell.Offset(1051 + LPGOffset * j, -3)).Copy
-          PRELIMSheet.Range("Y1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+          PRELIMSheet.Range("M1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Values - Pricing
-          Range(StartCell.Offset(1030 + LPGOffset * j, 0), StartCell.Offset(1039 + LPGOffset * j, Oils - 1)).Copy
-          PRELIMSheet.Range("AI2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+          ' Energy use and greenhouse gas emissions
+          Range(StartCell.Offset(1076 + LPGOffset * j, 0), StartCell.Offset(1097 + LPGOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("W2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Variables - Pricing
-          Range(StartCell.Offset(1030 + LPGOffset * j, -3), StartCell.Offset(1039 + LPGOffset * j, -3)).Copy
-          PRELIMSheet.Range("AI1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+          ' Energy use and greenhouse gas emissions Variable Names (column F)
+          Range(StartCell.Offset(1076 + LPGOffset * j, -3), StartCell.Offset(1097 + LPGOffset * j, -3)).Copy
+          PRELIMSheet.Range("W1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Product Combustion Values (kg/bbl)
+          Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, 0), StartCell.Offset(1787 + LPGSecondaryOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("AS2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Product Combustion Variables (kg/bbl)
+          Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, -3), StartCell.Offset(1787 + LPGSecondaryOffset * j, -3)).Copy
+          PRELIMSheet.Range("AS1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
           ' Clean Sheet
-          PRELIMSheet.Columns(13).EntireColumn.Delete
-          PRELIMSheet.Columns(9).EntireColumn.Delete
-          PRELIMSheet.Columns(6).EntireColumn.Delete
-          PRELIMSheet.Columns(4).EntireColumn.Delete
+          PRELIMSheet.Columns(33).EntireColumn.Delete
+          PRELIMSheet.Columns(29).EntireColumn.Delete
+          PRELIMSheet.Columns(26).EntireColumn.Delete
+          PRELIMSheet.Columns(24).EntireColumn.Delete
 
           ' Eliminate any oils which shouldn't have this refinery configuration
           For k = (Oils - 1) To 0 Step -1
