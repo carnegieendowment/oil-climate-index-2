@@ -217,10 +217,10 @@ var utils = {
       Number(prelim['MJD Liquefied Petroleum Gases (LPG)']);
 
     // Add extra if we're including petcoke, formulas are provided by Carnegie
-    // use 3134.18 as fallback conversion factor
+    // use 31341.8 as fallback conversion factor
     sum += (showCoke * prelim['MJD Petroleum Coke']);
     sum += (showCoke * info['Portion Net Upstream Petcoke'] *
-      (info['Net Upstream Petcoke Conversion'] || 3134.18) * barrelsPerDay);
+      (info['Net Upstream Petcoke Conversion'] || 31341.8) * barrelsPerDay);
 
     return sum / barrelsPerDay;
   },
