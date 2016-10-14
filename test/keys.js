@@ -12,7 +12,7 @@ test('All JSON files should parse correctly', function (t) {
   });
 });
 
-test('Data should exist with five basic keys', function (t) {
+test('Data should exist with four basic keys', function (t) {
   var oils = JSON.parse(fs.readFileSync('../app/assets/data/oils.json', 'utf8'));
-  t.same(Object.keys(oils), ['info', 'opgee', 'prelim', 'metadata', 'lhv']);
+  t.same(Object.keys(oils), ['info', 'opgee', 'prelim', 'metadata']);
 });
