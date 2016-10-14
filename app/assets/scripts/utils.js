@@ -210,20 +210,19 @@ var utils = {
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
     // Sum up MJ per day for each product
-    var sum = prelim['MJD Gasoline'] +
-      prelim['MJD Jet Fuel'] +
-      prelim['MJD Diesel'] +
-      prelim['MJD Fuel Oil'] +
-      prelim['MJD Residual Fuels'] +
-      prelim['MJD Surplus Refinery Fuel Gas (RFG)'] +
-      prelim['MJD Liquefied Petroleum Gases (LPG)'];
+    var sum = Number(prelim['MJD Gasoline']) + Number(prelim['MJD Jet Fuel']) +
+      Number(prelim['MJD Diesel']) + Number(prelim['MJD Fuel Oil']) +
+      Number(prelim['MJD Residual Fuels']) +
+      Number(prelim['MJD Surplus Refinery Fuel Gas (RFG)']) +
+      Number(prelim['MJD Liquefied Petroleum Gases (LPG)']);
 
     // Add extra if we're including petcoke, formulas are provided by Carnegie
     // use 3134.18 as fallback conversion factor
     sum += (showCoke * prelim['MJD Petroleum Coke']);
-    sum += (showCoke * info['Portion Net Upstream Petcoke'] * (info['Net Upstream Petcoke Conversion'] || 3134.18) * barrelsPerDay);
+    sum += (showCoke * info['Portion Net Upstream Petcoke'] *
+      (info['Net Upstream Petcoke Conversion'] || 3134.18) * barrelsPerDay);
 
-    return barrelsPerDay / sum;
+    return sum / barrelsPerDay;
   },
 
   categoryColorForType: function (oilType) {
