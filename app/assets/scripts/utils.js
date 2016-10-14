@@ -635,7 +635,8 @@ var utils = {
 
   // Return combustion components
   getDownstreamComponents: function (prelim, showCoke, transport) {
-    var outList = ['Heat', 'Steam', 'Electricity', 'Hydrogen', 'Fluid', 'Excess', 'Portion', 'Total', 'Unique', 'MJperbbl'];
+    var outList = ['Heat', 'Steam', 'Electricity', 'Hydrogen', 'Fluid',
+      'Excess', 'Portion', 'Total', 'Unique', 'MJperbbl', 'MJD'];
 
     var objArray = _.filter(_.map(prelim, function (el, key) {
       return { name: key, value: el };
