@@ -209,23 +209,20 @@ var utils = {
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
-    // Sum up lhv * portion in barrel
-    var sum = prelim['Portion Gasoline'] * Number(Oci.data.lhv['Gasoline']) +
-      prelim['Portion Jet Fuel'] * Number(Oci.data.lhv['Jet Fuel']) +
-      prelim['Portion Diesel'] * Number(Oci.data.lhv['Diesel']) +
-      prelim['Portion Fuel Oil'] * Number(Oci.data.lhv['Fuel Oil']) +
-      prelim['Portion Residual Fuels'] * Number(Oci.data.lhv['Residual Fuels']) +
-      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Number(Oci.data.lhv['Light Ends (RFG)']) +
-      prelim['Portion Liquefied Petroleum Gases (LPG)'] * Number(Oci.data.lhv['Liquified Petroluem Gas (LPG)']);
-
-    // divide by PRELIM barrels per day but use 100k as fallback
-    sum = sum / barrelsPerDay;
+    // Sum up MJ per day for each product
+    var sum = prelim['MJD Gasoline'] +
+      prelim['MJD Jet Fuel'] +
+      prelim['MJD Diesel'] +
+      prelim['MJD Fuel Oil'] +
+      prelim['MJD Residual Fuels'] +
+      prelim['MJD Surplus Refinery Fuel Gas (RFG)'] +
+      prelim['MJD Liquefied Petroleum Gases (LPG)'];
 
     // Add extra if we're including petcoke, formulas are provided by Carnegie
-    sum += (showCoke * ((prelim['Portion Petroleum Coke'] * Number(Oci.data.lhv['Petcoke Produced'])) / barrelsPerDay));
-    sum += (showCoke * info['Portion Net Upstream Petcoke'] * Number(Oci.data.lhv['Net Upstream Petcoke Used']));
+    sum += (showCoke * prelim['MJD Petroleum Coke']);
+    sum += (showCoke * info['Portion Net Upstream Petcoke'] / barrelsPerDay);
 
-    return sum;
+    return barrelsPerDay / sum;
   },
 
   categoryColorForType: function (oilType) {
