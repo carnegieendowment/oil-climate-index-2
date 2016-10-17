@@ -62,7 +62,7 @@ var utils = {
                 Oci.Collections.opgee.add(data);
               }});
             }
-            var opgee = Oci.Collections.opgee.get('run' + i + j + k).toJSON()[key];
+            var opgee = Oci.Collections.opgee.get(opgeeRun).toJSON()[key];
             var extraction = +opgee['Net lifecycle emissions'];
 
             if (!opgeeExtent || (extraction * minMaxMultiplier > opgeeExtent * minMaxMultiplier)) {
