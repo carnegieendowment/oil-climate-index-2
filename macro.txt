@@ -349,7 +349,7 @@ Sub PRELIM()
           ' Run Name
           PRELIMSheet.Range("A1").Value = "Run"
           For k = 0 To (Oils - 1)
-            PRELIMSheet.Range("A2").Offset(k, 0).Value = "run" & i & j
+            PRELIMSheet.Range("A2").Offset(k, 0).Value = "run" & i & (1 - j)
           Next k
 
           ' Unique Oil Names
