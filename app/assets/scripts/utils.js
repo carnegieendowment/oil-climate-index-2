@@ -1,9 +1,11 @@
-/*global Oci*/
+/* global Oci */
 'use strict';
 
 var $ = require('jquery');
 var d3 = require('d3');
 import _ from 'lodash';
+var OpgeeModel = require('./models/opgee');
+var PrelimModel = require('./models/prelim');
 
 var utils = {
   // Get global extents for dataset
@@ -20,11 +22,14 @@ var utils = {
     // check if this already exists and return if so
     var oilLookup = selectedOil || 'global';
     var componentLookup = component || 'total';
+    // special case for perDollar where we only return if the prices.json match
     if (Oci.data.globalExtents[ratio] &&
         Oci.data.globalExtents[ratio][oilLookup] &&
         Oci.data.globalExtents[ratio][oilLookup][componentLookup] &&
         Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax]) {
-      return Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax];
+      if (!(ratio === 'perDollar' && !_.isEqual(Oci.prices, Oci.origPrices))) {
+        return Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax];
+      }
     }
 
     var data = Oci.data;
@@ -49,7 +54,15 @@ var utils = {
       for (var i = 0; i < data.metadata.solarSteam.split(',').length; i++) {
         for (var j = 0; j < data.metadata.water.split(',').length; j++) {
           for (var k = 0; k < data.metadata.flare.split(',').length; k++) {
-            var opgee = data.opgee['run' + i + j + k][key];
+            // if we don't have the necessary data, load it
+            var opgeeRun = 'run' + i + j + k;
+            if (!Oci.Collections.opgee.get(opgeeRun)) {
+              var opgeeModel = new OpgeeModel({ id: opgeeRun });
+              opgeeModel.fetch({ async: false, success: function (data) {
+                Oci.Collections.opgee.add(data);
+              }});
+            }
+            var opgee = Oci.Collections.opgee.get('run' + i + j + k).toJSON()[key];
             var extraction = +opgee['Net lifecycle emissions'];
 
             if (!opgeeExtent || (extraction * minMaxMultiplier > opgeeExtent * minMaxMultiplier)) {
@@ -61,7 +74,17 @@ var utils = {
       for (var l = 0; l < data.metadata.refinery.split(',').length; l++) {
         // this for loop is for LPG runs
         for (var m = 0; m < 2; m++) {
-          var prelim = data.prelim['run' + l + m][key];
+          // if we don't have the necessary data, load it
+          var prelimRun = 'run' + l + m;
+
+          if (!Oci.Collections.prelim.get(prelimRun)) {
+            var prelimModel = new PrelimModel({ id: prelimRun });
+            prelimModel.fetch({ async: false, success: function (data) {
+              Oci.Collections.prelim.add(data);
+            }});
+          }
+
+          var prelim = Oci.Collections.prelim.get(prelimRun).toJSON()[key];
           // we might not have a prelim run for this oil (certain oils don't
           // run through some refineries)
           if (!prelim) break;
@@ -96,20 +119,17 @@ var utils = {
       }
     }
 
-    // store for later (unless it's perDollar)
-    // always save for preCalc
-    if (preCalc || ['perDollar', 'perCurrent', 'perHistoric'].indexOf(ratio) === -1) {
-      if (!Oci.data.globalExtents[ratio]) {
-        Oci.data.globalExtents[ratio] = {};
-      }
-      if (!Oci.data.globalExtents[ratio][oilLookup]) {
-        Oci.data.globalExtents[ratio][oilLookup] = {};
-      }
-      if (!Oci.data.globalExtents[ratio][oilLookup][componentLookup]) {
-        Oci.data.globalExtents[ratio][oilLookup][componentLookup] = {};
-      }
-      Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax] = extent;
+    // store for later
+    if (!Oci.data.globalExtents[ratio]) {
+      Oci.data.globalExtents[ratio] = {};
     }
+    if (!Oci.data.globalExtents[ratio][oilLookup]) {
+      Oci.data.globalExtents[ratio][oilLookup] = {};
+    }
+    if (!Oci.data.globalExtents[ratio][oilLookup][componentLookup]) {
+      Oci.data.globalExtents[ratio][oilLookup][componentLookup] = {};
+    }
+    Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax] = extent;
     return extent;
   },
 
