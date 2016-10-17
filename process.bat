@@ -4,7 +4,7 @@ FOR %%G IN (*.csv) DO (
   ren %%G.temp %%G
 )
 
-TYPE info.csv | csvjson |  jq "map({(.Unique): .}) | add | { info: . }" > info.json
+TYPE info.csv | csvjson |  jq "map({(.Unique): .}) | add " > info.json
 
 FOR %%G IN (opgee_run*.csv) DO (
   TYPE %%G | csvjson | jq "map({(.Unique): .}) | add | { (.[keys[0]].Run): del(.[].Run)}" >> temp_opgee.json
@@ -24,6 +24,6 @@ DEL temp_prelim.json
 
 TYPE metadata.csv | csvjson | jq "{ metadata: .[]}" > metadata.json
 
-TYPE info.json opgee.json prelim.json metadata.json | jq --slurp "add" > oils.json
+TYPE opgee.json prelim.json metadata.json | jq --slurp "add" > oils.json
 
-DEL info.json opgee.json prelim.json metadata.json
+DEL opgee.json prelim.json metadata.json

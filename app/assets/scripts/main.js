@@ -12,6 +12,13 @@ var utils = require('./utils');
 
 var Router = require('./routes/router');
 
+// Collections
+var OilFields = require('./collections/oil-fields');
+var Prices = require('./collections/prices');
+var Related = require('./collections/related');
+var Blurbs = require('./collections/blurbs');
+var Info = require('./collections/info');
+
 // globalish scroll tracker
 var scroll = window.scrollY;
 
@@ -22,17 +29,16 @@ window.Oci = {
   Routers: {},
   init: function () {
     // Oci.getData();
-    // Oci.getPrices();
-    // Oci.getBlurbs();
-    // Oci.getOilfields();
-    // Oci.getRelated();
+    Oci.getInfo();
+    Oci.getPrices();
+    Oci.getBlurbs();
+    Oci.getOilfields();
+    Oci.getRelated();
     Oci.router = new Router();
     Backbone.history.start();
   },
 
   getData: function () {
-    // synchronous AJAX call because the file is small and we need it to render all the graphs
-    // technically we could start rending other things first and have the d3 trigger on load
     $.ajax({
       type: 'GET',
       url: 'assets/data/oils.json',
@@ -50,51 +56,56 @@ window.Oci = {
       async: false
     });
   },
-  getBlurbs: function () {
-    // synchronous AJAX call because the file is small and we need it to render all the graphs
-    // technically we could start rending other things first and have the d3 trigger on load
-    $.ajax({
-      type: 'GET',
-      url: 'assets/data/blurbs.json',
-      dataType: 'json',
+
+  getInfo: function () {
+    var info = new Info();
+    info.fetch({
       success: function (data) {
-        Oci.blurbs = data;
+        Oci.data.info = data.attributes;
+        Oci.regions = _.uniq(_.map(data.attributes, function (oil) {
+          return oil['Region'];
+        }));
+        Oci.types = _.uniq(_.map(data.attributes, function (oil) {
+          return oil['Overall Crude Category'];
+        }));
+      },
+      async: false
+    });
+  },
+
+  getBlurbs: function () {
+    var blurbs = new Blurbs();
+    blurbs.fetch({
+      success: function (data) {
+        Oci.blurbs = data.attributes;
       },
       async: false
     });
   },
   getOilfields: function () {
-    // synchronous AJAX call because the file is small and we need it to render all the graphs
-    // technically we could start rending other things first and have the d3 trigger on load
-    $.ajax({
-      type: 'GET',
-      url: 'assets/data/oilfields.geojson',
-      dataType: 'json',
+    var oilFields = new OilFields();
+    oilFields.fetch({
+      async: false,
       success: function (data) {
-        Oci.oilfields = data;
-      },
-      async: false
+        Oci.oilfields = data.attributes;
+      }
     });
   },
   getPrices: function () {
-    $.ajax({
-      type: 'GET',
-      url: 'assets/data/prices.json',
-      dataType: 'json',
+    var prices = new Prices();
+    prices.fetch({
       success: function (data) {
-        Oci.prices = data;
-        Oci.origPrices = utils.cloneObject(data);
+        Oci.prices = data.attributes;
+        Oci.origPrices = utils.cloneObject(data.attributes);
       },
       async: false
     });
   },
   getRelated: function () {
-    $.ajax({
-      type: 'GET',
-      url: 'assets/data/related.json',
-      dataType: 'json',
+    var related = new Related();
+    related.fetch({
       success: function (data) {
-        Oci.relatedOils = data;
+        Oci.relatedOils = data.attributes;
       },
       async: false
     });
@@ -107,7 +118,9 @@ window.Oci = {
     }
   },
   prices: {},
-  data: {},
+  data: {
+    globalExtents: {}
+  },
   carbonTax: 20,
   order: {
     upstream: ['Exploration', 'Drilling', 'Production', 'Processing', 'Upgrading', 'Maintenance', 'Waste', 'Venting, Flaring, and Fugitive Emissions', 'Diluent', 'Miscellaneous', 'Transport to Refinery', 'Offsite emissions'],
