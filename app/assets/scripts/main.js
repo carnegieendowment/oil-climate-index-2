@@ -20,17 +20,25 @@ var Blurbs = require('./collections/blurbs');
 var Info = require('./collections/info');
 var GlobalExtents = require('./collections/global-extents');
 var Metadata = require('./collections/metadata');
+var OpgeeCollection = require('./collections/opgee');
+var PrelimCollection = require('./collections/prelim');
 
 // globalish scroll tracker
 var scroll = window.scrollY;
 
 window.Oci = {
   Models: {},
-  Collections: {},
+  Collections: {
+    opgee: new OpgeeCollection([{ id: 'run000' }]),
+    prelim: new PrelimCollection({ id: 'run00' })
+  },
   Views: {},
   Routers: {},
+  data: {
+    globalExtents: {}
+  },
   init: function () {
-    // Oci.getData();
+    Oci.getData();
     Oci.getGlobalExtents();
     Oci.getInfo();
     Oci.getPrices();
@@ -43,22 +51,11 @@ window.Oci = {
   },
 
   getData: function () {
-    $.ajax({
-      type: 'GET',
-      url: 'assets/data/oils.json',
-      dataType: 'json',
-      success: function (data) {
-        Oci.data = data;
-        Oci.data.globalExtents = {};
-        Oci.regions = _.uniq(_.map(data.info, function (oil) {
-          return oil['Region'];
-        }));
-        Oci.types = _.uniq(_.map(data.info, function (oil) {
-          return oil['Overall Crude Category'];
-        }));
-      },
-      async: false
-    });
+    Oci.Collections.opgee.models
+      .concat(Oci.Collections.prelim.models)
+      .forEach(function (model) {
+        model.fetch({ async: false });
+      });
   },
 
   getInfo: function () {
@@ -146,9 +143,6 @@ window.Oci = {
     }
   },
   prices: {},
-  data: {
-    globalExtents: {}
-  },
   carbonTax: 20,
   order: {
     upstream: ['Exploration', 'Drilling', 'Production', 'Processing', 'Upgrading', 'Maintenance', 'Waste', 'Venting, Flaring, and Fugitive Emissions', 'Diluent', 'Miscellaneous', 'Transport to Refinery', 'Offsite emissions'],
