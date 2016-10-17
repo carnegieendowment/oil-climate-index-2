@@ -1,5 +1,5 @@
 {
-  "Algeria Hassi Râ€™Mel": {
+  "Algeria Hassi R’Mel": {
     "Transport Emissions": "8.635173165",
     "Oil Field Name (OPGEE)": "Hassi R'Mel",
     "Flaring Class": "Low Flare",
@@ -20,7 +20,7 @@
     "Per $ Crude Oil - Historic": "N/A",
     "OPEM Data Quality": "#N/A",
     "Gassy Oil": "High Gas",
-    "Unique": "Algeria Hassi Râ€™Mel",
+    "Unique": "Algeria Hassi R’Mel",
     "Portion Net Upstream Petcoke": "0",
     "Country": "Algeria",
     "Region": "Middle East & N. Africa",
@@ -455,9 +455,9 @@
     "Onshore/Offshore": "Offshore",
     "Net Upstream Petcoke Conversion": ""
   },
-  "Colombia CaÃ±o LimÃ³n": {
+  "Colombia Caño Limón": {
     "Transport Emissions": "10.85206261",
-    "Oil Field Name (OPGEE)": "CaÃ±o LimÃ³n",
+    "Oil Field Name (OPGEE)": "Caño Limón",
     "Flaring Class": "Minimal Flare",
     "Assay Name (PRELIM)": "Cano Limon_Stratiev",
     "Crude Exporter": "",
@@ -476,7 +476,7 @@
     "Per $ Crude Oil - Historic": "N/A",
     "OPEM Data Quality": "1.955111636",
     "Gassy Oil": "Very Low Gas",
-    "Unique": "Colombia CaÃ±o LimÃ³n",
+    "Unique": "Colombia Caño Limón",
     "Portion Net Upstream Petcoke": "0",
     "Country": "Colombia",
     "Region": "S. America & Carribean",

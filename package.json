@@ -71,6 +71,7 @@
     "build": "gulp",
     "serve": "gulp serve",
     "test": "npm run lint && ava",
-    "lint": "eslint app/assets/scripts/  --ext .js"
+    "lint": "eslint app/assets/scripts/  --ext .js",
+    "utils": "babel app/assets/scripts/utils.js --out-file ./.build_scripts/utils.js"
   }
 }

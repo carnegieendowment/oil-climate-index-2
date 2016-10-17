@@ -18,6 +18,7 @@ var Prices = require('./collections/prices');
 var Related = require('./collections/related');
 var Blurbs = require('./collections/blurbs');
 var Info = require('./collections/info');
+var GlobalExtents = require('./collections/global-extents');
 
 // globalish scroll tracker
 var scroll = window.scrollY;
@@ -29,6 +30,7 @@ window.Oci = {
   Routers: {},
   init: function () {
     // Oci.getData();
+    Oci.getGlobalExtents();
     Oci.getInfo();
     Oci.getPrices();
     Oci.getBlurbs();
@@ -68,6 +70,16 @@ window.Oci = {
         Oci.types = _.uniq(_.map(data.attributes, function (oil) {
           return oil['Overall Crude Category'];
         }));
+      },
+      async: false
+    });
+  },
+
+  getGlobalExtents: function () {
+    var globalExtents = new GlobalExtents();
+    globalExtents.fetch({
+      success: function (data) {
+        Oci.data.globalExtents = data.attributes;
       },
       async: false
     });

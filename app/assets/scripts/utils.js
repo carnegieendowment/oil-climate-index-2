@@ -10,7 +10,8 @@ var utils = {
   // send ratio, min/max
   // optional component and oil
   // store them and return so we only have to calculate once per session
-  getGlobalExtent: function (ratio, minMax, component, selectedOil) {
+  // separate option for running this out of browser (preCalc)
+  getGlobalExtent: function (ratio, minMax, component, selectedOil, preCalc) {
     // handle this one input differently
     if (component === 'ghgTotal') {
       component = null;
@@ -96,7 +97,8 @@ var utils = {
     }
 
     // store for later (unless it's perDollar)
-    if (['perDollar', 'perCurrent', 'perHistoric'].indexOf(ratio) === -1) {
+    // always save for preCalc
+    if (preCalc || ['perDollar', 'perCurrent', 'perHistoric'].indexOf(ratio) === -1) {
       if (!Oci.data.globalExtents[ratio]) {
         Oci.data.globalExtents[ratio] = {};
       }
