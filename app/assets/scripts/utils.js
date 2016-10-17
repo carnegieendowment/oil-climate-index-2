@@ -209,6 +209,7 @@ var utils = {
 
   // Use prelim data and pricing info to determing blended MJ per barrel
   getMJPerBarrel: function (prelim, showCoke, info) {
+    var LPG = Boolean(Number(prelim['Portion Liquefied Petroleum Gases (LPG)']));
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
@@ -217,7 +218,7 @@ var utils = {
       Number(prelim['MJD Diesel']) + Number(prelim['MJD Fuel Oil']) +
       Number(prelim['MJD Residual Fuels']) +
       Number(prelim['MJD Surplus Refinery Fuel Gas (RFG)']) +
-      Number(prelim['MJD Liquefied Petroleum Gases (LPG)']);
+      (LPG ? Number(prelim['MJD Liquefied Petroleum Gases (LPG)']) : 0);
 
     // Add extra if we're including petcoke, formulas are provided by Carnegie
     // use 31341.8 as fallback conversion factor

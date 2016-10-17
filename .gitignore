@@ -7,4 +7,4 @@ app/bower_components
 test/bower_components/
 *.DS_Store
 .build_scripts/utils.js
-app/assets/data/global-extents.js
+app/assets/data/global-extents.json
