@@ -22,18 +22,18 @@ var li = [1, 0];
 si.forEach(function (_, s) {
   wi.forEach(function (_, w) {
     fi.forEach(function (_, f) {
-      var temp = JSON.parse(fs.readFileSync('app/assets/data/opgee/opgee_run' + s + w + f + '.json'))
-      Oci.data.opgee['run' + s + w + f] = temp
-    })
-  })
-})
+      var temp = JSON.parse(fs.readFileSync('app/assets/data/opgee/opgee_run' + s + w + f + '.json'));
+      Oci.data.opgee['run' + s + w + f] = temp;
+    });
+  });
+});
 
 ri.forEach(function (_, r) {
   li.forEach(function (_, l) {
-      var temp = JSON.parse(fs.readFileSync('app/assets/data/prelim/prelim_run' + r + l + '.json'))
-      Oci.data.prelim['run' + r + l] = temp
-  })
-})
+    var temp = JSON.parse(fs.readFileSync('app/assets/data/prelim/prelim_run' + r + l + '.json'));
+    Oci.data.prelim['run' + r + l] = temp;
+  });
+});
 
 var ratios = ['perBarrel', 'perMJ', 'perCurrent', 'perHistoric', 'perDollar'];
 var minMaxes = ['min', 'max'];
@@ -44,11 +44,11 @@ ratios.forEach(function (ratio) {
   minMaxes.forEach(function (minMax) {
     components.forEach(function (component) {
       oils.forEach(function (oil) {
-        utils.getGlobalExtent(ratio, minMax, component, oil, true)
-      })
-      utils.getGlobalExtent(ratio, minMax, component, null, true)
-    })
-  })
-})
+        utils.getGlobalExtent(ratio, minMax, component, oil, true);
+      });
+      utils.getGlobalExtent(ratio, minMax, component, null, true);
+    });
+  });
+});
 
 fs.writeFileSync('app/assets/data/global-extents.json', JSON.stringify(Oci.data.globalExtents));
