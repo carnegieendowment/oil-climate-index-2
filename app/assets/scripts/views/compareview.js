@@ -3,7 +3,7 @@
 require('mapbox.js');
 var d3 = require('d3');
 var $ = require('jquery');
-var _ = require('lodash');
+import _ from 'lodash';
 var turfCentroid = require('turf-centroid');
 
 var utils = require('../utils');

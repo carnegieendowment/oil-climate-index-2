@@ -4,7 +4,7 @@
 var Backbone = require('backbone');
 var d3 = require('d3');
 var $ = require('jquery');
-var _ = require('lodash');
+import _ from 'lodash';
 var noUiSlider = require('nouislider');
 
 var template = require('../templates/modelparameters.ejs');

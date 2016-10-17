@@ -5,7 +5,7 @@
 require('./wnumb');
 
 var $ = require('jquery');
-var _ = require('lodash');
+import _ from 'lodash';
 var Backbone = require('backbone');
 var Clipboard = require('clipboard');
 var utils = require('./utils');
@@ -21,11 +21,11 @@ window.Oci = {
   Views: {},
   Routers: {},
   init: function () {
-    Oci.getData();
-    Oci.getPrices();
-    Oci.getBlurbs();
-    Oci.getOilfields();
-    Oci.getRelated();
+    // Oci.getData();
+    // Oci.getPrices();
+    // Oci.getBlurbs();
+    // Oci.getOilfields();
+    // Oci.getRelated();
     Oci.router = new Router();
     Backbone.history.start();
   },

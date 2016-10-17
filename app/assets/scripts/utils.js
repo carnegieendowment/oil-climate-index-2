@@ -3,7 +3,8 @@
 
 var $ = require('jquery');
 var d3 = require('d3');
-var _ = require('lodash');
+import _ from 'lodash';
+
 var utils = {
   // Get global extents for dataset
   // send ratio, min/max

@@ -5,7 +5,7 @@ var d3 = require('d3');
 var d3tip = require('d3-tip');
 d3tip(d3);
 var $ = require('jquery');
-var _ = require('lodash');
+import _ from 'lodash';
 
 var utils = require('../utils');
 
