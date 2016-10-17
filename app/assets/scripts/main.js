@@ -19,6 +19,7 @@ var Related = require('./collections/related');
 var Blurbs = require('./collections/blurbs');
 var Info = require('./collections/info');
 var GlobalExtents = require('./collections/global-extents');
+var Metadata = require('./collections/metadata');
 
 // globalish scroll tracker
 var scroll = window.scrollY;
@@ -36,6 +37,7 @@ window.Oci = {
     Oci.getBlurbs();
     Oci.getOilfields();
     Oci.getRelated();
+    Oci.getMetadata();
     Oci.router = new Router();
     Backbone.history.start();
   },
@@ -94,6 +96,7 @@ window.Oci = {
       async: false
     });
   },
+
   getOilfields: function () {
     var oilFields = new OilFields();
     oilFields.fetch({
@@ -103,6 +106,7 @@ window.Oci = {
       }
     });
   },
+
   getPrices: function () {
     var prices = new Prices();
     prices.fetch({
@@ -113,6 +117,7 @@ window.Oci = {
       async: false
     });
   },
+
   getRelated: function () {
     var related = new Related();
     related.fetch({
@@ -122,6 +127,17 @@ window.Oci = {
       async: false
     });
   },
+
+  getMetadata: function () {
+    var metadata = new Metadata();
+    metadata.fetch({
+      success: function (data) {
+        Oci.data.metadata = data.attributes;
+      },
+      async: false
+    });
+  },
+
   showPricesModal: function (tf) {
     if (tf) {
       $('#modal-prices').addClass('revealed');

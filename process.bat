@@ -22,8 +22,8 @@ TYPE temp_prelim.json | jq --slurp "add | { prelim: . }" > prelim.json
 
 DEL temp_prelim.json
 
-TYPE metadata.csv | csvjson | jq "{ metadata: .[]}" > metadata.json
+TYPE metadata.csv | csvjson | jq ".[]" > metadata.json
 
-TYPE opgee.json prelim.json metadata.json | jq --slurp "add" > oils.json
+TYPE opgee.json prelim.json | jq --slurp "add" > oils.json
 
-DEL opgee.json prelim.json metadata.json
+DEL opgee.json prelim.json
