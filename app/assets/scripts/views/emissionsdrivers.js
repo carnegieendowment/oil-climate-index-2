@@ -13,6 +13,8 @@ var template = require('../templates/emissionsdrivers.ejs');
 var blueBar = require('../templates/bluebar.ejs');
 var ModelParameters = require('./modelparameters');
 var BaseView = require('./baseview');
+var OpgeeModel = require('../models/opgee');
+var PrelimModel = require('../models/prelim');
 
 var EmissionsDrivers = BaseView.extend({
 
@@ -395,10 +397,27 @@ var EmissionsDrivers = BaseView.extend({
     // Grab things based on the model we're using
     var params = this.modelParametersView.getModelValues();
 
+    // if we don't have the necessary data, load it
+    var opgeeRun = utils.getOPGEEModel(params.solarSteam, params.water, params.flaring);
+    var prelimRun = utils.getPRELIMModel(params.refinery, params.lpg);
+    if (!Oci.Collections.opgee.get(opgeeRun)) {
+      var opgeeModel = new OpgeeModel({ id: opgeeRun });
+      opgeeModel.fetch({ async: false, success: function (data) {
+        Oci.Collections.opgee.add(data);
+      }});
+    }
+
+    if (!Oci.Collections.prelim.get(prelimRun)) {
+      var prelimModel = new PrelimModel({ id: prelimRun });
+      prelimModel.fetch({ async: false, success: function (data) {
+        Oci.Collections.prelim.add(data);
+      }});
+    }
+
     var modelData = {
       info: Oci.data.info,
-      opgee: Oci.data.opgee[utils.getOPGEEModel(params.solarSteam, params.water, params.flaring)],
-      prelim: Oci.data.prelim[utils.getPRELIMModel(params.refinery, params.lpg)]
+      opgee: Oci.Collections.opgee.get(opgeeRun).toJSON(),
+      prelim: Oci.Collections.prelim.get(prelimRun).toJSON()
     };
 
     // Apply filters to the oils
