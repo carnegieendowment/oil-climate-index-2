@@ -9,7 +9,7 @@ Below are instructions for using the OCI Consolidated Workbook plus an OPGEE mod
 4. **Close without saving**
 5. Perform any special processing (see below)
 6. Run the processing script: `process.bat`
-7. The final data will be named `oils.json`; replace the old file with this name on the website ([on the master branch in `app/assets/data` folder](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data)
+7. There will be four types of final data: `info.json`, `metadata.json`, `opgee_runXXX.json`, and `prelim_runXX.json`; put these all into the ([the master branch in `app/assets/data` folder](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data). Note that the opgee runs and prelim runs should be put in separate subfolders (for clarity)
 
 ## OCI Consolidated Workbook File Modifications
 
