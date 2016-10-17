@@ -148,7 +148,7 @@ var OilDetails = BaseView.extend({
     $('#dropdown-refinery option[value="0 = Default"]').hide();
     // remove any refinery options it doesn't have available
     Oci.data.metadata.refinery.split(', ').forEach(function (refinery, index) {
-      if (Oci.data.info[self.oil.Unique]['Refinery exception'] === index) {
+      if (Number(Oci.data.info[self.oil.Unique]['Refinery exception']) === index) {
         $('#dropdown-refinery option[value="' + refinery + '"]').hide();
       }
     });

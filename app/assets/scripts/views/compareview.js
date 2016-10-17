@@ -151,12 +151,12 @@ var CompareView = BaseView.extend({
 
     Oci.data.metadata.refinery.split(', ').forEach(function (refinery, index) {
       // remove any refinery options the original oil doesn't have available
-      if (Oci.data.info[self.oil.Unique]['Refinery exception'] === index) {
+      if (Number(Oci.data.info[self.oil.Unique]['Refinery exception']) === index) {
         $('#dropdown-refinery option[value="' + refinery + '"]').hide();
       }
       if (self.comparisonOil) {
         // remove any refinery options the comparison oil doesn't have available
-        if (Oci.data.info[self.comparisonOil.Unique]['Refinery exception'] === index) {
+        if (Number(Oci.data.info[self.comparisonOil.Unique]['Refinery exception']) === index) {
           $('#dropdown-refinery option[value="' + refinery + '"]').hide();
         }
       } else {
@@ -165,7 +165,7 @@ var CompareView = BaseView.extend({
           return (o['Region'] === comparisonOilName ||
             o['Overall Crude Category'] === comparisonOilName);
         }).forEach(function (o) {
-          if (Oci.data.info[o.Unique]['Refinery exception'] === index) {
+          if (Number(Oci.data.info[o.Unique]['Refinery exception']) === index) {
             $('#dropdown-refinery option[value="' + refinery + '"]').hide();
           }
         });
