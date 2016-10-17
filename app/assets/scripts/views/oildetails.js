@@ -10,6 +10,8 @@ var utils = require('../utils');
 var template = require('../templates/oildetails.ejs');
 var ModelParameters = require('./modelparameters');
 var BaseView = require('./baseview');
+var OpgeeModel = require('../models/opgee');
+var PrelimModel = require('../models/prelim');
 
 var OilDetails = BaseView.extend({
 
@@ -146,7 +148,7 @@ var OilDetails = BaseView.extend({
     $('#dropdown-refinery option[value="0 = Default"]').hide();
     // remove any refinery options it doesn't have available
     Oci.data.metadata.refinery.split(', ').forEach(function (refinery, index) {
-      if (!Oci.data.prelim['run' + index + '0'][self.oil.Unique]) {
+      if (Oci.data.info[self.oil.Unique]['Refinery exception'] === index) {
         $('#dropdown-refinery option[value="' + refinery + '"]').hide();
       }
     });
@@ -252,16 +254,34 @@ var OilDetails = BaseView.extend({
     // Default model data
     var defaultModelData = {
       info: Oci.data.info,
-      opgee: Oci.data.opgee[utils.getOPGEEModel('0', '0', '0')],
-      prelim: Oci.data.prelim[utils.getPRELIMModel('0 = Default', 1)]
+      opgee: Oci.Collections.opgee.get(utils.getOPGEEModel('0', '0', '0')).toJSON(),
+      prelim: Oci.Collections.prelim.get(utils.getPRELIMModel('0 = Default', 1)).toJSON()
     };
 
     // Grab things based on the model we're using
     var params = this.modelParametersView.getModelValues();
+
+    // if we don't have the necessary data, load it
+    var opgeeRun = utils.getOPGEEModel(params.solarSteam, params.water, params.flaring);
+    var prelimRun = utils.getPRELIMModel(params.refinery, params.lpg);
+    if (!Oci.Collections.opgee.get(opgeeRun)) {
+      var opgeeModel = new OpgeeModel({ id: opgeeRun });
+      opgeeModel.fetch({ async: false, success: function (data) {
+        Oci.Collections.opgee.add(data);
+      }});
+    }
+
+    if (!Oci.Collections.prelim.get(prelimRun)) {
+      var prelimModel = new PrelimModel({ id: prelimRun });
+      prelimModel.fetch({ async: false, success: function (data) {
+        Oci.Collections.prelim.add(data);
+      }});
+    }
+
     var modelData = {
       info: Oci.data.info,
-      opgee: Oci.data.opgee[utils.getOPGEEModel(params.solarSteam, params.water, params.flaring)],
-      prelim: Oci.data.prelim[utils.getPRELIMModel(params.refinery, params.lpg)]
+      opgee: Oci.Collections.opgee.get(opgeeRun).toJSON(),
+      prelim: Oci.Collections.prelim.get(prelimRun).toJSON()
     };
 
     this.chartData = [
