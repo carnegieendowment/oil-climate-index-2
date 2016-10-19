@@ -6,7 +6,7 @@ The data which powers the maps in the site was generated from the CEIP-provided 
 
 1. [Install GDAL](http://sandbox.idre.ucla.edu/sandbox/tutorials/installing-gdal-for-windows) (Windows specific tutorial)
 2. Run the following command from the terminal: `ogr2ogr -f GeoJSON -t_srs crs:84 oilfields.geojson source_shapefile`, inserting your shapefile name in place of `source_shapefile`.
-3. Add to [`app/assets/data`](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data) replacing the previous GeoJSON
+3. Add to [`app/assets/data`](https://github.com/carnegieendowment/oil-climate-index-2/tree/master/app/assets/data) replacing the previous GeoJSON.
 
 ---
 
