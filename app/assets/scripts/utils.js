@@ -1,15 +1,19 @@
-/*global Oci*/
+/* global Oci */
 'use strict';
 
 var $ = require('jquery');
 var d3 = require('d3');
-var _ = require('lodash');
+import _ from 'lodash';
+var OpgeeModel = require('./models/opgee');
+var PrelimModel = require('./models/prelim');
+
 var utils = {
   // Get global extents for dataset
   // send ratio, min/max
   // optional component and oil
   // store them and return so we only have to calculate once per session
-  getGlobalExtent: function (ratio, minMax, component, selectedOil) {
+  // separate option for running this out of browser (preCalc)
+  getGlobalExtent: function (ratio, minMax, component, selectedOil, preCalc) {
     // handle this one input differently
     if (component === 'ghgTotal') {
       component = null;
@@ -18,11 +22,14 @@ var utils = {
     // check if this already exists and return if so
     var oilLookup = selectedOil || 'global';
     var componentLookup = component || 'total';
+    // special case for perDollar where we only return if the prices.json match
     if (Oci.data.globalExtents[ratio] &&
         Oci.data.globalExtents[ratio][oilLookup] &&
         Oci.data.globalExtents[ratio][oilLookup][componentLookup] &&
         Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax]) {
-      return Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax];
+      if (!(ratio === 'perDollar' && !_.isEqual(Oci.prices, Oci.origPrices))) {
+        return Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax];
+      }
     }
 
     var data = Oci.data;
@@ -47,7 +54,15 @@ var utils = {
       for (var i = 0; i < data.metadata.solarSteam.split(',').length; i++) {
         for (var j = 0; j < data.metadata.water.split(',').length; j++) {
           for (var k = 0; k < data.metadata.flare.split(',').length; k++) {
-            var opgee = data.opgee['run' + i + j + k][key];
+            // if we don't have the necessary data, load it
+            var opgeeRun = 'run' + i + j + k;
+            if (!Oci.Collections.opgee.get(opgeeRun)) {
+              var opgeeModel = new OpgeeModel({ id: opgeeRun });
+              opgeeModel.fetch({ async: false, success: function (data) {
+                Oci.Collections.opgee.add(data);
+              }});
+            }
+            var opgee = Oci.Collections.opgee.get(opgeeRun).toJSON()[key];
             var extraction = +opgee['Net lifecycle emissions'];
 
             if (!opgeeExtent || (extraction * minMaxMultiplier > opgeeExtent * minMaxMultiplier)) {
@@ -59,7 +74,17 @@ var utils = {
       for (var l = 0; l < data.metadata.refinery.split(',').length; l++) {
         // this for loop is for LPG runs
         for (var m = 0; m < 2; m++) {
-          var prelim = data.prelim['run' + l + m][key];
+          // if we don't have the necessary data, load it
+          var prelimRun = 'run' + l + m;
+
+          if (!Oci.Collections.prelim.get(prelimRun)) {
+            var prelimModel = new PrelimModel({ id: prelimRun });
+            prelimModel.fetch({ async: false, success: function (data) {
+              Oci.Collections.prelim.add(data);
+            }});
+          }
+
+          var prelim = Oci.Collections.prelim.get(prelimRun).toJSON()[key];
           // we might not have a prelim run for this oil (certain oils don't
           // run through some refineries)
           if (!prelim) break;
@@ -94,19 +119,17 @@ var utils = {
       }
     }
 
-    // store for later (unless it's perDollar)
-    if (['perDollar', 'perCurrent', 'perHistoric'].indexOf(ratio) === -1) {
-      if (!Oci.data.globalExtents[ratio]) {
-        Oci.data.globalExtents[ratio] = {};
-      }
-      if (!Oci.data.globalExtents[ratio][oilLookup]) {
-        Oci.data.globalExtents[ratio][oilLookup] = {};
-      }
-      if (!Oci.data.globalExtents[ratio][oilLookup][componentLookup]) {
-        Oci.data.globalExtents[ratio][oilLookup][componentLookup] = {};
-      }
-      Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax] = extent;
+    // store for later
+    if (!Oci.data.globalExtents[ratio]) {
+      Oci.data.globalExtents[ratio] = {};
     }
+    if (!Oci.data.globalExtents[ratio][oilLookup]) {
+      Oci.data.globalExtents[ratio][oilLookup] = {};
+    }
+    if (!Oci.data.globalExtents[ratio][oilLookup][componentLookup]) {
+      Oci.data.globalExtents[ratio][oilLookup][componentLookup] = {};
+    }
+    Oci.data.globalExtents[ratio][oilLookup][componentLookup][minMax] = extent;
     return extent;
   },
 
@@ -206,26 +229,24 @@ var utils = {
 
   // Use prelim data and pricing info to determing blended MJ per barrel
   getMJPerBarrel: function (prelim, showCoke, info) {
+    var LPG = Boolean(Number(prelim['Portion Liquefied Petroleum Gases (LPG)']));
     // if we don't have PRELIM barrels per day, use 100k as fallback
     var barrelsPerDay = Number(info['Barrels per day (PRELIM)']) || 100000;
 
-    // Sum up lhv * portion in barrel
-    var sum = prelim['Portion Gasoline'] * Number(Oci.data.lhv['Gasoline']) +
-      prelim['Portion Jet Fuel'] * Number(Oci.data.lhv['Jet Fuel']) +
-      prelim['Portion Diesel'] * Number(Oci.data.lhv['Diesel']) +
-      prelim['Portion Fuel Oil'] * Number(Oci.data.lhv['Fuel Oil']) +
-      prelim['Portion Residual Fuels'] * Number(Oci.data.lhv['Residual Fuels']) +
-      prelim['Portion Surplus Refinery Fuel Gas (RFG)'] * Number(Oci.data.lhv['Light Ends (RFG)']) +
-      prelim['Portion Liquefied Petroleum Gases (LPG)'] * Number(Oci.data.lhv['Liquified Petroluem Gas (LPG)']);
-
-    // divide by PRELIM barrels per day but use 100k as fallback
-    sum = sum / barrelsPerDay;
+    // Sum up MJ per day for each product
+    var sum = Number(prelim['MJD Gasoline']) + Number(prelim['MJD Jet Fuel']) +
+      Number(prelim['MJD Diesel']) + Number(prelim['MJD Fuel Oil']) +
+      Number(prelim['MJD Residual Fuels']) +
+      Number(prelim['MJD Surplus Refinery Fuel Gas (RFG)']) +
+      (LPG ? Number(prelim['MJD Liquefied Petroleum Gases (LPG)']) : 0);
 
     // Add extra if we're including petcoke, formulas are provided by Carnegie
-    sum += (showCoke * ((prelim['Portion Petroleum Coke'] * Number(Oci.data.lhv['Petcoke Produced'])) / barrelsPerDay));
-    sum += (showCoke * info['Portion Net Upstream Petcoke'] * Number(Oci.data.lhv['Net Upstream Petcoke Used']));
+    // use 31341.8 as fallback conversion factor
+    sum += (showCoke * prelim['MJD Petroleum Coke']);
+    sum += (showCoke * info['Portion Net Upstream Petcoke'] *
+      (info['Net Upstream Petcoke Conversion'] || 31341.8) * barrelsPerDay);
 
-    return sum;
+    return sum / barrelsPerDay;
   },
 
   categoryColorForType: function (oilType) {
@@ -638,7 +659,8 @@ var utils = {
 
   // Return combustion components
   getDownstreamComponents: function (prelim, showCoke, transport) {
-    var outList = ['Heat', 'Steam', 'Electricity', 'Hydrogen', 'Fluid', 'Excess', 'Portion', 'Total', 'Unique', 'MJperbbl'];
+    var outList = ['Heat', 'Steam', 'Electricity', 'Hydrogen', 'Fluid',
+      'Excess', 'Portion', 'Total', 'Unique', 'MJperbbl', 'MJD'];
 
     var objArray = _.filter(_.map(prelim, function (el, key) {
       return { name: key, value: el };

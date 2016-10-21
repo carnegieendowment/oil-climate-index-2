@@ -1,7 +1,7 @@
 /*global Oci */
 'use strict';
 var $ = require('jquery');
-var _ = require('lodash');
+import _ from 'lodash';
 var d3 = require('d3');
 var d3tip = require('d3-tip');
 d3tip(d3);
@@ -161,7 +161,8 @@ var SupplyCurve = BaseView.extend({
     for (var i = 0; i < oils.length; i++) {
       var oilInfo = data.info[oils[i]];
       var ghgTotal = +oilInfo['Total Emissions'];
-      var prelim = data.prelim.run00[oils[i]];
+      var prelim = Oci.Collections.prelim.get('run00').toJSON()[oils[i]];
+
       // 0 refers to no petroleum coke
       // 0 refers to no LPG
       var ghgPerMJ = utils.getValueForRatio(ghgTotal, 'perMJ', prelim, 0, oilInfo, 0);

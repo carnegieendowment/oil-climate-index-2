@@ -1,26 +1,19 @@
-TYPE info.csv | csvjson |  jq "map({(.Unique): .}) | add | { info: . }" > info.json
-
-
-FOR %%G IN (opgee_run*.csv) DO (
-  TYPE %%G | csvjson | jq "map({(.Unique): .}) | add | { (.[keys[0]].Run): del(.[].Run)}" >> temp_opgee.json
+FOR %%G IN (*.csv) DO (
+  iconv -f cp1254 -t utf-8 %%G > %%~nG.txt
 )
 
-TYPE temp_opgee.json | jq --slurp "add | { opgee: . } " > opgee.json
+TYPE info.txt | csvjson |  jq "map({(.Unique): .}) | add " > info.json
+DEL info.txt
 
-DEL temp_opgee.json
-
-FOR %%G IN (prelim_run*.csv) DO (
-  TYPE %%G | csvjson | jq "map({(.Unique): .}) | add | { (.[keys[0]].Run): del(.[].Run)}" >> temp_prelim.json
+FOR %%G IN (opgee_run*.txt) DO (
+  TYPE %%G | csvjson | jq "map({(.Unique): del(.Run)}) | add " > %%~nG.json
+  DEL %%G
 )
 
-TYPE temp_prelim.json | jq --slurp "add | { prelim: . }" > prelim.json
+FOR %%G IN (prelim_run*.txt) DO (
+  TYPE %%G | csvjson | jq "map({(.Unique): del(.Run)}) | add " > %%~nG.json
+  DEL %%G
+)
 
-DEL temp_prelim.json
-
-TYPE metadata.csv | csvjson | jq "{ metadata: .[]}" > metadata.json
-
-TYPE lhv.csv | csvjson | jq "{ lhv: .[]}" > lhv.json
-
-TYPE info.json opgee.json prelim.json metadata.json lhv.json | jq --slurp "add" > oils.json
-
-DEL info.json opgee.json prelim.json metadata.json lhv.json
+TYPE metadata.txt | csvjson | jq ".[]" > metadata.json
+DEL metadata.txt

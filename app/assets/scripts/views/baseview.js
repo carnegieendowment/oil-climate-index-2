@@ -134,7 +134,7 @@ var BaseView = Backbone.View.extend({
 
   _activateSearchBar: function () {
     var oilNames = [];
-    Object.keys(Oci.data.info).forEach(function (oilName) {
+    Object.keys(Oci.data.info || {}).forEach(function (oilName) {
       oilNames.push(Oci.data.info[oilName].Unique);
     });
 

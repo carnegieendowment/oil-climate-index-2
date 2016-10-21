@@ -3,7 +3,7 @@
 var $ = require('jquery');
 var d3 = require('d3');
 require('d3-tip');
-var _ = require('lodash');
+import _ from 'lodash';
 
 var utils = require('../utils');
 var mockData = require('../animation-mock-data');

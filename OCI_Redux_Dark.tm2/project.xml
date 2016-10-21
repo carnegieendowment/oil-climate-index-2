@@ -192,7 +192,7 @@
 
 <Style name="water" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="#222e3b" />
+    <PolygonSymbolizer fill="#354456" />
   </Rule>
 </Style>
 <Layer name="water"

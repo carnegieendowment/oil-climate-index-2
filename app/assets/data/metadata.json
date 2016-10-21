@@ -1,0 +1,6 @@
+{
+  "solarSteam": "0, 0.15",
+  "water": "1, 0.1",
+  "flare": "1, 0.5",
+  "refinery": "0 = Default, 1 = Hydroskimming, 2 = Medium Conversion, 3 = Deep Conversion (Coking), 4 = Deep Conversion (Hydrotreating)"
+}

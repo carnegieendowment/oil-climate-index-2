@@ -13,9 +13,11 @@ cache:
 
 before_install:
 - chmod +x ./.build_scripts/deploy.sh
+- chmod +x ./.build_scripts/precalc.js
 
 before_script:
 - npm test
+- node ./.build_scripts/precalc.js
 
 script:
 - npm run build

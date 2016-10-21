@@ -73,48 +73,49 @@ Sub Info()
   InfoBook.Sheets("Sheet1").Range("Y1").Value = "Field Depth"
   InfoBook.Sheets("Sheet1").Range("Z1").Value = "Oil Production Volume"
 
-  ' Portion Net Upstream Petcoke, row 444
-  Range(StartCell.Offset(439, 0), StartCell.Offset(439, Oils - 1)).Copy
+  ' Portion Net Upstream Petcoke, row 444-5
+  Range(StartCell.Offset(439, 0), StartCell.Offset(440, Oils - 1)).Copy
   InfoBook.Sheets("Sheet1").Range("AA2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
      SkipBlanks:=False, Transpose:=True
   InfoBook.Sheets("Sheet1").Range("AA1").Value = "Portion Net Upstream Petcoke"
+  InfoBook.Sheets("Sheet1").Range("AB1").Value = "Net Upstream Petcoke Conversion"
 
   ' Copy row 453 (default refinery) for all oils, paste transposed into info.csv
   Range(StartCell.Offset(448, 0), StartCell.Offset(448, Oils - 1)).Copy
-  InfoBook.Sheets("Sheet1").Range("AB2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+  InfoBook.Sheets("Sheet1").Range("AC2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
      SkipBlanks:=False, Transpose:=True
-  InfoBook.Sheets("Sheet1").Range("AB1").Value = "Default Refinery"
+  InfoBook.Sheets("Sheet1").Range("AC1").Value = "Default Refinery"
 
   ' Copy row 1777 (transport emissions) for all oils, paste transposed into info.csv
   Range(StartCell.Offset(1772, 0), StartCell.Offset(1772, Oils - 1)).Copy
-  InfoBook.Sheets("Sheet1").Range("AC2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+  InfoBook.Sheets("Sheet1").Range("AD2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
      SkipBlanks:=False, Transpose:=True
-  InfoBook.Sheets("Sheet1").Range("AC1").Value = "Transport Emissions"
+  InfoBook.Sheets("Sheet1").Range("AD1").Value = "Transport Emissions"
 
   ' Copy row 1805 (total emissions) for all oils, paste transposed into info.csv
   Range(StartCell.Offset(1800, 0), StartCell.Offset(1800, Oils - 1)).Copy
-  InfoBook.Sheets("Sheet1").Range("AD2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+  InfoBook.Sheets("Sheet1").Range("AE2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
      SkipBlanks:=False, Transpose:=True
-  InfoBook.Sheets("Sheet1").Range("AD1").Value = "Total Emissions"
+  InfoBook.Sheets("Sheet1").Range("AE1").Value = "Total Emissions"
 
   ' Copy row 1928/1934 (oil prices)
   Range(StartCell.Offset(1923, 0), StartCell.Offset(1923, Oils - 1)).Copy
-  InfoBook.Sheets("Sheet1").Range("AE2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-     SkipBlanks:=False, Transpose:=True
-  InfoBook.Sheets("Sheet1").Range("AE1").Value = "Per $ Crude Oil - Current"
-
-  Range(StartCell.Offset(1929, 0), StartCell.Offset(1929, Oils - 1)).Copy
   InfoBook.Sheets("Sheet1").Range("AF2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
      SkipBlanks:=False, Transpose:=True
-  InfoBook.Sheets("Sheet1").Range("AF1").Value = "Per $ Crude Oil - Historic"
+  InfoBook.Sheets("Sheet1").Range("AF1").Value = "Per $ Crude Oil - Current"
+
+  Range(StartCell.Offset(1929, 0), StartCell.Offset(1929, Oils - 1)).Copy
+  InfoBook.Sheets("Sheet1").Range("AG2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+     SkipBlanks:=False, Transpose:=True
+  InfoBook.Sheets("Sheet1").Range("AG1").Value = "Per $ Crude Oil - Historic"
 
   ' Copy row 1948-50 (data quality)
   Range(StartCell.Offset(1943, 0), StartCell.Offset(1945, Oils - 1)).Copy
-  InfoBook.Sheets("Sheet1").Range("AG2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+  InfoBook.Sheets("Sheet1").Range("AH2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
      SkipBlanks:=False, Transpose:=True
-  InfoBook.Sheets("Sheet1").Range("AG1").Value = "OPGEE Data Quality"
-  InfoBook.Sheets("Sheet1").Range("AH1").Value = "PRELIM Data Quality"
-  InfoBook.Sheets("Sheet1").Range("AI1").Value = "OPEM Data Quality"
+  InfoBook.Sheets("Sheet1").Range("AH1").Value = "OPGEE Data Quality"
+  InfoBook.Sheets("Sheet1").Range("AI1").Value = "PRELIM Data Quality"
+  InfoBook.Sheets("Sheet1").Range("AJ1").Value = "OPEM Data Quality"
 
   ' Save and close info.csv
   Application.DisplayAlerts = False
@@ -322,6 +323,8 @@ Sub PRELIM()
   For j = 0 To 9
     StartCell.Offset(1030 + j, -3).Value = "Portion " + StartCell.Offset(1030 + j, -3).Value
     StartCell.Offset(1030 + LPGOffset + j, -3).Value = "Portion " + StartCell.Offset(1030 + LPGOffset + j, -3).Value
+    StartCell.Offset(1042 + j, -3).Value = "MJD " + StartCell.Offset(1042 + j, -3).Value
+    StartCell.Offset(1042 + LPGOffset + j, -3).Value = "MJD " + StartCell.Offset(1042 + LPGOffset + j, -3).Value
   Next j
 
 
@@ -346,7 +349,7 @@ Sub PRELIM()
           ' Run Name
           PRELIMSheet.Range("A1").Value = "Run"
           For k = 0 To (Oils - 1)
-            PRELIMSheet.Range("A2").Offset(k, 0).Value = "run" & i & j
+            PRELIMSheet.Range("A2").Offset(k, 0).Value = "run" & i & (1 - j)
           Next k
 
           ' Unique Oil Names
@@ -355,41 +358,51 @@ Sub PRELIM()
           PRELIMSheet.Range("B2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
                   SkipBlanks:=False, Transpose:=True
 
-          ' PRELIM Values
-          Range(StartCell.Offset(1076 + LPGOffset * j, 0), StartCell.Offset(1097 + LPGOffset * j, Oils - 1)).Copy
+          ' Product - Pricing
+          Range(StartCell.Offset(1030 + LPGOffset * j, 0), StartCell.Offset(1039 + LPGOffset * j, Oils - 1)).Copy
           PRELIMSheet.Range("C2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' PRELIM Variable Names (column F)
-          Range(StartCell.Offset(1076 + LPGOffset * j, -3), StartCell.Offset(1097 + LPGOffset * j, -3)).Copy
+          ' Product Variables - Pricing
+          Range(StartCell.Offset(1030 + LPGOffset * j, -3), StartCell.Offset(1039 + LPGOffset * j, -3)).Copy
           PRELIMSheet.Range("C1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Values
+          ' Product (MJ/d)
+          Range(StartCell.Offset(1042 + LPGOffset * j, 0), StartCell.Offset(1051 + LPGOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("M2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Product Variables (MJ/d)
+          Range(StartCell.Offset(1042 + LPGOffset * j, -3), StartCell.Offset(1051 + LPGOffset * j, -3)).Copy
+          PRELIMSheet.Range("M1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Energy use and greenhouse gas emissions
+          Range(StartCell.Offset(1076 + LPGOffset * j, 0), StartCell.Offset(1097 + LPGOffset * j, Oils - 1)).Copy
+          PRELIMSheet.Range("W2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Energy use and greenhouse gas emissions Variable Names (column F)
+          Range(StartCell.Offset(1076 + LPGOffset * j, -3), StartCell.Offset(1097 + LPGOffset * j, -3)).Copy
+          PRELIMSheet.Range("W1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+              SkipBlanks:=False, Transpose:=True
+
+          ' Product Combustion Values (kg/bbl)
           Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, 0), StartCell.Offset(1787 + LPGSecondaryOffset * j, Oils - 1)).Copy
-          PRELIMSheet.Range("Y2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+          PRELIMSheet.Range("AS2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
-          ' Combustion Variables
+          ' Product Combustion Variables (kg/bbl)
           Range(StartCell.Offset(1778 + LPGSecondaryOffset * j, -3), StartCell.Offset(1787 + LPGSecondaryOffset * j, -3)).Copy
-          PRELIMSheet.Range("Y1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-              SkipBlanks:=False, Transpose:=True
-
-          ' Combustion Values - Pricing
-          Range(StartCell.Offset(1030 + LPGOffset * j, 0), StartCell.Offset(1039 + LPGOffset * j, Oils - 1)).Copy
-          PRELIMSheet.Range("AI2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-              SkipBlanks:=False, Transpose:=True
-
-          ' Combustion Variables - Pricing
-          Range(StartCell.Offset(1030 + LPGOffset * j, -3), StartCell.Offset(1039 + LPGOffset * j, -3)).Copy
-          PRELIMSheet.Range("AI1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
+          PRELIMSheet.Range("AS1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
               SkipBlanks:=False, Transpose:=True
 
           ' Clean Sheet
-          PRELIMSheet.Columns(13).EntireColumn.Delete
-          PRELIMSheet.Columns(9).EntireColumn.Delete
-          PRELIMSheet.Columns(6).EntireColumn.Delete
-          PRELIMSheet.Columns(4).EntireColumn.Delete
+          PRELIMSheet.Columns(33).EntireColumn.Delete
+          PRELIMSheet.Columns(29).EntireColumn.Delete
+          PRELIMSheet.Columns(26).EntireColumn.Delete
+          PRELIMSheet.Columns(24).EntireColumn.Delete
 
           ' Eliminate any oils which shouldn't have this refinery configuration
           For k = (Oils - 1) To 0 Step -1
@@ -405,22 +418,4 @@ Sub PRELIM()
           Application.DisplayAlerts = True
       Next j
   Next i
-
-  ' Write out LHV (lower heating values)
-  Set LHVBook = Workbooks.Add
-  Set LHVSheet = LHVBook.Sheets("Sheet1")
-  ' Grab the variable names from column F
-  Range(StartCell.Offset(1861, -3), StartCell.Offset(1869, -3)).Copy
-  LHVSheet.Range("A1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-     SkipBlanks:=False, Transpose:=True
-  ' Get values from column D'
-  Range(StartCell.Offset(1861, -5), StartCell.Offset(1869, -5)).Copy
-  LHVSheet.Range("A2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, _
-     SkipBlanks:=False, Transpose:=True
-
-  Application.DisplayAlerts = False
-  LHVBook.SaveAs Filename:="lhv.csv", FileFormat:=xlCSV
-  LHVBook.Close
-  Application.DisplayAlerts = True
-
 End Sub

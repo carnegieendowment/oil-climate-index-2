@@ -97,7 +97,7 @@ Map { background-color: @land; }
 
 // Water Features //
 #water {
-    polygon-fill: #222e3b;
+    polygon-fill: #354456;
 }
 
 // Water color is calculated by sampling the resulting color from
