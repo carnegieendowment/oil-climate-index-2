@@ -161,11 +161,10 @@ var SupplyCurve = BaseView.extend({
     for (var i = 0; i < oils.length; i++) {
       var oilInfo = data.info[oils[i]];
       var ghgTotal = +oilInfo['Total Emissions'];
-      var prelim = Oci.Collections.prelim.get('run00').toJSON()[oils[i]];
+      var prelim = Oci.Collections.prelim.get('run01').toJSON()[oils[i]];
 
       // 0 refers to no petroleum coke
-      // 0 refers to no LPG
-      var ghgPerMJ = utils.getValueForRatio(ghgTotal, 'perMJ', prelim, 0, oilInfo, 0);
+      var ghgPerMJ = utils.getValueForRatio(ghgTotal, 'perMJ', prelim, 0, oilInfo);
 
       var obj = {
         'id': utils.makeId(oilInfo.Unique),

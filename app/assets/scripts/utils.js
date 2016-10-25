@@ -631,7 +631,7 @@ var utils = {
   getPRELIMModel: function (refinery, lpg) {
     var metadata = Oci.data.metadata;
     var ri = this.trimMetadataArray(metadata.refinery.split(',')).indexOf(refinery);
-    var li = 1 - Number(lpg);
+    var li = Number(lpg);
     // Generate model string
     var model = 'run';
     // If we don't have a match, return default
