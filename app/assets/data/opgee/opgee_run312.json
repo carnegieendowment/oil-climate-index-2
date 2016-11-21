@@ -17,7 +17,7 @@
     "API Gravity": "66.64",
     "Gas-to-Oil-Ratio": "30503",
     "Water-to-Oil-Ratio": "3.948864445",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "267.4873519"
   },
   "Angola Girassol": {
@@ -38,7 +38,7 @@
     "API Gravity": "32",
     "Gas-to-Oil-Ratio": "622.115",
     "Water-to-Oil-Ratio": "0.25",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "24.14668528"
   },
   "Angola Kuito": {
@@ -59,7 +59,7 @@
     "API Gravity": "21",
     "Gas-to-Oil-Ratio": "200",
     "Water-to-Oil-Ratio": "0.610753853",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "43.82892904"
   },
   "Angola Takula": {
@@ -80,7 +80,7 @@
     "API Gravity": "32",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "2",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "51.12914328"
   },
   "Australia Cossack": {
@@ -101,7 +101,7 @@
     "API Gravity": "47.3",
     "Gas-to-Oil-Ratio": "2725.94",
     "Water-to-Oil-Ratio": "0.09",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Azerbaijan Azeri Light": {
@@ -122,7 +122,7 @@
     "API Gravity": "35",
     "Gas-to-Oil-Ratio": "1299",
     "Water-to-Oil-Ratio": "0.720030901",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Brazil Frade": {
@@ -143,7 +143,7 @@
     "API Gravity": "19",
     "Gas-to-Oil-Ratio": "1327",
     "Water-to-Oil-Ratio": "0.65",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Brazil Lula": {
@@ -164,7 +164,7 @@
     "API Gravity": "28",
     "Gas-to-Oil-Ratio": "2978",
     "Water-to-Oil-Ratio": "0.05",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "95.45466657"
   },
   "Canada Hibernia": {
@@ -185,7 +185,7 @@
     "API Gravity": "34.6",
     "Gas-to-Oil-Ratio": "333",
     "Water-to-Oil-Ratio": "0.610753853",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "China Bozhong": {
@@ -206,7 +206,7 @@
     "API Gravity": "17.5",
     "Gas-to-Oil-Ratio": "7276",
     "Water-to-Oil-Ratio": "0.5",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "84.08338693"
   },
   "China Nanhai Light": {
@@ -227,7 +227,7 @@
     "API Gravity": "43.6",
     "Gas-to-Oil-Ratio": "2505.17605",
     "Water-to-Oil-Ratio": "1.815",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "175.7312149"
   },
   "China Qinhuangdao": {
@@ -248,7 +248,7 @@
     "API Gravity": "16.9",
     "Gas-to-Oil-Ratio": "48.4",
     "Water-to-Oil-Ratio": "3.885",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "30.42063084"
   },
   "Colombia Caño Limón": {
@@ -269,7 +269,7 @@
     "API Gravity": "29",
     "Gas-to-Oil-Ratio": "73.04876449",
     "Water-to-Oil-Ratio": "0.76",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "53.04876449"
   },
   "Colombia Cusiana": {
@@ -290,7 +290,7 @@
     "API Gravity": "44",
     "Gas-to-Oil-Ratio": "1700",
     "Water-to-Oil-Ratio": "1.170855324",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Ecuador Sacha": {
@@ -311,7 +311,7 @@
     "API Gravity": "24.1",
     "Gas-to-Oil-Ratio": "908",
     "Water-to-Oil-Ratio": "0.29",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "158.0539355"
   },
   "India Bombay High": {
@@ -332,7 +332,7 @@
     "API Gravity": "39.4",
     "Gas-to-Oil-Ratio": "7115.835809",
     "Water-to-Oil-Ratio": "2.879223873",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "122.5937"
   },
   "Indonesia Duri": {
@@ -374,7 +374,7 @@
     "API Gravity": "34",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "6.029653554",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "83.73937767"
   },
   "Iran Aboozar": {
@@ -395,7 +395,7 @@
     "API Gravity": "26",
     "Gas-to-Oil-Ratio": "908",
     "Water-to-Oil-Ratio": "0.055",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "158.6224367"
   },
   "Iran Marun": {
@@ -416,7 +416,7 @@
     "API Gravity": "34",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "4.496506258",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "154.0325159"
   },
   "Iraq Kirkuk": {
@@ -437,7 +437,7 @@
     "API Gravity": "36",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "0.5",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "283.9803058"
   },
   "Iraq Rumaila": {
@@ -458,7 +458,7 @@
     "API Gravity": "30",
     "Gas-to-Oil-Ratio": "625",
     "Water-to-Oil-Ratio": "0.75",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "276.4423352"
   },
   "Iraq West Qurna": {
@@ -479,7 +479,7 @@
     "API Gravity": "21.6",
     "Gas-to-Oil-Ratio": "750",
     "Water-to-Oil-Ratio": "0.025",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "225.1273424"
   },
   "Iraq Zubair": {
@@ -500,7 +500,7 @@
     "API Gravity": "30.2",
     "Gas-to-Oil-Ratio": "857.4388939",
     "Water-to-Oil-Ratio": "0.75",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "837.4388939"
   },
   "Kazakhstan Tengiz": {
@@ -521,7 +521,7 @@
     "API Gravity": "46.4",
     "Gas-to-Oil-Ratio": "351",
     "Water-to-Oil-Ratio": "0.03",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "21.78350267"
   },
   "Kuwait Burgan": {
@@ -542,7 +542,7 @@
     "API Gravity": "30.8",
     "Gas-to-Oil-Ratio": "500",
     "Water-to-Oil-Ratio": "0.15",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "11.89099854"
   },
   "Kuwait Ratawi": {
@@ -563,7 +563,7 @@
     "API Gravity": "24.2",
     "Gas-to-Oil-Ratio": "908",
     "Water-to-Oil-Ratio": "1.6",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "159.9105518"
   },
   "Libya Waha": {
@@ -584,7 +584,7 @@
     "API Gravity": "36.71",
     "Gas-to-Oil-Ratio": "3752.778",
     "Water-to-Oil-Ratio": "5.551521777",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "21.18741779"
   },
   "Mexico Chuc": {
@@ -626,7 +626,7 @@
     "API Gravity": "47",
     "Gas-to-Oil-Ratio": "1733",
     "Water-to-Oil-Ratio": "0.15",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "28.09988333"
   },
   "Nigeria Bonga": {
@@ -647,7 +647,7 @@
     "API Gravity": "30",
     "Gas-to-Oil-Ratio": "930.94",
     "Water-to-Oil-Ratio": "0.105",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Nigeria Bonny": {
@@ -668,7 +668,7 @@
     "API Gravity": "35.3",
     "Gas-to-Oil-Ratio": "20848.68",
     "Water-to-Oil-Ratio": "0.352",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "571.247462"
   },
   "Nigeria Escravos Beach": {
@@ -689,7 +689,7 @@
     "API Gravity": "35.8",
     "Gas-to-Oil-Ratio": "1311",
     "Water-to-Oil-Ratio": "0.54",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "954.75"
   },
   "Nigeria Obagi": {
@@ -710,7 +710,7 @@
     "API Gravity": "35.3",
     "Gas-to-Oil-Ratio": "20408.74",
     "Water-to-Oil-Ratio": "1.95",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "743.8039394"
   },
   "Nigeria Pennington": {
@@ -731,7 +731,7 @@
     "API Gravity": "33.7",
     "Gas-to-Oil-Ratio": "1241",
     "Water-to-Oil-Ratio": "2.154184529",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "495.5842903"
   },
   "Norway Ekofisk": {
@@ -752,7 +752,7 @@
     "API Gravity": "38.4",
     "Gas-to-Oil-Ratio": "1150",
     "Water-to-Oil-Ratio": "0.15",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "13.87261583"
   },
   "Norway Oseberg": {
@@ -773,7 +773,7 @@
     "API Gravity": "30",
     "Gas-to-Oil-Ratio": "4609",
     "Water-to-Oil-Ratio": "0.45",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "23.25275583"
   },
   "Norway Skarv": {
@@ -794,7 +794,7 @@
     "API Gravity": "38.5",
     "Gas-to-Oil-Ratio": "5463",
     "Water-to-Oil-Ratio": "0.063681008",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "67.56082481"
   },
   "Qatar Bul Hanine": {
@@ -815,7 +815,7 @@
     "API Gravity": "35",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "3.45728604",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "113.7380597"
   },
   "Qatar Dukhan": {
@@ -836,7 +836,7 @@
     "API Gravity": "40",
     "Gas-to-Oil-Ratio": "2363.239",
     "Water-to-Oil-Ratio": "12.78696748",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "50.8657314"
   },
   "Russia Romashkinskoye": {
@@ -857,7 +857,7 @@
     "API Gravity": "31.78",
     "Gas-to-Oil-Ratio": "29.645",
     "Water-to-Oil-Ratio": "1.5",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Russia Samotlor": {
@@ -878,7 +878,7 @@
     "API Gravity": "35",
     "Gas-to-Oil-Ratio": "481.78",
     "Water-to-Oil-Ratio": "4.5",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "9.0108279"
   },
   "Saudi Arabia Ghawar": {
@@ -899,7 +899,7 @@
     "API Gravity": "34",
     "Gas-to-Oil-Ratio": "570",
     "Water-to-Oil-Ratio": "0.2142855",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "10.85256529"
   },
   "Saudi Arabia Safaniya": {
@@ -941,7 +941,7 @@
     "API Gravity": "32",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "3.016031698",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.71757886"
   },
   "United Arab Emirates Fateh": {
@@ -962,7 +962,7 @@
     "API Gravity": "31.8",
     "Gas-to-Oil-Ratio": "2770",
     "Water-to-Oil-Ratio": "0.5",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "36.24767153"
   },
   "United Arab Emirates Murban": {
@@ -983,7 +983,7 @@
     "API Gravity": "40",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "0.05",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "30.91783172"
   },
   "U.S.  Alaska North Slope": {
@@ -1004,7 +1004,7 @@
     "API Gravity": "28.3",
     "Gas-to-Oil-Ratio": "19556",
     "Water-to-Oil-Ratio": "1.98",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "15.52239331"
   },
   "U.S. Bakken Flare": {
@@ -1130,7 +1130,7 @@
     "API Gravity": "38.9",
     "Gas-to-Oil-Ratio": "325",
     "Water-to-Oil-Ratio": "18.69756661",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "U.S. Louisiana Lake Washington Field": {
@@ -1151,7 +1151,7 @@
     "API Gravity": "35.6",
     "Gas-to-Oil-Ratio": "1297",
     "Water-to-Oil-Ratio": "15.4770059",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "U.S. Gulf Mars": {
@@ -1172,7 +1172,7 @@
     "API Gravity": "28.8",
     "Gas-to-Oil-Ratio": "2000",
     "Water-to-Oil-Ratio": "0.1",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "U.S. California Midway Sunset": {
@@ -1256,7 +1256,7 @@
     "API Gravity": "37.5",
     "Gas-to-Oil-Ratio": "1660.2",
     "Water-to-Oil-Ratio": "0.125",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "58.41475891"
   },
   "U.S. Gulf Thunder Horse": {
@@ -1277,7 +1277,7 @@
     "API Gravity": "34.5",
     "Gas-to-Oil-Ratio": "885",
     "Water-to-Oil-Ratio": "0.18",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "39.83675425"
   },
   "U.S. Wyoming WC": {
@@ -1319,7 +1319,7 @@
     "API Gravity": "19.5",
     "Gas-to-Oil-Ratio": "292.4286446",
     "Water-to-Oil-Ratio": "18.55441536",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "U.S. Texas Yates": {
@@ -1340,7 +1340,7 @@
     "API Gravity": "30",
     "Gas-to-Oil-Ratio": "500",
     "Water-to-Oil-Ratio": "0.64",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Venezuela Hamaca SCO": {
@@ -1361,14 +1361,14 @@
     "API Gravity": "8.6",
     "Gas-to-Oil-Ratio": "111",
     "Water-to-Oil-Ratio": "0.05",
-    "Steam-to-Oil-Ratio": "3",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "7.5"
   },
   "Venezuela Tia Juana": {
     "Unique": "Venezuela Tia Juana",
     "Exploration": "0",
     "Drilling": "21.63635182",
-    "Production": "9.495321935",
+    "Production": "5.188640465",
     "Processing": "1.485683178",
     "Upgrading": "0",
     "Maintenance": "0",
@@ -1378,7 +1378,7 @@
     "Miscellaneous": "3.162322493",
     "Transport to Refinery": "1.636631447",
     "Offsite emissions": "1.971098072",
-    "Net lifecycle emissions": "55.32121255",
+    "Net lifecycle emissions": "51.01453108",
     "API Gravity": "12.1",
     "Gas-to-Oil-Ratio": "145",
     "Water-to-Oil-Ratio": "21.08011705",
