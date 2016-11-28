@@ -1487,7 +1487,7 @@
     "API Gravity": "30",
     "Gas-to-Oil-Ratio": "4203.815039",
     "Water-to-Oil-Ratio": "1.735089655",
-    "Steam-to-Oil-Ratio": "2.1",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "119.0320044"
   },
   "Mexico Cantarell": {
@@ -1529,7 +1529,7 @@
     "API Gravity": "36.4",
     "Gas-to-Oil-Ratio": "4000",
     "Water-to-Oil-Ratio": "0.711737451",
-    "Steam-to-Oil-Ratio": "2.1",
+    "Steam-to-Oil-Ratio": "0",
     "Flaring-to-Oil-Ratio": "34.99541641"
   },
   "UK Forties Blend": {
