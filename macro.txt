@@ -184,7 +184,7 @@ Sub OPGEE()
               Next
               OPGEEInputs.Range("C2").Value = Oils
               OPGEEModel.Activate
-              Application.Run ("" & OPGEEModel.Name & "!UltraBulk_assessment")
+              Application.Run ("'" & OPGEEModel.Name & "'!UltraBulk_assessment")
 
               ' Copy imputed water and flaring values on to Inputs tab
               Range(OPGEEOutputs.Range("H43"), OPGEEOutputs.Range("H44").Offset(0, NonSpecialOils - 1)).Copy
@@ -206,7 +206,7 @@ Sub OPGEE()
               OPGEEEmissions.Range("A22").Value = (1 - CDbl(SolarSteamArray(s)))
 
               ' Run Again
-              Application.Run ("" & OPGEEModel.Name & "!UltraBulk_assessment")
+              Application.Run ("'" & OPGEEModel.Name & "'!UltraBulk_assessment")
               Application.Calculation = xlCalculationManual
               Application.ScreenUpdating = False
 
@@ -282,6 +282,8 @@ Sub OPGEE()
   Next s
 
   ' Close model, force no-save
+   OPGEEEmissions.Range("H22").Formula = "=('Energy Consumption'!H31*IF('Energy Consumption'!K31="4",'Emissions Factors'!M17,'Emissions Factors'!C17)+'Energy Consumption'!H32*'Emissions Factors'!F17"
+   
   OPGEEModel.Close SaveChanges:=False
 
   ' Write out metadata
