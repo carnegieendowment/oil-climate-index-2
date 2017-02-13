@@ -282,7 +282,7 @@ Sub OPGEE()
   Next s
 
   ' Close model, force no-save
-   OPGEEEmissions.Range("H22").Formula = "=('Energy Consumption'!H31*IF('Energy Consumption'!K31="4",'Emissions Factors'!M17,'Emissions Factors'!C17)+'Energy Consumption'!H32*'Emissions Factors'!F17"
+  OPGEEModel.Sheets("GHG Emissions").Range("H22") = "='Energy Consumption'!H31*IF('Energy Consumption'!K31=" & Chr(34) & "4" & Chr(34) & ",'Emissions Factors'!M17,'Emissions Factors'!C17)+'Energy Consumption'!H32*'Emissions Factors'!F17"
    
   OPGEEModel.Close SaveChanges:=False
 
