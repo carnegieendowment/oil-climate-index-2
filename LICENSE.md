@@ -64,8 +64,8 @@ Carnegie is not liable for any special, consequential, lost profits, expectation
 Users will indemnify, hold harmless and defend Stanford against any claim of any kind arising out of or related to the exercise of any rights in this Agreement.
 
 
-PPRELIM
--------
+PRELIM
+------
 
 Copyright © 2016 Dr. Joule A. Bergerson 
 All rights reserved.
