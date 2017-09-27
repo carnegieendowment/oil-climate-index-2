@@ -176,7 +176,7 @@
   "U.S. Texas Eagle Ford Black Oil Zone": {
     "description": "A light, sweet oil from the complex Eagle Ford play in the U.S. state of Texas with production zones ranging from oil to gas. In the Black Oil production zone, Eagle Ford’s moderate gas-to-oil ratio leads to moderate levels of GHG emissions from venting and flaring the associated gas during processing. OCI assay source: Eagle Ford Ultralight, Platts"
   },
-  "U.S. Texas Eagle Ford Volatile Oil Zone ": {
+  "U.S. Texas Eagle Ford Volatile Oil Zone": {
     "description": "An ultra-light, sweet oil from the complex Eagle Ford play in the U.S. state of Texas with production zones ranging from oil to gas. This Eagle Ford oil zone exists in a gaseous phase while under pressure in the reservoir. The Eagle Ford Volatile Oil has a higher gas-to-oil ratio than other resources from this play, but the natural gas produced alongside the oil can be exported, which generates an off-site emissions credit. OCI assay source: Proxy assay—Margham Light, Ceric Emir"
   },
   "U.S. Texas Eagle Ford Condensate Zone": {
@@ -185,10 +185,10 @@
   "U.S.  East Texas Field": {
     "description": "A light, sweet oil that has been in production for nearly a century from a large oil field covering east Texas and bounded by Louisiana, two U.S. states. Extracting oil from this depleted field requires water-reinjection-based enhanced oil recovery as well as energy-intensive pumping, the latter of which contributes significantly to its upstream GHG emissions. East Texas (also known as East Texas Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: East Texas Sweet, Crude Oil Analysis Database"
   },
-  "U.S. Louisiana Lake Washington": {
+  "U.S. Louisiana Lake Washington Field": {
     "description": "A light, sweet, depleted oil from the coast of the U.S. state of Louisiana. Some of the most emission-intensive production practices among the OCI Phase 2 oils are used to extract Lake Washington. This oil’s GHG emissions driver is the combustion associated with energy-intensive pumping operations. Lake Washington (also identified as Louisiana Light Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: Louisiana Light Sweet, Stratiev"
   },
-  "U.S. Gulf Mars ": {
+  "U.S. Gulf Mars": {
     "description": "A medium, sour, ultra-deep oil in the U.S. Gulf of Mexico, southeast of New Orleans. Mars has a relatively high gas-to-oil ratio compared to other OCI Phase 2 oils, and venting this gas contributes significantly to the oil’s upstream GHG emissions. OCI assay source: Mars, BP"
   },
   "U.S. California Midway Sunset": {
@@ -203,7 +203,7 @@
   "U.S. Texas Spraberry": {
     "description": "A light, sweet oil from the Permian basin in west Texas, a U.S. state, that has been in production for nearly seventy years. Extracting Spraberry requires energy-intensive pumping techniques because the field is depleted, and this process contributes to the oil’s upstream GHG emissions. Given the oil’s high gas-to-oil ratio, combustion and venting of the gas generate upstream GHG emissions. Spraberry (also identified as West Texas Intermediate or WTI) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: West Texas Intermediate, Stratiev"
   },
-  "U.S. Gulf Thunder Horse ": {
+  "U.S. Gulf Thunder Horse": {
     "description": "A light, sour oil located offshore in the U.S. Gulf of Mexico, southeast of New Orleans. Thunder Horse’s GHG emissions are relatively low compared to other ultra-deep oils in part because it is not particularly gassy. OCI assay source: Thunder Horse, BP "
   },
   "U.S. Wyoming WC": {
