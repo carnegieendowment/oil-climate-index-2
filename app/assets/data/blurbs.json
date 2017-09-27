@@ -44,7 +44,7 @@
   "China Nanhai Light": {
     "description": "A light, sweet, deepwater oil from the Huizhou field produced offshore in the South China Sea, near the coast of Guangdong Province. Nanhai Light’s associated gas is moderately flared, despite its significant gas content, which contributes substantially to its upstream GHG emissions. OCI assay source: Nanhai Light, Chevron"
   },
-  "China Qinhuangdao ": {
+  "China Qinhuangdao": {
     "description": "A heavy, sweet oil produced southeast of Beijing in China’s Bohai Bay. Qinhuangdao’s GHG emissions stem from the significant amounts of heat and hydrogen required to refine the heavy oil into petroleum products. The petroleum products produced when Qinhuangdao is refined, particularly petcoke, are emissions intensive and contribute considerably to its total emissions when combusted. OCI assay source: Qinhuangdao, Chevron"
   },
   "Colombia Caño Limón": {
@@ -182,7 +182,7 @@
   "U.S. Texas Eagle Ford Condensate Zone": {
     "description": "A sweet oil from the complex Eagle Ford play in the U.S. state of Texas with production zones ranging from oil to gas. Eagle Ford Condensate has almost ten times as much associated gas as light Eagle Ford Black Oil. For this reason, collecting and processing this oil’s gas produces emissions—venting, flaring, and fugitive methane emissions—that are among the highest of the OCI Phase 2 sample oils. However, the sale of natural gas and natural gas liquids generates off-site emissions credits that moderate the oil’s upstream GHG emissions. OCI assay source: Proxy assay—Snohvit Condensate, Statoil"
   },
-  "U.S.  East Texas Field": {
+  "U.S. East Texas Field": {
     "description": "A light, sweet oil that has been in production for nearly a century from a large oil field covering east Texas and bounded by Louisiana, two U.S. states. Extracting oil from this depleted field requires water-reinjection-based enhanced oil recovery as well as energy-intensive pumping, the latter of which contributes significantly to its upstream GHG emissions. East Texas (also known as East Texas Sweet) is one of the OCI Phase 2 oils whose price is tracked and reported monthly. OCI assay source: East Texas Sweet, Crude Oil Analysis Database"
   },
   "U.S. Louisiana Lake Washington Field": {
@@ -215,13 +215,13 @@
   "U.S. California Wilmington": {
     "description": "A heavy, sour oil located in southern Los Angeles County. Running pumps to extract this watery, depleted crude from the reservoir generates Wilmington’s upstream GHG emissions. Petcoke is produced when this heavy oil is refined. When exported and combusted, the petcoke contributes significantly to Wilmington’s downstream GHG emissions.  OCI assay source: Wilmington, Knovel"
   },
-  "Venezuela Hamaca SCO ": {
+  "Venezuela Hamaca SCO": {
     "description": "An extra-heavy, sour oil produced in the Orinoco heavy-oil belt in central Venezuela. Hamaca’s upstream GHG emissions are high because it is upgraded into a synthetic crude oil (SCO) before it is refined. Hamaca is also produced in a highly developed, carbon-rich (forested) ecosystem, and elevated GHG emissions are released from the soil and from biomass when sites are developed for drilling. OCI assay source: Hamaca, Knovel"
   },
-  "Venezuela Merey Blend ": {
+  "Venezuela Merey Blend": {
     "description": "A 60/40 blend of extra-heavy, sour oil from the Orinoco heavy-oil belt and light Santa Barbara oil. The Merey Blend’s upstream GHG emissions are high due to the steam used to extract the viscous oil and the land-use disruption to the surrounding carbon-rich soil and biomass when drilling sites are developed. Heat and hydrogen are required to refine the oil, and petcoke is produced in the process; both of these factors contribute to Merey’s high emissions. The Merey Blend is one of the OCI Phase 2 oils whose price is tracked and reported monthly. This oil is blended to facilitate transport and is not equivalent on a per-barrel basis to conventional and synthetic oils in the OCI. OCI assay source: Merey, Oil & Gas Journal"
   },
-  "Venezuela Tia Juana ": {
+  "Venezuela Tia Juana": {
     "description": "An extra-heavy, sour oil from the vicinity of Lake Maracaibo. Tia Juana’s upstream GHG emissions result from land-use disruption and steam-based enhanced oil recovery techniques during its extraction. Refining emissions are high due to the hydrogen production this extra-heavy oil requires and the combustion of petcoke that process generates. OCI assay source: Tia Juana, Stratiev"
   }
 }
