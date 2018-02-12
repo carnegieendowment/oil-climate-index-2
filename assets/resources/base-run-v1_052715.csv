@@ -1,0 +1,607 @@
+,Oil Climate Index Consolidated Data,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Oil Climate Index Webtool Base Run,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Refer to oci.carnegiendowment.org/methodology,,,,Note that this workbook does not include data used to make upstream sliders.  See methodology to generate slider data using OPGEE v1.1d and notes regarding special cases.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Subtitle/Reference,Subtitle/Reference,Data Field Names,Units,Notes/Sources,List of oils,,,,,,,,,,,,,,,,,,,,,,,,Special Cases Start here --> ,,,,,
+,,,Region,,,Sub-Saharan Africa,North America,Eurasia,Sub-Saharan Africa,Asia-Pacific,Europe,Asia-Pacific,Europe,Latin America & Caribbean,Sub-Saharan Africa,Latin America & Caribbean,North America,Middle East & North Africa,Latin America & Caribbean,North America,North America,North America,Sub-Saharan Africa,Middle East & North Africa,North America,Eurasia,North America,North America,Middle East & North Africa,Europe,Eurasia,North America,North America,North America,North America
+,,,Unique,,,Nigeria Agbami,U.S. Alaska North Slope,Azerbaijan Azeri Light,Nigeria Bonny,China Bozhong,UK Brent,Indonesia Duri,Norway Ekofisk,Brazil Frade,Angola Girassol,Venezuela Hamaca,Canada Hibernia,Angola Kuito,Brazil Lula,U.S. Gulf Mars,Canada Midale,California Midway Sunset,Nigeria Obagi,Kuwait Ratawi,California South Belridge,Kazakhstan Tengiz,U.S. Gulf Thunder Horse,California Wilmington,Iraq Zubair,UK Forties,Russia Chayvo,Canada Cold Lake Dilbit,Canada Heavy Sour SCO,Canada Light Sweet SCO,Canada Medium Sweet SCO
+,,,Country,,,Nigeria,U.S.,Azerbaijan,Nigeria,China,UK,Indonesia,Norway,Brazil,Angola,Venezuela,Canada,Angola,Brazil,U.S. Gulf,Canada,California,Nigeria,Kuwait,California,Kazakhstan,U.S. Gulf,California,Iraq,UK,Russia,Canada,Canada,Canada,Canada
+,,,Oil Field Name (OPGEE),,,Agbami,Alaska North Slope,Azeri Light,Bonny,Bozhong,Brent,Duri,Ekofisk,Frade,Girassol,Hamaca,Hibernia,Kuito,Lula,Mars,Midale,Midway Sunset,Obagi,Ratawi,South Belridge,Tengiz,Thunder Horse,Wilmington,Zubair,Forties,Chayvo,Cold Lake Dilbit,Heavy Sour SCO,Light Sweet SCO,Medium Sweet SCO
+,,,Assay Name (PRELIM),,Sources for Assays included here, Nigeria Agbami_Chevron , Alaskan North Slope_Exxon , Azeri Light_Chevron , Bonny Light_Chevron , China Bozhong_Chevron , Brent_Chevron , Indonesia Duri , Ekofisk_BP , Brazil Frade_Chevron , Angola Girassol_Exxon , Hamaca Venezuela_Knovel , Canada Hibernia_Exxon , Angola Kuito_Chevron , Brazil Lula_BG Group , Mars USA-Gulf of Mexico_BP , Midale_Crude Monitor , Midway- Sunset_Knovel , Bonny Light_Chevron , Kuwait Ratawi_Chevron , Belridge_Knovel , Tengiz_Chevron , Thunderhorse_Exxon , Wilmington CA_Knovel , Iraq Basra_BP , Forties Blend_BP  , Russia Sokol_Exxon , Cold Lake_Crude Monitor , Suncor Synthetic H_Crude Monitor , Suncor Synthetic A_Crude Monitor , Syncrude Synthetic_Crude Monitor 
+,,,Oil Type,,,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Conventional,Oil Sands,Oil Sands,Oil Sands,Oil Sands
+,,,API,,,47.0,28.3,35.0,35.3,17.5,39.0,19.0,38.4,19.0,32.0,8.6,34.6,21.0,28.0,28.8,28.7,22.6,35.3,24.2,15.0,46.4,34.5,19.5,30.2,35.0,36.4,10.2,8.0,8.0,8.0
+,,,Sulfur %wt,,,0.01%,0.32%,0.02%,0.03%,0.21%,0.04%,0.17%,0.03%,0.58%,0.14%,0.26%,0.16%,0.21%,0.20%,0.63%,1.05%,0.86%,0.03%,0.93%,0.12%,0.42%,0.27%,0.00%,1.13%,0.39%,0.05%,2.81%,2.65%,0.03%,0.11%
+,,,API Crude Category,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Ultra-Light,Medium,Light,Light,Heavy,Light,Heavy,Light,Heavy,Light,Extra-Heavy,Light,Heavy,Medium,Medium,Medium,Heavy,Light,Medium,Heavy,Ultra-Light,Light,Heavy,Medium,Light,Light,Extra-Heavy,Extra-Heavy,Extra-Heavy,Extra-Heavy
+,,,Sulfur Category,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Sweet,Sweet,Sweet,Sweet,Sweet,Sweet,Sweet,Sweet,Sour,Sweet,Sweet,Sweet,Sweet,Sweet,Sour,Sour,Sour,Sweet,Sour,Sweet,Sweet,Sweet,Sweet,Sour,Sweet,Sweet,Sour,Sour,Sour,Sour
+,,,Production Volume,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Medium,High,High,Very Low,Medium,Very Low,Medium,Medium,Low,Medium,Medium,Medium,Medium,Medium,Medium,Low,Medium,Low,Medium,Medium,High,Medium,Medium,Medium,Medium,High,Medium,Medium,Medium,High
+,,,Onshore/Offshore,,,Offshore,Onshore,Offshore,Onshore,Offshore,Offshore,Onshore,Offshore,Offshore,Onshore,Onshore,Offshore,Offshore,Offshore,Offshore,Onshore,Onshore,Onshore,Onshore,Onshore,Onshore,Offshore,Onshore,Onshore,Offshore,Offshore,Onshore,Onshore,Onshore,Onshore
+,,,Shallow; Deep; Ultra-Deep,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Ultra-Deep,Deep,Deep,Ultra-Deep,Deep,Deep,Shallow,Deep,Shallow,Shallow,Shallow,Deep,Deep,Ultra-Deep,Ultra-Deep,Shallow,Shallow,Shallow,Shallow,Shallow,Ultra-Deep,Ultra-Deep,Shallow,Ultra-Deep,Deep,Ultra-Deep,Shallow,Shallow,Shallow,Shallow
+,,,Flaring Class,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Low Flare,Low Flare,Minimal Flare,High Flare,High Flare,High Flare,Minimal Flare,Minimal Flare,Minimal Flare,High Flare,Low Flare,Low Flare,Low Flare,Minimal Flare,Minimal Flare,Low Flare,Minimal Flare,High Flare,Low Flare,Minimal Flare,Minimal Flare,Minimal Flare,Minimal Flare,High Flare,Minimal Flare,High Flare,Minimal Flare,Minimal Flare,Minimal Flare,Minimal Flare
+,,,Watery Oil,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Low Water,Low Water,Low Water,Low Water,Low Water,Watery Oil,Low Water,Low Water,Low Water,Low Water,Low Water,Low Water,Low Water,Low Water,Low Water,Watery Oil,Watery Oil,Low Water,Low Water,Watery Oil,Low Water,Low Water,Watery Oil,Low Water,Watery Oil,Low Water,Low Water,Low Water,Low Water,Low Water
+,,,Gassy Oil,,The bounds for these classifications can be changed on the 'Classification Bounds' sheet,Medium Gas,High Gas,Medium Gas,High Gas,Medium Gas,High Gas,Very Low Gas,Medium Gas,Medium Gas,Low Gas,Low Gas,Low Gas,Low Gas,Medium Gas,Medium Gas,Medium Gas,Low Gas,High Gas,Low Gas,Low Gas,Low Gas,Low Gas,Low Gas,Low Gas,Low Gas,Medium Gas,Low Gas,Very Low Gas,Very Low Gas,Very Low Gas
+,,,EOR,,,EOR,EOR,,,,,EOR,,,,,,,,EOR,,EOR,,EOR,EOR,,EOR,EOR,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Overall Crude Emissions Category,,, Light , High Gas ,Light, High Flare , High Flare , Depleted/Watery Oil , High Steam , Light , Heavy , Conventional , Extra-Heavy ,Conventional,Heavy, Ultra-Deep , Ultra-Deep , Depleted/Watery Oil , High Steam , High Flare , Conventional , Depleted/Watery Oil , Light , Ultra-Deep , Depleted/Watery Oil , Conventional , Depleted/Watery Oil , Ultra-Deep , Extra-Heavy , Extra-Heavy , Extra-Heavy , Extra-Heavy 
+,,,Crude Exporter,,,Crude Net Exporter,Crude Net Importer,Crude Net Exporter,Crude Net Exporter,Crude Net Importer,Crude Net Importer,Crude Net Importer,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter,Crude net Exporter,Crude Net Importer,Crude Net Exporter,Crude Net Importer,Crude Net Exporter,Crude Net Exporter,Crude Net Importer,Crude Net Exporter,Crude net Importer,Crude Net Importer,Crude Net Exporter,Crude Net Importer,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter,Crude Net Exporter
+,,,Location Description,,These locations were estimates,"Off coast of Nigeria, 220 miles SouthEast of Lagos",Northern Alaska,Caspian Sea,"West of Akabuka, North-West of Port Harcourt","Bohai Bay, off the coast from Tianjin",North Sea West of Bergen,"Near Duri town, Central sumatra",Norwegian Sector of North Sea,"Northeasteast of Rio, http://www.chevron.com/articledocuments/latest/news_203789/1457697f-c289-4781-abce-5b3792c645e1/FradeFieldFactSheet.pdf.cvxn",Approximate Coordinates,Coords approximate,"ESE of St. Johns, Newfoundland","West of Cabinda, North Angola","Santos basin, 250km from Rio de Janeiro",Mississipi canyon in US Gulf ,Southern Saskatchewan (check coordinates),California ,"West of Akabuka, North-West of Port Harcourt","Partitioned zone between Kuwait and Saudi Arabia, Ratawi produced from Wafra, South Umm Gudair and South Fuwaris fields, coords link to Wafra field",California,low-lying wetlands along the northeast shores of the Caspian Sea.,Gulf Coast,South Los Angeles,West of Basrah,East of Aberdeen,"East Coast, Sakhalin-1 Project",Cold Lake Oil Sands,Athabasca,Athabasca,Athabasca
+,,,Latitude,,,3.44,70.31,40.17,5.24,38.33,60.90,1.26,56.55,-21.56,-7.89,8.00,46.75,-5.46,-25.50,28.17,49.38,35.25,5.24,28.62,35.47,46.15,28.11,33.76,30.35,57.72,52.12,54.43,56.72,56.72,56.72
+,,,Longitude,,,5.67,-148.73,51.33,6.63,119.43,1.80,101.13,3.21,-39.33,12.14,-65.00,-48.78,11.68,-43.50,-89.22,-103.34,-119.60,6.63,47.90,-119.74,53.38,-88.49,-118.23,47.60,1.02,143.76,-110.22,-111.24,-111.24,-111.24
+,,,Total Emissions,,,471.4,556.1,485.3,651.3,812.1,558.7,732.1,466.2,576.6,519.0,742.2,492.2,515.0,539.2,505.0,523.0,739.0,719.7,494.4,685.1,456.3,486.8,608.6,540.0,502.4,529.1,637.8,825.2,733.2,767.0
+,,Oil Sands Inputs Only,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Country,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Canada,Canada,Canada,Canada
+,,,Oil Field Name,,,INTENTIONALLY LEFT BLANK FOR ALL CONVENTIONAL OILS,,,,,,,,,,,,,,,,,,,,,,,,,,Cold Lake,Heavy Sour SCO,Light Sweet SCO,Medium Sweet SCO
+,,,,,"Oil sands can not be put into the Bulk Assessment of OPGEE.   Instead these values have to be entered manually.  The respective cells for these numbers are listed below.  Unless otherwise stated, the values should be pasted into the 'Bitumen Extraction and Upgrading' Sheet of OPGEE.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Crude API Gravity,deg. API,M31,,,,,,,,,,,,,,,,,,,,,,,,,,,10.2,8,8,8
+,,,SCO API Gravity,deg. API,M36,,,,,,,,,,,,,,,,,,,,,,,,,,,,19.5,32.8,32.2
+,,,Diluent API Gravity,deg. API,M41,,,,,,,,,,,,,,,,,,,,,,,,,,,59.7,,,
+,,,Oil production rate,bbl/d,User Inputs and Results'!J70,,,,,,,,,,,,,,,,,,,,,,,,,,,154100,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Hydrocarbon upgraded?,Y/N,M52,,,,,,,,,,,,,,,,,,,,,,,,,,,0,1,1,1
+,,,Hydrocarbon diluted?,Y/N,M53,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Mining integrated,Y/N,M57,,,,,,,,,,,,,,,,,,,,,,,,,,,0,1,1,1
+,,,Mining non-integrated,Y/N,M58,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,In situ - Primary,Y/N,M59,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,In situ - SAGD,Y/N,M60,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,In situ - CSS,Y/N,M61,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,SOR - SAGD,bbl water/bbl bitumen,M64,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,
+,,,SOR - CSS,bbl water/bbl bitumen,M65,,,,,,,,,,,,,,,,,,,,,,,,,,,3.421,,,
+,,,Volume diluent blended,bbl diluent/bbl dilbit,M69,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Gas composition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,N2,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,CO2,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,C1,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,C2,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,C3,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,C4+,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,H2S,mol%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Fuel intensity primary bitumen extraction,,,Table 4.2 - Energy Demand for primary bitumen extraction - CSS Column,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Diesel,MMBtu/bbl,E198,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,
+,,,Natural gas,MMBtu/bbl,E199,,,,,,,,,,,,,,,,,,,,,,,,,,,1.355,,,
+,,,Electricity,MMBtu/bbl,E200,,,,,,,,,,,,,,,,,,,,,,,,,,,-0.02,,,
+,,,Coke,MMBtu/bbl,E201,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,
+,,,Still gas,MMBtu/bbl,E202,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Fuel intensity for upgrading,,,Table 4.4 - Energy Demand for Upgrading - Integrated mining & upgrading Column,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Diesel,MMBtu/bbl,D224,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.160,0.160,0.103
+,,,Natural gas,MMBtu/bbl,D225,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.560,0.560,0.821
+,,,Electricity,MMBtu/bbl,D226,,,,,,,,,,,,,,,,,,,,,,,,,,,,-0.027,-0.027,-0.002
+,,,Coke,MMBtu/bbl,D227,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.205,0.205,0.175
+,,,Still gas,MMBtu/bbl,D228,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.462,0.462,0.775
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Flaring-to-oil ratio,,scf/bbl,User Inputs and Results'!B107,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,,
+,,Venting-to-oil ratio,,scf/bbl,User Inputs and Results'!B108,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Crude ecosystem carbon richness,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Low carbon richness (semi-arid grasslands),Y/N,M99,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,Moderate carbon richness (mixed),Y/N,M100,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1
+,,,High carbon richness (forested),Y/N,M101,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,Field development intensity,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Low intensity development and low oxidation,Y/N,M104,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,Moderate intensity development and moderate oxidation,Y/N,M105,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,High intensity development and high oxidation,Y/N,M106,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Fraction of oil transported by each mode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Ocean tanker,[-],User Inputs & Results! J125,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,Barge,[-],User Inputs & Results! J126,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,Pipeline,[-],User Inputs & Results! J127,,,,,,,,,,,,,,,,,,,,,,,,,,,1,1,1,1
+,,,Rail,[-],User Inputs & Results! J128,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,Transport distance (one way),,,User Inputs & Results! J129,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Ocean tanker,Mile,User Inputs & Results! J130,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,Barge,Mile,User Inputs & Results! J131,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,Pipeline,Mile,User Inputs & Results! J132,,,,,,,,,,,,,,,,,,,,,,,,,,,2500,2500,2500,2500
+,,,Rail,Mile,User Inputs & Results! J133,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0
+,,,"Ocean tanker size, if applicable",Ton,User Inputs & Results! J134,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,BITUMEN OUTPUTS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.1   Exploration,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.1.1   Total energy consumption,,,INTENTIONALLY LEFT BLANK FOR ALL CONVENTIONAL OILS,,,,,,,,,,,,,,,,,,,,,,,,,,0.000,0.000,0.000,0.000
+,,,6.1.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,6.1.2.1   Combustion/land use ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,6.1.2.2   VFF ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.2   Drilling & Development,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.2.1   Total energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.000,0.000,0.000,0.000
+,,,6.2.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.41,2.87,2.87,2.87
+,,,6.2.2.1   Combustion/land use ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3.41,2.87,2.87,2.87
+,,,6.2.2.2   VFF ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.3  Bitumen extraction,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.3.1   Total energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.186,0.240,0.254,0.364
+,,,6.3.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,8.59,9.63,9.40,9.44
+,,,6.3.2.1   Combustion/land use ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,8.58,5.90,5.76,5.78
+,,,6.3.2.2   VFF ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.01,3.73,3.64,3.65
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.4   Upgrading,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.4.1   Total energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.000,0.153,0.169,0.278
+,,,6.4.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,9.44,10.53,15.17
+,,,6.4.2.1   Combustion/land use ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,9.44,10.53,15.17
+,,,6.4.2.2   VFF ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.5   Maintenance,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.5.1   Total energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.000,0.000,0.000,0.000
+,,,6.5.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,6.5.2.1   Combustion/land use ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,6.5.2.2   VFF ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.6   Waste disposal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.6.1   Total energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.000,0.000,0.000,0.000
+,,,6.6.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,6.6.2.1   Combustion/land use ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,6.6.2.2   VFF ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.00,0.00,0.00,0.00
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.7   Crude transport,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,6.7.1   Total energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.018,0.018,0.018,0.018
+,,,6.7.2   Total GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.15,1.15,1.15,1.15
+,,,6.7.3   Loss factor,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0001,1.0001,1.0001,1.0001
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.8   Other small sources,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.50,0.50,0.50,0.50
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.9   Offsite emissions credit/debit,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4.33,0.56,0.58,1.99
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.10   Lifecycle energy consumption,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.20,0.41,0.44,0.66
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,6.11   Lifecycle GHG emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,17.97,24.15,25.03,31.11
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Final Inputs and Outputs - Conventional,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,1 Inputs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Oil Field Name,,,Nigeria_Agbami,ANS,Azeri_Light,Nigeria_Bonny,Bozhong,Brent,Duri,Ekofisk,Frade,Girassol,Hamaca,Hibernia,Kuito,Lula,Mars,Midale,Midway_Sunset,Nigeria_Obagi,Kuwait_Ratawi,South_Belridge,Kazakhstan_Tengiz,Thunder Horse,Wilmington,Iraq_Zubair,Forties ESP,Chayvo,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.1   Production methods,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,"Notes: Enter ""1"" where applicable and ""0"" where not applicable",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.1.1   Downhole pump,NA,,0,0,1,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,0,1,0,0.6,1,,,,
+,,,1.1.2   Water reinjection ,NA,,0,0,1,0,1,0,0,1,1,1,0,0,1,1,0,1,1,1,0,1,0,0,0,1,1,0,,,,
+,,,1.1.3   Gas reinjection,NA,,1,1,0,0,1,0,0,1,0,1,0,1,0,1,0,1,0,0,0,0,1,0,0,0,0,1,,,,
+,,,1.1.4   Water flooding,NA,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,0,,,,
+,,,1.1.5   Gas lifting,NA,,0,1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0.4,0,,,,
+,,,1.1.6   Gas flooding,NA,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
+,,,1.1.7   Steam flooding,NA,,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.2    Field properties,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.2.1   Field location (Country),NA,,Nigeria,US Alaska,Azerbaijan,Nigeria,China,UK,Indonesia,Norway,Brazil,Angola,Venezuela,Canada,Angola,Brazil,US Continental,Canada,US Continental,Nigeria,Kuwait,US Continental,Kazakhstan,US Continental,US Continental,Iraq,UK,Russia,,,,
+,,,1.2.2   Field name,NA,,Agbami,ANS,Azeri,Bonny,Bozhong,Brent,Duri,Ekofisk,Frade,Girassol,Hamaca,Hibernia,Kuito,Lula,Mars,Midale (Southeast Saskatchewan),Midway-Sunset,Obagi,Ratawi,South Belridge,Tengiz,Thunder Horse,Wilmington-Duffy,Zubair,Forties,Chayvo,,,,
+,,,1.2.3   Field age,yr.,,5,45,17,40,23,37,55,42,4,12,13,15,15,3,17,60,120,47,57,103,22,5,82,60,38,8,39,48,48,37
+,,,1.2.4   Field depth,ft,,13000,7700,9075,11500,10500,8100,600,10000,6730,3937,2200,10065,7240,19737,16000,4600,2698,2050,6500,779,11843,16000,2824,11000,7311,36000,,,,
+,,,1.2.5   Oil production volume,bbl/d,,233000,507770,655700,2234,90000,1030,165057,102000,16912,175000,190000,135483,50000,100000,60000,5000,78918,9910,90000,64245,528767,30098,36344.51781,125130,46410,250000,154100,144271,144271,274421
+,,,1.2.6   Number of producing wells,[-],,22,1515,77,33,88,160,2500,80,12,24,190,740,19,6,21,953,10460,56,140,5135,70,4,1315,30,80,26,,,,
+,,,1.2.7   Number of water injecting wells,[-],,11,853,30,0,36,23,1000,20,7,20,0,394,9,1,3,83,110,12,32,1090,8,2,715,14,11,0,,,,
+,,,1.2.8   Well diameter,in,,4.5,2.775,3.775,2.775,3.5,2.775,4.5,2.775,2.775,8,5.5,2.775,6,3.525,2.775,2.775,2.775,2.775,6.25,2.775,2.775,7,2.775,3.025,4.5,5.5,,,,
+,,,1.2.9   Productivity index,bbl/psi-d,,3,3,11,3,3,50,3,3,3,90.9,10,3,4,3,30,3,3,3,3,3,6,3,3,3,3,6,,,,
+,,,1.2.10   Reservoir pressure,psi,,7000,3200,1951,2400,1450,1800,100,5150,2900,3655,950,2164,1556.6,8000,5800,2600,580.07,2610,2000,167.485,9000,15000,1557,3800,2900,2600,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.3   Fluid properties,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.3.1   API gravity,deg. API,,47,28.3,35,35.3,17.5,39,19,38.4,19,32,8.6,34.6,21,28,28.8,28.7,22.6,35.3,24.2,15,46.4,34.5,19.5,30.2,35,36.4,,,,
+,,,1.3.2   Gas composition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,N2,mol%,,2.00,2.03,2.00,2.00,1.00,2.00,2.00,0.26,2.33,2.03,0.10,2.00,2,2.196650223,2,2,2,2.019518541,2,2,2,2,2,2,2.05414935,2.00,,,,
+,,,CO2,mol%,,6.00,6.10,6.00,6.00,5.40,6.00,6.00,2.54,1.30,5.57,5.90,6.00,6,2.757287914,6,6,6,5.639472909,6,6,4,6,6,6,5.409885932,6.00,,,,
+,,,C1,mol%,,84.00,85.38,84.00,84.00,75.00,84.00,84.00,78.74,94.56,84.95,91.90,84.00,84,91.25874247,84,84,84,84.79605544,84,84,60,84,84,84,85.28749925,84.00,,,,
+,,,C2,mol%,,4.00,3.15,4.00,4.00,12.10,4.00,4.00,9.81,0.94,3.74,0.86,4.00,4,1.949127451,4,4,4,3.785304502,4,4,10,4,4,4,3.641874843,4.00,,,,
+,,,C3,mol%,,2.00,1.54,2.00,2.00,2.90,2.00,2.00,4.30,0.43,1.86,0.39,2.00,2,0.919095971,2,2,2,1.879824303,2,2,3,2,2,2,1.803295311,2.00,,,,
+,,,C4+,mol%,,1.00,0.77,1.00,1.00,3.60,1.00,1.00,3.34,0.22,0.93,0.85,1.00,1,0.459547986,1,1,1,0.939912151,1,1,6,1,1,1,0.901647655,1.00,,,,
+,,,H2S,mol%,,1.00,1.02,1.00,1.00,0.00,1.00,1.00,1.00,0.22,0.93,0.00,1.00,1,0.459547986,1,1,1,0.939912151,1,1,15,1,1,1,0.901647655,1.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.4   Production practices,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,"Notes: Enter ""NA"" where not applicable",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.4.1   Gas-to-oil ratio (GOR),scf/bbl oil,,1733,21536,1299,20848.68,7276,28756.14365,25,1150,1704,629.68,121,333,210,3053,2000,2000,168,20908.72,908,382,351,885,292.4286446,775,269.04,4000,260,0,0,0
+,,,1.4.2   Water-to-oil ratio (WOR),bbl water/bbl oil,,0.30,3.96,1.44,0.70,1.00,25.35,3.00,0.30,1.30,0.50,0.10,1.22,1.22,0.10,0.20,11.50,8.01,3.90,3.20,13.20,0.06,0.36,37.11,1.50,8.70,0.57,3.4,2.5,2.5,2.5
+,,,1.4.3   Water injection ratio,bbl water/bbl oil,,1.30,5.90,2.44,1.70,1.00,26.35,0.00,1.30,1.30,1.50,1.10,2.22,1.35,0.50,1.50,12.50,2.37,3.90,4.20,10.89,0.00,1.40,39.98,2.50,6.00,0.00,,,,
+,,,1.4.4   Gas lifting injection ratio,scf/bbl liquid,,1500,1000,1500,1500,1500,104.3,1500,1500,580,30.26,1500,1500,1500,1500,1500,1500,0,256.4,1500,1500,1500,1500,1500,1500,3.2,1500,,,,
+,,,1.4.5   Gas flooding injection ratio,scf/bbl oil,,2599.5,30972,1948.5,31273.02,10914,43134.21548,37.5,1725,555,876.435,166.5,499.5,300,2104.5,3000,3000,0,29478.54,1362,573,526.5,1327.5,438.6429669,1162.5,357,6000,3,0,0,0
+,,,1.4.6   Steam-to-oil ratio (SOR),bbl steam/bbl oil,,3.00,3.00,3.00,3.00,3.00,3.00,4.21,3.00,3.00,3.00,3.00,3.00,3.00,3.00,3.00,3.00,5.79,3.00,3.00,2.81,3.00,3.00,3.00,3.00,3.00,3.00,,,,
+,,,1.4.7   Fraction of required electricity generated onsite,[-],,1.00,1.00,0.00,0.00,1.00,0.00,0.00,1.00,1.00,1.00,0.00,0.00,0.00,1.00,1.00,0.00,0.00,0.00,0.00,0.00,0.00,1.00,0.00,0.00,1.00,1.00,,,,
+,,,1.4.8   Fraction of remaining gas reinjected,[-],,0.90,0.93,0.00,0.00,0.34,0.00,0.00,0.25,0.00,0.00,0.00,1.00,0.00,0.23,0.00,0.15,0.00,0.00,0.00,0.00,0.33,0.00,0.00,0.00,0.00,0.30,,,,
+,,,1.4.9   Fraction of water produced water reinjected,[-],,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,0.30,1.00,1.00,0.83,1.00,1.00,1.00,1.00,0.69,1.00,,,,
+,,,1.4.10   Fraction of steam generation via cogeneration ,[-],,0.00,0.00,0.00,0.00,0.00,0.00,1.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.26,0.00,0.00,0.14,0.00,0.00,0.00,0.00,0.00,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.5   Processing practices,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.5.1   Heater/treater,NA,,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,,,,
+,,,1.5.2   Stabilizer column,NA,,1,0,1,1,1,1,0,1,1,1,0,0,0,1,1,1,0,1,1,0,0,1,0,1,0,1,,,,
+,,,1.5.3   Application of AGR unit,NA,,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,,
+,,,1.5.4   Application of gas dehydration unit,NA,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,,
+,,,1.5.5   Application of demethanizer unit,NA,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,,
+,,,1.5.6   Flaring-to-oil ratio,scf/bbl oil,,90,51,25,1652,2694,728,5,18,45,223,101,82,190,44.74826195,16.24708535,81.58608888,16.24708535,2428.4,52.94202794,16.24708535,18,16.24708535,16.24708535,543,34,370,,,,
+,,,1.5.7   Venting-to-oil ratio,scf/bbl oil,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,,,,
+,,,1.5.8   Volume fraction of diluent,[-],,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.6   Land use impacts,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.6.1   Crude ecosystem carbon richness,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.6.1.1   Low carbon richness (semi-arid grasslands),NA,,1,1,1,0,1,1,0,1,1,1,0,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,,,,
+,,,1.6.1.2   Moderate carbon richness (mixed),NA,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,
+,,,1.6.1.3   High carbon richness (forested),NA,,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,,,,
+,,,1.6.2   Field development intensity,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.6.2.1   Low intensity development and low oxidation,NA,,1,0,1,0,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,0,1,1,0,0,1,1,,,,
+,,,1.6.2.2   Moderate intensity development and moderate oxidation,NA,,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,1,0,0,,,,
+,,,1.6.2.3   High intensity development and high oxidation,NA,,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.7   Non-integrated upgrader,,NA,,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.8   Crude oil transport,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.8.1   Fraction of oil transported by each mode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.8.1.1   Ocean tanker,[-],,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,0,1,1,0,1,0,0,1,1,1,,,,
+,,,1.8.1.2   Barge,[-],,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
+,,,1.8.1.3   Pipeline,[-],,0,1,1,0,0,0,1,1,0,0,1,1,0,0,1,1,1,0,0,1,1,1,1,0,0,1,,,,
+,,,1.8.1.4   Rail,[-],,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
+,,,1.8.2   Transport distance (one way),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,1.8.2.1   Ocean tanker,Mile,,6940,7491,8252,6926,11801,5517,13500,4942,6200,7984,2443,3189,7984,5387,0,0,5154,7127,11500,5154,13025,0,5154,11550,4942,10417,,,,
+,,,1.8.2.2   Barge,Mile,,0,0,0,0,0,0,0,0,0,0,500,500,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
+,,,1.8.2.3   Pipeline,Mile,,0,800,518,0,0,227,340,220,0,0,140,750,0,0,495,2000,120,50,0,150,900,495,25,0,220,140,,,,
+,,,1.8.2.4   Rail,Mile,,0,0,0,0,0,0,0,0,0,0,800,800,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,
+,,,"1.8.3   Ocean tanker size, if applicable",Ton,,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,250000,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,1.9   Small sources emissions,,gCO2eq/MJ,,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,,,,
+,2 Outputs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,Generic,Generic,Generic,Generic,Generic,Generic,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Output variables,,,,Field 1,Field 2,Field 3,Field 4,Field 1,Field 6,Field 8,Field 9,Field 10,Field 11,Field 12,Field 13,Field 14,Field 15,Field 16,Field 17,Field 18,Field 19,Field 20,Field 21,Field 22,Field 23,Field 24,Field 25,,Field 1,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,Field name,,,,Agbami,ANS,Azeri,Bonny,Bozhong,Brent,Duri,Ekofisk,Frade,Girassol,Hamaca,Hibernia,Kuito,Lula,Mars,Midale (Southeast Saskatchewan),Midway-Sunset,Obagi,Ratawi,South Belridge,Tengiz,Thunder Horse,Wilmington-Duffy,Zubair,Forties,Chayvo,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.1   Exploration (e),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.1.1   Total energy consumption,MJ/MJ,,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.000,,,,
+,,,2.1.2   Total GHG emissions,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,2.1.2.1   Combustion/land use,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,2.1.2.2   VFF,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.2   Drilling & Development (d),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.2.1   Total energy consumption,MJ/MJ,,0.005,0.001,0.001,-0.001,0.001,0.000,0.000,0.001,0.001,0.000,0.000,0.003,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.006,,,,
+,,,2.2.2   Total GHG emissions,gCO2eq/MJ,,0.38,0.22,0.16,2.62,0.20,0.13,6.47,0.20,0.09,0.06,6.48,0.20,0.1,1.3,0.6,3.4,0.4,2.4,0.2,0.4,0.3,0.7,0.1,0.3,0.1,0.63,,,,
+,,,2.2.2.1   Combustion/land use,gCO2eq/MJ,,0.38,0.22,0.16,2.62,0.20,0.13,6.47,0.20,0.09,0.06,6.48,0.20,0.1,1.3,0.6,3.4,0.4,2.4,0.2,0.4,0.3,0.7,0.1,0.3,0.1,0.63,,,,
+,,,2.2.2.2   VFF,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.3   Crude production & extraction (p),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.3.1   Total energy consumption,MJ/MJ,,0.027,0.129,0.010,0.000,0.006,0.006,0.308,0.001,0.008,0.001,0.001,0.002,0.0,0.0,0.0,0.0,0.5,0.0,0.0,0.2,0.0,0.0,0.1,0.0,0.1,0.018,,,,
+,,,2.3.2   Total GHG emissions,gCO2eq/MJ,,1.70,9.81,0.92,0.05,1.05,5.03,46.56,0.17,0.59,0.08,0.07,0.12,0.5,1.1,1.4,1.4,36.6,1.2,0.7,15.0,0.0,1.0,4.7,0.4,3.7,1.72,,,,
+,,,2.3.2.1   Combustion/land use,gCO2eq/MJ,,1.70,9.80,0.92,0.00,1.04,4.51,46.54,0.17,0.58,0.08,0.07,0.10,0.5,1.1,1.4,0.8,36.2,1.2,0.7,14.9,0.0,1.0,4.6,0.4,3.7,1.72,,,,
+,,,2.3.2.2   VFF,gCO2eq/MJ,,0.00,0.01,0.00,0.05,0.00,0.53,0.02,0.00,0.00,0.00,0.00,0.02,0.0,0.0,0.0,0.6,0.4,0.0,0.0,0.1,0.0,0.0,0.1,0.0,0.0,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.4   Surface processing (s),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.4.1   Total energy consumption,MJ/MJ,,0.050,0.046,0.026,0.266,0.515,0.165,0.009,0.020,0.027,0.055,0.026,0.026,0.0,0.0,0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.100,,,,
+,,,2.4.2   Total GHG emissions,gCO2eq/MJ,,5.89,5.88,4.26,47.82,45.01,46.46,1.79,3.58,3.36,5.86,2.98,3.37,4.2,4.9,4.9,5.6,2.1,56.5,3.9,2.4,2.9,3.7,2.2,9.9,2.7,11.92,,,,
+,,,2.4.2.1   Combustion/land use,gCO2eq/MJ,,1.30,1.70,1.03,9.42,2.46,13.80,0.01,0.85,0.67,0.63,0.18,0.11,0.0,1.2,1.4,1.3,0.1,8.6,0.8,0.3,0.4,0.9,0.1,0.5,0.1,2.21,,,,
+,,,2.4.2.2   VFF,gCO2eq/MJ,,4.59,4.18,3.22,38.40,42.55,32.66,1.78,2.73,2.69,5.22,2.79,3.25,4.2,3.7,3.5,4.3,2.1,47.8,3.1,2.1,2.5,2.8,2.1,9.4,2.6,9.71,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.5   Maintenance (m),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.5.1   Total energy consumption,MJ/MJ,,0.000,0.002,0.000,0.002,0.000,0.002,0.000,0.000,0.000,0.000,0.000,0.000,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.000,,,,
+,,,2.5.2   Total GHG emissions,gCO2eq/MJ,,0.12,0.86,0.10,0.77,0.22,1.12,0.06,0.09,0.12,0.06,0.02,0.06,0.1,0.2,0.2,0.1,0.1,0.7,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.19,,,,
+,,,2.5.2.1   Combustion/land use,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,2.5.2.2   VFF,gCO2eq/MJ,,0.12,0.86,0.10,0.77,0.22,1.12,0.06,0.09,0.12,0.06,0.02,0.06,0.1,0.2,0.2,0.1,0.1,0.7,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.19,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.6   Waste disposal (w),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.6.1   Total energy consumption,MJ/MJ,,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.000,,,,
+,,,2.6.2   Total GHG emissions,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,2.6.2.1   Combustion\land use,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,2.6.2.2   VFF,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.7   Diluent,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.7.1   Total energy consumption,MJ/MJ,,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.000,,,,
+,,,2.7.2   Total GHG emissions,gCO2eq/MJ,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.8   Non-integrated upgrader,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.8.1   Total energy consumption,MJ/MJ,Note: SCO produces coke,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.272,0.000,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.000,,,,
+,,,2.8.2   Total GHG emissions,gCO2eq/MJ,Add into combustion for SCOs,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,16.87,0.00,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.9   Crude transport (t),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,2.9.1   Total energy consumption,MJ/MJ,,0.010,0.017,0.015,0.010,0.017,0.008,0.022,0.009,0.009,0.012,0.005,0.005,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.016,,,,
+,,,2.9.2   Total GHG emissions,gCO2eq/MJ,,0.80,1.25,1.19,0.80,1.41,0.64,1.77,0.67,0.74,0.93,0.37,0.34,0.9,0.6,0.2,0.9,0.1,0.8,1.4,0.1,1.9,0.2,0.0,1.4,0.6,1.27,,,,
+,,,2.9.3   Loss factor,NA,,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.00,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.10   Other small sources,,gCO2eq/MJ,,0.50,0.50,0.50,0.50,0.50,0.50,0.50,0.50,0.50,0.50,0.50,0.50,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.50,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.11   Offsite emissions credit/debit,,gCO2eq/MJ,,0.08,-3.06,-1.29,-22.85,-4.46,-33.33,-26.73,-1.28,-0.19,-0.34,0.05,0.06,0.1,-0.7,-2.0,-1.6,-6.3,-20.4,-0.8,-0.8,-0.2,-0.7,0.8,-0.1,0.4,-2.85,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.12   Lifecycle energy consumption,,MJ/MJ,,0.092,0.195,0.053,0.278,0.540,0.182,0.339,0.031,0.045,0.068,0.304,0.035,0.1,0.1,0.1,0.1,0.5,0.4,0.1,0.2,0.0,0.1,0.1,0.1,0.1,0.140,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,2.13   Lifecycle GHG emissions,,gCO2eq/MJ,,9.46,15.45,5.85,29.71,43.93,20.55,30.43,3.93,5.21,7.16,27.34,4.65,6.5,7.9,5.9,10.4,33.5,41.8,6.0,17.7,5.5,5.5,8.4,12.5,8.1,13.37,,,,
+,3 Oil carbon index post-processing,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Loss Factpr,,,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062,1.000062
+,,,Dilbit Conversion Factor,,,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+,,Summary GHG emissions [gCO2eq/MJ],Exploration,kgCO2eq/bblCrude,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Drilling,kgCO2eq/bblCrude,,2.04,1.29,0.92,14.88,1.25,0.75,39.64,1.11,0.58,0.33,41.72,1.13,0.64,7.63,3.72,20.23,2.20,13.60,1.15,2.20,1.61,3.72,0.89,1.95,0.64,3.56,21.76,18.47,18.47,18.47
+,,,Production,kgCO2eq/bblCrude,,9.25,57.60,5.25,0.00,6.46,25.17,285.00,0.95,3.58,0.49,0.44,0.57,3.03,6.51,8.39,4.43,218.75,6.64,4.36,93.08,0.26,5.98,28.45,2.41,21.16,9.71,54.75,38.00,37.09,37.22
+,,,Processing,kgCO2eq/bblCrude,,7.08,9.97,5.88,53.57,15.17,77.07,0.04,4.76,4.10,3.66,1.17,0.66,0.04,7.02,8.07,7.65,0.39,49.02,4.82,2.10,2.16,4.98,0.72,3.17,0.57,12.50,0.00,0.00,0.00,0.00
+,,,Upgrading,kgCO2eq/bblCrude,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,108.62,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,60.76,67.79,97.64
+,,,Maintenance,kgCO2eq/bblCrude,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Waste,kgCO2eq/bblCrude,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,"Venting, Flaring, and Fugitive Emissions",kgCO2eq/bblCrude,,25.56,29.64,18.89,223.05,264.36,191.47,11.43,15.87,17.21,30.50,18.15,19.03,26.03,22.83,21.45,29.80,15.49,276.47,18.94,14.02,13.97,16.48,13.59,54.87,15.08,55.93,0.06,24.00,23.43,23.52
+,,,Diluent,kgCO2eq/bblCrude,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Miscellaneous,kgCO2eq/bblCrude,,2.71,2.94,2.84,2.84,3.09,2.79,3.06,2.80,3.06,2.88,3.22,2.86,3.03,2.94,2.94,2.94,3.02,2.84,2.99,3.12,2.71,2.86,3.06,2.91,2.84,2.83,3.19,3.22,3.22,3.22
+,,,Transport to Refinery,kgCO2eq/bblCrude,,4.33,7.33,6.79,4.58,8.74,3.56,10.84,3.77,4.53,5.37,2.36,1.95,5.76,3.72,1.34,5.40,0.34,4.71,8.14,0.44,10.32,1.29,0.07,7.87,3.27,7.20,7.31,7.38,7.38,7.38
+,,,Offsite emissions,kgCO2eq/bblCrude,,0.42,-17.99,-7.31,-129.94,-27.55,-186.06,-163.67,-7.21,-1.18,-1.95,0.31,0.36,0.74,-4.19,-11.48,-9.64,-37.81,-115.80,-4.53,-4.79,-1.09,-3.93,4.73,-0.41,2.30,-16.13,27.61,3.60,3.71,12.81
+,,,Net lifecycle emissions,kgCO2eq/bblCrude,,51.39,90.78,33.26,168.98,271.52,114.75,186.34,22.05,31.89,41.28,175.98,26.56,39.28,46.45,34.44,60.81,202.38,237.47,35.86,110.17,29.95,31.38,51.53,72.76,45.86,75.59,114.68,155.43,161.08,200.26
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,Nigeria Agbami,U.S. Alaska North Slope,Azerbaijan Azeri Light,Nigeria Bonny,China Bozhong,UK Brent,Indonesia Duri,Norway Ekofisk,Brazil Frade,Angola Girassol,Venezuela Hamaca,Canada Hibernia,Angola Kuito,Brazil Lula,U.S. Gulf Mars,Canada Midale,California Midway Sunset,Nigeria Obagi,Kuwait Ratawi,California South Belridge,Kazakhstan Tengiz,U.S. Gulf Thunder Horse,California Wilmington,Iraq Zubair,UK Forties,Russia Chayvo,Canada Cold Lake Dilbit,Canada Heavy Sour SCO,Canada Light Sweet SCO,Canada Medium Sweet SCO
+,Oil Sands,,,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+,3.1   Crude oil energy density,,,MJ LHV/bbl,,5430,5875,5687,5687,6180,5582,6124,5609,6124,5766,6437,5714,6067,5875,5875,5875,6037,5687,5984,6237,5430,5714,6124,5818,5687,5652,6381,6437,6437,6437
+,3.2  Upstream Crude oil GHG per bbl,,Offical Run,OPGEE kgCO2eq/bbl,,51.4,90.8,33.3,169.0,271.5,114.7,186.3,22.0,31.9,41.3,176.0,26.6,39.3,46.5,34.4,60.8,202.4,237.5,35.9,110.2,30.0,31.4,51.5,72.8,45.9,75.6,114.7,155.4,161.1,200.3
+,4.0 Upstream Pet Coke Production,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Petcoke Produced,Tonnes PC/Year,Canada Government ST39-2013,,,,,,,,,,,,,,,,,,,,,,,,,,,," 4,097,375 "," 4,097,375 "," 2,747,630 "
+,,,Petcoke Produced,Tons/Bbl SCO,Converted per bbl SCO,,,,,,,,,,,0.036,,,,,,,,,,,,,,,,,0.043,0.043,0.030
+,,,Petcoke Used in Upgrading,Tons/Bbl SCO,,,,,,,,,,,,0.007,,,,,,,,,,,,,,,,,0.008,0.008,0.007
+,,,Net Upstream Petcoke,Tons PC/Bbl SCO,,,,,,,,,,,,0.029,,,,,,,,,,,,,,,,,0.035,0.035,0.023
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,PRELIM Float Case - Petroleum Refinery Life-Cycle Inventory Model,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Source: PRELIM's Assay Inventory,,,,,Nigeria Agbami_Chevron,Alaskan North Slope_Exxon,Azeri Light_Chevron,Bonny Light_Chevron,China Bozhong_Chevron,Brent_Chevron,Indonesia Duri,Ekofisk_BP,Brazil Frade_Chevron,Angola Girassol_Exxon,Hamaca Venezuela_Knovel,Canada Hibernia_Exxon,Angola Kuito_Chevron,Brazil Lula_BG Group,Mars USA-Gulf of Mexico_BP,Midale_Crude Monitor,Midway- Sunset_Knovel,Bonny Light_Chevron,Kuwait Ratawi_Chevron,Belridge_Knovel,Tengiz_Chevron,Thunderhorse_Exxon,Wilmington CA_Knovel,Iraq Basra_BP,Forties Blend_BP ,Russia Sokol_Exxon,Cold Lake_Crude Monitor,Suncor Synthetic H_Crude Monitor,Suncor Synthetic A_Crude Monitor,Syncrude Synthetic_Crude Monitor
+,,,,,,Agbami,Alaskan North Slope,Azeri Light,Bonny Light,Bozhong,Brent,Duri,Ekofisk,Frade,Girassol,Hamaca,Hibernia,Kuito,Lula,Mars USA-Gulf of Mexico,Midale,Midway- Sunset,Bonny Light,Ratawi,Belridge,Tengiz,Thunderhorse,Wilmington CA,Basra,Forties_Blend_BP,Sokol,Cold Lake,Suncor Synthetic H,Suncor Synthetic A,Syncrude Synthetic
+,,,Results for the Coking Refinery,,,,,,,,,,,,,,,,,,,,,,,,,,,Results for the Coking Refinery,,,,,
+,,,DEFAULT RUN,,,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC ,Hydroskimming Configuration,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC 
+,,,Product slate,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Product slate,,,"bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil",bbl product per day,"bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Blended Gasoline,,,"22,111.37 ","38,111.50 ","18,271.13 ","24,220.78 ","45,650.50 ","28,896.59 ","49,245.26 ","29,070.91 ","49,133.21 ","32,254.88 ","43,513.00 ","37,469.53 ","23,475.55 ","49,070.13 ","32,833.44 ","36,495.29 ","52,609.80 ","24,220.78 ","21,008.13 ","50,417.15 ","41,255.75 ","39,212.78 ","57,639.36 ","37,706.97 ","48,632.01 ","27,495.08 ","48,134.36 ","42,476.38 ","18,301.20 ","36,250.08 "
+,,,Jet-A/AVTUR,,,"24,342.77 ","17,134.09 ","23,964.28 ","28,125.88 ","8,237.91 ","20,494.63 ","5,749.43 ","20,546.50 ","9,217.21 ","18,402.37 ","21,064.73 ","18,911.01 ","10,217.84 ","18,471.25 ","16,220.81 ","19,261.93 ","17,142.02 ","28,125.88 ","14,410.87 ","9,669.51 ","26,425.58 ","18,031.40 ","10,513.00 ","16,023.43 ","16,374.04 ","23,945.79 ","11,387.19 ","6,835.36 ","25,477.45 ","27,891.35 "
+,,,ULSD,,,"7,628.31 ","18,500.18 ","11,220.38 ","13,413.83 ","39,161.54 ","8,015.59 ","35,034.13 ","9,047.18 ","36,187.23 ","23,944.78 ","20,631.72 ","14,471.14 ","19,588.48 ","28,823.18 ","22,882.44 ","22,203.81 ","28,738.94 ","13,413.83 ","14,737.81 ","37,881.48 ","16,038.08 ","15,516.71 ","31,836.49 ","20,341.90 ","20,576.24 ","11,179.52 ","27,623.45 ","54,322.83 ","20,757.86 ","36,299.01 "
+,,,Fuel Oil,,,"11,006.08 ",0.00 ,"11,607.18 ","11,182.52 ",0.00 ,"8,454.55 ",0.00 ,"8,444.12 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"11,182.52 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"6,570.58 ",0.00 ,0.00 ,"18,874.09 ",0.00 
+,,,Coke,,,0.00 ,0.00 ,0.00 ,0.00 ,"10,676.49 ",0.00 ,"10,437.77 ",0.00 ,"7,905.47 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"5,530.26 ",0.00 ,0.00 ,"7,984.79 ",0.00 ,0.00 ,"6,433.46 ",0.00 ,0.00 ,0.00 ,"13,825.26 ",773.01 ,0.00 ,0.00 
+,,,Bunker C,,,"27,193.77 ","28,826.19 ","33,456.23 ","28,238.05 ","4,239.77 ","31,760.40 ","4,246.59 ","31,305.89 ","4,120.02 ","29,256.33 ","21,426.85 ","31,627.13 ","46,953.89 ","10,920.60 ","30,037.71 ","22,542.31 ","3,405.60 ","28,238.05 ","47,173.75 ","4,413.39 ","11,430.18 ","28,177.80 ","3,667.67 ","27,754.81 ","15,597.30 ","30,730.15 ","2,587.92 ","4,921.82 ","17,328.43 ","5,292.21 "
+,,,Surplus Refinery Fuel Gas (RFG),,,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Product slate,,,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d
+,,,Blended Gasoline,,,"112,608,208.34 ","189,312,845.05 ","92,499,178.60 ","120,303,050.16 ","230,399,122.52 ","145,798,599.34 ","248,502,920.21 ","142,746,338.46 ","247,770,971.06 ","161,745,443.02 ","210,401,671.97 ","185,605,010.29 ","118,146,380.15 ","245,309,733.76 ","167,084,694.39 ","183,283,159.36 ","261,746,956.89 ","120,303,050.16 ","106,744,713.54 ","254,724,732.84 ","210,885,180.34 ","196,572,122.25 ","286,007,478.51 ","187,074,523.07 ","240,212,085.04 ","138,230,371.57 ","237,397,840.19 ","215,031,471.67 ","91,893,288.67 ","183,062,134.17 "
+,,,Jet-A/AVTUR,,,"129,813,125.13 ","91,371,291.89 ","127,794,742.07 ","149,987,387.47 ","43,930,452.39 ","109,292,076.60 ","30,660,085.87 ","109,568,672.57 ","49,152,763.45 ","98,134,659.30 ","112,332,241.94 ","100,847,065.28 ","54,488,872.29 ","98,501,981.38 ","86,501,028.05 ","102,718,461.75 ","91,413,581.38 ","149,987,387.47 ","76,849,132.65 ","51,564,782.59 ","140,920,185.25 ","96,156,397.77 ","56,062,858.91 ","85,448,430.65 ","87,318,123.23 ","127,696,148.26 ","60,724,678.46 ","36,451,040.51 ","135,864,036.06 ","148,736,727.60 "
+,,,ULSD,,,"42,636,924.27 ","103,392,454.76 ","62,714,036.47 ","74,973,921.37 ","219,115,854.92 ","44,801,538.26 ","195,003,430.94 ","50,567,405.40 ","202,135,860.02 ","133,387,937.61 ","115,151,834.24 ","80,461,456.18 ","109,696,337.76 ","160,471,259.06 ","128,048,016.96 ","124,393,447.24 ","160,153,675.50 ","74,973,921.37 ","82,517,849.32 ","211,164,532.93 ","89,153,179.16 ","86,274,726.86 ","177,337,887.53 ","113,896,166.90 ","114,898,451.67 ","62,485,696.51 ","155,213,920.63 ","307,889,343.66 ","116,021,909.89 ","203,495,853.63 "
+,,,Fuel Oil,,,"61,398,241.40 ",0.00 ,"65,435,812.30 ","64,682,281.91 ",0.00 ,"48,099,398.78 ",0.00 ,"48,161,380.08 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"64,682,281.91 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"37,770,923.88 ",0.00 ,0.00 ,"109,564,206.28 ",0.00 
+,,,Coke,,,0.00 ,0.00 ,0.00 ,0.00 ,"57,144,784.99 ",0.00 ,"55,867,098.78 ",0.00 ,"42,313,217.88 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"29,600,150.14 ",0.00 ,0.00 ,"42,737,775.68 ",0.00 ,0.00 ,"34,434,424.41 ",0.00 ,0.00 ,0.00 ,"73,998,285.08 ","4,137,445.19 ",0.00 ,0.00 
+,,,Bunker C,,,"159,855,443.22 ","173,126,997.65 ","193,879,894.16 ","152,864,417.91 ","26,277,640.34 ","185,002,008.29 ","26,319,934.97 ","184,395,840.80 ","25,535,480.01 ","173,497,870.75 ","136,419,678.50 ","183,620,334.64 ","295,688,504.79 ","65,314,886.23 ","180,986,641.86 ","143,134,752.35 ","21,107,536.82 ","152,864,417.91 ","295,548,889.52 ","27,353,755.11 ","68,967,482.96 ","170,583,823.63 ","22,731,831.94 ","168,647,718.71 ","93,337,272.28 ","177,610,499.65 ","16,039,677.48 ","30,504,912.16 ","102,880,662.23 ","32,552,703.14 "
+,,,Surplus RFG,,,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 
+,,,Surplus NCR H2,,,"4,803,838.67 ",0.00 ,"1,980,276.04 ",0.00 ,0.00 ,"2,327,949.09 ",0.00 ,"515,925.68 ",0.00 ,0.00 ,"5,037,230.22 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Gasoline S wt%,,,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 
+,,,Gasoline H2 wt%,,,13.14 ,14.13 ,13.29 ,13.64 ,14.91 ,13.33 ,14.98 ,13.88 ,14.79 ,14.25 ,14.80 ,14.34 ,14.20 ,14.38 ,13.67 ,13.96 ,14.87 ,13.64 ,13.86 ,14.89 ,13.57 ,14.03 ,14.87 ,14.18 ,14.15 ,13.40 ,15.38 ,14.39 ,13.42 ,14.09 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Product slate (mass flow rates),,,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d
+,,,Blended Gasoline,,,"2,591,760.47 ","4,357,173.92 ","2,128,936.41 ","2,768,862.90 ","5,302,804.72 ","3,355,661.66 ","5,719,476.90 ","3,285,411.64 ","5,702,630.55 ","3,722,689.96 ","4,842,548.74 ","4,271,835.39 ","2,719,225.56 ","5,645,983.37 ","3,845,576.74 ","4,218,396.29 ","6,024,298.11 ","2,768,862.90 ","2,456,807.84 ","5,862,676.48 ","4,853,677.04 ","4,524,251.51 ","6,582,671.81 ","4,305,657.30 ","5,528,657.25 ","3,181,473.35 ","5,463,885.34 ","4,949,106.97 ","2,114,991.41 ","4,213,309.23 "
+,,,Jet-A/AVTUR,,,"3,127,114.43 ","2,201,075.47 ","3,078,492.89 ","3,613,099.40 ","1,058,256.26 ","2,632,775.61 ","738,581.69 ","2,639,438.63 ","1,184,058.36 ","2,364,000.63 ","2,706,011.23 ","2,429,340.74 ","1,312,601.78 ","2,372,849.18 ","2,083,753.96 ","2,474,421.47 ","2,202,094.20 ","3,613,099.40 ","1,851,246.02 ","1,242,162.34 ","3,394,676.34 ","2,316,345.58 ","1,350,518.10 ","2,058,397.57 ","2,103,437.25 ","3,076,117.83 ","1,462,818.33 ","878,082.05 ","3,272,876.97 ","3,582,971.81 "
+,,,ULSD,,,"1,000,564.12 ","2,426,319.01 ","1,471,715.32 ","1,759,419.02 ","5,142,009.31 ","1,051,361.29 ","4,576,161.13 ","1,186,669.35 ","4,743,538.41 ","3,130,225.41 ","2,702,277.31 ","1,888,195.44 ","2,574,252.74 ","3,765,791.89 ","3,004,913.07 ","2,919,150.99 ","3,758,339.13 ","1,759,419.02 ","1,936,452.98 ","4,955,415.00 ","2,092,164.79 ","2,024,615.92 ","4,161,602.41 ","2,672,810.47 ","2,696,331.17 ","1,466,356.84 ","3,642,417.50 ","7,225,263.88 ","2,722,695.45 ","4,775,453.49 "
+,,,Fuel Oil,,,"1,503,633.56 ",0.00 ,"1,609,475.41 ","1,609,417.50 ",0.00 ,"1,187,730.00 ",0.00 ,"1,190,592.00 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"1,609,417.50 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"937,071.90 ",0.00 ,0.00 ,"2,730,888.56 ",0.00 
+,,,Coke,,,0.00 ,0.00 ,0.00 ,0.00 ,"1,936,762.74 ",0.00 ,"1,893,459.14 ",0.00 ,"1,434,088.23 ",0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,"1,003,214.34 ",0.00 ,0.00 ,"1,448,477.43 ",0.00 ,0.00 ,"1,167,058.55 ",0.00 ,0.00 ,0.00 ,"2,507,965.01 ","140,227.14 ",0.00 ,0.00 
+,,,Bunker C,,,"4,009,689.48 ","4,394,875.58 ","4,828,426.22 ","3,701,424.30 ","680,809.94 ","4,618,950.00 ","681,905.73 ","4,630,080.00 ","661,581.81 ","4,373,335.89 ","3,612,264.26 ","4,578,408.58 ","7,755,214.42 ","1,655,339.68 ","4,603,127.73 ","3,780,762.91 ","546,861.16 ","3,701,424.30 ","7,719,617.23 ","708,690.29 ","1,755,769.39 ","4,350,953.91 ","588,943.95 ","4,311,515.15 ","2,364,709.29 ","4,417,624.69 ","415,561.36 ","790,331.53 ","2,594,344.13 ","838,993.05 "
+,,,Sulphur,,,804.83 ,"42,440.22 ","2,636.61 ","4,282.12 ","29,562.87 ","4,664.17 ","23,282.59 ","3,645.24 ","79,786.48 ","18,920.78 ","36,589.22 ","20,851.38 ","30,340.57 ","27,345.24 ","85,782.52 ","142,076.99 ","117,943.00 ","4,282.12 ","130,863.69 ","16,407.93 ","51,216.19 ","36,209.03 ",-1.15 ,"152,171.96 ","50,040.88 ","6,585.36 ","390,313.85 ","380,926.40 ","4,363.81 ","15,259.42 "
+,,,Surplus RFG,,,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 ,0.00 
+,,,Surplus NCR H2,,,"37,809 ",0 ,"15,586 ",0 ,0 ,"18,322 ",0 ,"4,061 ",0 ,0 ,"39,645 ",0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Energy use and greenhouse gas emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Refinery CO2 emissions: using hydrogen from naphtha catalytic reforming and RFG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,, Functional unit ,,, CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint , CO2eq footprint 
+,,,Per bbl of crude,,,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude
+,,,Feedstock,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Crude,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Process Energy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Electricity,,,2.55,4.03,2.75,3.54,7.84,3.53,10.97,2.40,10.98,4.15,3.86,3.80,4.01,6.48,4.90,4.83,10.58,3.54,3.68,11.54,5.76,4.03,10.51,4.55,5.41,3.39,9.59,12.27,2.84,6.54
+,,,Heat,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,RFG,,,7.14,8.42,5.57,6.50,19.00,8.40,23.86,7.04,23.73,7.04,7.17,7.58,5.52,9.83,8.69,8.93,24.26,6.50,5.54,24.58,11.78,8.95,24.20,8.28,10.65,7.91,21.61,11.07,5.32,8.58
+,,,Natural Gas,,,3.99,4.68,4.59,6.59,0.00,4.18,0.00,4.02,0.00,4.83,5.28,4.25,4.00,6.29,5.64,6.12,0.00,6.59,4.33,0.00,5.05,3.89,0.00,6.06,6.06,4.39,0.83,13.72,5.81,8.56
+,,,Steam,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,RFG,,,0.00,0.00,0.00,0.00,3.88,0.00,5.34,0.00,4.43,0.00,0.00,0.00,0.00,0.00,0.00,0.00,1.39,0.00,0.00,5.39,0.00,0.00,4.87,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Natural Gas,,,1.63,2.22,1.50,1.64,0.00,1.74,0.00,1.52,0.40,2.55,2.18,2.29,2.30,3.30,2.13,1.85,3.12,1.64,1.43,0.00,2.56,2.34,0.00,1.65,2.35,1.67,1.86,3.15,1.37,3.03
+,,,Electricity,,,0.04,0.05,0.04,0.04,0.11,0.04,0.15,0.04,0.14,0.06,0.05,0.06,0.06,0.08,0.05,0.05,0.12,0.04,0.04,0.16,0.06,0.06,0.14,0.04,0.06,0.04,0.05,0.08,0.03,0.07
+,,,Hydrogen via SMR,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Steam RFG,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Steam Natural Gas,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Steam Electricity,,,0.00,0.14,0.00,0.12,0.93,0.00,1.28,0.00,1.20,0.23,-0.01,0.17,0.27,0.51,0.19,0.29,1.17,0.12,0.16,1.55,0.13,0.10,1.40,0.25,0.27,0.03,0.84,1.41,0.00,0.53
+,,,"RFG, heat SMR",,,0.00,0.00,0.00,0.00,2.79,0.00,3.19,0.00,0.00,0.00,-0.16,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,1.58,0.00,0.00,0.20,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,"Natural Gas, Heat SMR",,,0.00,2.45,0.00,2.22,13.35,0.00,19.17,0.00,21.50,4.12,0.00,3.01,4.79,9.06,3.37,5.12,20.88,2.22,2.92,25.81,2.25,1.72,24.73,4.39,4.91,0.46,15.05,25.27,0.07,9.41
+,,,"RFG, Feed SMR",,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,-0.10,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,"Natural Gas, Feed SMR",,,0.00,2.16,0.00,1.96,14.66,0.00,20.20,0.00,18.96,3.64,0.00,2.66,4.22,7.99,2.97,4.52,18.41,1.96,2.58,24.39,1.99,1.51,22.01,3.87,4.33,0.41,13.27,22.28,0.06,8.30
+,,,Hydrogen via CNR,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,FCC Cat. Regeneration,,,0.00,2.27,0.00,0.00,6.21,0.00,6.36,0.00,6.18,3.01,2.91,2.26,2.75,4.80,2.30,2.71,4.98,0.00,2.02,6.52,2.31,2.26,5.34,2.53,2.29,0.00,3.75,7.27,0.00,3.90
+,,,Excess of RFG,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Total refinery processes ,,,15.35,26.42,14.45,22.60,68.76,17.90,90.53,15.01,87.52,29.63,21.18,26.08,27.92,48.34,30.24,34.42,84.90,22.60,22.70,101.52,31.88,24.86,93.40,31.61,36.33,18.30,66.85,96.51,15.51,48.91
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Per energy content of refinery product,,,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product
+,,,Blended Gasoline,,,8.86,8.95,9.80,11.10,15.71,9.42,19.34,7.55,18.25,10.45,6.59,9.70,11.90,11.76,10.56,11.17,17.48,11.10,10.64,20.41,10.40,9.02,18.97,10.25,10.87,9.57,15.04,18.08,9.51,13.77
+,,,Jet-A/AVTUR,,,2.75,2.40,2.78,4.09,2.59,2.66,2.52,2.67,2.56,2.45,2.29,2.37,2.36,2.62,2.36,2.28,6.98,4.09,2.72,8.82,2.51,2.35,7.26,2.83,2.55,2.61,6.99,7.39,2.76,2.96
+,,,ULSD,,,2.59,7.35,2.63,3.91,14.42,2.51,20.49,2.51,19.36,7.86,4.62,7.17,10.51,11.17,8.53,9.02,20.65,3.91,10.25,21.02,5.44,5.85,20.18,9.09,6.96,2.44,17.95,17.66,2.59,9.43
+,,,Fuel Oil,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Coke,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Bunker C,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Sulfur (emissions per kg of sulfur),,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,RFG,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Surplus NCR H2 ,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Total Refinery Processes ,,,2.80,4.67,2.57,3.90,11.08,3.23,14.50,2.73,13.91,5.14,3.68,4.64,4.57,8.40,5.29,5.98,13.98,3.90,3.84,15.70,5.72,4.43,14.97,5.60,6.55,3.24,11.64,15.63,2.74,8.37
+,,,Allocation to gasoline,,,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product,g CO2eq/MJ product
+,,,Feedstock,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Crude,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Process Energy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Electricity,,,1.40,1.24,1.93,1.66,1.60,1.89,2.15,1.13,2.09,1.31,1.01,1.31,1.50,1.44,1.45,1.37,1.96,1.66,1.50,2.09,1.83,1.37,1.86,1.33,1.52,1.79,1.97,2.02,1.81,1.82
+,,,Heat,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,RFG,,,4.17,3.05,3.78,3.09,4.65,4.41,5.45,3.59,5.36,2.51,2.24,2.78,2.54,2.47,3.28,3.03,5.40,3.09,2.86,5.28,3.80,3.31,5.16,2.91,3.22,4.09,5.58,2.35,3.22,2.50
+,,,Natural Gas,,,2.33,1.70,3.11,3.13,0.00,2.19,0.00,2.05,0.00,1.72,1.65,1.56,1.84,1.58,2.13,2.08,0.00,3.13,2.24,0.00,1.63,1.44,0.00,2.13,1.83,2.27,0.21,2.91,3.51,2.49
+,,,Steam,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,RFG,,,0.00,0.00,0.00,0.00,0.81,0.00,1.02,0.00,0.80,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.26,0.00,0.00,0.99,0.00,0.00,0.87,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Natural Gas,,,0.93,0.75,0.95,0.79,0.00,0.90,0.00,0.75,0.07,0.89,0.63,0.87,0.94,0.81,0.82,0.66,0.58,0.79,0.79,0.00,0.86,0.86,0.00,0.62,0.69,0.85,0.35,0.48,0.83,0.82
+,,,Electricity,,,0.02,0.02,0.02,0.02,0.02,0.02,0.03,0.02,0.03,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.03,0.02,0.02,0.03,0.02,0.02,0.02,0.01,0.01,0.02,0.02
+,,,Hydrogen via SMR,,, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
+,,,Steam RFG,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Steam Natural Gas,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Steam Electricity,,,0.00,0.04,0.00,0.07,0.19,0.00,0.26,0.00,0.23,0.08,0.00,0.07,0.10,0.11,0.05,0.08,0.23,0.07,0.05,0.29,0.04,0.03,0.28,0.06,0.08,0.02,0.17,0.23,0.00,0.13
+,,,"RFG, heat SMR",,,0.00,0.00,0.00,0.00,0.58,0.00,0.64,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.30,0.00,0.00,0.04,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,"Natural Gas, Heat SMR",,,0.00,0.67,0.00,1.24,2.79,0.00,3.86,0.00,4.18,1.34,0.00,1.16,1.75,2.04,0.94,1.52,4.05,1.24,0.98,4.91,0.78,0.60,4.95,1.15,1.49,0.28,2.96,4.03,0.06,2.35
+,,,"RFG, Feed SMR",,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,"Natural Gas, Feed SMR",,,0.00,0.59,0.00,1.09,3.06,0.00,4.07,0.00,3.68,1.18,0.00,1.02,1.55,1.80,0.83,1.34,3.57,1.09,0.86,4.64,0.68,0.53,4.40,1.02,1.31,0.25,2.61,3.56,0.06,2.07
+,,,Hydrogen via CNR,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,FCC Cat. Regeneration,,,0.00,0.90,0.00,0.00,2.00,0.00,1.85,0.00,1.80,1.38,1.05,0.90,1.66,1.47,1.03,1.08,1.41,0.00,1.35,1.88,0.77,0.86,1.39,1.01,0.70,0.00,1.18,2.48,0.00,1.57
+,,,Excess of RFG,,,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,,,Total refinery processes ,,,8.86,8.95,9.80,11.10,15.71,9.42,19.34,7.55,18.25,10.45,6.59,9.70,11.90,11.76,10.56,11.17,17.48,11.10,10.64,20.41,10.40,9.02,18.97,10.25,10.87,9.57,15.04,18.08,9.51,13.77
+,,FINAL RESULT - SLIDER IN ROW 959,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Refinery Configuration Slider,"0 = Default, 1 = Hydroskimming, 2 = Medium Conversion, 3 = Deep Conversion (Coking), 4 = Deep Conversion (Hydrotreating)",,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 
+,,,Dilbit Conversion Factor,,,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00,1.00
+,,,Refinery Type,,,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC ,Hydroskimming Configuration,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC 
+,,,Product slate,,,"bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil",bbl product per day,"bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil","bbl product per 100,000 bbl crude oil"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Gasoline,,,22111.4,38111.5,18271.1,24220.8,45650.5,28896.6,49245.3,29070.9,49133.2,32254.9,43513.0,37469.5,23475.6,49070.1,32833.4,36495.3,52609.8,24220.8,21008.1,50417.1,41255.7,39212.8,57639.4,37707.0,48632.0,27495.1,48134.4,42476.4,18301.2,36250.1
+,,,Jet Fuel,,,24342.8,17134.1,23964.3,28125.9,8237.9,20494.6,5749.4,20546.5,9217.2,18402.4,21064.7,18911.0,10217.8,18471.3,16220.8,19261.9,17142.0,28125.9,14410.9,9669.5,26425.6,18031.4,10513.0,16023.4,16374.0,23945.8,11387.2,6835.4,25477.4,27891.4
+,,,Diesel,,,7628.3,18500.2,11220.4,13413.8,39161.5,8015.6,35034.1,9047.2,36187.2,23944.8,20631.7,14471.1,19588.5,28823.2,22882.4,22203.8,28738.9,13413.8,14737.8,37881.5,16038.1,15516.7,31836.5,20341.9,20576.2,11179.5,27623.4,54322.8,20757.9,36299.0
+,,,Fuel Oil,,,11006.1,0.0,11607.2,11182.5,0.0,8454.5,0.0,8444.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,11182.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,6570.6,0.0,0.0,18874.1,0.0
+,,,Petroleum Coke,,,0.0,0.0,0.0,0.0,10676.5,0.0,10437.8,0.0,7905.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5530.3,0.0,0.0,7984.8,0.0,0.0,6433.5,0.0,0.0,0.0,13825.3,773.0,0.0,0.0
+,,,Bunker Fuel,,,27193.8,28826.2,33456.2,28238.1,4239.8,31760.4,4246.6,31305.9,4120.0,29256.3,21426.8,31627.1,46953.9,10920.6,30037.7,22542.3,3405.6,28238.1,47173.7,4413.4,11430.2,28177.8,3667.7,27754.8,15597.3,30730.1,2587.9,4921.8,17328.4,5292.2
+,,,Surplus Refinery Fuel Gas (RFG),,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Product slate,,,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d,MJ/d
+,,,Blended Gasoline,,,112608208.3,189312845.0,92499178.6,120303050.2,230399122.5,145798599.3,248502920.2,142746338.5,247770971.1,161745443.0,210401672.0,185605010.3,118146380.2,245309733.8,167084694.4,183283159.4,261746956.9,120303050.2,106744713.5,254724732.8,210885180.3,196572122.3,286007478.5,187074523.1,240212085.0,138230371.6,237397840.2,215031471.7,91893288.7,183062134.2
+,,,Jet-A/AVTUR,,,129813125.1,91371291.9,127794742.1,149987387.5,43930452.4,109292076.6,30660085.9,109568672.6,49152763.5,98134659.3,112332241.9,100847065.3,54488872.3,98501981.4,86501028.1,102718461.7,91413581.4,149987387.5,76849132.6,51564782.6,140920185.3,96156397.8,56062858.9,85448430.7,87318123.2,127696148.3,60724678.5,36451040.5,135864036.1,148736727.6
+,,,ULSD,,,42636924.3,103392454.8,62714036.5,74973921.4,219115854.9,44801538.3,195003430.9,50567405.4,202135860.0,133387937.6,115151834.2,80461456.2,109696337.8,160471259.1,128048017.0,124393447.2,160153675.5,74973921.4,82517849.3,211164532.9,89153179.2,86274726.9,177337887.5,113896166.9,114898451.7,62485696.5,155213920.6,307889343.7,116021909.9,203495853.6
+,,,Fuel Oil,,,61398241.4,0.0,65435812.3,64682281.9,0.0,48099398.8,0.0,48161380.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,64682281.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,37770923.9,0.0,0.0,109564206.3,0.0
+,,,Coke,,,0.0,0.0,0.0,0.0,57144785.0,0.0,55867098.8,0.0,42313217.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,29600150.1,0.0,0.0,42737775.7,0.0,0.0,34434424.4,0.0,0.0,0.0,73998285.1,4137445.2,0.0,0.0
+,,,Bunker C,,,159855443.2,173126997.6,193879894.2,152864417.9,26277640.3,185002008.3,26319935.0,184395840.8,25535480.0,173497870.8,136419678.5,183620334.6,295688504.8,65314886.2,180986641.9,143134752.4,21107536.8,152864417.9,295548889.5,27353755.1,68967483.0,170583823.6,22731831.9,168647718.7,93337272.3,177610499.6,16039677.5,30504912.2,102880662.2,32552703.1
+,,,Surplus RFG,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Surplus NCR H2,,,4803838.7,0.0,1980276.0,0.0,0.0,2327949.1,0.0,515925.7,0.0,0.0,5037230.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Gasoline S wt%,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Gasoline H2 wt%,,,13.1,14.1,13.3,13.6,14.9,13.3,15.0,13.9,14.8,14.2,14.8,14.3,14.2,14.4,13.7,14.0,14.9,13.6,13.9,14.9,13.6,14.0,14.9,14.2,14.2,13.4,15.4,14.4,13.4,14.1
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Product slate (mass flow rates),,,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d,kg/d
+,,,Blended Gasoline,,,2591760.5,4357173.9,2128936.4,2768862.9,5302804.7,3355661.7,5719476.9,3285411.6,5702630.6,3722690.0,4842548.7,4271835.4,2719225.6,5645983.4,3845576.7,4218396.3,6024298.1,2768862.9,2456807.8,5862676.5,4853677.0,4524251.5,6582671.8,4305657.3,5528657.3,3181473.3,5463885.3,4949107.0,2114991.4,4213309.2
+,,,Jet-A/AVTUR,,,3127114.4,2201075.5,3078492.9,3613099.4,1058256.3,2632775.6,738581.7,2639438.6,1184058.4,2364000.6,2706011.2,2429340.7,1312601.8,2372849.2,2083754.0,2474421.5,2202094.2,3613099.4,1851246.0,1242162.3,3394676.3,2316345.6,1350518.1,2058397.6,2103437.3,3076117.8,1462818.3,878082.0,3272877.0,3582971.8
+,,,ULSD,,,1000564.1,2426319.0,1471715.3,1759419.0,5142009.3,1051361.3,4576161.1,1186669.4,4743538.4,3130225.4,2702277.3,1888195.4,2574252.7,3765791.9,3004913.1,2919151.0,3758339.1,1759419.0,1936453.0,4955415.0,2092164.8,2024615.9,4161602.4,2672810.5,2696331.2,1466356.8,3642417.5,7225263.9,2722695.4,4775453.5
+,,,Fuel Oil,,,1503633.6,0.0,1609475.4,1609417.5,0.0,1187730.0,0.0,1190592.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1609417.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,937071.9,0.0,0.0,2730888.6,0.0
+,,,Coke,,,0.0,0.0,0.0,0.0,1936762.7,0.0,1893459.1,0.0,1434088.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1003214.3,0.0,0.0,1448477.4,0.0,0.0,1167058.6,0.0,0.0,0.0,2507965.0,140227.1,0.0,0.0
+,,,Bunker C,,,4009689.5,4394875.6,4828426.2,3701424.3,680809.9,4618950.0,681905.7,4630080.0,661581.8,4373335.9,3612264.3,4578408.6,7755214.4,1655339.7,4603127.7,3780762.9,546861.2,3701424.3,7719617.2,708690.3,1755769.4,4350953.9,588943.9,4311515.2,2364709.3,4417624.7,415561.4,790331.5,2594344.1,838993.1
+,,,Sulphur,,,804.8,42440.2,2636.6,4282.1,29562.9,4664.2,23282.6,3645.2,79786.5,18920.8,36589.2,20851.4,30340.6,27345.2,85782.5,142077.0,117943.0,4282.1,130863.7,16407.9,51216.2,36209.0,-1.2,152172.0,50040.9,6585.4,390313.9,380926.4,4363.8,15259.4
+,,,Surplus RFG,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Surplus NCR H2,,,37808.5,0.0,15585.7,0.0,0.0,18322.1,0.0,4060.6,0.0,0.0,39645.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Energy use and greenhouse gas emissions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Refinery CO2 emissions: using hydrogen from naphtha catalytic reforming and RFG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,, Functional unit ,,,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint,CO2eq footprint
+,,,Per bbl of crude,,,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude,kg CO2eq/bbl crude
+,,,Feedstock,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Crude,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Process Energy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Electricity,,,2.5,4.0,2.7,3.5,7.8,3.5,11.0,2.4,11.0,4.2,3.9,3.8,4.0,6.5,4.9,4.8,10.6,3.5,3.7,11.5,5.8,4.0,10.5,4.5,5.4,3.4,9.6,12.3,2.8,6.5
+,,,Heat,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Heat RFG,,,7.1,8.4,5.6,6.5,19.0,8.4,23.9,7.0,23.7,7.0,7.2,7.6,5.5,9.8,8.7,8.9,24.3,6.5,5.5,24.6,11.8,8.9,24.2,8.3,10.6,7.9,21.6,11.1,5.3,8.6
+,,,Heat Natural Gas,,,4.0,4.7,4.6,6.6,0.0,4.2,0.0,4.0,0.0,4.8,5.3,4.3,4.0,6.3,5.6,6.1,0.0,6.6,4.3,0.0,5.0,3.9,0.0,6.1,6.1,4.4,0.8,13.7,5.8,8.6
+,,,Steam,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Steam RFG,,,0.0,0.0,0.0,0.0,3.9,0.0,5.3,0.0,4.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.4,0.0,0.0,5.4,0.0,0.0,4.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Steam Natural Gas,,,1.6,2.2,1.5,1.6,0.0,1.7,0.0,1.5,0.4,2.6,2.2,2.3,2.3,3.3,2.1,1.8,3.1,1.6,1.4,0.0,2.6,2.3,0.0,1.7,2.4,1.7,1.9,3.1,1.4,3.0
+,,,Steam Electricity,,,0.0,0.1,0.0,0.0,0.1,0.0,0.2,0.0,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.0,0.1,0.0,0.0,0.2,0.1,0.1,0.1,0.0,0.1,0.0,0.0,0.1,0.0,0.1
+,,,Hydrogen via SMR,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Hydrogen Steam RFG,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Hydrogen Steam Natural Gas,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Hydrogen Steam Electricity,,,0.0,0.1,0.0,0.1,0.9,0.0,1.3,0.0,1.2,0.2,0.0,0.2,0.3,0.5,0.2,0.3,1.2,0.1,0.2,1.5,0.1,0.1,1.4,0.2,0.3,0.0,0.8,1.4,0.0,0.5
+,,,"Hydrogen RFG, heat SMR",,,0.0,0.0,0.0,0.0,2.8,0.0,3.2,0.0,0.0,0.0,-0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.6,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,"Hydrogen Natural Gas, Heat SMR",,,0.0,2.4,0.0,2.2,13.3,0.0,19.2,0.0,21.5,4.1,0.0,3.0,4.8,9.1,3.4,5.1,20.9,2.2,2.9,25.8,2.3,1.7,24.7,4.4,4.9,0.5,15.1,25.3,0.1,9.4
+,,,"Hydrogen RFG, Feed SMR",,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,"Hydrogen Natural Gas, Feed SMR",,,0.0,2.2,0.0,2.0,14.7,0.0,20.2,0.0,19.0,3.6,0.0,2.7,4.2,8.0,3.0,4.5,18.4,2.0,2.6,24.4,2.0,1.5,22.0,3.9,4.3,0.4,13.3,22.3,0.1,8.3
+,,,Hydrogen via CNR,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Fluid Catalytic Cracking Regeneration,,,0.0,2.3,0.0,0.0,6.2,0.0,6.4,0.0,6.2,3.0,2.9,2.3,2.8,4.8,2.3,2.7,5.0,0.0,2.0,6.5,2.3,2.3,5.3,2.5,2.3,0.0,3.7,7.3,0.0,3.9
+,,,Excess of RFG,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Total refinery processes ,,,15.3,26.4,14.5,22.6,68.8,17.9,90.5,15.0,87.5,29.6,21.2,26.1,27.9,48.3,30.2,34.4,84.9,22.6,22.7,101.5,31.9,24.9,93.4,31.6,36.3,18.3,66.8,96.5,15.5,48.9
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Energy Use - Default Refinery,(MJ/bblCrude),,238.1,415.0,232.1,374.3,969.0,307.3,1271.4,277.0,1229.8,431.1,298.1,398.1,394.8,687.2,466.9,525.7,1207.0,374.3,333.0,1428.5,517.8,396.8,1341.1,480.7,572.64,331.5,946.9,1301.5,262.9,696.3
+,,,Energy Use - Hydroskimming Refinery,(MJ/bblCrude),,238.1,216.9,232.1,374.3,68.5,307.3,54.1,277.0,100.0,162.3,184.3,192.4,132.6,212.1,214.2,244.1,234.4,374.3,134.3,164.1,335.4,211.5,288.3,226.8,356.85,331.5,185.7,205.7,262.9,243.6
+,,,Energy Use - Medium Refinery,(MJ/bblCrude),,402.8,415.0,431.5,648.2,412.5,491.5,273.3,511.9,389.5,431.1,298.1,398.1,394.8,687.2,466.9,525.7,390.3,648.2,333.0,418.2,517.8,396.8,446.8,480.7,572.64,530.9,547.4,1159.2,676.1,696.3
+,,,Energy Use - Deep Coking Refinery,(MJ/bblCrude),,550.5,784.0,613.4,788.6,969.0,691.5,1271.4,722.2,1229.8,802.7,462.3,826.1,1116.5,738.7,819.0,789.9,1207.0,788.6,927.4,1428.5,652.6,901.4,1341.1,789.5,770.08,860.4,946.9,1301.5,690.9,755.8
+,,,Energy Use - Deep Hydrotreating Refinery,(MJ/bblCrude),,643.2,962.6,732.6,849.2,1405.9,808.4,1735.5,800.4,1659.6,950.1,711.7,994.1,1541.2,829.2,1032.3,985.1,1425.1,849.2,1389.1,1826.8,718.4,944.8,1584.1,985.7,851.06,932.0,1300.5,1331.3,693.8,765.1
+,,,Energy Use - Chosen Refinery,(MJ/bblCrude),,238.1,415.0,232.1,374.3,969.0,307.3,1271.4,277.0,1229.8,431.1,298.1,398.1,394.8,687.2,466.9,525.7,1207.0,374.3,333.0,1428.5,517.8,396.8,1341.1,480.7,572.6,331.5,946.9,1301.5,262.9,696.3
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Refined Process Transport to End Users,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Assumptions,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Default product transport,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Emissions Factors (gCO2eq/kgkm),"Light Products (Gasoline, Diesel, Jet Fuel)",,Heavy Products,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,0.1045,380,km by Truck,380,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,0.0047,0,km by Ocean Tanker,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,0.0425,0,km by Barge,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,0.0168,2414,km by Pipeline,2414,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,0.0296,0,km by Rail,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Light Product Transport Emissions per Barrel of Product,gCO2/kg,,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21
+,,,Mass of Light Products per Barrel of Crude,kg/barrelCrude,,67.19,89.85,66.79,81.41,115.03,70.40,110.34,71.12,116.30,92.17,102.51,85.89,66.06,117.85,89.34,96.12,119.85,81.41,62.45,120.60,103.41,88.65,120.95,90.37,103.28,77.24,105.69,130.52,81.11,125.72
+,,,Emissions from Transport of Light Products,kgCO2/bblcrude,,5.39,7.21,5.36,6.53,9.23,5.65,8.85,5.70,9.33,7.39,8.22,6.89,5.30,9.45,7.17,7.71,9.61,6.53,5.01,9.67,8.29,7.11,9.70,7.25,8.28,6.20,8.48,10.47,6.51,10.08
+,,,Heavy Product Transport Emissions per Barrel of Product,gCO2/kg,,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21,80.21
+,,,Mass of Heavy Products per Barrel of Crude,kg/barrelCrude,,55.13,43.95,64.38,53.11,26.18,58.07,25.75,58.21,20.96,43.73,62.43,45.78,77.55,16.55,46.03,37.81,15.50,53.11,77.20,21.57,17.56,43.51,17.56,43.12,23.65,53.55,29.24,40.80,84.75,29.51
+,,,Emissions from Transport of Heavy Products,kgCO2/bblcrude,,4.422451193,3.525300917,5.164091703,4.2600331,2.099657023,4.657764241,2.065800487,4.66898777,1.68101858,3.508023088,5.007526177,3.672519887,6.220759607,1.327812448,3.692348082,3.032697218,1.24337595,4.2600331,6.192205714,1.730348267,1.408371027,3.49006963,1.408558016,3.458434269,1.896825441,4.295210748,2.345074394,3.272597474,6.797736715,2.36680548
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Total Transport Emissions,kgCO2/barrel of crude,,9.81,10.73,10.52,10.79,11.33,10.30,10.92,10.37,11.01,10.90,13.23,10.56,11.52,10.78,10.86,10.74,10.86,10.79,11.20,11.40,9.70,10.60,11.11,10.71,10.18,10.49,10.82,13.74,13.30,12.45
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Combustion Emission Results,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+, Emission Factors,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,kg CO2 eq/bbl,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,370.3,,Gasoline,kg CO2eq/bblCrude,,81.9,141.1,67.7,89.7,169.0,107.0,182.4,107.7,181.9,119.4,161.1,138.8,86.9,181.7,121.6,135.1,194.8,89.7,77.8,186.7,152.8,145.2,213.4,139.6,180.1,101.8,178.2,157.3,67.8,134.2
+,411.1,,Jet Fuel,kg CO2eq/bblCrude,,100.1,70.4,98.5,115.6,33.9,84.3,23.6,84.5,37.9,75.6,86.6,77.7,42.0,75.9,66.7,79.2,70.5,115.6,59.2,39.8,108.6,74.1,43.2,65.9,67.3,98.4,46.8,28.1,104.7,114.7
+,430.4,,Diesel,kg CO2eq/bblCrude,,32.8,79.6,48.3,57.7,168.6,34.5,150.8,38.9,155.8,103.1,88.8,62.3,84.3,124.1,98.5,95.6,123.7,57.7,63.4,163.0,69.0,66.8,137.0,87.6,88.6,48.1,118.9,233.8,89.3,156.2
+,462.1,,Fuel Oil,kg CO2eq/bblCrude,,50.9,0.0,53.6,51.7,0.0,39.1,0.0,39.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,51.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,30.4,0.0,0.0,87.2,0.0
+,645.0,,Petroleum Coke,kg CO2eq/bblCrude,,0.0,0.0,0.0,0.0,68.9,0.0,67.3,0.0,51.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,35.7,0.0,0.0,51.5,0.0,0.0,41.5,0.0,0.0,0.0,89.2,5.0,0.0,0.0
+,475.1,,Bunker Fuel,kg CO2eq/bblCrude,,129.2,137.0,159.0,134.2,20.1,150.9,20.2,148.7,19.6,139.0,101.8,150.3,223.1,51.9,142.7,107.1,16.2,134.2,224.1,21.0,54.3,133.9,17.4,131.9,74.1,146.0,12.3,23.4,82.3,25.1
+,0.0,,Light Ends (RFG),kg CO2eq/bblCrude,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,,,Net Upstream Petcoke,kg CO2eq/bblCrude,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,93.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,112.0,112.0,75.1
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Dilbit Conversion Factor,,,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%
+,TOTAL Combustion GHG/Bbl Crude Input,,,,,394.8,428.1,427.1,448.9,460.5,415.7,444.3,418.8,446.2,437.2,531.8,429.0,436.3,433.6,429.5,417.0,440.8,448.9,424.6,462.0,384.7,420.0,452.6,424.9,410.1,424.7,445.4,559.5,543.3,505.3
+,Combust NO PETCOKE,,,,,394.8,428.1,427.1,448.9,391.6,415.7,377.0,418.8,395.2,437.2,438.3,429.0,436.3,433.6,429.5,417.0,405.2,448.9,424.6,410.5,384.7,420.0,411.1,424.9,410.1,424.7,356.2,442.6,431.4,430.3
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,TOTAL EMISSIONS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,OPGEE Emissions,kgCO2eq/bblcrude,,51.39,90.78,33.26,168.98,271.52,114.75,186.34,22.05,31.89,41.28,175.98,26.56,39.28,46.45,34.44,60.81,202.38,237.47,35.86,110.17,29.95,31.38,51.53,72.76,45.86,75.59,114.68,155.43,161.08,200.26
+,,,PRELIM Emissions,kgCO2eq/bblcrude,,15.35,26.42,14.45,22.60,68.76,17.90,90.53,15.01,87.52,29.63,21.18,26.08,27.92,48.34,30.24,34.42,84.90,22.60,22.70,101.52,31.88,24.86,93.40,31.61,36.33,18.30,66.85,96.51,15.51,48.91
+,,,TRANSPORT Emissions,kgCO2eq/bblcrude,,9.81,10.73,10.52,10.79,11.33,10.30,10.92,10.37,11.01,10.90,13.23,10.56,11.52,10.78,10.86,10.74,10.86,10.79,11.20,11.40,9.70,10.60,11.11,10.71,10.18,10.49,10.82,13.74,13.30,12.45
+,,,COMBUST Emissions,kgCO2eq/bblcrude,,394.84,428.15,427.05,448.88,460.47,415.72,444.28,418.81,446.15,437.15,531.84,429.04,436.33,433.58,429.46,416.99,440.83,448.88,424.59,461.96,384.74,419.99,452.61,424.92,410.06,424.73,445.42,559.53,543.34,505.34
+,,,Downstream Emissions,kgCO2eq/bblcrude,,404.65,438.88,437.58,459.67,471.80,426.02,455.20,429.18,457.16,448.05,545.07,439.60,447.85,444.36,440.32,427.74,451.69,459.67,435.80,473.37,394.44,430.59,463.72,435.63,420.25,435.22,456.24,573.27,556.65,517.79
+,,,Total Emissions,kgCO2eq/bblcrude,,471.3895952,556.0732236,485.2846199,651.2570836,812.0797291,558.6641632,732.0623179,466.2399316,576.5681629,518.9615276,742.228054,492.2372815,515.0481157,539.1577569,505.0083024,522.9675175,738.9666064,719.7480279,494.3553755,685.0541972,456.2771227,486.8337891,608.644769,539.993875,502.4344548,529.1228826,637.7641111,825.2109887,733.2474882,766.9550831
+,,,Refinery Type,,,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC ,Hydroskimming Configuration,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Deep Conversion: FCC & GO-HC,Medium Conversion: FCC & GO-HC ,Medium Conversion: FCC & GO-HC ,Hydroskimming Configuration,Deep Conversion: FCC & GO-HC,Deep Conversion: FCC & GO-HC,Hydroskimming Configuration,Medium Conversion: FCC & GO-HC 
+,,,OPGEE % of Total Emissions,,,10.90%,16.33%,6.85%,25.95%,33.44%,20.54%,25.45%,4.73%,5.53%,7.95%,23.71%,5.40%,7.63%,8.62%,6.82%,11.63%,27.39%,32.99%,7.25%,16.08%,6.57%,6.45%,8.47%,13.47%,9.13%,14.29%,17.98%,18.84%,21.97%,26.11%
+,,,PRELIM % of Total Emissions,,,3.26%,4.75%,2.98%,3.47%,8.47%,3.20%,12.37%,3.22%,15.18%,5.71%,2.85%,5.30%,5.42%,8.97%,5.99%,6.58%,11.49%,3.14%,4.59%,14.82%,6.99%,5.11%,15.35%,5.85%,7.23%,3.46%,10.48%,11.70%,2.12%,6.38%
+,,,OPEM % of Total Emissions,,,85.84%,78.92%,90.17%,70.58%,58.10%,76.26%,62.18%,92.05%,79.29%,86.34%,73.44%,89.31%,86.95%,82.42%,87.19%,81.79%,61.12%,63.87%,88.15%,69.10%,86.45%,88.45%,76.19%,80.67%,83.64%,82.25%,71.54%,69.47%,75.92%,67.51%
+,,,,,,2.08%,1.93%,2.17%,1.66%,1.39%,1.84%,1.49%,2.22%,1.91%,2.10%,1.78%,2.15%,2.24%,2.00%,2.15%,2.05%,1.47%,1.50%,2.27%,1.66%,2.13%,2.18%,1.83%,1.98%,2.03%,1.98%,1.70%,1.67%,1.81%,1.62%
+,Convert Results to Other Functional Units,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Per MJ Product Energy Output,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,HHV Petroleum Products,,LHV Petroleum Products,,Use LHV throughout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,5487.9,Blended Gasoline,5140.3,MJProduct/bblCrude,,1136.6,1959.0,939.2,1245.0,2346.6,1485.4,2531.3,1494.3,2525.6,1658.0,2236.7,1926.0,1206.7,2522.3,1687.7,1876.0,2704.3,1245.0,1079.9,2591.6,2120.6,2015.6,2962.8,1938.2,2499.8,1413.3,2474.2,2183.4,940.7,1863.3
+,5652.6,Jet-A/AVTUR,5285.2,MJProduct/bblCrude,,1286.6,905.6,1266.6,1486.5,435.4,1083.2,303.9,1085.9,487.1,972.6,1113.3,999.5,540.0,976.2,857.3,1018.0,906.0,1486.5,761.6,511.1,1396.6,953.0,555.6,846.9,865.4,1265.6,601.8,361.3,1346.5,1474.1
+,6145.7,ULSD,5737.9,MJProduct/bblCrude,,437.7,1061.5,643.8,769.7,2247.1,459.9,2010.2,519.1,2076.4,1373.9,1183.8,830.3,1124.0,1653.9,1313.0,1274.0,1649.0,769.7,845.6,2173.6,920.3,890.3,1826.8,1167.2,1180.7,641.5,1585.0,3117.0,1191.1,2082.8
+,6425.3,Fuel Oil,6007.6,MJProduct/bblCrude,,661.2,0.0,697.3,671.8,0.0,507.9,0.0,507.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,671.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,394.7,0.0,0.0,1133.9,0.0
+,6355.6,Coke,5942.5,MJProduct/bblCrude,,0.0,0.0,0.0,0.0,634.5,0.0,620.3,0.0,469.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,328.6,0.0,0.0,474.5,0.0,0.0,382.3,0.0,0.0,0.0,821.6,45.9,0.0,0.0
+,6633.1,Bunker C,6202.0,MJProduct/bblCrude,,1686.5,1787.8,2074.9,1751.3,262.9,1969.8,263.4,1941.6,255.5,1814.5,1328.9,1961.5,2912.1,677.3,1862.9,1398.1,211.2,1751.3,2925.7,273.7,708.9,1747.6,227.5,1721.3,967.3,1905.9,160.5,305.2,1074.7,328.2
+,5536.9,Light Ends (RFG),5177.0,MJProduct/bblCrude,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+,6355.6,Net Upstream Coke,5942.5,MJProduct/bblCrude,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,861.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1031.5,1031.5,691.6
+,LHV Total Petroleum Products,,,MJProduct/bblCrude,,5208.6,5713.9,5621.8,5924.3,5926.4,5506.2,5729.1,5548.2,5814.4,5819.0,6724.3,5717.4,5782.8,5829.7,5720.9,5566.1,5799.1,5924.3,5612.9,6024.5,5146.4,5606.5,5955.0,5673.7,5513.2,5621.0,5643.2,7044.3,6718.4,6440.1
+,per MJ Petroleum Products,,Total Emissions,kg CO2 eq./MJ Products,,0.091,0.097,0.086,0.110,0.137,0.101,0.128,0.084,0.099,0.089,0.110,0.086,0.089,0.092,0.088,0.094,0.127,0.121,0.088,0.114,0.089,0.087,0.102,0.095,0.091,0.094,0.113,0.117,0.109,0.119
+,,,Upstream Emissions,kg CO2 eq./MJ Products,,0.010,0.016,0.006,0.029,0.046,0.021,0.033,0.004,0.005,0.007,0.026,0.005,0.007,0.008,0.006,0.011,0.035,0.040,0.006,0.018,0.006,0.006,0.009,0.013,0.008,0.013,0.020,0.022,0.024,0.031
+,,,Midstream Emissions,kg CO2 eq./MJ Products,,0.003,0.005,0.003,0.004,0.012,0.003,0.016,0.003,0.015,0.005,0.003,0.005,0.005,0.008,0.005,0.006,0.015,0.004,0.004,0.017,0.006,0.004,0.016,0.006,0.007,0.003,0.012,0.014,0.002,0.008
+,,,Downstream Emissions,kg CO2 eq./MJ Products,,0.078,0.077,0.078,0.078,0.080,0.077,0.079,0.077,0.079,0.077,0.081,0.077,0.077,0.076,0.077,0.077,0.078,0.078,0.078,0.079,0.077,0.077,0.078,0.077,0.076,0.077,0.081,0.081,0.083,0.080
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Per $ Product value,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Market Value Product as of Date,,,"Prices accessed February 3rd, 2015",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,$1.56,http://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm,Blended Gasoline,USD/gallon,Average of NY Harbor/LA RBOB,$14.49,$24.97,$11.97,$15.87,$29.91,$18.93,$32.27,$19.05,$32.19,$21.13,$28.51,$24.55,$15.38,$32.15,$21.51,$23.91,$34.47,$15.87,$13.76,$33.03,$27.03,$25.69,$37.77,$24.71,$31.86,$18.01,$31.54,$27.83,$11.99,$23.75
+,$1.75,http://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm,Jet-A/AVTUR,USD/gallon,US Gulf Coast Spot,$17.89,$12.59,$17.61,$20.67,$6.05,$15.06,$4.23,$15.10,$6.77,$13.53,$15.48,$13.90,$7.51,$13.58,$11.92,$14.16,$12.60,$20.67,$10.59,$7.11,$19.42,$13.25,$7.73,$11.78,$12.03,$17.60,$8.37,$5.02,$18.73,$20.50
+,$1.89,http://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm,ULSD,USD/gallon,NY Harbor ,$6.06,$14.69,$8.91,$10.65,$31.09,$6.36,$27.81,$7.18,$28.73,$19.01,$16.38,$11.49,$15.55,$22.88,$18.16,$17.63,$22.81,$10.65,$11.70,$30.07,$12.73,$12.32,$25.27,$16.15,$16.33,$8.87,$21.93,$43.12,$16.48,$28.81
+,$1.25,http://www.eia.gov/dnav/pet/pet_pri_refoth_dcu_nus_m.htm,Fuel Oil,USD/gallon,NMEX (heating oil),$5.78,$0.00,$6.09,$5.87,$0.00,$4.44,$0.00,$4.43,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$5.87,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$3.45,$0.00,$0.00,$9.91,$0.00
+,$83.00,http://www.argusmedia.com/~/media/Files/PDFs/Samples/Energy-Argus-Petroleum-Coke.pdf?la=en,Coke,USD/ton,Global averages,$0.00,$0.00,$0.00,$0.00,$1.77,$0.00,$1.73,$0.00,$1.31,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.92,$0.00,$0.00,$1.33,$0.00,$0.00,$1.07,$0.00,$0.00,$0.00,$2.29,$0.13,$0.00,$0.00
+,$1.25,http://www.eia.gov/dnav/pet/pet_pri_refoth_dcu_nus_m.htm,Bunker C,USD/gallon,Rotterdam,$14.28,$15.13,$17.56,$14.82,$2.23,$16.67,$2.23,$16.44,$2.16,$15.36,$11.25,$16.60,$24.65,$5.73,$15.77,$11.83,$1.79,$14.82,$24.77,$2.32,$6.00,$14.79,$1.93,$14.57,$8.19,$16.13,$1.36,$2.58,$9.10,$2.78
+,$83.00,,Coke (net upstream),,,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$2.41,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,$2.88,$2.88,$1.93
+,,,Light Ends (RFG),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Hydrogen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,Asphalt,$ Value Products/Bbl Crude input,,$58.49,$67.38,$62.15,$67.89,$71.05,$61.47,$68.26,$62.20,$71.17,$69.03,$74.03,$66.54,$63.09,$74.34,$67.37,$67.53,$72.59,$67.89,$60.82,$73.85,$65.19,$66.06,$73.76,$67.20,$68.42,$64.07,$65.49,$81.57,$69.08,$77.78
+,,,Total Emissions,kg CO2 eq./USD Value of Products,,8.06,8.25,7.81,9.59,11.43,9.09,10.72,7.50,8.10,7.52,10.03,7.40,8.16,7.25,7.50,7.74,10.18,10.60,8.13,9.28,7.00,7.37,8.25,8.04,7.34,8.26,9.74,10.12,10.61,9.86
+,,,Upstream Emissions,kg CO2 eq./USD Value of Products,,0.88,1.35,0.54,2.49,3.82,1.87,2.73,0.35,0.45,0.60,2.38,0.40,0.62,0.62,0.51,0.90,2.79,3.50,0.59,1.49,0.46,0.48,0.70,1.08,0.67,1.18,1.75,1.91,2.33,2.57
+,,,Midstream Emissions,kg CO2 eq./USD Value of Products,,0.26,0.39,0.23,0.33,0.97,0.29,1.33,0.24,1.23,0.43,0.29,0.39,0.44,0.65,0.45,0.51,1.17,0.33,0.37,1.37,0.49,0.38,1.27,0.47,0.53,0.29,1.02,1.18,0.22,0.63
+,,,Downstream Emissions,kg CO2 eq./USD Value of Products,,6.92,6.51,7.04,6.77,6.64,6.93,6.67,6.90,6.42,6.49,7.36,6.61,7.10,5.98,6.54,6.33,6.22,6.77,7.17,6.41,6.05,6.52,6.29,6.48,6.14,6.79,6.97,7.03,8.06,6.66
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
